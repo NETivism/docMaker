@@ -8,8 +8,11 @@
  */
 function doParseParams($params) {
   extract($params);
+  $xmlFolder = $baseDir .'/xml/schema/';
+  $filePathArray = glob($xmlFolder.'*/'.$entityName.'.xml');
+  $file = reset($filePathArray);
 
-  $xml = simplexml_load_file("{target}") or die("Error: Cannot create object");
+  $xml = simplexml_load_file("$file") or die("Error: Cannot create object");
   $fields = $xml->field;
   $replaceParams = 
   "| Name | Type | Description | Create Rule |

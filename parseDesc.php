@@ -26,8 +26,10 @@ function doParseDesc($params) {
   print($content);
   print("\n");
 
+  $fileName = $baseDir .'/api/v3/'.$entityName.'.php';
+
   $docComments = array_filter(
-    token_get_all( file_get_contents( __FILE__ ) ), function($entry) {
+    token_get_all( file_get_contents( $fileName ) ), function($entry) {
         return $entry[0] == T_DOC_COMMENT;
     }
   );
