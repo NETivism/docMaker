@@ -4,15 +4,19 @@ class genDoc {
   function __construct($entityName) {
     $genDocDir = __DIR__;
     $markdownDir = $genDocDir."/markdown";
+    $templatesDir = $genDocDir."/templates";
     $baseDir = dirname($genDocDir);
-    $filePath = $markdownDir."/".$entityName.".md";
+    $markdownFilePath = $markdownDir."/".$entityName.".md";
+    $templatesFilePath = $templatesDir."/".$entityName.".tpl";
 
     $params = array(
       'entityName' => $entityName,
       'genDocDir' => $genDocDir,
       'markdownDir' => $markdownDir,
       'baseDir' => $baseDir,
-      'filePath' => $filePath,
+      'markdownFilePath' => $markdownFilePath,
+      'templatesDir' => $templatesDir,
+      'templatesFilePath' => $templatesFilePath
     );
 
     # 1. Prepare each parameters, files.
@@ -53,7 +57,17 @@ class genDoc {
     include_once("genHtmlFromMD.php");
     $params = doGenHtmlFromMD($params);
 
-    $file = fopen($filePath, "w");
+    # Save as tpl file
+    $file = fopen($templatesFilePath, "w");
+    fwrite($file, $params['content']);
+    fclose($file);
+
+    # Translate tpl file using smarty
+    include_once("translateFromTpl.php");
+    $params = doTranslate($params);
+
+    # Save as markdown file
+    $file = fopen($markdownFilePath, "w");
     fwrite($file, $params['content']);
     fclose($file);
 

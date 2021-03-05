@@ -22,6 +22,10 @@ function doParseParams($params) {
     if($field->name == 'id') {
         continue;
     }
+    $description = '';
+    if(property_exists($field, 'title')) {
+      $description = '{ts}' . $field->title . '{/ts}';
+    }
     $create_rule = '';
     if(property_exists($field, 'required') && 
       ($field->required == true && !property_exists($field, 'default'))
@@ -29,7 +33,7 @@ function doParseParams($params) {
         $create_rule = 'required';
     }
     // $description = shell_exec('drush ev');
-    $row = '| ' . $field->name . ' | ' . $field->type . ' | ' . $field->comment . ' | ' . $create_rule . ' |';
+    $row = '| ' . $field->name . ' | ' . $field->type . ' | ' . $description . ' | ' . $create_rule . ' |';
     $replaceParams = $replaceParams . "\n" . $row;
   }
 
