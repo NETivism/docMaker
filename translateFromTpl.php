@@ -1,8 +1,7 @@
 <?php
+require_once '../civicrm.config.php';
 
 function doTranslate($params){
-    
-    require_once '../civicrm.config.php';
     $config   = CRM_Core_Config::singleton();
     chdir(__DIR__);
 
@@ -19,10 +18,9 @@ function doTranslate($params){
     $smarty->assign('locale', 'en');
     $smarty->assign('tsLocale', 'zh-TW');
 
-    $result = $smarty->fetch($params['entityName'] . '.tpl');
-
-    echo "123123";
-    echo $result;
+    $result = $smarty->fetch($params['templatesFilePath']);
+    $params['content'] = $result;
+    return $params;
 
 }
 

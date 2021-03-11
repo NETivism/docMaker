@@ -8,5 +8,9 @@
  */
 function doGenTestResult($params) {
   extract($params);
+
+  // chdir($baseDir.'/tests/phpunit');
+  // shell_exec("phpunit \"api/v3/{$entityName}Test.php\"");
+
   return $params;
 }

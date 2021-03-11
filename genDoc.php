@@ -1,5 +1,7 @@
 <?php
 
+include_once("translateFromTpl.php");
+
 class genDoc {
   function __construct($entityName) {
     $genDocDir = __DIR__;
@@ -30,9 +32,11 @@ class genDoc {
 
 {{PARAMS}}
 
+{literal}
 {{SAMPLE_CODE}}
 
 {{RESULT}}
+{/literal}
 
 ";
     $params['content'] = $content;
@@ -63,7 +67,6 @@ class genDoc {
     fclose($file);
 
     # Translate tpl file using smarty
-    include_once("translateFromTpl.php");
     $params = doTranslate($params);
 
     # Save as markdown file
