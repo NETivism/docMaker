@@ -33,7 +33,7 @@ function doParseParams($params) {
   $xml = simplexml_load_file("$file") or die("Error: Cannot create object");
   $fields = $xml->field;
   $replaceParams = 
-  "| Name | Type | Description | Create Rule |
+  "| {ts}Name{/ts} | {ts}Type{/ts} | {ts}Description{/ts} | {ts}Create Rule{/ts} |
 | ---- | ---- | ---- | ---- |";
 
   foreach($fields as $field) {
