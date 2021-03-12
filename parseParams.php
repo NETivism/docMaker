@@ -6,7 +6,25 @@
  *   $baseDir => Directory path to base civicrm, like "/path/to/civicrm"
  *   $content => current full doc content
  */
+
+
 function doParseParams($params) {
+  # mapping type to the string that existing in civicrm.po
+  $TYPE_MAPPING = array(
+    'varchar' => 'String',
+    'char' => 'String',
+    'text' => 'String',
+    'longtext' => 'String',
+    'datetime' => 'Date',
+    'date' => 'Date',
+    'int unsigned' => 'Number',
+    'int' => 'Number',
+    'enum' => 'Number',
+    'decimal' => 'Number',
+    'boolean' => 'Boolean',
+    'float' => 'Float'
+  );
+
   extract($params);
   $xmlFolder = $baseDir .'/xml/schema/';
   $filePathArray = glob($xmlFolder.'*/'.$entityName.'.xml');
@@ -22,6 +40,24 @@ function doParseParams($params) {
     if($field->name == 'id') {
         continue;
     }
+
+    $name = composeTitle($field->name);
+    if($name == '') {
+        $name = $field->name;
+    } else {
+        $name = '{ts}' . $name . '{/ts}';
+    }
+
+    $type = '';
+    if(property_exists($field, 'type')) {
+      $origin_type = (string) $field->type;
+      if(array_key_exists($origin_type, $TYPE_MAPPING)) {
+        $type = '{ts}' . $TYPE_MAPPING[$origin_type] . '{/ts}';
+      } else {
+        $type = $origin_type;
+      }
+    }
+
     $description = '';
     if(property_exists($field, 'title')) {
       $description = '{ts}' . $field->title . '{/ts}';
@@ -34,15 +70,9 @@ function doParseParams($params) {
         $create_rule = '{ts}required{/ts}';
     }
 
-    $name = composeTitle($field->name);
-    if($name == '') {
-        $name = $field->name;
-    } else {
-        $name = '{ts}' . $name . '{/ts}';
-    }
 
     // $description = shell_exec('drush ev');
-    $row = '| ' . $name . ' | ' . $field->type . ' | ' . $description . ' | ' . $create_rule . ' |';
+    $row = '| ' . $name . ' | ' . $type . ' | ' . $description . ' | ' . $create_rule . ' |';
     $replaceParams = $replaceParams . "\n" . $row;
   }
 
