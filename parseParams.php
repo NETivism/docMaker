@@ -26,14 +26,23 @@ function doParseParams($params) {
     if(property_exists($field, 'title')) {
       $description = '{ts}' . $field->title . '{/ts}';
     }
+    
     $create_rule = '';
     if(property_exists($field, 'required') && 
       ($field->required == true && !property_exists($field, 'default'))
     ) {
-        $create_rule = 'required';
+        $create_rule = '{ts}required{/ts}';
     }
+
+    $name = composeTitle($field->name);
+    if($name == '') {
+        $name = $field->name;
+    } else {
+        $name = '{ts}' . $name . '{/ts}';
+    }
+
     // $description = shell_exec('drush ev');
-    $row = '| ' . $field->name . ' | ' . $field->type . ' | ' . $description . ' | ' . $create_rule . ' |';
+    $row = '| ' . $name . ' | ' . $field->type . ' | ' . $description . ' | ' . $create_rule . ' |';
     $replaceParams = $replaceParams . "\n" . $row;
   }
 
@@ -42,4 +51,25 @@ function doParseParams($params) {
 
   $params['content'] = $content;
   return $params;
+}
+
+function composeTitle($name) {
+    $names = explode('_', strtolower($name));
+    $title = '';
+    for ($i = 0; $i < count($names); $i++) {
+      if ($names[$i] === 'id' || $names[$i] === 'is') {
+        // id's do not get titles
+        return NULL;
+      }
+
+      if ($names[$i] === 'im') {
+        $names[$i] = 'IM';
+      }
+      else {
+        $names[$i] = ucfirst(trim($names[$i]));
+      }
+
+      $title = $title . ' ' . $names[$i];
+    }
+    return trim($title);
 }
