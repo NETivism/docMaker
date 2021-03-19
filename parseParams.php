@@ -21,7 +21,6 @@ function doParseParams($params) {
     'int' => 'Number',
     'enum' => 'Number',
     'decimal' => 'Number',
-    'boolean' => 'Boolean',
     'float' => 'Float'
   );
 
@@ -33,8 +32,8 @@ function doParseParams($params) {
   $xml = simplexml_load_file("$file") or die("Error: Cannot create object");
   $fields = $xml->field;
   $replaceParams = 
-  "| {ts}Name{/ts} | {ts}Type{/ts} | {ts}Description{/ts} | {ts}Create Rule{/ts} |
-| ---- | ---- | ---- | ---- |";
+  "| {ts}Parameter Name{/ts} | {ts}Name{/ts} | {ts}Type{/ts} | {ts}Description{/ts} | {ts}Create Rule{/ts} |
+| ---- | ---- | ---- | ---- | ---- |";
 
   foreach($fields as $field) {
     if($field->name == 'id') {
@@ -53,6 +52,8 @@ function doParseParams($params) {
       $origin_type = (string) $field->type;
       if(array_key_exists($origin_type, $TYPE_MAPPING)) {
         $type = '{ts}' . $TYPE_MAPPING[$origin_type] . '{/ts}';
+      } else if($origin_type == 'boolean') {
+        $type = '{ts}Boolean{/ts}({ts}True or False{/ts})';
       } else {
         $type = $origin_type;
       }
@@ -70,9 +71,7 @@ function doParseParams($params) {
         $create_rule = '{ts}required{/ts}';
     }
 
-
-    // $description = shell_exec('drush ev');
-    $row = '| ' . $name . ' | ' . $type . ' | ' . $description . ' | ' . $create_rule . ' |';
+    $row = '| ' . $field->name . ' | ' . $name . ' | ' . $type . ' | ' . $description . ' | ' . $create_rule . ' |';
     $replaceParams = $replaceParams . "\n" . $row;
   }
 
