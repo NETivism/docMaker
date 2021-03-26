@@ -40,9 +40,11 @@ function doParseDesc($params) {
     $fileDocComment = trim($fileDocComment, '/**');
     $fileDocComment = str_replace(' * ', '', $fileDocComment);
     preg_match('#@start_document(.+)@end_document#s',$fileDocComment,$matches);
-    $replaceDesc = $replaceDesc . $matches[1];
+    if (!empty($matches[1])) {
+      $replaceDesc = $replaceDesc . $matches[1];
+    }
   }
-  
+
   $search = "{{DESC}}";
   $content = str_replace($search, $replaceDesc, $content);
 

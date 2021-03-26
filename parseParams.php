@@ -32,10 +32,25 @@ function doParseParams($params) {
   $xml = simplexml_load_file("$file") or die("Error: Cannot create object");
   $fields = $xml->field;
   $replaceParams = 
-  "| {ts}Parameter Name{/ts} | {ts}Name{/ts} | {ts}Type{/ts} | {ts}Description{/ts} | {ts}Create Rule{/ts} |
-| ---- | ---- | ---- | ---- | ---- |";
+  "| {ts}Parameter Name{/ts} | {ts}Field Help{/ts} | {ts}Type{/ts} | {ts}Create Rule{/ts} |
+| ---- | ---- | ---- | ---- |";
 
+  $fieldsArray = array();
+
+  // Some field appear twice in XML files. Compare the 'Add' attribute.
   foreach($fields as $field) {
+    if (isset($fieldsArray[$field->name])) {
+      $newVersion = (Float) $field->add;
+      $originVersion = (Float) $fieldsArray[$field->name]->add;
+      if ($newVersion > $originVersion) {
+        $fieldsArray[(String) $field->name] = $field;
+      }
+    }
+    else {
+      $fieldsArray[(String) $field->name] = $field;
+    }
+  }
+  foreach ($fieldsArray as $field) {
     if($field->name == 'id') {
         continue;
     }
@@ -43,7 +58,11 @@ function doParseParams($params) {
     $name = composeTitle($field->name);
     if($name == '') {
         $name = $field->name;
-    } else {
+    }
+    else if(property_exists($field, 'title')) {
+      $name = '{ts}' . $field->title . '{/ts}';
+    }
+    else {
         $name = '{ts}' . $name . '{/ts}';
     }
 
@@ -59,21 +78,20 @@ function doParseParams($params) {
       }
     }
 
-    $description = '';
-    if(property_exists($field, 'title')) {
-      $description = '{ts}' . $field->title . '{/ts}';
+    $create_rule = array();
+    if(property_exists($field, 'required') && $field->required == 'true') {
+        $create_rule[] = '{ts}Required{/ts}';
     }
-    
-    $create_rule = '';
-    if(property_exists($field, 'required') && 
-      ($field->required == true && !property_exists($field, 'default'))
-    ) {
-        $create_rule = '{ts}required{/ts}';
+    if (property_exists($field, 'default')) {
+      $create_rule[] = "{ts}Default Value{/ts}: {$field->default}";
     }
+    $create_rule = implode(', ', $create_rule);
 
-    $row = '| ' . $field->name . ' | ' . $name . ' | ' . $type . ' | ' . $description . ' | ' . $create_rule . ' |';
+    $row = '| ' . $field->name . ' | ' . $name . ' | ' . $type . ' | ' . $create_rule . ' |';
     $replaceParams = $replaceParams . "\n" . $row;
   }
+  print_r($row);
+  // $replaceParams = $replaceParams . "\n" . implode("\n", $row);
 
   $search = "{{PARAMS}}";
   $content = str_replace($search, $replaceParams, $content);
@@ -88,7 +106,7 @@ function composeTitle($name) {
     for ($i = 0; $i < count($names); $i++) {
       if ($names[$i] === 'id' || $names[$i] === 'is') {
         // id's do not get titles
-        return NULL;
+        continue;
       }
 
       if ($names[$i] === 'im') {
