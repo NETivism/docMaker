@@ -1,6 +1,6 @@
 <?php
 
-include_once("translateFromTpl.php");
+include_once("translateFromTpl.php"); // it needs to be place here
 
 class genDoc {
   function __construct($entityName) {
@@ -32,12 +32,7 @@ class genDoc {
 
 {{PARAMS}}
 
-{literal}
 {{SAMPLE_CODE}}
-
-{{RESULT}}
-{/literal}
-
 ";
     $params['content'] = $content;
 
