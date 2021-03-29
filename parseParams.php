@@ -90,7 +90,6 @@ function doParseParams($params) {
     $row = '| ' . $field->name . ' | ' . $name . ' | ' . $type . ' | ' . $create_rule . ' |';
     $replaceParams = $replaceParams . "\n" . $row;
   }
-  print_r($row);
   // $replaceParams = $replaceParams . "\n" . implode("\n", $row);
 
   $search = "{{PARAMS}}";
