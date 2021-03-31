@@ -19,12 +19,6 @@
 
 function doParseDesc($params) {
   extract($params);
-  print($entityName);
-  print("\n");
-  print($baseDir);
-  print("\n");
-  print($content);
-  print("\n");
 
   $fileName = $baseDir .'/api/v3/'.$entityName.'.php';
 

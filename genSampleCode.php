@@ -28,9 +28,16 @@ function doGenSampleCode($params) {
   foreach($docComments as $order => $comments) {
     $fileDocComment = $comments[1];
     $fileDocComment = trim($fileDocComment, '/**');
-    $fileDocComment = str_replace(' * ', '', $fileDocComment);
+    $fileDocComment = str_replace('   * ', '', $fileDocComment);
     preg_match('#@start_document(.+)@end_document#s',$fileDocComment,$matches);
     $description = $matches[1];
+
+    // Add {literal} to all code block.
+    preg_match_all('#```.+```#sU',$description,$codeBlockMatches);
+    foreach($codeBlockMatches[0] as $codeBlock) {
+      $description = str_replace($codeBlock, "{literal}" . $codeBlock . "{/literal}", $description);
+    }
+
     foreach($tokenMapping as $token => $replacement) {
       $description = str_replace($token, $replacement, $description);
     }
@@ -50,7 +57,7 @@ function doGenSampleCode($params) {
     $unitTestResultFile = fopen($unitTestResultFileDir, 'r');
     $unitTestResult = fread($unitTestResultFile, filesize($unitTestResultFileDir));
     fclose($unitTestResultFile);
-    $unitTestResult = "{literal}".$unitTestResult."{/literal}";
+    $unitTestResult = "**{ts}Response Samples{/ts}** \r\n{literal}```\r\n" . $unitTestResult . "\r\n```{/literal}";
     $description = str_replace("{{RESULT}}", $unitTestResult, $description);
     $replaceDesc = $replaceDesc . $description;
   }
