@@ -5,7 +5,7 @@ include_once("translateFromTpl.php"); // it needs to be place here
 class genDoc {
   function __construct($entityName) {
     $genDocDir = __DIR__;
-    $markdownDir = $genDocDir."/markdown";
+    $markdownDir = $genDocDir."/content";
     $templatesDir = $genDocDir."/templates";
     $baseDir = dirname($genDocDir);
     $markdownFilePath = $markdownDir."/".$entityName.".md";

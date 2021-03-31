@@ -1,0 +1,4 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "netiCRM API Doc Site"
+theme = "book"
