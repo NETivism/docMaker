@@ -9,10 +9,14 @@
 function doGenSampleCode($params) {
   extract($params);
 
-  $tokenMapping = array(
-    "{{API_KEY_HEADER}}" => "--header 'x-civicrm-api-key: <secret-key>'",
-    "{{SITE_KEY_HEADER}}" => "--header 'x-civicrm-site-key: <site-key>'"
-  );
+  try {
+    genDoc::$_smarty->assign('API_KEY_HEADER', "--header 'x-civicrm-api-key: <secret-key>'");
+    genDoc::$_smarty->assign('SITE_KEY_HEADER', "--header 'x-civicrm-site-key: <site-key>'");
+  }
+  catch (Exception $e) {
+    print('genDoc::$_smarty has error.');
+  }
+
 
   $fileName = $baseDir.'/tests/phpunit/api/v3/'.$entityName.'Test.php';
 
@@ -32,15 +36,6 @@ function doGenSampleCode($params) {
     preg_match('#@start_document(.+)@end_document#s',$fileDocComment,$matches);
     $description = $matches[1];
 
-    // Add {literal} to all code block.
-    preg_match_all('#```.+```#sU',$description,$codeBlockMatches);
-    foreach($codeBlockMatches[0] as $codeBlock) {
-      $description = str_replace($codeBlock, "{literal}" . $codeBlock . "{/literal}", $description);
-    }
-
-    foreach($tokenMapping as $token => $replacement) {
-      $description = str_replace($token, $replacement, $description);
-    }
 
     // get function name and replace {{Result}} with unit test result.
     global $nextLine;
@@ -53,13 +48,27 @@ function doGenSampleCode($params) {
     );
     $funcNameBlock = reset($funcNameBlocks);
     $funcName = $funcNameBlock[1];
+
+    // Load Funcname json
     $unitTestResultFileDir = $baseDir.'/docMaker/unit_test_results/'.$funcName.'Result.json';
     $unitTestResultFile = fopen($unitTestResultFileDir, 'r');
     $unitTestResult = fread($unitTestResultFile, filesize($unitTestResultFileDir));
     fclose($unitTestResultFile);
-    $unitTestResult = "**{ts}Response Samples{/ts}** \r\n{literal}```\r\n" . $unitTestResult . "\r\n```{/literal}";
-    $description = str_replace("{{RESULT}}", $unitTestResult, $description);
-    $replaceDesc = $replaceDesc . $description;
+
+    // transfer result json to obj
+    $resultObj = json_decode($unitTestResult, TRUE);
+    $value = reset($resultObj['values']);
+    genDoc::$_smarty->assign('value', $value);
+
+    // transfer result json to json code block
+    $unitTestResultText = "**{ts}Response Samples{/ts}** \r\n{literal}```json\r\n" . $unitTestResult . "\r\n```{/literal}";
+    genDoc::$_smarty->assign('result', $unitTestResultText);
+    $filePath = $templatesDir.'/'.$funcName.'.tpl';
+    $tplFile = fopen($filePath, 'w');
+    fwrite($tplFile, $description);
+    fclose($tplFile);
+    $fetchResult = genDoc::$_smarty->fetch($filePath);
+    $replaceDesc .= $fetchResult;
   }
 
   $search = "{{SAMPLE_CODE}}";

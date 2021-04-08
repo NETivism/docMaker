@@ -3,9 +3,11 @@
 include_once("translateFromTpl.php"); // it needs to be place here
 
 class genDoc {
+  static public $_smarty = NULL;
+
   function __construct($entityName) {
     $genDocDir = __DIR__;
-    $markdownDir = $genDocDir."/content";
+    $markdownDir = $genDocDir."/content/docs";
     $templatesDir = $genDocDir."/templates";
     $baseDir = dirname($genDocDir);
     $markdownFilePath = $markdownDir."/".$entityName.".md";
@@ -44,13 +46,11 @@ class genDoc {
     include_once("parseParams.php");
     $params = doParseParams($params);
 
+    genDoc::$_smarty = prepareSmarty($params);
+
     # 4. Get Sample Code from API test file
     include_once("genSampleCode.php");
     $params = doGenSampleCode($params);
-
-    # 5. Get Result from executing phpunit testing by Sample Code
-    include_once("genTestResult.php");
-    $params = doGenTestResult($params);
 
     # 6. Generate html file from markdown file
     include_once("genHtmlFromMD.php");

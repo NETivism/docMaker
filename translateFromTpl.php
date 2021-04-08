@@ -2,6 +2,19 @@
 require_once '../civicrm.config.php';
 
 function doTranslate($params){
+    if (genDoc::$_smarty) {
+        $smarty = genDoc::$_smarty;
+    }
+    else {
+        $smarty = prepareSmarty($params);
+    }
+
+    $result = $smarty->fetch($params['templatesFilePath']);
+    $params['content'] = $result;
+    return $params;
+}
+
+function prepareSmarty($params) {
     $config   = CRM_Core_Config::singleton();
     chdir(__DIR__);
 
@@ -18,10 +31,14 @@ function doTranslate($params){
     $smarty->assign('locale', 'en');
     $smarty->assign('tsLocale', 'zh-TW');
 
-    $result = $smarty->fetch($params['templatesFilePath']);
-    $params['content'] = $result;
-    return $params;
-
+    $smarty->register_resource('string', array(
+        'civicrm_smarty_resource_string_get_template',
+        'civicrm_smarty_resource_string_get_timestamp',
+        'civicrm_smarty_resource_string_get_secure',
+        'civicrm_smarty_resource_string_get_trusted',
+      )
+    );
+    return $smarty;
 }
 
 

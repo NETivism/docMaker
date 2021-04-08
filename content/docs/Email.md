@@ -1,4 +1,8 @@
-# Email
+---
+
+title: Email
+
+---
 
 
 
@@ -11,7 +15,7 @@ This is a API Document about Email
 | contact_id | 聯絡人 | 數字 |  |
 | location_type_id | 地點類型 | 數字 |  |
 | email | 電子郵件 | 字串 |  |
-| is_primary | 預設 | 字串 | 預設值: 0 |
+| is_primary | 預設 | 布林值(True or False) | 預設值: 0 |
 | is_billing | 帳單 | 布林值(True or False) | 預設值: 0 |
 | on_hold | 凍結 | 布林值(True or False) | 必填, 預設值: 0 |
 | is_bulkmail | 用於大量郵件 | 布林值(True or False) | 必填, 預設值: 0 |
@@ -22,7 +26,7 @@ This is a API Document about Email
 
 
 
-## 建立 電子郵件 
+## 建立電子郵件 
 
 This is tests for creating Email 
 
@@ -31,25 +35,25 @@ This is tests for creating Email
 **路徑**
 
 ```
-<entrypoint>?entity=Contact&action=get&pretty=1&json={"email":"api@a-team.com"}
+<entrypoint>?entity=Contact&action=create&pretty=1&json=\"\}
 ```
 
-**API Explor**
+**API Explorer**
 
 ```
-https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=get&pretty=1&json={"email":"api@a-team.com"}
+https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=create&pretty=1&json=\"\}
 ```
 
 **Request Samples**
 
-```
-curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json={"email":"api@a-team.com"}' \
+```shell
+curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json=\"\}' \
 --header 'x-civicrm-api-key: <secret-key>'\
 --header 'x-civicrm-site-key: <site-key>''
 ```
 
 **Response Samples** 
-```
+```json
 {
     "is_error": 0,
     "version": 3,
@@ -75,12 +79,11 @@ curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json={"
 ```
 
 
-
-## Get 電子郵件 
+## Get電子郵件 
 
 This is tests for get Email 
 
-**HTTP methods: POST**
+**HTTP methods: GET**
 
 **路徑**
 
@@ -96,39 +99,16 @@ https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&actio
 
 **Request Samples**
 
-```
-Sample Source Code
+```shell
+curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json=' \
+}\
+}'
 ```
 
-**Response Samples** 
-```
-{
-    "is_error": 0,
-    "version": 3,
-    "count": 1,
-    "id": 17,
-    "values": {
-        "17": {
-            "id": "17",
-            "contact_id": "17",
-            "location_type_id": "32",
-            "email": "api@a-team.com",
-            "is_primary": "1",
-            "is_billing": "",
-            "on_hold": "",
-            "is_bulkmail": "",
-            "hold_date": "",
-            "reset_date": "",
-            "signature_text": "",
-            "signature_html": ""
-        }
-    }
 }
-```
 
 
-
-## 刪除 電子郵件 
+## 刪除電子郵件 
 
 This is tests for deleting Email 
 
@@ -137,28 +117,24 @@ This is tests for deleting Email
 **路徑**
 
 ```
-<entrypoint>?entity=Contact&action=get&pretty=1&json={"email":"api@a-team.com"}
-```
+<entrypoint>?entity=Contact&action=get&pretty=1&json=```
 
 **API Explor**
 
 ```
-https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=get&pretty=1&json={"email":"api@a-team.com"}
-```
+https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=get&pretty=1&json=```
 **Request Samples**
 
-```
-Sample Source Code
-```
-
-**Response Samples** 
-```
-
+```shell
+curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json=' \
+}\
+}'
 ```
 
+}
 
 
-## 更新 電子郵件 
+## 更新電子郵件 
 
 This is tests for updating Email 
 
@@ -167,23 +143,19 @@ This is tests for updating Email
 **路徑**
 
 ```
-<entrypoint>?entity=Contact&action=get&pretty=1
-```
+<entrypoint>?entity=Contact&action=update&pretty=1&json=```
 
 **API Explor**
 
 ```
-https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=get&pretty=1
-```
+https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=update&pretty=1&json=```
 
 **Request Samples**
 
-```
-Sample Source Code
-```
-
-**Response Samples** 
-```
-
+```shell
+curl -g --request POST '<entrypoint>?entity=Email&action=update&pretty=1&json=' \
+}\
+}'
 ```
 
+}
