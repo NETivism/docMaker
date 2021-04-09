@@ -1,5 +1,4 @@
 <?php
-// ini_set('display_errors',"1");
 /**
  * in $params
  *   $entityName => entity name like "contact", "email"
@@ -55,6 +54,10 @@ function doGenSampleCode($params) {
     $unitTestResult = fread($unitTestResultFile, filesize($unitTestResultFileDir));
     fclose($unitTestResultFile);
 
+    // preserve \{ and \}
+    $description = str_replace("\{", "{literal}\{{/literal}", $description);
+    $description = str_replace("\}", "{literal}\}{/literal}", $description);
+
     // transfer result json to obj
     $resultObj = json_decode($unitTestResult, TRUE);
     $value = reset($resultObj['values']);
@@ -70,6 +73,10 @@ function doGenSampleCode($params) {
     $fetchResult = genDoc::$_smarty->fetch($filePath);
     $replaceDesc .= $fetchResult;
   }
+
+  // preserve \{ and \}
+  $replaceDesc = str_replace("\{", "{literal}{{/literal}", $replaceDesc);
+  $replaceDesc = str_replace("\}", "{literal}}{/literal}", $replaceDesc);
 
   $search = "{{SAMPLE_CODE}}";
   $content = str_replace($search, $replaceDesc, $content);
