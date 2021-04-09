@@ -23,12 +23,9 @@ curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest \
  && dpkg -i hugo*_Linux-64bit.deb
  ```
 
-2. Get hugo [themes/book](https://github.com/alex-shpak/hugo-book) if you are not
+2. Get hugo [themes/book](https://github.com/alex-shpak/hugo-book)
+Run this command to clone the theme from github if themes/book folder is empty:
 ```bash
-git submodule add -f https://github.com/alex-shpak/hugo-book themes/book
-```
-Then run this command to clone the theme from github if themes/book folder is empty:
-```
 git submodule update --init
 ```
 
