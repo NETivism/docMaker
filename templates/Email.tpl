@@ -13,7 +13,7 @@
 | contact_id | {ts}Contact{/ts} | {ts}Number{/ts} |  |
 | location_type_id | {ts}Location Type{/ts} | {ts}Number{/ts} |  |
 | email | {ts}Email{/ts} | {ts}String{/ts} |  |
-| is_primary | {ts}Primary{/ts} | {ts}String{/ts} | {ts}Default Value{/ts}: 0 |
+| is_primary | {ts}Primary{/ts} | {ts}Boolean{/ts}({ts}True or False{/ts}) | {ts}Default Value{/ts}: 0 |
 | is_billing | {ts}Billing{/ts} | {ts}Boolean{/ts}({ts}True or False{/ts}) | {ts}Default Value{/ts}: 0 |
 | on_hold | {ts}On Hold{/ts} | {ts}Boolean{/ts}({ts}True or False{/ts}) | {ts}Required{/ts}, {ts}Default Value{/ts}: 0 |
 | is_bulkmail | {ts}Use for Bulk Mail{/ts} | {ts}Boolean{/ts}({ts}True or False{/ts}) | {ts}Required{/ts}, {ts}Default Value{/ts}: 0 |
@@ -24,44 +24,44 @@
 
 
 
-## {ts}Create{/ts} {ts}Email{/ts} 
+## 建立 電子郵件 
 
-{ts}This is tests for creating Email{/ts} 
+This is tests for creating Email 
 
-**HTTP {ts}methods{/ts}: POST**
+**HTTP methods: POST**
 
-**{ts}Path{/ts}**
+**路徑**
 
-{literal}```
-<entrypoint>?entity=Contact&action=get&pretty=1&json={"email":"api@a-team.com"}
-```{/literal}
+```
+<entrypoint>?entity=Contact&action=create&pretty=1&json={literal}{{/literal}"email":"api@a-team.com"{literal}}{/literal}
+```
 
-**API Explor**
+**API Explorer**
 
-{literal}```
-https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=get&pretty=1&json={"email":"api@a-team.com"}
-```{/literal}
+```
+https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=create&pretty=1&json={literal}{{/literal}"email":"api@a-team.com"{literal}}{/literal}
+```
 
-**{ts}Request Samples{/ts}**
+**Request Samples**
 
-{literal}```
-curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json={"email":"api@a-team.com"}' \
+```shell
+curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json={literal}{{/literal}"email":"api@a-team.com"{literal}}{/literal}' \
 --header 'x-civicrm-api-key: <secret-key>'\
 --header 'x-civicrm-site-key: <site-key>''
-```{/literal}
+```
 
 **{ts}Response Samples{/ts}** 
-{literal}```
+{literal}```json
 {
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 13,
+    "id": 145,
     "values": {
-        "13": {
-            "id": "13",
-            "contact_id": "13",
-            "location_type_id": "24",
+        "145": {
+            "id": "145",
+            "contact_id": "145",
+            "location_type_id": "292",
             "email": "api@a-team.com",
             "is_primary": "1",
             "is_billing": "",
@@ -77,116 +77,82 @@ curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json={"
 ```{/literal}
 
 
+## Get 電子郵件 
 
-## {ts}Get{/ts} {ts}Email{/ts} 
+This is tests for get Email 
 
-{ts}This is tests for get Email{/ts} 
+**HTTP methods: POST**
 
-**HTTP {ts}methods{/ts}: POST**
+**路徑**
 
-**{ts}Path{/ts}**
-
-{literal}```
+```
 <entrypoint>?entity=Contact&action=get&pretty=1
-```{/literal}
+```
 
 **API Explor**
 
-{literal}```
+```
 https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=get&pretty=1
-```{/literal}
+```
 
-**{ts}Request Samples{/ts}**
+**Request Samples**
 
-{literal}```
+```
 Sample Source Code
-```{/literal}
+```
 
-**{ts}Response Samples{/ts}** 
-{literal}```
-{
-    "is_error": 0,
-    "version": 3,
-    "count": 1,
-    "id": 17,
-    "values": {
-        "17": {
-            "id": "17",
-            "contact_id": "17",
-            "location_type_id": "32",
-            "email": "api@a-team.com",
-            "is_primary": "1",
-            "is_billing": "",
-            "on_hold": "",
-            "is_bulkmail": "",
-            "hold_date": "",
-            "reset_date": "",
-            "signature_text": "",
-            "signature_html": ""
-        }
-    }
 }
-```{/literal}
 
 
+## 刪除 電子郵件 
 
-## {ts}Delete{/ts} {ts}Email{/ts} 
+This is tests for deleting Email 
 
-{ts}This is tests for deleting Email{/ts} 
+**HTTP methods: POST**
 
-**HTTP {ts}methods{/ts}: POST**
+**路徑**
 
-**{ts}Path{/ts}**
-
-{literal}```
-<entrypoint>?entity=Contact&action=get&pretty=1&json={"email":"api@a-team.com"}
-```{/literal}
+```
+<entrypoint>?entity=Contact&action=get&pretty=1&json={literal}{{/literal}"email":""{literal}}{/literal}
+```
 
 **API Explor**
 
-{literal}```
-https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=get&pretty=1&json={"email":"api@a-team.com"}
-```{/literal}
-**{ts}Request Samples{/ts}**
+```
+https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=get&pretty=1&json={literal}{{/literal}"email":""{literal}}{/literal}
+```
+**Request Samples**
 
-{literal}```
+```
 Sample Source Code
-```{/literal}
+```
 
-**{ts}Response Samples{/ts}** 
-{literal}```
-
-```{/literal}
+}
 
 
+## 更新 電子郵件 
 
-## {ts}Update{/ts} {ts}Email{/ts} 
+This is tests for updating Email 
 
-{ts}This is tests for updating Email{/ts} 
+**HTTP methods: POST**
 
-**HTTP {ts}methods{/ts}: POST**
+**路徑**
 
-**{ts}Path{/ts}**
-
-{literal}```
+```
 <entrypoint>?entity=Contact&action=get&pretty=1
-```{/literal}
+```
 
 **API Explor**
 
-{literal}```
+```
 https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=get&pretty=1
-```{/literal}
+```
 
-**{ts}Request Samples{/ts}**
+**Request Samples**
 
-{literal}```
+```
 Sample Source Code
-```{/literal}
+```
 
-**{ts}Response Samples{/ts}** 
-{literal}```
-
-```{/literal}
-
+}
 
