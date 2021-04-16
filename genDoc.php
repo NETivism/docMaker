@@ -7,7 +7,7 @@ class genDoc {
 
   function __construct($entityName) {
     $genDocDir = __DIR__;
-    $markdownDir = $genDocDir."/content/docs";
+    $markdownDir = $genDocDir."/content/docs/3";
     $templatesDir = $genDocDir."/templates";
     $baseDir = dirname($genDocDir);
     $markdownFilePath = $markdownDir."/".$entityName.".md";
