@@ -45,7 +45,7 @@ https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&actio
 ```shell
 curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json={"email":"api@a-team.com"}' \
 --header 'x-civicrm-api-key: <secret-key>'\
---header 'x-civicrm-site-key: <site-key>''
+--header 'x-civicrm-site-key: <site-key>'
 ```
 
 **Response Samples** 
@@ -99,7 +99,31 @@ https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&actio
 Sample Source Code
 ```
 
+**Response Samples** 
+```json
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "id": 146,
+    "values": {
+        "146": {
+            "id": "146",
+            "contact_id": "146",
+            "location_type_id": "294",
+            "email": "api@a-team.com",
+            "is_primary": "1",
+            "is_billing": "",
+            "on_hold": "",
+            "is_bulkmail": "",
+            "hold_date": "",
+            "reset_date": "",
+            "signature_text": "",
+            "signature_html": ""
+        }
+    }
 }
+```
 
 
 ## 刪除 電子郵件 
@@ -125,7 +149,15 @@ https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&actio
 Sample Source Code
 ```
 
+**Response Samples** 
+```json
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "values": 1
 }
+```
 
 
 ## 更新 電子郵件 
@@ -152,4 +184,7 @@ https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&actio
 Sample Source Code
 ```
 
-}
+**Response Samples** 
+```json
+null
+```
