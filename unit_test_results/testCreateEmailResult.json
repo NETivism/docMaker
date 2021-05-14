@@ -1,0 +1,22 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "id": 3,
+    "values": {
+        "3": {
+            "id": "3",
+            "contact_id": "2",
+            "location_type_id": "6",
+            "email": "api@a-team.com",
+            "is_primary": "1",
+            "is_billing": "",
+            "on_hold": "",
+            "is_bulkmail": "",
+            "hold_date": "",
+            "reset_date": "",
+            "signature_text": "",
+            "signature_html": ""
+        }
+    }
+}
