@@ -1,0 +1,22 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "id": 13,
+    "values": {
+        "13": {
+            "id": "13",
+            "contact_id": "8",
+            "location_type_id": "18",
+            "email": "1-4@example.com",
+            "is_primary": "1",
+            "is_billing": "",
+            "on_hold": "",
+            "is_bulkmail": "",
+            "hold_date": "",
+            "reset_date": "",
+            "signature_text": "",
+            "signature_html": ""
+        }
+    }
+}
