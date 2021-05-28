@@ -49,7 +49,7 @@ function doGenSampleCode($params) {
     $funcName = $funcNameBlock[1];
 
     // Load Funcname json
-    $unitTestResultFileDir = $baseDir.'/docMaker/unit_test_results/'.$funcName.'Result.json';
+    $unitTestResultFileDir = $baseDir.'/docMaker/unit_test_results/'.$entityName."Test_".$funcName.'Result.json';
     $unitTestResultFile = fopen($unitTestResultFileDir, 'r');
     $unitTestResult = fread($unitTestResultFile, filesize($unitTestResultFileDir));
     fclose($unitTestResultFile);
