@@ -2,12 +2,12 @@
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 3,
+    "id": 46,
     "values": {
-        "3": {
-            "id": "3",
-            "contact_id": "2",
-            "location_type_id": "6",
+        "46": {
+            "id": "46",
+            "contact_id": "137",
+            "location_type_id": "179",
             "email": "api@a-team.com",
             "is_primary": "1",
             "is_billing": "",
