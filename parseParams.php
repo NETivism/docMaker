@@ -10,7 +10,7 @@
 
 function doParseParams($params) {
   # mapping type to the string that existing in civicrm.po
-  $TYPE_MAPPING = array(
+  $type_mapping = array(
     'varchar' => 'String',
     'char' => 'String',
     'text' => 'String',
@@ -19,8 +19,9 @@ function doParseParams($params) {
     'date' => 'Date',
     'int unsigned' => 'Number',
     'int' => 'Number',
-    'enum' => 'Number',
+    'enum' => 'String',
     'decimal' => 'Number',
+    'boolean' => 'Boolean',
     'float' => 'Float'
   );
 
@@ -32,8 +33,8 @@ function doParseParams($params) {
   $xml = simplexml_load_file("$file") or die("Error: Cannot create object");
   $fields = $xml->field;
   $replaceParams = 
-  "| {ts}Parameter Name{/ts} | {ts}Field Help{/ts} | {ts}Type{/ts} | {ts}Create Rule{/ts} |
-| ---- | ---- | ---- | ---- |";
+  "| {ts}Parameter Name{/ts} | {ts}Field Help{/ts} | {ts}Type{/ts} | {ts}Length{/ts} | {ts}Format{/ts} | {ts}Create Rule{/ts} |
+| ---- | ---- | ---- | ---- | ---- | ---- |";
 
   $fieldsArray = array();
 
@@ -51,30 +52,85 @@ function doParseParams($params) {
     }
   }
   foreach ($fieldsArray as $field) {
-    if($field->name == 'id') {
-        continue;
-    }
 
-    $name = composeTitle($field->name);
-    if($name == '') {
-        $name = $field->name;
-    }
-    else if(property_exists($field, 'title')) {
-      $name = '{ts}' . $field->title . '{/ts}';
-    }
-    else {
-        $name = '{ts}' . $name . '{/ts}';
+    $comment = '';
+    if(property_exists($field, 'comment')) {
+      $comment = '{ts}'.(string) $field->comment.'{/ts}';
     }
 
     $type = '';
     if(property_exists($field, 'type')) {
       $origin_type = (string) $field->type;
-      if(array_key_exists($origin_type, $TYPE_MAPPING)) {
-        $type = '{ts}' . $TYPE_MAPPING[$origin_type] . '{/ts}';
-      } else if($origin_type == 'boolean') {
-        $type = '{ts}Boolean{/ts}({ts}True or False{/ts})';
-      } else {
+      if(array_key_exists($origin_type, $type_mapping)) {
+        $type = '{ts}' . $type_mapping[$origin_type] . '{/ts}'."($origin_type)";
+      }
+      else if($origin_type == 'boolean') {
+        $type = '{ts}Boolean{/ts}'."($origin_type)";
+      }
+      else {
         $type = $origin_type;
+      }
+    }
+
+    $length = NULL;
+    if ($origin_type) {
+      if (property_exists($field, 'length')) {
+        $length = (int)$field->length;
+      }
+      else {
+        $origin_type = (string) $field->type;
+        switch($origin_type) {
+          case 'varchar':
+            $length = 255;
+            break;
+          case 'char':
+            $length = 1;
+            break;
+          case 'int':
+          case 'int unsigned':
+            $length = 10;
+            break;
+          case 'decimal':
+            $length = '20,2';
+            break;
+          case 'boolean':
+            $length = 1;
+            break;
+          case 'text':
+          case 'longtext':
+            $length = 65535;
+            break;
+          default:
+            $length = '';
+            break;
+        }
+      }
+    }
+
+    $format = '';
+    if ($origin_type) {
+      switch($origin_type) {
+        case 'enum':
+          if (property_exists($field, 'values')) {
+            $format = (string) $field->values;
+          }
+          break;
+        case 'boolean':
+          $format = '0 or 1';
+          break;
+        case 'int unsigned':
+          $format = '>= 0';
+          break;
+        case 'datetime':
+          $format = 'yyyy-mm-dd hh:ii:ss';
+          break;
+        case 'date':
+          $format = 'yyyy-mm-dd';
+          break;
+        case 'decimal':
+        case 'float':
+          $format = '00.00';
+          break;
       }
     }
 
@@ -87,7 +143,7 @@ function doParseParams($params) {
     }
     $create_rule = implode(', ', $create_rule);
 
-    $row = '| ' . $field->name . ' | ' . $name . ' | ' . $type . ' | ' . $create_rule . ' |';
+    $row = '| ' . $field->name . ' | ' . $comment. ' | ' . $type . ' | '. $length .' | ' . $format .' | ' . $create_rule . ' |';
     $replaceParams = $replaceParams . "\n" . $row;
   }
   // $replaceParams = $replaceParams . "\n" . implode("\n", $row);

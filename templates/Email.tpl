@@ -8,19 +8,20 @@
 
 
 
-| {ts}Parameter Name{/ts} | {ts}Field Help{/ts} | {ts}Type{/ts} | {ts}Create Rule{/ts} |
-| ---- | ---- | ---- | ---- |
-| contact_id | {ts}Contact{/ts} | {ts}Number{/ts} |  |
-| location_type_id | {ts}Location Type{/ts} | {ts}Number{/ts} |  |
-| email | {ts}Email{/ts} | {ts}String{/ts} |  |
-| is_primary | {ts}Primary{/ts} | {ts}Boolean{/ts}({ts}True or False{/ts}) | {ts}Default Value{/ts}: 0 |
-| is_billing | {ts}Billing{/ts} | {ts}Boolean{/ts}({ts}True or False{/ts}) | {ts}Default Value{/ts}: 0 |
-| on_hold | {ts}On Hold{/ts} | {ts}Boolean{/ts}({ts}True or False{/ts}) | {ts}Required{/ts}, {ts}Default Value{/ts}: 0 |
-| is_bulkmail | {ts}Use for Bulk Mail{/ts} | {ts}Boolean{/ts}({ts}True or False{/ts}) | {ts}Required{/ts}, {ts}Default Value{/ts}: 0 |
-| hold_date | {ts}Hold Date{/ts} | {ts}Date{/ts} |  |
-| reset_date | {ts}Reset Date{/ts} | {ts}Date{/ts} |  |
-| signature_text | {ts}Signature Text{/ts} | {ts}String{/ts} | {ts}Default Value{/ts}: NULL |
-| signature_html | {ts}Signature Html{/ts} | {ts}String{/ts} | {ts}Default Value{/ts}: NULL |
+| {ts}Parameter Name{/ts} | {ts}Field Help{/ts} | {ts}Type{/ts} | {ts}Length{/ts} | {ts}Format{/ts} | {ts}Create Rule{/ts} |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| id | {ts}Unique Email ID{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} |
+| contact_id | {ts}FK to Contact ID{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  |
+| location_type_id | {ts}Which Location does this email belong to.{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  |
+| email | {ts}Email address{/ts} | {ts}String{/ts}(varchar) | 64 |  |  |
+| is_primary | {ts}Is this the primary?{/ts} | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 |
+| is_billing | {ts}Is this the billing?{/ts} | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 |
+| on_hold | {ts}Is this address on bounce hold?{/ts} | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Required{/ts}, {ts}Default Value{/ts}: 0 |
+| is_bulkmail | {ts}Is this address for bulk mail ?{/ts} | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Required{/ts}, {ts}Default Value{/ts}: 0 |
+| hold_date | {ts}When the address went on bounce hold{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
+| reset_date | {ts}When the address bounce status was last reset{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
+| signature_text | {ts}Text formatted signature for the email.{/ts} | {ts}String{/ts}(text) | 65535 |  | {ts}Default Value{/ts}: NULL |
+| signature_html | {ts}HTML formatted signature for the email.{/ts} | {ts}String{/ts}(text) | 65535 |  | {ts}Default Value{/ts}: NULL |
 
 
 
@@ -33,19 +34,19 @@ This is tests for creating Email
 **路徑**
 
 ```
-<entrypoint>?entity=Email&action=create&pretty=1&json={literal}{{/literal}"contact_id":"100","location_type_id":"105","is_primary":"1","email":"api@a-team.com"{literal}}{/literal}
+<entrypoint>?entity=Email&action=create&pretty=1&json={literal}{{/literal}"contact_id":"137","location_type_id":"179","is_primary":"1","email":"api@a-team.com"{literal}}{/literal}
 ```
 
 **API Explorer**
 
 ```
-https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=create&pretty=1&json={literal}{{/literal}"contact_id":"100","location_type_id":"105","is_primary":"1","email":"api@a-team.com"{literal}}{/literal}
+https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=create&pretty=1&json={literal}{{/literal}"contact_id":"137","location_type_id":"179","is_primary":"1","email":"api@a-team.com"{literal}}{/literal}
 ```
 
 **Request Samples**
 
 ```shell
-curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json={literal}{{/literal}"contact_id":"100","location_type_id":"105","is_primary":"1","email":"api@a-team.com"{literal}}{/literal}' \
+curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json={literal}{{/literal}"contact_id":"137","location_type_id":"179","is_primary":"1","email":"api@a-team.com"{literal}}{/literal}' \
 --header 'x-civicrm-api-key: <secret-key>' \
 --header 'x-civicrm-site-key: <site-key>'
 ```
@@ -56,12 +57,12 @@ curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json={l
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 1,
+    "id": 46,
     "values": {
-        "1": {
-            "id": "1",
-            "contact_id": "100",
-            "location_type_id": "105",
+        "46": {
+            "id": "46",
+            "contact_id": "137",
+            "location_type_id": "179",
             "email": "api@a-team.com",
             "is_primary": "1",
             "is_billing": "",
@@ -86,19 +87,19 @@ This is tests for get Email
 **路徑**
 
 ```
-<entrypoint>?entity=Email&action=get&pretty=1&json={literal}{{/literal}"contact_id":"104"{literal}}{/literal}
+<entrypoint>?entity=Email&action=get&pretty=1&json={literal}{{/literal}"contact_id":"141"{literal}}{/literal}
 ```
 
 **API Explorer**
 
 ```
-https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=get&pretty=1&json={literal}{{/literal}"contact_id":"104"{literal}}{/literal}
+https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=get&pretty=1&json={literal}{{/literal}"contact_id":"141"{literal}}{/literal}
 ```
 
 **Request Samples**
 
 ```shell
-curl -g --request GET '<entrypoint>?entity=Email&action=get&pretty=1&json={literal}{{/literal}"contact_id":"104"{literal}}{/literal}' \
+curl -g --request GET '<entrypoint>?entity=Email&action=get&pretty=1&json={literal}{{/literal}"contact_id":"141"{literal}}{/literal}' \
 --header 'x-civicrm-api-key: <secret-key>' \
 --header 'x-civicrm-site-key: <site-key>'
 ```
@@ -109,12 +110,12 @@ curl -g --request GET '<entrypoint>?entity=Email&action=get&pretty=1&json={liter
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 5,
+    "id": 50,
     "values": {
-        "5": {
-            "id": "5",
-            "contact_id": "104",
-            "location_type_id": "113",
+        "50": {
+            "id": "50",
+            "contact_id": "141",
+            "location_type_id": "187",
             "email": "api@a-team.com",
             "is_primary": "1",
             "is_billing": "0",
@@ -153,7 +154,12 @@ curl -g --request POST '<entrypoint>?entity=Email&action=delete&pretty=1&json={l
 
 **{ts}Response Samples{/ts}** 
 {literal}```json
-
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "values": 1
+}
 ```{/literal}
 
 
@@ -166,19 +172,19 @@ This is tests for updating Email
 **路徑**
 
 ```
-<entrypoint>?entity=Email&action=create&pretty=1&json={literal}{{/literal}"id":"11","contact_id":"106","location_type_id":"117","is_primary":"1","email":"1-4@example.com"{literal}}{/literal}
+<entrypoint>?entity=Email&action=create&pretty=1&json={literal}{{/literal}"id":"56","contact_id":"143","location_type_id":"191","is_primary":"1","email":"1-4@example.com"{literal}}{/literal}
 ```
 
 **API Explorer**
 
 ```
-https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=create&pretty=1&json={literal}{{/literal}"id":"11","contact_id":"106","location_type_id":"117","is_primary":"1","email":"1-4@example.com"{literal}}{/literal}
+https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=create&pretty=1&json={literal}{{/literal}"id":"56","contact_id":"143","location_type_id":"191","is_primary":"1","email":"1-4@example.com"{literal}}{/literal}
 ```
 
 **Request Samples**
 
 ```
-curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json={literal}{{/literal}"id":"11","contact_id":"106","location_type_id":"117","is_primary":"1","email":"1-4@example.com"{literal}}{/literal}' \
+curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json={literal}{{/literal}"id":"56","contact_id":"143","location_type_id":"191","is_primary":"1","email":"1-4@example.com"{literal}}{/literal}' \
 --header 'x-civicrm-api-key: <secret-key>' \
 --header 'x-civicrm-site-key: <site-key>'
 ```
@@ -189,12 +195,12 @@ curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json={l
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 11,
+    "id": 56,
     "values": {
-        "11": {
-            "id": "11",
-            "contact_id": "106",
-            "location_type_id": "117",
+        "56": {
+            "id": "56",
+            "contact_id": "143",
+            "location_type_id": "191",
             "email": "1-4@example.com",
             "is_primary": "1",
             "is_billing": "",
