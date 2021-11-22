@@ -1,11 +1,7 @@
-# Email
+# Email API
 
 
-
-# {ts}Email{/ts} API {ts}Help{/ts}
-
-{ts}This is a API Document about Email{/ts}
-
+This is a API Document about Email.
 
 
 | {ts}Parameter Name{/ts} | {ts}Field Help{/ts} | {ts}Type{/ts} | {ts}Length{/ts} | {ts}Format{/ts} | {ts}Create Rule{/ts} |
@@ -24,99 +20,54 @@
 | signature_html | {ts}HTML formatted signature for the email.{/ts} | {ts}String{/ts}(text) | 65535 |  | {ts}Default Value{/ts}: NULL |
 
 
+## Email Get API
 
-## 建立 電子郵件 
+{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
 
-This is tests for creating Email 
-
-**HTTP methods: POST**
-
-**路徑**
-
+### HTTP Method
 ```
-<entrypoint>?entity=Email&action=create&pretty=1&json={literal}{{/literal}"contact_id":"137","location_type_id":"179","is_primary":"1","email":"api@a-team.com"{literal}}{/literal}
+GET
 ```
 
-**API Explorer**
+### Request URL
+```{literal}
+<entrypoint>?entity=Email&action=get&json={"contact_id":332,"location_type_id":630,"email":"api.test@civicrm.test.org"}
+{/literal}```
 
-```
-https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=create&pretty=1&json={literal}{{/literal}"contact_id":"137","location_type_id":"179","is_primary":"1","email":"api@a-team.com"{literal}}{/literal}
-```
-
-**Request Samples**
-
-```shell
-curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json={literal}{{/literal}"contact_id":"137","location_type_id":"179","is_primary":"1","email":"api@a-team.com"{literal}}{/literal}' \
---header 'x-civicrm-api-key: <secret-key>' \
---header 'x-civicrm-site-key: <site-key>'
-```
-
-**{ts}Response Samples{/ts}** 
-{literal}```json
+### Request body
+```{literal}
 {
-    "is_error": 0,
-    "version": 3,
-    "count": 1,
-    "id": 46,
-    "values": {
-        "46": {
-            "id": "46",
-            "contact_id": "137",
-            "location_type_id": "179",
-            "email": "api@a-team.com",
-            "is_primary": "1",
-            "is_billing": "",
-            "on_hold": "",
-            "is_bulkmail": "",
-            "hold_date": "",
-            "reset_date": "",
-            "signature_text": "",
-            "signature_html": ""
-        }
-    }
+    "contact_id": 332,
+    "location_type_id": 630,
+    "email": "api.test@civicrm.test.org"
 }
-```{/literal}
+{/literal}```
 
+### API Explorer
+```{literal}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=get&pretty=1&json={"contact_id":332,"location_type_id":630,"email":"api.test@civicrm.test.org"}
+{/literal}```
 
-## Get 電子郵件 
-
-This is tests for get Email 
-
-**HTTP methods: GET**
-
-**路徑**
-
+### curl Example
 ```
-<entrypoint>?entity=Email&action=get&pretty=1&json={literal}{{/literal}"contact_id":"141"{literal}}{/literal}
-```
-
-**API Explorer**
-
-```
-https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=get&pretty=1&json={literal}{{/literal}"contact_id":"141"{literal}}{/literal}
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
+    '<entrypoint>?entity=Email&action=get&json={"contact_id":332,"location_type_id":630,"email":"api.test@civicrm.test.org"}'
 ```
 
-**Request Samples**
-
-```shell
-curl -g --request GET '<entrypoint>?entity=Email&action=get&pretty=1&json={literal}{{/literal}"contact_id":"141"{literal}}{/literal}' \
---header 'x-civicrm-api-key: <secret-key>' \
---header 'x-civicrm-site-key: <site-key>'
-```
-
-**{ts}Response Samples{/ts}** 
-{literal}```json
+### Response Example
+```{literal}
 {
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 50,
+    "id": 565,
     "values": {
-        "50": {
-            "id": "50",
-            "contact_id": "141",
-            "location_type_id": "187",
-            "email": "api@a-team.com",
+        "565": {
+            "id": "565",
+            "contact_id": "332",
+            "location_type_id": "630",
+            "email": "api.test@civicrm.test.org",
             "is_primary": "1",
             "is_billing": "0",
             "on_hold": "0",
@@ -124,84 +75,56 @@ curl -g --request GET '<entrypoint>?entity=Email&action=get&pretty=1&json={liter
         }
     }
 }
-```{/literal}
+{/literal}```
+## Email Create API
 
+{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
 
-## 刪除 電子郵件 
-
-This is tests for deleting Email 
-
-**HTTP methods: POST**
-
-**路徑**
-
+### HTTP Method
 ```
-<entrypoint>?entity=Email&action=delete&pretty=1&json={literal}{{/literal}"id":"1"{literal}}{/literal}
+POST
 ```
 
-**API Explorer**
+### Request URL
+```{literal}
+<entrypoint>?entity=Email&action=create
+{/literal}```
 
-```
-https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=delete&pretty=1&json={literal}{{/literal}"id":"1"{literal}}{/literal}
-```
-**Request Samples**
-
-```bash
-curl -g --request POST '<entrypoint>?entity=Email&action=delete&pretty=1&json={literal}{{/literal}"id":"1"{literal}}{/literal}' \
---header 'x-civicrm-api-key: <secret-key>' \
---header 'x-civicrm-site-key: <site-key>'
-```
-
-**{ts}Response Samples{/ts}** 
-{literal}```json
+### Request body
+```{literal}
 {
-    "is_error": 0,
-    "version": 3,
-    "count": 1,
-    "values": 1
+    "contact_id": 333,
+    "location_type_id": 632,
+    "email": "api.test@civicrm.test.org",
+    "is_primary": 1
 }
-```{/literal}
+{/literal}```
 
+### API Explorer
+```{literal}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=create&pretty=1&json={"contact_id":333,"location_type_id":632,"email":"api.test@civicrm.test.org","is_primary":1}
+{/literal}```
 
-## 更新 電子郵件 
-
-This is tests for updating Email 
-
-**HTTP methods: POST**
-
-**路徑**
-
+### curl Example
 ```
-<entrypoint>?entity=Email&action=create&pretty=1&json={literal}{{/literal}"id":"56","contact_id":"143","location_type_id":"191","is_primary":"1","email":"1-4@example.com"{literal}}{/literal}
-```
-
-**API Explorer**
-
-```
-https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=create&pretty=1&json={literal}{{/literal}"id":"56","contact_id":"143","location_type_id":"191","is_primary":"1","email":"1-4@example.com"{literal}}{/literal}
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
+    --request POST -d 'json={literal}{"contact_id":333,"location_type_id":632,"email":"api.test@civicrm.test.org","is_primary":1}{/literal}' \  '<entrypoint>?entity=Email&action=create'
 ```
 
-**Request Samples**
-
-```
-curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json={literal}{{/literal}"id":"56","contact_id":"143","location_type_id":"191","is_primary":"1","email":"1-4@example.com"{literal}}{/literal}' \
---header 'x-civicrm-api-key: <secret-key>' \
---header 'x-civicrm-site-key: <site-key>'
-```
-
-**{ts}Response Samples{/ts}** 
-{literal}```json
+### Response Example
+```{literal}
 {
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 56,
+    "id": 566,
     "values": {
-        "56": {
-            "id": "56",
-            "contact_id": "143",
-            "location_type_id": "191",
-            "email": "1-4@example.com",
+        "566": {
+            "id": "566",
+            "contact_id": "333",
+            "location_type_id": "632",
+            "email": "api.test@civicrm.test.org",
             "is_primary": "1",
             "is_billing": "",
             "on_hold": "",
@@ -213,5 +136,108 @@ curl -g --request POST '<entrypoint>?entity=Email&action=create&pretty=1&json={l
         }
     }
 }
-```{/literal}
+{/literal}```
+## Email Update API
 
+{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
+
+### HTTP Method
+```
+POST
+```
+
+### Request URL
+```{literal}
+<entrypoint>?entity=Email&action=create
+{/literal}```
+
+### Request body
+```{literal}
+{
+    "contact_id": 337,
+    "location_type_id": 640,
+    "email": "test.update@civicrm.test.org",
+    "is_primary": 1,
+    "id": 570
+}
+{/literal}```
+
+### API Explorer
+```{literal}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=create&pretty=1&json={"contact_id":337,"location_type_id":640,"email":"test.update@civicrm.test.org","is_primary":1,"id":570}
+{/literal}```
+
+### curl Example
+```
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
+    --request POST -d 'json={literal}{"contact_id":337,"location_type_id":640,"email":"test.update@civicrm.test.org","is_primary":1,"id":570}{/literal}' \  '<entrypoint>?entity=Email&action=create'
+```
+
+### Response Example
+```{literal}
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "id": 570,
+    "values": {
+        "570": {
+            "id": "570",
+            "contact_id": "337",
+            "location_type_id": "640",
+            "email": "test.update@civicrm.test.org",
+            "is_primary": "1",
+            "is_billing": "",
+            "on_hold": "",
+            "is_bulkmail": "",
+            "hold_date": "",
+            "reset_date": "",
+            "signature_text": "",
+            "signature_html": ""
+        }
+    }
+}
+{/literal}```
+## Email Delete API
+
+{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
+
+### HTTP Method
+```
+POST
+```
+
+### Request URL
+```{literal}
+<entrypoint>?entity=Email&action=delete
+{/literal}```
+
+### Request body
+```{literal}
+{
+    "id": 571
+}
+{/literal}```
+
+### API Explorer
+```{literal}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=delete&pretty=1&json={"id":571}
+{/literal}```
+
+### curl Example
+```
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
+    --request POST -d 'json={literal}{"id":571}{/literal}' \  '<entrypoint>?entity=Email&action=delete'
+```
+
+### Response Example
+```{literal}
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "values": 1
+}
+{/literal}```

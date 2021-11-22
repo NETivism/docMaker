@@ -19,13 +19,14 @@ function prepareSmarty($params) {
     chdir(__DIR__);
 
     require_once 'Smarty/Smarty.class.php';
+    require_once 'CRM/Core/Smarty/resources/String.php';
+    require_once 'CRM/Core/Smarty/plugins/block.localize.php';
     $smarty = new Smarty();
     $smarty->template_dir = $params['templatesDir'];
     $smarty->plugins_dir = array('../packages/Smarty/plugins', '../CRM/Core/Smarty/plugins');
     $smarty->compile_dir = createTempDir();
     $smarty->clear_all_cache();
 
-    require_once 'CRM/Core/Smarty/plugins/block.localize.php';
     $smarty->register_block('localize', 'smarty_block_localize');
 
     $smarty->assign('locale', 'en');

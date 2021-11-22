@@ -2,13 +2,13 @@
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 46,
+    "id": 566,
     "values": {
-        "46": {
-            "id": "46",
-            "contact_id": "137",
-            "location_type_id": "179",
-            "email": "api@a-team.com",
+        "566": {
+            "id": "566",
+            "contact_id": "333",
+            "location_type_id": "632",
+            "email": "api.test@civicrm.test.org",
             "is_primary": "1",
             "is_billing": "",
             "on_hold": "",

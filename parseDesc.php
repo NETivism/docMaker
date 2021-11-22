@@ -8,19 +8,19 @@
  */
 
 /**
- * @start_document
+ * @docmaker_start
  * # Title 1
  * ## Title 2
  * jasdkfj
  * sdfs
  * ### Title 3
- * @end_document
+ * @docmaker_end
  */
 
 function doParseDesc($params) {
   extract($params);
 
-  $fileName = $baseDir .'/api/v3/'.$entityName.'.php';
+  $fileName = $baseDir .'/tests/phpunit/api/v3/'.$entityName.'Test.php';
 
   $docComments = array_filter(
     token_get_all( file_get_contents( $fileName ) ), function($entry) {
@@ -32,8 +32,8 @@ function doParseDesc($params) {
   foreach($docComments as $comments) {
     $fileDocComment = $comments[1];
     $fileDocComment = trim($fileDocComment, '/**');
-    $fileDocComment = str_replace(' * ', '', $fileDocComment);
-    preg_match('#@start_document(.+)@end_document#s',$fileDocComment,$matches);
+    $fileDocComment = preg_replace('/^\s+\*[ ]*/m', '', $fileDocComment);
+    preg_match('#@docmaker_intro_start(.+)@docmaker_intro_end#s', $fileDocComment, $matches);
     if (!empty($matches[1])) {
       $replaceDesc = $replaceDesc . $matches[1];
     }

@@ -17,6 +17,7 @@ function doGenSampleCode($params) {
   }
 
 
+  $baseTpl = $params['templatesDir'].'/apiItem.tpl';
   $fileName = $baseDir.'/tests/phpunit/api/v3/'.$entityName.'Test.php';
 
   $docBlocks = token_get_all( file_get_contents( $fileName ) );
@@ -31,10 +32,22 @@ function doGenSampleCode($params) {
   foreach($docComments as $order => $comments) {
     $fileDocComment = $comments[1];
     $fileDocComment = trim($fileDocComment, '/**');
-    $fileDocComment = str_replace('   * ', '', $fileDocComment);
-    preg_match('#@start_document(.+)@end_document#s',$fileDocComment,$matches);
+    $fileDocComment = preg_replace('/^\s+\*[ ]*/m', '', $fileDocComment);
+    preg_match('#@docmaker_start(.+)@docmaker_end#s', $fileDocComment, $matches);
+    if (empty($matches)) {
+      continue;
+    }
     $description = $matches[1];
+    $lines = explode("\n", $description);
 
+    // iterate each line to parse smarty by string
+    $tplParams = array();
+    foreach($lines as $line) {
+      preg_match('/^@(\w+)\s+(.*)$/', $line, $matches);
+      if (!empty($matches)) {
+        $tplParams[$matches[1]] = 'string:'.$matches[2];
+      }
+    }
 
     // get function name and replace {{Result}} with unit test result.
     global $nextLine;
@@ -49,29 +62,25 @@ function doGenSampleCode($params) {
     $funcName = $funcNameBlock[1];
 
     // Load Funcname json
-    $unitTestResultFileDir = $baseDir.'/docMaker/unit_test_results/'.$entityName."Test_".$funcName.'Result.json';
-    $unitTestResultFile = fopen($unitTestResultFileDir, 'r');
-    $unitTestResult = fread($unitTestResultFile, filesize($unitTestResultFileDir));
-    fclose($unitTestResultFile);
-
-    // preserve \{ and \}
-    $description = str_replace("\{", "{literal}\{{/literal}", $description);
-    $description = str_replace("\}", "{literal}\}{/literal}", $description);
+    $unitTestRequest = file_get_contents($baseDir.'/docMaker/unit_test_results/'.$entityName."Test_".$funcName.'-request.json');
+    $unitTestResponse = file_get_contents($baseDir.'/docMaker/unit_test_results/'.$entityName."Test_".$funcName.'-response.json');
+    genDoc::$_smarty->assign('request_body', $unitTestRequest);
+    genDoc::$_smarty->assign('response_body', $unitTestResponse);
+    genDoc::$_smarty->assign('request_body_inline', json_encode(json_decode($unitTestRequest), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+    genDoc::$_smarty->assign('response_body_inline', json_encode(json_decode($unitTestResponse), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+    foreach($tplParams as $varName => $val) {
+      genDoc::$_smarty->assign($varName, genDoc::$_smarty->fetch($val));
+    }
 
     // transfer result json to obj
-    $resultObj = json_decode($unitTestResult, TRUE);
-    $value = reset($resultObj['values']);
-    genDoc::$_smarty->assign('value', $value);
+    // $resultObj = json_decode($unitTestRequest, TRUE);
+    // $value = reset($resultObj['values']);
+    // genDoc::$_smarty->assign('value', $value);
 
     // transfer result json to json code block
-    $unitTestResultText = "**{ts}Response Samples{/ts}** \r\n{literal}```json\r\n" . $unitTestResult . "\r\n```{/literal}";
-    genDoc::$_smarty->assign('result', $unitTestResultText);
-    $filePath = $templatesDir.'/'.$funcName.'.tpl';
-    $tplFile = fopen($filePath, 'w');
-    fwrite($tplFile, $description);
-    fclose($tplFile);
-    $fetchResult = genDoc::$_smarty->fetch($filePath);
+    $fetchResult = genDoc::$_smarty->fetch($baseTpl);
     $replaceDesc .= $fetchResult;
+    genDoc::$_smarty->clear_all_assign();
   }
 
   // preserve \{ and \}
@@ -81,22 +90,6 @@ function doGenSampleCode($params) {
   $search = "{{SAMPLE_CODE}}";
   $content = str_replace($search, $replaceDesc, $content);
   $params['content'] = $content;
-
-  // // Get Function name for Sample code.
-  // $funcNames = array();
-  // foreach($docComments as $order => $commentBlock) {
-  //   global $nextLine;
-  //   $nextLine = $docBlocks[$order+2][2];
-  //   $funcNameBlocks = array_filter(
-  //     $docBlocks, function($entry) {
-  //       global $nextLine;
-  //       return $entry[2] == $nextLine && $entry[0] == T_STRING;
-  //     }
-  //   );
-  //   $funcNameBlock = reset($funcNameBlocks);
-  //   $funcNames[] = $funcNameBlock[1];
-  // }
-  // $params['testFunctions'] = $funcNames;
 
   return $params;
 }

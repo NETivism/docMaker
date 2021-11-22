@@ -2,13 +2,13 @@
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 56,
+    "id": 570,
     "values": {
-        "56": {
-            "id": "56",
-            "contact_id": "143",
-            "location_type_id": "191",
-            "email": "1-4@example.com",
+        "570": {
+            "id": "570",
+            "contact_id": "337",
+            "location_type_id": "640",
+            "email": "test.update@civicrm.test.org",
             "is_primary": "1",
             "is_billing": "",
             "on_hold": "",
