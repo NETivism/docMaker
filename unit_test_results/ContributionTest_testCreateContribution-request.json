@@ -1,0 +1,14 @@
+{
+    "contact_id": 540,
+    "receive_date": "2021-11-23 19:19:49",
+    "total_amount": 100,
+    "contribution_type_id": 1,
+    "non_deductible_amount": 10,
+    "fee_amount": 50,
+    "net_amount": 90,
+    "source": "Contribution Unit Test",
+    "contribution_status_id": 1,
+    "trxn_id": "30IuTSVS39",
+    "invoice_id": "SPVZjY9rpK",
+    "payment_instrument_id": 1
+}
