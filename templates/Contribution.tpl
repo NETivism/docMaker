@@ -55,13 +55,6 @@ GET
 <entrypoint>?entity=Contribution&action=get&json={"contribution_id":186}
 {/literal}```
 
-### Request body
-```{literal}
-{
-    "contribution_id": 186
-}
-{/literal}```
-
 ### API Explorer
 ```{literal}
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&action=get&pretty=1&json={"contribution_id":186}
@@ -70,8 +63,9 @@ GET
 ### curl Example
 ```
 curl -g \
-  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
-    '<entrypoint>?entity=Contribution&action=get&json={"contribution_id":186}'
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  '<entrypoint>?entity=Contribution&action=get&json={"contribution_id":186}'
 ```
 
 ### Response Example
@@ -138,6 +132,7 @@ curl -g \
     }
 }
 {/literal}```
+
 ## Contribution Create API
 
 {ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
@@ -150,6 +145,11 @@ POST
 ### Request URL
 ```{literal}
 <entrypoint>?entity=Contribution&action=create
+{/literal}```
+
+### Request Content Type
+```{literal}
+application/json
 {/literal}```
 
 ### Request body
@@ -178,8 +178,12 @@ POST
 ### curl Example
 ```
 curl -g \
-  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
-    --request POST -d 'json={literal}{"contact_id":540,"receive_date":"2021-11-23 19:19:49","total_amount":100,"contribution_type_id":1,"non_deductible_amount":10,"fee_amount":50,"net_amount":90,"source":"Contribution Unit Test","contribution_status_id":1,"trxn_id":"30IuTSVS39","invoice_id":"SPVZjY9rpK","payment_instrument_id":1}{/literal}' \  '<entrypoint>?entity=Contribution&action=create'
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{literal}{"contact_id":540,"receive_date":"2021-11-23 19:19:49","total_amount":100,"contribution_type_id":1,"non_deductible_amount":10,"fee_amount":50,"net_amount":90,"source":"Contribution Unit Test","contribution_status_id":1,"trxn_id":"30IuTSVS39","invoice_id":"SPVZjY9rpK","payment_instrument_id":1}{/literal}' \
+  '<entrypoint>?entity=Contribution&action=create'
 ```
 
 ### Response Example
@@ -226,6 +230,7 @@ curl -g \
     }
 }
 {/literal}```
+
 ## Contribution Update API
 
 {ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
@@ -238,6 +243,11 @@ POST
 ### Request URL
 ```{literal}
 <entrypoint>?entity=Contribution&action=create
+{/literal}```
+
+### Request Content Type
+```{literal}
+application/json
 {/literal}```
 
 ### Request body
@@ -262,8 +272,12 @@ POST
 ### curl Example
 ```
 curl -g \
-  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
-    --request POST -d 'json={literal}{"id":194,"total_amount":9999,"contribution_type_id":1,"non_deductible_amount":10,"net_amount":100,"contribution_status_id":3,"cancel_date":"20211123191951","cancel_reason":"The reason to cancel"}{/literal}' \  '<entrypoint>?entity=Contribution&action=create'
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{literal}{"id":194,"total_amount":9999,"contribution_type_id":1,"non_deductible_amount":10,"net_amount":100,"contribution_status_id":3,"cancel_date":"20211123191951","cancel_reason":"The reason to cancel"}{/literal}' \
+  '<entrypoint>?entity=Contribution&action=create'
 ```
 
 ### Response Example
@@ -310,6 +324,7 @@ curl -g \
     }
 }
 {/literal}```
+
 ## Contribution Delete API
 
 {ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
@@ -322,6 +337,11 @@ POST
 ### Request URL
 ```{literal}
 <entrypoint>?entity=Contribution&action=delete
+{/literal}```
+
+### Request Content Type
+```{literal}
+application/json
 {/literal}```
 
 ### Request body
@@ -339,8 +359,12 @@ POST
 ### curl Example
 ```
 curl -g \
-  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
-    --request POST -d 'json={literal}{"id":195}{/literal}' \  '<entrypoint>?entity=Contribution&action=delete'
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{literal}{"id":195}{/literal}' \
+  '<entrypoint>?entity=Contribution&action=delete'
 ```
 
 ### Response Example
@@ -355,3 +379,4 @@ curl -g \
     }
 }
 {/literal}```
+

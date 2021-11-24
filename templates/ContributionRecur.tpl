@@ -1,0 +1,329 @@
+# ContributionRecur API
+
+
+This is a API document about recurring contribution.
+
+
+| {ts}Parameter Name{/ts} | {ts}Field Help{/ts} | {ts}Type{/ts} | {ts}Length{/ts} | {ts}Format{/ts} | {ts}Create Rule{/ts} |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| id | {ts}Contribution Recur ID{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} |
+| contact_id | {ts}Foreign key to civicrm_contact.id .{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} |
+| amount | {ts}Amount to be contributed or charged each recurrence.{/ts} | {ts}Number{/ts}(decimal) | 20,2 | 00.00 | {ts}Required{/ts} |
+| currency | {ts}3 character string, value from config setting or input via user.{/ts} | {ts}String{/ts}(varchar) | 3 |  | {ts}Default Value{/ts}: NULL |
+| frequency_unit | {ts}Time units for recurrence of payment.{/ts} | {ts}String{/ts}(enum) |  | day,week,month,year | {ts}Default Value{/ts}: 'month' |
+| frequency_interval | {ts}Number of time units for recurrence of payment.{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} |
+| installments | {ts}Total number of payments to be made. Set this to 0 if this is an open-ended commitment i.e. no set end date.{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  |
+| start_date | {ts}The date the first scheduled recurring contribution occurs.{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss | {ts}Required{/ts} |
+| create_date | {ts}When this recurring contribution record was created.{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss | {ts}Required{/ts} |
+| modified_date | {ts}Last updated date for this record. mostly the last time a payment was received{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
+| cancel_date | {ts}Date this recurring contribution was cancelled by contributor- if we can get access to it{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
+| end_date | {ts}Date this recurring contribution finished successfully{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
+| processor_id | {ts}FK to payment processor{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  |
+| external_id | {ts}Possibly needed to store a unique identifier for this recurring payment order - if this is available from the processor??{/ts} | {ts}String{/ts}(varchar) | 255 |  |  |
+| trxn_id | {ts}unique transaction id. may be processor id, bank id + trans id, or account number + check number... depending on payment_method{/ts} | {ts}String{/ts}(varchar) | 255 |  |  |
+| invoice_id | {ts}unique invoice id, system generated or passed in{/ts} | {ts}String{/ts}(varchar) | 255 |  |  |
+| contribution_status_id |  | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Default Value{/ts}: 1 |
+| is_test |  | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 |
+| cycle_day | {ts}Day in the period when the payment should be charged e.g. 1st of month, 15th etc.{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts}, {ts}Default Value{/ts}: 1 |
+| next_sched_contribution | {ts}At Groundspring this was used by the cron job which triggered payments. If we\'re not doing that but we know about payments, it might still be useful to store for display to org andor contributors.{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
+| failure_count | {ts}Number of failed charge attempts since last success. Business rule could be set to deactivate on more than x failures.{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Default Value{/ts}: 0 |
+| failure_retry_date | {ts}At Groundspring we set a business rule to retry failed payments every 7 days - and stored the next scheduled attempt date there.{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
+| auto_renew | {ts}Some systems allow contributor to set a number of installments - but then auto-renew the subscription or commitment if they do not cancel.{/ts} | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Required{/ts}, {ts}Default Value{/ts}: 0 |
+| last_execute_date | {ts}Last expected execute transaction date.{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
+
+
+## Recurring Contribution Get API
+
+{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
+
+### HTTP Method
+```
+GET
+```
+
+### Request URL
+```{literal}
+<entrypoint>?entity=contribution_recur&action=get&json={"id":85}
+{/literal}```
+
+### API Explorer
+```{literal}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=get&pretty=1&json={"id":85}
+{/literal}```
+
+### curl Example
+```
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  '<entrypoint>?entity=contribution_recur&action=get&json={"id":85}'
+```
+
+### Response Example
+```{literal}
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "id": 85,
+    "values": {
+        "85": {
+            "id": "85",
+            "contact_id": "660",
+            "amount": "500.00",
+            "currency": "TWD",
+            "frequency_unit": "month",
+            "frequency_interval": "1",
+            "installments": "12",
+            "start_date": "2021-10-25 14:03:01",
+            "create_date": "2021-10-01 14:03:01",
+            "modified_date": "2021-11-24 14:03:01",
+            "trxn_id": "HKOVvvL4mi",
+            "invoice_id": "ogQMpTGr1XOP45N0XQamuiVoYWn7Jfru",
+            "contribution_status_id": "5",
+            "is_test": "0",
+            "cycle_day": "5",
+            "next_sched_contribution": "2021-11-25 14:03:01",
+            "failure_count": "0",
+            "auto_renew": "0"
+        }
+    }
+}
+{/literal}```
+
+## Recurring Contribution Create API
+
+{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
+
+### HTTP Method
+```
+POST
+```
+
+### Request URL
+```{literal}
+<entrypoint>?entity=contribution_recur&action=create
+{/literal}```
+
+### Request Content Type
+```{literal}
+application/json
+{/literal}```
+
+### Request body
+```{literal}
+{
+    "contact_id": 661,
+    "amount": "500.00",
+    "currency": "TWD",
+    "frequency_unit": "month",
+    "frequency_interval": "1",
+    "installments": "12",
+    "start_date": "2021-10-25 14:03:01",
+    "create_date": "2021-10-01 14:03:01",
+    "cancel_date": "",
+    "end_date": "",
+    "processor_id": "",
+    "external_id": "",
+    "trxn_id": "JBDIxFGe8D",
+    "invoice_id": "aYKfxYoCDImHqOqididjLhsvZeOx1yKX",
+    "contribution_status_id": 5,
+    "is_test": 0,
+    "cycle_day": 5,
+    "next_sched_contribution": "2021-11-25 14:03:01",
+    "failure_count": 0,
+    "failure_retry_date": "",
+    "auto_renew": 0,
+    "last_execute_date": ""
+}
+{/literal}```
+
+### API Explorer
+```{literal}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=create&pretty=1&json={"contact_id":661,"amount":"500.00","currency":"TWD","frequency_unit":"month","frequency_interval":"1","installments":"12","start_date":"2021-10-25 14:03:01","create_date":"2021-10-01 14:03:01","cancel_date":"","end_date":"","processor_id":"","external_id":"","trxn_id":"JBDIxFGe8D","invoice_id":"aYKfxYoCDImHqOqididjLhsvZeOx1yKX","contribution_status_id":5,"is_test":0,"cycle_day":5,"next_sched_contribution":"2021-11-25 14:03:01","failure_count":0,"failure_retry_date":"","auto_renew":0,"last_execute_date":""}
+{/literal}```
+
+### curl Example
+```
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{literal}{"contact_id":661,"amount":"500.00","currency":"TWD","frequency_unit":"month","frequency_interval":"1","installments":"12","start_date":"2021-10-25 14:03:01","create_date":"2021-10-01 14:03:01","cancel_date":"","end_date":"","processor_id":"","external_id":"","trxn_id":"JBDIxFGe8D","invoice_id":"aYKfxYoCDImHqOqididjLhsvZeOx1yKX","contribution_status_id":5,"is_test":0,"cycle_day":5,"next_sched_contribution":"2021-11-25 14:03:01","failure_count":0,"failure_retry_date":"","auto_renew":0,"last_execute_date":""}{/literal}' \
+  '<entrypoint>?entity=contribution_recur&action=create'
+```
+
+### Response Example
+```{literal}
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "id": 86,
+    "values": {
+        "86": {
+            "id": "86",
+            "contact_id": "661",
+            "amount": "500.00",
+            "currency": "TWD",
+            "frequency_unit": "month",
+            "frequency_interval": "1",
+            "installments": "12",
+            "start_date": "20211025140301",
+            "create_date": "20211001140301",
+            "modified_date": "20211124140301",
+            "cancel_date": "null",
+            "end_date": "null",
+            "processor_id": "null",
+            "external_id": "null",
+            "trxn_id": "JBDIxFGe8D",
+            "invoice_id": "aYKfxYoCDImHqOqididjLhsvZeOx1yKX",
+            "contribution_status_id": "5",
+            "is_test": "0",
+            "cycle_day": "5",
+            "next_sched_contribution": "20211125140301",
+            "failure_count": "0",
+            "failure_retry_date": "null",
+            "auto_renew": "0",
+            "last_execute_date": "null"
+        }
+    }
+}
+{/literal}```
+
+## Recurring Contribution Update API
+
+{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
+
+### HTTP Method
+```
+POST
+```
+
+### Request URL
+```{literal}
+<entrypoint>?entity=contribution_recur&action=create
+{/literal}```
+
+### Request Content Type
+```{literal}
+application/json
+{/literal}```
+
+### Request body
+```{literal}
+{
+    "id": 87,
+    "contribution_status_id": 1,
+    "next_sched_contribution": "",
+    "end_date": "2021-11-24 14:03:01"
+}
+{/literal}```
+
+### API Explorer
+```{literal}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=create&pretty=1&json={"id":87,"contribution_status_id":1,"next_sched_contribution":"","end_date":"2021-11-24 14:03:01"}
+{/literal}```
+
+### curl Example
+```
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{literal}{"id":87,"contribution_status_id":1,"next_sched_contribution":"","end_date":"2021-11-24 14:03:01"}{/literal}' \
+  '<entrypoint>?entity=contribution_recur&action=create'
+```
+
+### Response Example
+```{literal}
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "id": 87,
+    "values": {
+        "87": {
+            "id": "87",
+            "contact_id": "662",
+            "amount": "500.00",
+            "currency": "TWD",
+            "frequency_unit": "month",
+            "frequency_interval": "1",
+            "installments": "12",
+            "start_date": "20211025140301",
+            "create_date": "20211001140301",
+            "modified_date": "20211124140301",
+            "cancel_date": "",
+            "end_date": "20211124140301",
+            "processor_id": "",
+            "external_id": "",
+            "trxn_id": "CvzMMwGynz",
+            "invoice_id": "lcxgKmGInd8seyEw2QVcKcOj6Foe4N44",
+            "contribution_status_id": "1",
+            "is_test": "0",
+            "cycle_day": "5",
+            "next_sched_contribution": "null",
+            "failure_count": "0",
+            "failure_retry_date": "",
+            "auto_renew": "0",
+            "last_execute_date": ""
+        }
+    }
+}
+{/literal}```
+
+## Recurring Contribution Delete API
+
+{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
+
+### HTTP Method
+```
+POST
+```
+
+### Request URL
+```{literal}
+<entrypoint>?entity=contribution_recur&action=delete
+{/literal}```
+
+### Request Content Type
+```{literal}
+application/json
+{/literal}```
+
+### Request body
+```{literal}
+{
+    "id": 88
+}
+{/literal}```
+
+### API Explorer
+```{literal}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=delete&pretty=1&json={"id":88}
+{/literal}```
+
+### curl Example
+```
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{literal}{"id":88}{/literal}' \
+  '<entrypoint>?entity=contribution_recur&action=delete'
+```
+
+### Response Example
+```{literal}
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "values": 1
+}
+{/literal}```
+

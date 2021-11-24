@@ -1,0 +1,34 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "id": 87,
+    "values": {
+        "87": {
+            "id": "87",
+            "contact_id": "662",
+            "amount": "500.00",
+            "currency": "TWD",
+            "frequency_unit": "month",
+            "frequency_interval": "1",
+            "installments": "12",
+            "start_date": "20211025140301",
+            "create_date": "20211001140301",
+            "modified_date": "20211124140301",
+            "cancel_date": "",
+            "end_date": "20211124140301",
+            "processor_id": "",
+            "external_id": "",
+            "trxn_id": "CvzMMwGynz",
+            "invoice_id": "lcxgKmGInd8seyEw2QVcKcOj6Foe4N44",
+            "contribution_status_id": "1",
+            "is_test": "0",
+            "cycle_day": "5",
+            "next_sched_contribution": "null",
+            "failure_count": "0",
+            "failure_retry_date": "",
+            "auto_renew": "0",
+            "last_execute_date": ""
+        }
+    }
+}

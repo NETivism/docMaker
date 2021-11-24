@@ -34,15 +34,6 @@ GET
 <entrypoint>?entity=Email&action=get&json={"contact_id":332,"location_type_id":630,"email":"api.test@civicrm.test.org"}
 {/literal}```
 
-### Request body
-```{literal}
-{
-    "contact_id": 332,
-    "location_type_id": 630,
-    "email": "api.test@civicrm.test.org"
-}
-{/literal}```
-
 ### API Explorer
 ```{literal}
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=get&pretty=1&json={"contact_id":332,"location_type_id":630,"email":"api.test@civicrm.test.org"}
@@ -51,8 +42,9 @@ GET
 ### curl Example
 ```
 curl -g \
-  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
-    '<entrypoint>?entity=Email&action=get&json={"contact_id":332,"location_type_id":630,"email":"api.test@civicrm.test.org"}'
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  '<entrypoint>?entity=Email&action=get&json={"contact_id":332,"location_type_id":630,"email":"api.test@civicrm.test.org"}'
 ```
 
 ### Response Example
@@ -76,6 +68,7 @@ curl -g \
     }
 }
 {/literal}```
+
 ## Email Create API
 
 {ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
@@ -88,6 +81,11 @@ POST
 ### Request URL
 ```{literal}
 <entrypoint>?entity=Email&action=create
+{/literal}```
+
+### Request Content Type
+```{literal}
+application/json
 {/literal}```
 
 ### Request body
@@ -108,8 +106,12 @@ POST
 ### curl Example
 ```
 curl -g \
-  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
-    --request POST -d 'json={literal}{"contact_id":333,"location_type_id":632,"email":"api.test@civicrm.test.org","is_primary":1}{/literal}' \  '<entrypoint>?entity=Email&action=create'
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{literal}{"contact_id":333,"location_type_id":632,"email":"api.test@civicrm.test.org","is_primary":1}{/literal}' \
+  '<entrypoint>?entity=Email&action=create'
 ```
 
 ### Response Example
@@ -137,6 +139,7 @@ curl -g \
     }
 }
 {/literal}```
+
 ## Email Update API
 
 {ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
@@ -149,6 +152,11 @@ POST
 ### Request URL
 ```{literal}
 <entrypoint>?entity=Email&action=create
+{/literal}```
+
+### Request Content Type
+```{literal}
+application/json
 {/literal}```
 
 ### Request body
@@ -170,8 +178,12 @@ POST
 ### curl Example
 ```
 curl -g \
-  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
-    --request POST -d 'json={literal}{"contact_id":337,"location_type_id":640,"email":"test.update@civicrm.test.org","is_primary":1,"id":570}{/literal}' \  '<entrypoint>?entity=Email&action=create'
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{literal}{"contact_id":337,"location_type_id":640,"email":"test.update@civicrm.test.org","is_primary":1,"id":570}{/literal}' \
+  '<entrypoint>?entity=Email&action=create'
 ```
 
 ### Response Example
@@ -199,6 +211,7 @@ curl -g \
     }
 }
 {/literal}```
+
 ## Email Delete API
 
 {ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
@@ -211,6 +224,11 @@ POST
 ### Request URL
 ```{literal}
 <entrypoint>?entity=Email&action=delete
+{/literal}```
+
+### Request Content Type
+```{literal}
+application/json
 {/literal}```
 
 ### Request body
@@ -228,8 +246,12 @@ POST
 ### curl Example
 ```
 curl -g \
-  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
-    --request POST -d 'json={literal}{"id":571}{/literal}' \  '<entrypoint>?entity=Email&action=delete'
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{literal}{"id":571}{/literal}' \
+  '<entrypoint>?entity=Email&action=delete'
 ```
 
 ### Response Example
@@ -241,3 +263,4 @@ curl -g \
     "values": 1
 }
 {/literal}```
+

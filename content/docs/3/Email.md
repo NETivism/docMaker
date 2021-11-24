@@ -34,15 +34,6 @@ GET
 <entrypoint>?entity=Email&action=get&json={"contact_id":332,"location_type_id":630,"email":"api.test@civicrm.test.org"}
 ```
 
-### Request body
-```
-{
-    "contact_id": 332,
-    "location_type_id": 630,
-    "email": "api.test@civicrm.test.org"
-}
-```
-
 ### API Explorer
 ```
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=get&pretty=1&json={"contact_id":332,"location_type_id":630,"email":"api.test@civicrm.test.org"}
@@ -51,8 +42,9 @@ GET
 ### curl Example
 ```
 curl -g \
-  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
-    '<entrypoint>?entity=Email&action=get&json='
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  '<entrypoint>?entity=Email&action=get&json='
 ```
 
 ### Response Example
@@ -76,6 +68,7 @@ curl -g \
     }
 }
 ```
+
 ## Email Create API
 
   API
@@ -88,6 +81,11 @@ POST
 ### Request URL
 ```
 <entrypoint>?entity=Email&action=create
+```
+
+### Request Content Type
+```
+application/json
 ```
 
 ### Request body
@@ -108,8 +106,12 @@ POST
 ### curl Example
 ```
 curl -g \
-  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
-    --request POST -d 'json={"contact_id":333,"location_type_id":632,"email":"api.test@civicrm.test.org","is_primary":1}' \  '<entrypoint>?entity=Email&action=create'
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{"contact_id":333,"location_type_id":632,"email":"api.test@civicrm.test.org","is_primary":1}' \
+  '<entrypoint>?entity=Email&action=create'
 ```
 
 ### Response Example
@@ -137,6 +139,7 @@ curl -g \
     }
 }
 ```
+
 ## Email Update API
 
   API
@@ -149,6 +152,11 @@ POST
 ### Request URL
 ```
 <entrypoint>?entity=Email&action=create
+```
+
+### Request Content Type
+```
+application/json
 ```
 
 ### Request body
@@ -170,8 +178,12 @@ POST
 ### curl Example
 ```
 curl -g \
-  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
-    --request POST -d 'json={"contact_id":337,"location_type_id":640,"email":"test.update@civicrm.test.org","is_primary":1,"id":570}' \  '<entrypoint>?entity=Email&action=create'
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{"contact_id":337,"location_type_id":640,"email":"test.update@civicrm.test.org","is_primary":1,"id":570}' \
+  '<entrypoint>?entity=Email&action=create'
 ```
 
 ### Response Example
@@ -199,6 +211,7 @@ curl -g \
     }
 }
 ```
+
 ## Email Delete API
 
   API
@@ -211,6 +224,11 @@ POST
 ### Request URL
 ```
 <entrypoint>?entity=Email&action=delete
+```
+
+### Request Content Type
+```
+application/json
 ```
 
 ### Request body
@@ -228,8 +246,12 @@ POST
 ### curl Example
 ```
 curl -g \
-  --header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
-    --request POST -d 'json={"id":571}' \  '<entrypoint>?entity=Email&action=delete'
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{"id":571}' \
+  '<entrypoint>?entity=Email&action=delete'
 ```
 
 ### Response Example
