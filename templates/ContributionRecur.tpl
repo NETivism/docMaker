@@ -6,30 +6,30 @@ This is a API document about recurring contribution.
 
 | {ts}Parameter Name{/ts} | {ts}Type{/ts} | {ts}Length{/ts} | {ts}Format{/ts} | {ts}Create Rule{/ts} | {ts}Field Help{/ts} |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} | {ts}Contribution Recur ID{/ts} |
-| contact_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} | {ts}Foreign key to civicrm_contact.id .{/ts} |
+| id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} | {ts}Unique Contribution Recur ID{/ts} |
+| contact_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} | {ts}Foreign key to civicrm_contact.id{/ts} |
 | amount | {ts}Number{/ts}(decimal) | 20,2 | 00.00 | {ts}Required{/ts} | {ts}Amount to be contributed or charged each recurrence.{/ts} |
-| currency | {ts}String{/ts}(varchar) | 3 |  | {ts}Default Value{/ts}: NULL | {ts}3 character string, value from config setting or input via user.{/ts} |
+| currency | {ts}String{/ts}(varchar) | 3 |  | {ts}Default Value{/ts}: NULL | {ts}3 character string, value from config setting.{/ts} |
 | frequency_unit | {ts}String{/ts}(enum) |  | day,week,month,year | {ts}Default Value{/ts}: 'month' | {ts}Time units for recurrence of payment.{/ts} |
 | frequency_interval | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} | {ts}Number of time units for recurrence of payment.{/ts} |
-| installments | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}Total number of payments to be made. Set this to 0 if this is an open-ended commitment i.e. no set end date.{/ts} |
+| installments | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}Total number of payments to be made. Set this to 0 if this is an open-ended commitment.{/ts} |
 | start_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss | {ts}Required{/ts} | {ts}The date the first scheduled recurring contribution occurs.{/ts} |
 | create_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss | {ts}Required{/ts} | {ts}When this recurring contribution record was created.{/ts} |
 | modified_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}Last updated date for this record. mostly the last time a payment was received{/ts} |
 | cancel_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}Date this recurring contribution was cancelled by contributor- if we can get access to it{/ts} |
 | end_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}Date this recurring contribution finished successfully{/ts} |
-| processor_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to payment processor{/ts} |
-| external_id | {ts}String{/ts}(varchar) | 255 |  |  | {ts}Possibly needed to store a unique identifier for this recurring payment order - if this is available from the processor??{/ts} |
-| trxn_id | {ts}String{/ts}(varchar) | 255 |  |  | {ts}unique transaction id. may be processor id, bank id + trans id, or account number + check number... depending on payment_method{/ts} |
+| processor_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to Payment Processor{/ts} |
+| external_id | {ts}String{/ts}(varchar) | 255 |  |  | {ts}an external unique identifier for this recurring payment order provide by payment method{/ts} |
+| trxn_id | {ts}String{/ts}(varchar) | 255 |  |  | {ts}unique transaction id or this recurring defined by this application{/ts} |
 | invoice_id | {ts}String{/ts}(varchar) | 255 |  |  | {ts}unique invoice id, system generated or passed in{/ts} |
-| contribution_status_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Default Value{/ts}: 1 |  |
-| is_test | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 |  |
+| contribution_status_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Default Value{/ts}: 1 | {ts}1=completed, 2=pending, 3=cancel, 4=failed, 5=in progress, 6=overdue, 7=suspend{/ts} |
+| is_test | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 | {ts}Mark 1 when this order is an testing order.{/ts} |
 | cycle_day | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts}, {ts}Default Value{/ts}: 1 | {ts}Day in the period when the payment should be charged e.g. 1st of month, 15th etc.{/ts} |
-| next_sched_contribution | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}At Groundspring this was used by the cron job which triggered payments. If we\'re not doing that but we know about payments, it might still be useful to store for display to org andor contributors.{/ts} |
-| failure_count | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Default Value{/ts}: 0 | {ts}Number of failed charge attempts since last success. Business rule could be set to deactivate on more than x failures.{/ts} |
-| failure_retry_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}At Groundspring we set a business rule to retry failed payments every 7 days - and stored the next scheduled attempt date there.{/ts} |
-| auto_renew | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Required{/ts}, {ts}Default Value{/ts}: 0 | {ts}Some systems allow contributor to set a number of installments - but then auto-renew the subscription or commitment if they do not cancel.{/ts} |
-| last_execute_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}Last expected execute transaction date.{/ts} |
+| next_sched_contribution | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}Next payment day for display or execution(if needed).{/ts} |
+| failure_count | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Default Value{/ts}: 0 | {ts}Number of failed charge attempts since last success.{/ts} |
+| failure_retry_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}Record retried date after payment fail retry.{/ts} |
+| auto_renew | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Required{/ts}, {ts}Default Value{/ts}: 0 | {ts}Auto renew card expiration date when available.{/ts} |
+| last_execute_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}Last payment execution transaction date to prevent duplicate execution at the same frequency_unit.{/ts} |
 
 
 ## Recurring Contribution Get API

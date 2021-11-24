@@ -6,30 +6,30 @@ This is a API document about recurring contribution.
 
 | 變數名稱 | 類型 | 長度 | 格式 | 建立規則 | 說明 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| id | 數字(int unsigned) | 10 | >= 0 | 必填 | Contribution Recur ID |
-| contact_id | 數字(int unsigned) | 10 | >= 0 | 必填 | Foreign key to civicrm_contact.id . |
+| id | 數字(int unsigned) | 10 | >= 0 | 必填 | Unique Contribution Recur ID |
+| contact_id | 數字(int unsigned) | 10 | >= 0 | 必填 | Foreign key to civicrm_contact.id |
 | amount | 數字(decimal) | 20,2 | 00.00 | 必填 | Amount to be contributed or charged each recurrence. |
-| currency | 字串(varchar) | 3 |  | 預設值: NULL | 3 character string, value from config setting or input via user. |
+| currency | 字串(varchar) | 3 |  | 預設值: NULL | 3 character string, value from config setting. |
 | frequency_unit | 字串(enum) |  | day,week,month,year | 預設值: 'month' | Time units for recurrence of payment. |
 | frequency_interval | 數字(int unsigned) | 10 | >= 0 | 必填 | Number of time units for recurrence of payment. |
-| installments | 數字(int unsigned) | 10 | >= 0 |  | Total number of payments to be made. Set this to 0 if this is an open-ended commitment i.e. no set end date. |
+| installments | 數字(int unsigned) | 10 | >= 0 |  | Total number of payments to be made. Set this to 0 if this is an open-ended commitment. |
 | start_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss | 必填 | The date the first scheduled recurring contribution occurs. |
 | create_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss | 必填 | When this recurring contribution record was created. |
 | modified_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | Last updated date for this record. mostly the last time a payment was received |
 | cancel_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | Date this recurring contribution was cancelled by contributor- if we can get access to it |
 | end_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | Date this recurring contribution finished successfully |
-| processor_id | 數字(int unsigned) | 10 | >= 0 |  | FK to payment processor |
-| external_id | 字串(varchar) | 255 |  |  | Possibly needed to store a unique identifier for this recurring payment order - if this is available from the processor?? |
-| trxn_id | 字串(varchar) | 255 |  |  | unique transaction id. may be processor id, bank id + trans id, or account number + check number... depending on payment_method |
+| processor_id | 數字(int unsigned) | 10 | >= 0 |  | FK to Payment Processor |
+| external_id | 字串(varchar) | 255 |  |  | an external unique identifier for this recurring payment order provide by payment method |
+| trxn_id | 字串(varchar) | 255 |  |  | unique transaction id or this recurring defined by this application |
 | invoice_id | 字串(varchar) | 255 |  |  | unique invoice id, system generated or passed in |
-| contribution_status_id | 數字(int unsigned) | 10 | >= 0 | 預設值: 1 |  |
-| is_test | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 |  |
+| contribution_status_id | 數字(int unsigned) | 10 | >= 0 | 預設值: 1 | 1=completed, 2=pending, 3=cancel, 4=failed, 5=in progress, 6=overdue, 7=suspend |
+| is_test | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 | Mark 1 when this order is an testing order. |
 | cycle_day | 數字(int unsigned) | 10 | >= 0 | 必填, 預設值: 1 | Day in the period when the payment should be charged e.g. 1st of month, 15th etc. |
-| next_sched_contribution | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | At Groundspring this was used by the cron job which triggered payments. If we\'re not doing that but we know about payments, it might still be useful to store for display to org andor contributors. |
-| failure_count | 數字(int unsigned) | 10 | >= 0 | 預設值: 0 | Number of failed charge attempts since last success. Business rule could be set to deactivate on more than x failures. |
-| failure_retry_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | At Groundspring we set a business rule to retry failed payments every 7 days - and stored the next scheduled attempt date there. |
-| auto_renew | 布林值(boolean) | 1 | 0 or 1 | 必填, 預設值: 0 | Some systems allow contributor to set a number of installments - but then auto-renew the subscription or commitment if they do not cancel. |
-| last_execute_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | Last expected execute transaction date. |
+| next_sched_contribution | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | Next payment day for display or execution(if needed). |
+| failure_count | 數字(int unsigned) | 10 | >= 0 | 預設值: 0 | Number of failed charge attempts since last success. |
+| failure_retry_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | Record retried date after payment fail retry. |
+| auto_renew | 布林值(boolean) | 1 | 0 or 1 | 必填, 預設值: 0 | Auto renew card expiration date when available. |
+| last_execute_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | Last payment execution transaction date to prevent duplicate execution at the same frequency_unit. |
 
 
 ## Recurring Contribution Get API

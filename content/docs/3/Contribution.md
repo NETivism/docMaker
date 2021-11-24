@@ -6,7 +6,7 @@ This is a API Document about contribution.
 
 | 變數名稱 | 類型 | 長度 | 格式 | 建立規則 | 說明 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| id | 數字(int unsigned) | 10 | >= 0 | 必填 | 捐款編號 |
+| id | 數字(int unsigned) | 10 | >= 0 | 必填 | Unique Contribution ID |
 | contact_id | 數字(int unsigned) | 10 | >= 0 | 必填 | FK to Contact ID |
 | solicitor_id | 數字(int unsigned) | 10 | >= 0 |  | FK to Solicitor ID |
 | contribution_type_id | 數字(int unsigned) | 10 | >= 0 |  | FK to Contribution Type |
@@ -14,26 +14,26 @@ This is a API Document about contribution.
 | payment_processor_id | 數字(int unsigned) | 10 | >= 0 |  | FK to Payment Processor |
 | payment_instrument_id | 數字(int unsigned) | 10 | >= 0 |  | FK to Payment Instrument |
 | created_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | when was contribution submitted |
-| receive_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | when was gift received |
-| non_deductible_amount | 數字(decimal) | 20,2 | 00.00 | 預設值: 0 | Portion of total amount which is NOT tax deductible. Equal to total_amount for non-deductible contribution types. |
-| total_amount | 數字(decimal) | 20,2 | 00.00 | 必填 | Total amount of this contribution. Use market value for non-monetary gifts. |
-| fee_amount | 數字(decimal) | 20,2 | 00.00 |  | actual processor fee if known - may be 0. |
-| net_amount | 數字(decimal) | 20,2 | 00.00 |  | actual funds transfer amount. total less fees. if processor does not report actual fee during transaction, this is set to total_amount. |
-| trxn_id | 字串(varchar) | 255 |  |  | unique transaction id. may be processor id, bank id + trans id, or account number + check number... depending on payment_method |
+| receive_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | when was gift received(or got authorized by credit card) |
+| non_deductible_amount | 數字(decimal) | 20,2 | 00.00 | 預設值: 0 | Portion of total amount which is NOT tax deductible. |
+| total_amount | 數字(decimal) | 20,2 | 00.00 | 必填 | Total amount of this contribution. |
+| fee_amount | 數字(decimal) | 20,2 | 00.00 |  | Payment processor fee when available. |
+| net_amount | 數字(decimal) | 20,2 | 00.00 |  | net amount + fee amount = total amount |
+| trxn_id | 字串(varchar) | 255 |  |  | unique transaction id by this application |
 | invoice_id | 字串(varchar) | 255 |  |  | unique invoice id, system generated or passed in |
-| currency | 字串(varchar) | 3 |  | 預設值: NULL | 3 character string, value from config setting or input via user. |
+| currency | 字串(varchar) | 3 |  | 預設值: NULL | 3 character string, value from config setting. |
 | cancel_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | when was gift cancelled |
-| cancel_reason | 字串(text) | 65535 |  |  |  |
-| receipt_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | when (if) receipt was sent. populated automatically for online donations w/ automatic receipting |
+| cancel_reason | 字串(text) | 65535 |  |  | Reason that gift was cancelled |
+| receipt_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | Record date after (email)receipt sent. |
 | thankyou_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | when (if) was donor thanked |
 | source | 字串(varchar) | 255 |  |  | Origin of this Contribution. |
-| amount_level | 字串(text) | 65535 |  |  |  |
+| amount_level | 字串(text) | 65535 |  |  | Amount level / label that donor choose in contribution page. |
 | note | 字串(text) | 65535 |  |  | Note and/or Comment. |
-| contribution_recur_id | 數字(int unsigned) | 10 | >= 0 |  | Conditional foreign key to civicrm_contribution_recur id. Each contribution made in connection with a recurring contribution carries a foreign key to the recurring contribution record. This assumes we can track these processor initiated events. |
-| honor_contact_id | 數字(int unsigned) | 10 | >= 0 |  | FK to contact ID |
-| is_test | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 |  |
-| is_pay_later | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 |  |
-| contribution_status_id | 數字(int unsigned) | 10 | >= 0 | 預設值: 1 |  |
+| contribution_recur_id | 數字(int unsigned) | 10 | >= 0 |  | FK to Contribution Recurring. If this set, this contribution is belong to a recurring order. |
+| honor_contact_id | 數字(int unsigned) | 10 | >= 0 |  | FK to contact ID. If this set, contribution is honor of other contact. |
+| is_test | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 | Mark 1 when this order is a testing contribution. |
+| is_pay_later | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 | Mark 1 when this order is not paid by real-time payment instrument. eg. ATM is not real-time. |
+| contribution_status_id | 數字(int unsigned) | 10 | >= 0 | 預設值: 1 | 1=completed, 2=pending, 3=cancel, 4=failed |
 | honor_type_id | 數字(int unsigned) | 10 | >= 0 |  | Implicit FK to civicrm_option_value. |
 | address_id | 數字(int unsigned) | 10 | >= 0 |  | Conditional foreign key to civicrm_address.id. We insert an address record for each contribution when we have associated billing name and address data. |
 | check_number | 字串(varchar) | 255 |  |  |  |

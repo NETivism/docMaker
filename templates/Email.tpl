@@ -10,7 +10,7 @@ This is a API Document about Email.
 | contact_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to Contact ID{/ts} |
 | location_type_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}Which Location does this email belong to.{/ts} |
 | email | {ts}String{/ts}(varchar) | 64 |  |  | {ts}Email address{/ts} |
-| is_primary | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 | {ts}Is this the primary?{/ts} |
+| is_primary | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 | {ts}Is this the primary email for this contact and location.{/ts} |
 | is_billing | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 | {ts}Is this the billing?{/ts} |
 | on_hold | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Required{/ts}, {ts}Default Value{/ts}: 0 | {ts}Is this address on bounce hold?{/ts} |
 | is_bulkmail | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Required{/ts}, {ts}Default Value{/ts}: 0 | {ts}Is this address for bulk mail ?{/ts} |

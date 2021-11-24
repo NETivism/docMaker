@@ -6,7 +6,7 @@ This is a API Document about contribution.
 
 | {ts}Parameter Name{/ts} | {ts}Type{/ts} | {ts}Length{/ts} | {ts}Format{/ts} | {ts}Create Rule{/ts} | {ts}Field Help{/ts} |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} | {ts}Contribution ID{/ts} |
+| id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} | {ts}Unique Contribution ID{/ts} |
 | contact_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} | {ts}FK to Contact ID{/ts} |
 | solicitor_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to Solicitor ID{/ts} |
 | contribution_type_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to Contribution Type{/ts} |
@@ -14,26 +14,26 @@ This is a API Document about contribution.
 | payment_processor_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to Payment Processor{/ts} |
 | payment_instrument_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to Payment Instrument{/ts} |
 | created_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}when was contribution submitted{/ts} |
-| receive_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}when was gift received{/ts} |
-| non_deductible_amount | {ts}Number{/ts}(decimal) | 20,2 | 00.00 | {ts}Default Value{/ts}: 0 | {ts}Portion of total amount which is NOT tax deductible. Equal to total_amount for non-deductible contribution types.{/ts} |
-| total_amount | {ts}Number{/ts}(decimal) | 20,2 | 00.00 | {ts}Required{/ts} | {ts}Total amount of this contribution. Use market value for non-monetary gifts.{/ts} |
-| fee_amount | {ts}Number{/ts}(decimal) | 20,2 | 00.00 |  | {ts}actual processor fee if known - may be 0.{/ts} |
-| net_amount | {ts}Number{/ts}(decimal) | 20,2 | 00.00 |  | {ts}actual funds transfer amount. total less fees. if processor does not report actual fee during transaction, this is set to total_amount.{/ts} |
-| trxn_id | {ts}String{/ts}(varchar) | 255 |  |  | {ts}unique transaction id. may be processor id, bank id + trans id, or account number + check number... depending on payment_method{/ts} |
+| receive_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}when was gift received(or got authorized by credit card){/ts} |
+| non_deductible_amount | {ts}Number{/ts}(decimal) | 20,2 | 00.00 | {ts}Default Value{/ts}: 0 | {ts}Portion of total amount which is NOT tax deductible.{/ts} |
+| total_amount | {ts}Number{/ts}(decimal) | 20,2 | 00.00 | {ts}Required{/ts} | {ts}Total amount of this contribution.{/ts} |
+| fee_amount | {ts}Number{/ts}(decimal) | 20,2 | 00.00 |  | {ts}Payment processor fee when available.{/ts} |
+| net_amount | {ts}Number{/ts}(decimal) | 20,2 | 00.00 |  | {ts}net amount + fee amount = total amount{/ts} |
+| trxn_id | {ts}String{/ts}(varchar) | 255 |  |  | {ts}unique transaction id by this application{/ts} |
 | invoice_id | {ts}String{/ts}(varchar) | 255 |  |  | {ts}unique invoice id, system generated or passed in{/ts} |
-| currency | {ts}String{/ts}(varchar) | 3 |  | {ts}Default Value{/ts}: NULL | {ts}3 character string, value from config setting or input via user.{/ts} |
+| currency | {ts}String{/ts}(varchar) | 3 |  | {ts}Default Value{/ts}: NULL | {ts}3 character string, value from config setting.{/ts} |
 | cancel_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}when was gift cancelled{/ts} |
-| cancel_reason | {ts}String{/ts}(text) | 65535 |  |  |  |
-| receipt_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}when (if) receipt was sent. populated automatically for online donations w/ automatic receipting{/ts} |
+| cancel_reason | {ts}String{/ts}(text) | 65535 |  |  | {ts}Reason that gift was cancelled{/ts} |
+| receipt_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}Record date after (email)receipt sent.{/ts} |
 | thankyou_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}when (if) was donor thanked{/ts} |
 | source | {ts}String{/ts}(varchar) | 255 |  |  | {ts}Origin of this Contribution.{/ts} |
-| amount_level | {ts}String{/ts}(text) | 65535 |  |  |  |
+| amount_level | {ts}String{/ts}(text) | 65535 |  |  | {ts}Amount level / label that donor choose in contribution page.{/ts} |
 | note | {ts}String{/ts}(text) | 65535 |  |  | {ts}Note and/or Comment.{/ts} |
-| contribution_recur_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}Conditional foreign key to civicrm_contribution_recur id. Each contribution made in connection with a recurring contribution carries a foreign key to the recurring contribution record. This assumes we can track these processor initiated events.{/ts} |
-| honor_contact_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to contact ID{/ts} |
-| is_test | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 |  |
-| is_pay_later | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 |  |
-| contribution_status_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Default Value{/ts}: 1 |  |
+| contribution_recur_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to Contribution Recurring. If this set, this contribution is belong to a recurring order.{/ts} |
+| honor_contact_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to contact ID. If this set, contribution is honor of other contact.{/ts} |
+| is_test | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 | {ts}Mark 1 when this order is a testing contribution.{/ts} |
+| is_pay_later | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 | {ts}Mark 1 when this order is not paid by real-time payment instrument. eg. ATM is not real-time.{/ts} |
+| contribution_status_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Default Value{/ts}: 1 | {ts}1=completed, 2=pending, 3=cancel, 4=failed{/ts} |
 | honor_type_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}Implicit FK to civicrm_option_value.{/ts} |
 | address_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}Conditional foreign key to civicrm_address.id. We insert an address record for each contribution when we have associated billing name and address data.{/ts} |
 | check_number | {ts}String{/ts}(varchar) | 255 |  |  |  |

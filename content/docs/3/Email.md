@@ -10,7 +10,7 @@ This is a API Document about Email.
 | contact_id | 數字(int unsigned) | 10 | >= 0 |  | FK to Contact ID |
 | location_type_id | 數字(int unsigned) | 10 | >= 0 |  | Which Location does this email belong to. |
 | email | 字串(varchar) | 64 |  |  | Email address |
-| is_primary | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 | Is this the primary? |
+| is_primary | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 | Is this the primary email for this contact and location. |
 | is_billing | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 | Is this the billing? |
 | on_hold | 布林值(boolean) | 1 | 0 or 1 | 必填, 預設值: 0 | Is this address on bounce hold? |
 | is_bulkmail | 布林值(boolean) | 1 | 0 or 1 | 必填, 預設值: 0 | Is this address for bulk mail ? |
