@@ -1,5 +1,8 @@
-# Contribution API
-
++++
+title = "Contribution API"
+menuTitle = "Contribution"
+chapter = false
++++
 
 This is a API Document about contribution.
 
@@ -43,22 +46,23 @@ This is a API Document about contribution.
 
 ## Contribution Get API
 
-### HTTP Method
+### 傳送範例
+#### HTTP Method
 ```
 GET
 ```
 
-### Request URL
+#### Request URL
 ```
 <entrypoint>?entity=Contribution&action=get&json={"contribution_id":186}
 ```
 
-### API Explorer
+#### API Explorer
 ```
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&action=get&pretty=1&json={"contribution_id":186}
 ```
 
-### curl Example
+#### curl Example
 ```
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
@@ -66,7 +70,7 @@ curl -g \
   '<entrypoint>?entity=Contribution&action=get&json='
 ```
 
-### Response Example
+### 回傳範例
 ```
 {
     "is_error": 0,
@@ -133,22 +137,23 @@ curl -g \
 
 ## Contribution Create API
 
-### HTTP Method
+### 傳送範例
+#### HTTP Method
 ```
 POST
 ```
 
-### Request URL
+#### Request URL
 ```
 <entrypoint>?entity=Contribution&action=create
 ```
 
-### Request Content Type
+#### Request Content Type
 ```
 application/json
 ```
 
-### Request body
+#### Request body
 ```
 {
     "contact_id": 540,
@@ -166,12 +171,12 @@ application/json
 }
 ```
 
-### API Explorer
+#### API Explorer
 ```
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&action=create&pretty=1&json={"contact_id":540,"receive_date":"2021-11-23 19:19:49","total_amount":100,"contribution_type_id":1,"non_deductible_amount":10,"fee_amount":50,"net_amount":90,"source":"Contribution Unit Test","contribution_status_id":1,"trxn_id":"30IuTSVS39","invoice_id":"SPVZjY9rpK","payment_instrument_id":1}
 ```
 
-### curl Example
+#### curl Example
 ```
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
@@ -182,7 +187,7 @@ curl -g \
   '<entrypoint>?entity=Contribution&action=create'
 ```
 
-### Response Example
+### 回傳範例
 ```
 {
     "is_error": 0,
@@ -229,22 +234,23 @@ curl -g \
 
 ## Contribution Update API
 
-### HTTP Method
+### 傳送範例
+#### HTTP Method
 ```
 POST
 ```
 
-### Request URL
+#### Request URL
 ```
 <entrypoint>?entity=Contribution&action=create
 ```
 
-### Request Content Type
+#### Request Content Type
 ```
 application/json
 ```
 
-### Request body
+#### Request body
 ```
 {
     "id": 194,
@@ -258,12 +264,12 @@ application/json
 }
 ```
 
-### API Explorer
+#### API Explorer
 ```
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&action=create&pretty=1&json={"id":194,"total_amount":9999,"contribution_type_id":1,"non_deductible_amount":10,"net_amount":100,"contribution_status_id":3,"cancel_date":"20211123191951","cancel_reason":"The reason to cancel"}
 ```
 
-### curl Example
+#### curl Example
 ```
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
@@ -274,7 +280,7 @@ curl -g \
   '<entrypoint>?entity=Contribution&action=create'
 ```
 
-### Response Example
+### 回傳範例
 ```
 {
     "is_error": 0,
@@ -321,34 +327,35 @@ curl -g \
 
 ## Contribution Delete API
 
-### HTTP Method
+### 傳送範例
+#### HTTP Method
 ```
 POST
 ```
 
-### Request URL
+#### Request URL
 ```
 <entrypoint>?entity=Contribution&action=delete
 ```
 
-### Request Content Type
+#### Request Content Type
 ```
 application/json
 ```
 
-### Request body
+#### Request body
 ```
 {
     "id": 195
 }
 ```
 
-### API Explorer
+#### API Explorer
 ```
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&action=delete&pretty=1&json={"id":195}
 ```
 
-### curl Example
+#### curl Example
 ```
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
@@ -359,7 +366,7 @@ curl -g \
   '<entrypoint>?entity=Contribution&action=delete'
 ```
 
-### Response Example
+### 回傳範例
 ```
 {
     "is_error": 0,

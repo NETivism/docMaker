@@ -1,5 +1,8 @@
-# Email API
-
++++
+title = "Email API"
+menuTitle = "Email"
+chapter = false
++++
 
 This is a API Document about Email.
 
@@ -22,22 +25,23 @@ This is a API Document about Email.
 
 ## Email Get API
 
-### HTTP Method
+### 傳送範例
+#### HTTP Method
 ```
 GET
 ```
 
-### Request URL
+#### Request URL
 ```
 <entrypoint>?entity=Email&action=get&json={"contact_id":332,"location_type_id":630,"email":"api.test@civicrm.test.org"}
 ```
 
-### API Explorer
+#### API Explorer
 ```
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=get&pretty=1&json={"contact_id":332,"location_type_id":630,"email":"api.test@civicrm.test.org"}
 ```
 
-### curl Example
+#### curl Example
 ```
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
@@ -45,7 +49,7 @@ curl -g \
   '<entrypoint>?entity=Email&action=get&json='
 ```
 
-### Response Example
+### 回傳範例
 ```
 {
     "is_error": 0,
@@ -69,22 +73,23 @@ curl -g \
 
 ## Email Create API
 
-### HTTP Method
+### 傳送範例
+#### HTTP Method
 ```
 POST
 ```
 
-### Request URL
+#### Request URL
 ```
 <entrypoint>?entity=Email&action=create
 ```
 
-### Request Content Type
+#### Request Content Type
 ```
 application/json
 ```
 
-### Request body
+#### Request body
 ```
 {
     "contact_id": 333,
@@ -94,12 +99,12 @@ application/json
 }
 ```
 
-### API Explorer
+#### API Explorer
 ```
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=create&pretty=1&json={"contact_id":333,"location_type_id":632,"email":"api.test@civicrm.test.org","is_primary":1}
 ```
 
-### curl Example
+#### curl Example
 ```
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
@@ -110,7 +115,7 @@ curl -g \
   '<entrypoint>?entity=Email&action=create'
 ```
 
-### Response Example
+### 回傳範例
 ```
 {
     "is_error": 0,
@@ -138,22 +143,23 @@ curl -g \
 
 ## Email Update API
 
-### HTTP Method
+### 傳送範例
+#### HTTP Method
 ```
 POST
 ```
 
-### Request URL
+#### Request URL
 ```
 <entrypoint>?entity=Email&action=create
 ```
 
-### Request Content Type
+#### Request Content Type
 ```
 application/json
 ```
 
-### Request body
+#### Request body
 ```
 {
     "contact_id": 337,
@@ -164,12 +170,12 @@ application/json
 }
 ```
 
-### API Explorer
+#### API Explorer
 ```
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=create&pretty=1&json={"contact_id":337,"location_type_id":640,"email":"test.update@civicrm.test.org","is_primary":1,"id":570}
 ```
 
-### curl Example
+#### curl Example
 ```
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
@@ -180,7 +186,7 @@ curl -g \
   '<entrypoint>?entity=Email&action=create'
 ```
 
-### Response Example
+### 回傳範例
 ```
 {
     "is_error": 0,
@@ -208,34 +214,35 @@ curl -g \
 
 ## Email Delete API
 
-### HTTP Method
+### 傳送範例
+#### HTTP Method
 ```
 POST
 ```
 
-### Request URL
+#### Request URL
 ```
 <entrypoint>?entity=Email&action=delete
 ```
 
-### Request Content Type
+#### Request Content Type
 ```
 application/json
 ```
 
-### Request body
+#### Request body
 ```
 {
     "id": 571
 }
 ```
 
-### API Explorer
+#### API Explorer
 ```
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=delete&pretty=1&json={"id":571}
 ```
 
-### curl Example
+#### curl Example
 ```
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
@@ -246,7 +253,7 @@ curl -g \
   '<entrypoint>?entity=Email&action=delete'
 ```
 
-### Response Example
+### 回傳範例
 ```
 {
     "is_error": 0,
