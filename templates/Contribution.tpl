@@ -4,46 +4,44 @@
 This is a API Document about contribution.
 
 
-| {ts}Parameter Name{/ts} | {ts}Field Help{/ts} | {ts}Type{/ts} | {ts}Length{/ts} | {ts}Format{/ts} | {ts}Create Rule{/ts} |
+| {ts}Parameter Name{/ts} | {ts}Type{/ts} | {ts}Length{/ts} | {ts}Format{/ts} | {ts}Create Rule{/ts} | {ts}Field Help{/ts} |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| id | {ts}Contribution ID{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} |
-| contact_id | {ts}FK to Contact ID{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} |
-| solicitor_id | {ts}FK to Solicitor ID{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  |
-| contribution_type_id | {ts}FK to Contribution Type{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  |
-| contribution_page_id | {ts}The Contribution Page which triggered this contribution{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  |
-| payment_processor_id | {ts}FK to Payment Processor{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  |
-| payment_instrument_id | {ts}FK to Payment Instrument{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  |
-| created_date | {ts}when was contribution submitted{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
-| receive_date | {ts}when was gift received{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
-| non_deductible_amount | {ts}Portion of total amount which is NOT tax deductible. Equal to total_amount for non-deductible contribution types.{/ts} | {ts}Number{/ts}(decimal) | 20,2 | 00.00 | {ts}Default Value{/ts}: 0 |
-| total_amount | {ts}Total amount of this contribution. Use market value for non-monetary gifts.{/ts} | {ts}Number{/ts}(decimal) | 20,2 | 00.00 | {ts}Required{/ts} |
-| fee_amount | {ts}actual processor fee if known - may be 0.{/ts} | {ts}Number{/ts}(decimal) | 20,2 | 00.00 |  |
-| net_amount | {ts}actual funds transfer amount. total less fees. if processor does not report actual fee during transaction, this is set to total_amount.{/ts} | {ts}Number{/ts}(decimal) | 20,2 | 00.00 |  |
-| trxn_id | {ts}unique transaction id. may be processor id, bank id + trans id, or account number + check number... depending on payment_method{/ts} | {ts}String{/ts}(varchar) | 255 |  |  |
-| invoice_id | {ts}unique invoice id, system generated or passed in{/ts} | {ts}String{/ts}(varchar) | 255 |  |  |
-| currency | {ts}3 character string, value from config setting or input via user.{/ts} | {ts}String{/ts}(varchar) | 3 |  | {ts}Default Value{/ts}: NULL |
-| cancel_date | {ts}when was gift cancelled{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
-| cancel_reason |  | {ts}String{/ts}(text) | 65535 |  |  |
-| receipt_date | {ts}when (if) receipt was sent. populated automatically for online donations w/ automatic receipting{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
-| thankyou_date | {ts}when (if) was donor thanked{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
-| source | {ts}Origin of this Contribution.{/ts} | {ts}String{/ts}(varchar) | 255 |  |  |
-| amount_level |  | {ts}String{/ts}(text) | 65535 |  |  |
-| note | {ts}Note and/or Comment.{/ts} | {ts}String{/ts}(text) | 65535 |  |  |
-| contribution_recur_id | {ts}Conditional foreign key to civicrm_contribution_recur id. Each contribution made in connection with a recurring contribution carries a foreign key to the recurring contribution record. This assumes we can track these processor initiated events.{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  |
-| honor_contact_id | {ts}FK to contact ID{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  |
-| is_test |  | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 |
-| is_pay_later |  | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 |
-| contribution_status_id |  | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Default Value{/ts}: 1 |
-| honor_type_id | {ts}Implicit FK to civicrm_option_value.{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  |
-| address_id | {ts}Conditional foreign key to civicrm_address.id. We insert an address record for each contribution when we have associated billing name and address data.{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  |
-| check_number |  | {ts}String{/ts}(varchar) | 255 |  |  |
-| receipt_id |  | {ts}String{/ts}(varchar) | 255 |  |  |
-| expire_date | {ts}when is payment expiration{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
+| id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} | {ts}Contribution ID{/ts} |
+| contact_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} | {ts}FK to Contact ID{/ts} |
+| solicitor_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to Solicitor ID{/ts} |
+| contribution_type_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to Contribution Type{/ts} |
+| contribution_page_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}The Contribution Page which triggered this contribution{/ts} |
+| payment_processor_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to Payment Processor{/ts} |
+| payment_instrument_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to Payment Instrument{/ts} |
+| created_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}when was contribution submitted{/ts} |
+| receive_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}when was gift received{/ts} |
+| non_deductible_amount | {ts}Number{/ts}(decimal) | 20,2 | 00.00 | {ts}Default Value{/ts}: 0 | {ts}Portion of total amount which is NOT tax deductible. Equal to total_amount for non-deductible contribution types.{/ts} |
+| total_amount | {ts}Number{/ts}(decimal) | 20,2 | 00.00 | {ts}Required{/ts} | {ts}Total amount of this contribution. Use market value for non-monetary gifts.{/ts} |
+| fee_amount | {ts}Number{/ts}(decimal) | 20,2 | 00.00 |  | {ts}actual processor fee if known - may be 0.{/ts} |
+| net_amount | {ts}Number{/ts}(decimal) | 20,2 | 00.00 |  | {ts}actual funds transfer amount. total less fees. if processor does not report actual fee during transaction, this is set to total_amount.{/ts} |
+| trxn_id | {ts}String{/ts}(varchar) | 255 |  |  | {ts}unique transaction id. may be processor id, bank id + trans id, or account number + check number... depending on payment_method{/ts} |
+| invoice_id | {ts}String{/ts}(varchar) | 255 |  |  | {ts}unique invoice id, system generated or passed in{/ts} |
+| currency | {ts}String{/ts}(varchar) | 3 |  | {ts}Default Value{/ts}: NULL | {ts}3 character string, value from config setting or input via user.{/ts} |
+| cancel_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}when was gift cancelled{/ts} |
+| cancel_reason | {ts}String{/ts}(text) | 65535 |  |  |  |
+| receipt_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}when (if) receipt was sent. populated automatically for online donations w/ automatic receipting{/ts} |
+| thankyou_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}when (if) was donor thanked{/ts} |
+| source | {ts}String{/ts}(varchar) | 255 |  |  | {ts}Origin of this Contribution.{/ts} |
+| amount_level | {ts}String{/ts}(text) | 65535 |  |  |  |
+| note | {ts}String{/ts}(text) | 65535 |  |  | {ts}Note and/or Comment.{/ts} |
+| contribution_recur_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}Conditional foreign key to civicrm_contribution_recur id. Each contribution made in connection with a recurring contribution carries a foreign key to the recurring contribution record. This assumes we can track these processor initiated events.{/ts} |
+| honor_contact_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to contact ID{/ts} |
+| is_test | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 |  |
+| is_pay_later | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 |  |
+| contribution_status_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Default Value{/ts}: 1 |  |
+| honor_type_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}Implicit FK to civicrm_option_value.{/ts} |
+| address_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}Conditional foreign key to civicrm_address.id. We insert an address record for each contribution when we have associated billing name and address data.{/ts} |
+| check_number | {ts}String{/ts}(varchar) | 255 |  |  |  |
+| receipt_id | {ts}String{/ts}(varchar) | 255 |  |  |  |
+| expire_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}when is payment expiration{/ts} |
 
 
 ## Contribution Get API
-
-{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
 
 ### HTTP Method
 ```
@@ -134,8 +132,6 @@ curl -g \
 {/literal}```
 
 ## Contribution Create API
-
-{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
 
 ### HTTP Method
 ```
@@ -233,8 +229,6 @@ curl -g \
 
 ## Contribution Update API
 
-{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
-
 ### HTTP Method
 ```
 POST
@@ -326,8 +320,6 @@ curl -g \
 {/literal}```
 
 ## Contribution Delete API
-
-{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
 
 ### HTTP Method
 ```

@@ -33,7 +33,7 @@ function doParseParams($params) {
   $xml = simplexml_load_file("$file") or die("Error: Cannot create object");
   $fields = $xml->field;
   $replaceParams = 
-  "| {ts}Parameter Name{/ts} | {ts}Field Help{/ts} | {ts}Type{/ts} | {ts}Length{/ts} | {ts}Format{/ts} | {ts}Create Rule{/ts} |
+  "| {ts}Parameter Name{/ts} | {ts}Type{/ts} | {ts}Length{/ts} | {ts}Format{/ts} | {ts}Create Rule{/ts} | {ts}Field Help{/ts} |
 | ---- | ---- | ---- | ---- | ---- | ---- |";
 
   $fieldsArray = array();
@@ -143,7 +143,7 @@ function doParseParams($params) {
     }
     $create_rule = implode(', ', $create_rule);
 
-    $row = '| ' . $field->name . ' | ' . $comment. ' | ' . $type . ' | '. $length .' | ' . $format .' | ' . $create_rule . ' |';
+    $row = '| ' . $field->name . ' | ' . $type . ' | '. $length .' | ' . $format .' | ' . $create_rule . ' | ' . $comment. ' |';
     $replaceParams = $replaceParams . "\n" . $row;
   }
   // $replaceParams = $replaceParams . "\n" . implode("\n", $row);

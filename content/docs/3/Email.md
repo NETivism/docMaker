@@ -4,25 +4,23 @@
 This is a API Document about Email.
 
 
-| 變數名稱 | 說明 | 類型 | 長度 | 格式 | 建立規則 |
+| 變數名稱 | 類型 | 長度 | 格式 | 建立規則 | 說明 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| id | Unique Email ID | 數字(int unsigned) | 10 | >= 0 | 必填 |
-| contact_id | FK to Contact ID | 數字(int unsigned) | 10 | >= 0 |  |
-| location_type_id | Which Location does this email belong to. | 數字(int unsigned) | 10 | >= 0 |  |
-| email | Email address | 字串(varchar) | 64 |  |  |
-| is_primary | Is this the primary? | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 |
-| is_billing | Is this the billing? | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 |
-| on_hold | Is this address on bounce hold? | 布林值(boolean) | 1 | 0 or 1 | 必填, 預設值: 0 |
-| is_bulkmail | Is this address for bulk mail ? | 布林值(boolean) | 1 | 0 or 1 | 必填, 預設值: 0 |
-| hold_date | When the address went on bounce hold | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
-| reset_date | When the address bounce status was last reset | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
-| signature_text | Text formatted signature for the email. | 字串(text) | 65535 |  | 預設值: NULL |
-| signature_html | HTML formatted signature for the email. | 字串(text) | 65535 |  | 預設值: NULL |
+| id | 數字(int unsigned) | 10 | >= 0 | 必填 | Unique Email ID |
+| contact_id | 數字(int unsigned) | 10 | >= 0 |  | FK to Contact ID |
+| location_type_id | 數字(int unsigned) | 10 | >= 0 |  | Which Location does this email belong to. |
+| email | 字串(varchar) | 64 |  |  | Email address |
+| is_primary | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 | Is this the primary? |
+| is_billing | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 | Is this the billing? |
+| on_hold | 布林值(boolean) | 1 | 0 or 1 | 必填, 預設值: 0 | Is this address on bounce hold? |
+| is_bulkmail | 布林值(boolean) | 1 | 0 or 1 | 必填, 預設值: 0 | Is this address for bulk mail ? |
+| hold_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | When the address went on bounce hold |
+| reset_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | When the address bounce status was last reset |
+| signature_text | 字串(text) | 65535 |  | 預設值: NULL | Text formatted signature for the email. |
+| signature_html | 字串(text) | 65535 |  | 預設值: NULL | HTML formatted signature for the email. |
 
 
 ## Email Get API
-
-  API
 
 ### HTTP Method
 ```
@@ -70,8 +68,6 @@ curl -g \
 ```
 
 ## Email Create API
-
-  API
 
 ### HTTP Method
 ```
@@ -142,8 +138,6 @@ curl -g \
 
 ## Email Update API
 
-  API
-
 ### HTTP Method
 ```
 POST
@@ -213,8 +207,6 @@ curl -g \
 ```
 
 ## Email Delete API
-
-  API
 
 ### HTTP Method
 ```

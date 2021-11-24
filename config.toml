@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "netiCRM API Doc Site"
+baseURL = "/api-document"
+languageCode = "zh-tw"
+title = "netiCRM API Documentation"
 theme = "book"

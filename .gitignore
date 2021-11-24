@@ -2,3 +2,4 @@ public/
 .DS_Store
 *.deb
 resources/
+.hugo_build.lock

@@ -4,37 +4,35 @@
 This is a API document about recurring contribution.
 
 
-| {ts}Parameter Name{/ts} | {ts}Field Help{/ts} | {ts}Type{/ts} | {ts}Length{/ts} | {ts}Format{/ts} | {ts}Create Rule{/ts} |
+| {ts}Parameter Name{/ts} | {ts}Type{/ts} | {ts}Length{/ts} | {ts}Format{/ts} | {ts}Create Rule{/ts} | {ts}Field Help{/ts} |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| id | {ts}Contribution Recur ID{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} |
-| contact_id | {ts}Foreign key to civicrm_contact.id .{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} |
-| amount | {ts}Amount to be contributed or charged each recurrence.{/ts} | {ts}Number{/ts}(decimal) | 20,2 | 00.00 | {ts}Required{/ts} |
-| currency | {ts}3 character string, value from config setting or input via user.{/ts} | {ts}String{/ts}(varchar) | 3 |  | {ts}Default Value{/ts}: NULL |
-| frequency_unit | {ts}Time units for recurrence of payment.{/ts} | {ts}String{/ts}(enum) |  | day,week,month,year | {ts}Default Value{/ts}: 'month' |
-| frequency_interval | {ts}Number of time units for recurrence of payment.{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} |
-| installments | {ts}Total number of payments to be made. Set this to 0 if this is an open-ended commitment i.e. no set end date.{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  |
-| start_date | {ts}The date the first scheduled recurring contribution occurs.{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss | {ts}Required{/ts} |
-| create_date | {ts}When this recurring contribution record was created.{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss | {ts}Required{/ts} |
-| modified_date | {ts}Last updated date for this record. mostly the last time a payment was received{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
-| cancel_date | {ts}Date this recurring contribution was cancelled by contributor- if we can get access to it{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
-| end_date | {ts}Date this recurring contribution finished successfully{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
-| processor_id | {ts}FK to payment processor{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  |
-| external_id | {ts}Possibly needed to store a unique identifier for this recurring payment order - if this is available from the processor??{/ts} | {ts}String{/ts}(varchar) | 255 |  |  |
-| trxn_id | {ts}unique transaction id. may be processor id, bank id + trans id, or account number + check number... depending on payment_method{/ts} | {ts}String{/ts}(varchar) | 255 |  |  |
-| invoice_id | {ts}unique invoice id, system generated or passed in{/ts} | {ts}String{/ts}(varchar) | 255 |  |  |
-| contribution_status_id |  | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Default Value{/ts}: 1 |
-| is_test |  | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 |
-| cycle_day | {ts}Day in the period when the payment should be charged e.g. 1st of month, 15th etc.{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts}, {ts}Default Value{/ts}: 1 |
-| next_sched_contribution | {ts}At Groundspring this was used by the cron job which triggered payments. If we\'re not doing that but we know about payments, it might still be useful to store for display to org andor contributors.{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
-| failure_count | {ts}Number of failed charge attempts since last success. Business rule could be set to deactivate on more than x failures.{/ts} | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Default Value{/ts}: 0 |
-| failure_retry_date | {ts}At Groundspring we set a business rule to retry failed payments every 7 days - and stored the next scheduled attempt date there.{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
-| auto_renew | {ts}Some systems allow contributor to set a number of installments - but then auto-renew the subscription or commitment if they do not cancel.{/ts} | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Required{/ts}, {ts}Default Value{/ts}: 0 |
-| last_execute_date | {ts}Last expected execute transaction date.{/ts} | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  |
+| id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} | {ts}Contribution Recur ID{/ts} |
+| contact_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} | {ts}Foreign key to civicrm_contact.id .{/ts} |
+| amount | {ts}Number{/ts}(decimal) | 20,2 | 00.00 | {ts}Required{/ts} | {ts}Amount to be contributed or charged each recurrence.{/ts} |
+| currency | {ts}String{/ts}(varchar) | 3 |  | {ts}Default Value{/ts}: NULL | {ts}3 character string, value from config setting or input via user.{/ts} |
+| frequency_unit | {ts}String{/ts}(enum) |  | day,week,month,year | {ts}Default Value{/ts}: 'month' | {ts}Time units for recurrence of payment.{/ts} |
+| frequency_interval | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts} | {ts}Number of time units for recurrence of payment.{/ts} |
+| installments | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}Total number of payments to be made. Set this to 0 if this is an open-ended commitment i.e. no set end date.{/ts} |
+| start_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss | {ts}Required{/ts} | {ts}The date the first scheduled recurring contribution occurs.{/ts} |
+| create_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss | {ts}Required{/ts} | {ts}When this recurring contribution record was created.{/ts} |
+| modified_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}Last updated date for this record. mostly the last time a payment was received{/ts} |
+| cancel_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}Date this recurring contribution was cancelled by contributor- if we can get access to it{/ts} |
+| end_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}Date this recurring contribution finished successfully{/ts} |
+| processor_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 |  | {ts}FK to payment processor{/ts} |
+| external_id | {ts}String{/ts}(varchar) | 255 |  |  | {ts}Possibly needed to store a unique identifier for this recurring payment order - if this is available from the processor??{/ts} |
+| trxn_id | {ts}String{/ts}(varchar) | 255 |  |  | {ts}unique transaction id. may be processor id, bank id + trans id, or account number + check number... depending on payment_method{/ts} |
+| invoice_id | {ts}String{/ts}(varchar) | 255 |  |  | {ts}unique invoice id, system generated or passed in{/ts} |
+| contribution_status_id | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Default Value{/ts}: 1 |  |
+| is_test | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Default Value{/ts}: 0 |  |
+| cycle_day | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Required{/ts}, {ts}Default Value{/ts}: 1 | {ts}Day in the period when the payment should be charged e.g. 1st of month, 15th etc.{/ts} |
+| next_sched_contribution | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}At Groundspring this was used by the cron job which triggered payments. If we\'re not doing that but we know about payments, it might still be useful to store for display to org andor contributors.{/ts} |
+| failure_count | {ts}Number{/ts}(int unsigned) | 10 | >= 0 | {ts}Default Value{/ts}: 0 | {ts}Number of failed charge attempts since last success. Business rule could be set to deactivate on more than x failures.{/ts} |
+| failure_retry_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}At Groundspring we set a business rule to retry failed payments every 7 days - and stored the next scheduled attempt date there.{/ts} |
+| auto_renew | {ts}Boolean{/ts}(boolean) | 1 | 0 or 1 | {ts}Required{/ts}, {ts}Default Value{/ts}: 0 | {ts}Some systems allow contributor to set a number of installments - but then auto-renew the subscription or commitment if they do not cancel.{/ts} |
+| last_execute_date | {ts}Date{/ts}(datetime) |  | yyyy-mm-dd hh:ii:ss |  | {ts}Last expected execute transaction date.{/ts} |
 
 
 ## Recurring Contribution Get API
-
-{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
 
 ### HTTP Method
 ```
@@ -92,8 +90,6 @@ curl -g \
 {/literal}```
 
 ## Recurring Contribution Create API
-
-{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
 
 ### HTTP Method
 ```
@@ -194,8 +190,6 @@ curl -g \
 
 ## Recurring Contribution Update API
 
-{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
-
 ### HTTP Method
 ```
 POST
@@ -276,8 +270,6 @@ curl -g \
 {/literal}```
 
 ## Recurring Contribution Delete API
-
-{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API
 
 ### HTTP Method
 ```

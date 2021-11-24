@@ -1,8 +1,6 @@
 
 ## {$api_entity} {$api_action} API
 
-{literal}{ts}{$api_entity}{/ts} {ts}{$api_action}{/ts} API{/literal}
-
 ### HTTP Method
 ```
 {$http_method}
