@@ -15,7 +15,6 @@ function doTranslate($params){
 }
 
 function prepareSmarty($params) {
-    $config   = CRM_Core_Config::singleton();
     chdir(__DIR__);
 
     require_once 'Smarty/Smarty.class.php';
@@ -40,6 +39,20 @@ function prepareSmarty($params) {
       )
     );
     return $smarty;
+}
+
+function prepareLocalTranslate() {
+  $strings = array(
+    'Request Example' => '傳送範例',
+    'Response Example' => '回傳範例',
+  );
+  return array(
+    'zh_TW'=> array(
+      'enabled' => array(
+        'exactMatch' => $strings,
+      ),
+    ),
+  );
 }
 
 

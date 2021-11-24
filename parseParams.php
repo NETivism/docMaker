@@ -9,6 +9,7 @@
 
 
 function doParseParams($params) {
+  chdir(__DIR__);
   # mapping type to the string that existing in civicrm.po
   $type_mapping = array(
     'varchar' => 'String',
@@ -29,9 +30,9 @@ function doParseParams($params) {
   $xmlFolder = $baseDir .'/xml/schema/';
   $filePathArray = glob($xmlFolder.'*/'.$entityName.'.xml');
   $file = reset($filePathArray);
+  print $file;
 
   $xml = simplexml_load_file("$file") or die("Error: Cannot create object");
-  $fields = $xml->field;
   $replaceParams = 
   "| {ts}Parameter Name{/ts} | {ts}Type{/ts} | {ts}Length{/ts} | {ts}Format{/ts} | {ts}Create Rule{/ts} | {ts}Field Help{/ts} |
 | ---- | ---- | ---- | ---- | ---- | ---- |";
@@ -39,7 +40,7 @@ function doParseParams($params) {
   $fieldsArray = array();
 
   // Some field appear twice in XML files. Compare the 'Add' attribute.
-  foreach($fields as $field) {
+  foreach($xml->field as $field) {
     if (isset($fieldsArray[$field->name])) {
       $newVersion = (Float) $field->add;
       $originVersion = (Float) $fieldsArray[$field->name]->add;
