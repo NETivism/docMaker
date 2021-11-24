@@ -1,4 +1,5 @@
 baseURL = "/api-document"
 languageCode = "zh-tw"
 title = "netiCRM API Documentation"
-theme = "book"
+theme = "hugo-theme-learn"
+
