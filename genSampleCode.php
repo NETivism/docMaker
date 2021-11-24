@@ -79,7 +79,7 @@ function doGenSampleCode($params) {
 
     // transfer result json to json code block
     $fetchResult = genDoc::$_smarty->fetch($baseTpl);
-    $replaceDesc .= $fetchResult;
+    $replaceDesc .= $fetchResult."\n";
     genDoc::$_smarty->clear_all_assign();
   }
 
