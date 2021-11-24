@@ -462,11 +462,10 @@ h2, h3, h4, h5, h6 {
     letter-spacing: -1px;
 }
 h1 {
-    font-family: "Novacento Sans Wide", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     text-align: center;
-    text-transform: uppercase;
     color: #222;
-    font-weight: 200;
+    font-weight: 500;
 }
 blockquote {
     border-left: 10px solid #F0F2F4;
