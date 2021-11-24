@@ -1,5 +1,8 @@
-# ContributionRecur API
-
++++
+title = "ContributionRecur API"
+menuTitle = "ContributionRecur"
+chapter = false
++++
 
 This is a API document about recurring contribution.
 
@@ -34,22 +37,23 @@ This is a API document about recurring contribution.
 
 ## Recurring Contribution Get API
 
-### HTTP Method
+### 傳送範例
+#### HTTP Method
 ```
 GET
 ```
 
-### Request URL
+#### Request URL
 ```{literal}
 <entrypoint>?entity=contribution_recur&action=get&json={"id":85}
 {/literal}```
 
-### API Explorer
+#### API Explorer
 ```{literal}
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=get&pretty=1&json={"id":85}
 {/literal}```
 
-### curl Example
+#### curl Example
 ```
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
@@ -57,7 +61,7 @@ curl -g \
   '<entrypoint>?entity=contribution_recur&action=get&json={"id":85}'
 ```
 
-### Response Example
+### 回傳範例
 ```{literal}
 {
     "is_error": 0,
@@ -91,22 +95,23 @@ curl -g \
 
 ## Recurring Contribution Create API
 
-### HTTP Method
+### 傳送範例
+#### HTTP Method
 ```
 POST
 ```
 
-### Request URL
+#### Request URL
 ```{literal}
 <entrypoint>?entity=contribution_recur&action=create
 {/literal}```
 
-### Request Content Type
+#### Request Content Type
 ```{literal}
 application/json
 {/literal}```
 
-### Request body
+#### Request body
 ```{literal}
 {
     "contact_id": 661,
@@ -134,12 +139,12 @@ application/json
 }
 {/literal}```
 
-### API Explorer
+#### API Explorer
 ```{literal}
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=create&pretty=1&json={"contact_id":661,"amount":"500.00","currency":"TWD","frequency_unit":"month","frequency_interval":"1","installments":"12","start_date":"2021-10-25 14:03:01","create_date":"2021-10-01 14:03:01","cancel_date":"","end_date":"","processor_id":"","external_id":"","trxn_id":"JBDIxFGe8D","invoice_id":"aYKfxYoCDImHqOqididjLhsvZeOx1yKX","contribution_status_id":5,"is_test":0,"cycle_day":5,"next_sched_contribution":"2021-11-25 14:03:01","failure_count":0,"failure_retry_date":"","auto_renew":0,"last_execute_date":""}
 {/literal}```
 
-### curl Example
+#### curl Example
 ```
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
@@ -150,7 +155,7 @@ curl -g \
   '<entrypoint>?entity=contribution_recur&action=create'
 ```
 
-### Response Example
+### 回傳範例
 ```{literal}
 {
     "is_error": 0,
@@ -190,22 +195,23 @@ curl -g \
 
 ## Recurring Contribution Update API
 
-### HTTP Method
+### 傳送範例
+#### HTTP Method
 ```
 POST
 ```
 
-### Request URL
+#### Request URL
 ```{literal}
 <entrypoint>?entity=contribution_recur&action=create
 {/literal}```
 
-### Request Content Type
+#### Request Content Type
 ```{literal}
 application/json
 {/literal}```
 
-### Request body
+#### Request body
 ```{literal}
 {
     "id": 87,
@@ -215,12 +221,12 @@ application/json
 }
 {/literal}```
 
-### API Explorer
+#### API Explorer
 ```{literal}
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=create&pretty=1&json={"id":87,"contribution_status_id":1,"next_sched_contribution":"","end_date":"2021-11-24 14:03:01"}
 {/literal}```
 
-### curl Example
+#### curl Example
 ```
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
@@ -231,7 +237,7 @@ curl -g \
   '<entrypoint>?entity=contribution_recur&action=create'
 ```
 
-### Response Example
+### 回傳範例
 ```{literal}
 {
     "is_error": 0,
@@ -271,34 +277,35 @@ curl -g \
 
 ## Recurring Contribution Delete API
 
-### HTTP Method
+### 傳送範例
+#### HTTP Method
 ```
 POST
 ```
 
-### Request URL
+#### Request URL
 ```{literal}
 <entrypoint>?entity=contribution_recur&action=delete
 {/literal}```
 
-### Request Content Type
+#### Request Content Type
 ```{literal}
 application/json
 {/literal}```
 
-### Request body
+#### Request body
 ```{literal}
 {
     "id": 88
 }
 {/literal}```
 
-### API Explorer
+#### API Explorer
 ```{literal}
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=delete&pretty=1&json={"id":88}
 {/literal}```
 
-### curl Example
+#### curl Example
 ```
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
@@ -309,7 +316,7 @@ curl -g \
   '<entrypoint>?entity=contribution_recur&action=delete'
 ```
 
-### Response Example
+### 回傳範例
 ```{literal}
 {
     "is_error": 0,
@@ -318,4 +325,3 @@ curl -g \
     "values": 1
 }
 {/literal}```
-

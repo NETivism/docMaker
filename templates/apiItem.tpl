@@ -1,38 +1,40 @@
 
 ## {$api_entity} {$api_action} API
 
-### HTTP Method
+### {ts}Request Example{/ts}
+
+#### HTTP Method
 ```
 {$http_method}
 ```
 
-### Request URL
+#### Request URL
 ```{ldelim}literal{rdelim}
 {$request_url}
 {ldelim}/literal{rdelim}```
 
 {if $request_body && $http_method == 'POST'}
-### Request Content Type
+#### Request Content Type
 ```{ldelim}literal{rdelim}
 {$request_content_type}
 {ldelim}/literal{rdelim}```
 
 {/if}
 {if $request_body && $http_method == 'POST'}
-### Request body
+#### Request body
 ```{ldelim}literal{rdelim}
 {$request_body}
 {ldelim}/literal{rdelim}```
 
 {/if}
 {if $api_explorer}
-### API Explorer
+#### API Explorer
 ```{ldelim}literal{rdelim}
 {$api_explorer}
 {ldelim}/literal{rdelim}```
 {/if}
 
-### curl Example
+#### curl Example
 ```
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
@@ -44,7 +46,8 @@ curl -g \
   '{$request_url}'
 ```
 
-### Response Example
+### {ts}Response Example{/ts}
+
 ```{ldelim}literal{rdelim}
 {$response_body}
 {ldelim}/literal{rdelim}```
