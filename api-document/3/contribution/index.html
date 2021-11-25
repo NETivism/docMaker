@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/api-document/images/favicon.png" type="image/png">
+
+    <title>Contribution API :: netiCRM API Documentation</title>
+
+    
+    <link href="/api-document/css/nucleus.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1637835093" rel="stylesheet">
+    
+    
+
+    <script src="/api-document/js/jquery-3.3.1.min.js?1637835093"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/api-document/3/contribution/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1637835093"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1637835093"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/api-document";
+    
+</script>
+<script type="text/javascript" src="/api-document/js/search.js?1637835093"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/api-document/3/" title="netiCRM API v3 簡介" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/api-document/3/">
+          API 簡介
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/basic/" title="API 基礎操作" class="dd-item ">
+        <a href="/api-document/3/basic/">
+        API 基礎操作
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contact/" title="Contact API" class="dd-item ">
+        <a href="/api-document/3/contact/">
+        Contact
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contribution/" title="Contribution API" class="dd-item active">
+        <a href="/api-document/3/contribution/">
+        Contribution
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contributionpage/" title="Contribution Page API" class="dd-item ">
+        <a href="/api-document/3/contributionpage/">
+        Contribution Page
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contributionrecur/" title="ContributionRecur API" class="dd-item ">
+        <a href="/api-document/3/contributionrecur/">
+        ContributionRecur
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/email/" title="Email API" class="dd-item ">
+        <a href="/api-document/3/email/">
+        Email
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/event/" title="Event API" class="dd-item ">
+        <a href="/api-document/3/event/">
+        Event
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/api-document/webhook/" title="Webhook API 簡介" class="dd-item
+        
+        
+        
+        ">
+      <a href="/api-document/webhook/">
+          Webhook 簡介
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>本文件製作<br>
+  <a href='/'><img src="https://neticrm.tw/sites/neticrm.tw/files/vigor_logo.png" width="100"></a></p>
+
+<p>This Theme Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/api-document/'>netiCRM API 手冊</a> > <a href='/api-document/3/'>netiCRM API v3 簡介</a> > Contribution API
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#contribution-get-api">Contribution Get API</a>
+      <ul>
+        <li><a href="#傳送範例">傳送範例</a></li>
+        <li><a href="#回傳範例">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#contribution-create-api">Contribution Create API</a>
+      <ul>
+        <li><a href="#傳送範例-1">傳送範例</a></li>
+        <li><a href="#回傳範例-1">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#contribution-update-api">Contribution Update API</a>
+      <ul>
+        <li><a href="#傳送範例-2">傳送範例</a></li>
+        <li><a href="#回傳範例-2">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#contribution-delete-api">Contribution Delete API</a>
+      <ul>
+        <li><a href="#傳送範例-3">傳送範例</a></li>
+        <li><a href="#回傳範例-3">回傳範例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Contribution API
+            </h1>
+          
+
+        
+
+
+<p>This is a API Document about contribution.</p>
+<table>
+<thead>
+<tr>
+<th>變數名稱</th>
+<th>類型</th>
+<th>長度</th>
+<th>格式</th>
+<th>建立規則</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td>必填</td>
+<td>Unique Contribution ID</td>
+</tr>
+<tr>
+<td>contact_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td>必填</td>
+<td>FK to Contact ID</td>
+</tr>
+<tr>
+<td>solicitor_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>FK to Solicitor ID</td>
+</tr>
+<tr>
+<td>contribution_type_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>FK to Contribution Type</td>
+</tr>
+<tr>
+<td>contribution_page_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>The Contribution Page which triggered this contribution</td>
+</tr>
+<tr>
+<td>payment_processor_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>FK to Payment Processor</td>
+</tr>
+<tr>
+<td>payment_instrument_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>FK to Payment Instrument</td>
+</tr>
+<tr>
+<td>created_date</td>
+<td>日期(datetime)</td>
+<td></td>
+<td>yyyy-mm-dd hh:ii:ss</td>
+<td></td>
+<td>when was contribution submitted</td>
+</tr>
+<tr>
+<td>receive_date</td>
+<td>日期(datetime)</td>
+<td></td>
+<td>yyyy-mm-dd hh:ii:ss</td>
+<td></td>
+<td>when was gift received(or got authorized by credit card)</td>
+</tr>
+<tr>
+<td>non_deductible_amount</td>
+<td>數字(decimal)</td>
+<td>20,2</td>
+<td>00.00</td>
+<td>預設值: 0</td>
+<td>Portion of total amount which is NOT tax deductible.</td>
+</tr>
+<tr>
+<td>total_amount</td>
+<td>數字(decimal)</td>
+<td>20,2</td>
+<td>00.00</td>
+<td>必填</td>
+<td>Total amount of this contribution.</td>
+</tr>
+<tr>
+<td>fee_amount</td>
+<td>數字(decimal)</td>
+<td>20,2</td>
+<td>00.00</td>
+<td></td>
+<td>Payment processor fee when available.</td>
+</tr>
+<tr>
+<td>net_amount</td>
+<td>數字(decimal)</td>
+<td>20,2</td>
+<td>00.00</td>
+<td></td>
+<td>net amount + fee amount = total amount</td>
+</tr>
+<tr>
+<td>trxn_id</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td>unique transaction id by this application</td>
+</tr>
+<tr>
+<td>invoice_id</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td>unique invoice id, system generated or passed in</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>字串(varchar)</td>
+<td>3</td>
+<td></td>
+<td>預設值: NULL</td>
+<td>3 character string, value from config setting.</td>
+</tr>
+<tr>
+<td>cancel_date</td>
+<td>日期(datetime)</td>
+<td></td>
+<td>yyyy-mm-dd hh:ii:ss</td>
+<td></td>
+<td>when was gift cancelled</td>
+</tr>
+<tr>
+<td>cancel_reason</td>
+<td>字串(text)</td>
+<td>65535</td>
+<td></td>
+<td></td>
+<td>Reason that gift was cancelled</td>
+</tr>
+<tr>
+<td>receipt_date</td>
+<td>日期(datetime)</td>
+<td></td>
+<td>yyyy-mm-dd hh:ii:ss</td>
+<td></td>
+<td>Record date after (email)receipt sent.</td>
+</tr>
+<tr>
+<td>thankyou_date</td>
+<td>日期(datetime)</td>
+<td></td>
+<td>yyyy-mm-dd hh:ii:ss</td>
+<td></td>
+<td>when (if) was donor thanked</td>
+</tr>
+<tr>
+<td>source</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td>Origin of this Contribution.</td>
+</tr>
+<tr>
+<td>amount_level</td>
+<td>字串(text)</td>
+<td>65535</td>
+<td></td>
+<td></td>
+<td>Amount level / label that donor choose in contribution page.</td>
+</tr>
+<tr>
+<td>note</td>
+<td>字串(text)</td>
+<td>65535</td>
+<td></td>
+<td></td>
+<td>Note and/or Comment.</td>
+</tr>
+<tr>
+<td>contribution_recur_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>FK to Contribution Recurring. If this set, this contribution is belong to a recurring order.</td>
+</tr>
+<tr>
+<td>honor_contact_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>FK to contact ID. If this set, contribution is honor of other contact.</td>
+</tr>
+<tr>
+<td>is_test</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 0</td>
+<td>Mark 1 when this order is a testing contribution.</td>
+</tr>
+<tr>
+<td>is_pay_later</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 0</td>
+<td>Mark 1 when this order is not paid by real-time payment instrument. eg. ATM is not real-time.</td>
+</tr>
+<tr>
+<td>contribution_status_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td>預設值: 1</td>
+<td>1=completed, 2=pending, 3=cancel, 4=failed</td>
+</tr>
+<tr>
+<td>honor_type_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Implicit FK to civicrm_option_value.</td>
+</tr>
+<tr>
+<td>address_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Conditional foreign key to civicrm_address.id. We insert an address record for each contribution when we have associated billing name and address data.</td>
+</tr>
+<tr>
+<td>check_number</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>receipt_id</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>expire_date</td>
+<td>日期(datetime)</td>
+<td></td>
+<td>yyyy-mm-dd hh:ii:ss</td>
+<td></td>
+<td>when is payment expiration</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contribution-get-api">Contribution Get API</h2>
+<h3 id="傳送範例">傳送範例</h3>
+<h4 id="http-method">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contribution&amp;action=get&amp;json={&quot;contribution_id&quot;:186}
+</code></pre><h4 id="api-explorer">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&amp;action=get&amp;pretty=1&amp;json={&quot;contribution_id&quot;:186}
+</code></pre><h4 id="curl-example">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=Contribution&amp;action=get&amp;json='
+</code></pre><h3 id="回傳範例">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 1,
+    &quot;id&quot;: 186,
+    &quot;values&quot;: {
+        &quot;186&quot;: {
+            &quot;contact_id&quot;: &quot;539&quot;,
+            &quot;contact_type&quot;: &quot;Individual&quot;,
+            &quot;contact_sub_type&quot;: &quot;&quot;,
+            &quot;sort_name&quot;: &quot;Test axcKQ Unit&quot;,
+            &quot;display_name&quot;: &quot;Test axcKQ Unit&quot;,
+            &quot;contribution_id&quot;: &quot;186&quot;,
+            &quot;currency&quot;: &quot;USD&quot;,
+            &quot;contribution_page_id&quot;: &quot;&quot;,
+            &quot;created_date&quot;: &quot;2021-11-23 19:19:49&quot;,
+            &quot;receive_date&quot;: &quot;2021-11-23 19:19:49&quot;,
+            &quot;non_deductible_amount&quot;: &quot;10.00&quot;,
+            &quot;total_amount&quot;: &quot;100.00&quot;,
+            &quot;fee_amount&quot;: &quot;50.00&quot;,
+            &quot;net_amount&quot;: &quot;90.00&quot;,
+            &quot;trxn_id&quot;: &quot;P026IUyL9B&quot;,
+            &quot;invoice_id&quot;: &quot;xQNLHVDVSM&quot;,
+            &quot;cancel_date&quot;: &quot;&quot;,
+            &quot;cancel_reason&quot;: &quot;&quot;,
+            &quot;receipt_date&quot;: &quot;&quot;,
+            &quot;thankyou_date&quot;: &quot;&quot;,
+            &quot;contribution_source&quot;: &quot;Contribution Unit Test&quot;,
+            &quot;amount_level&quot;: &quot;&quot;,
+            &quot;is_test&quot;: &quot;0&quot;,
+            &quot;is_pay_later&quot;: &quot;0&quot;,
+            &quot;check_number&quot;: &quot;&quot;,
+            &quot;receipt_id&quot;: &quot;&quot;,
+            &quot;contribution_type_id&quot;: &quot;1&quot;,
+            &quot;contribution_type&quot;: &quot;\u4e00\u822c\u6350\u6b3e&quot;,
+            &quot;accounting_code&quot;: &quot;&quot;,
+            &quot;payment_instrument_id&quot;: &quot;&quot;,
+            &quot;payment_instrument&quot;: &quot;&quot;,
+            &quot;product_id&quot;: &quot;&quot;,
+            &quot;product_name&quot;: &quot;&quot;,
+            &quot;sku&quot;: &quot;&quot;,
+            &quot;contribution_product_id&quot;: &quot;&quot;,
+            &quot;product_option&quot;: &quot;&quot;,
+            &quot;fulfilled_date&quot;: &quot;&quot;,
+            &quot;contribution_start_date&quot;: &quot;&quot;,
+            &quot;contribution_end_date&quot;: &quot;&quot;,
+            &quot;contribution_recur_id&quot;: &quot;&quot;,
+            &quot;contribution_note&quot;: &quot;&quot;,
+            &quot;contribution_status_id&quot;: &quot;1&quot;,
+            &quot;contribution_status&quot;: &quot;\u5df2\u5b8c\u6210&quot;,
+            &quot;contribution_payment_instrument&quot;: &quot;&quot;,
+            &quot;contribution_check_number&quot;: &quot;&quot;,
+            &quot;contribution_referrer_type&quot;: &quot;&quot;,
+            &quot;civicrm_value_shou_ju_zi_xun_1_id&quot;: &quot;&quot;,
+            &quot;custom_1&quot;: &quot;&quot;,
+            &quot;custom_2&quot;: &quot;&quot;,
+            &quot;custom_3&quot;: &quot;&quot;,
+            &quot;custom_4&quot;: &quot;&quot;
+        }
+    }
+}
+</code></pre><h2 id="contribution-create-api">Contribution Create API</h2>
+<h3 id="傳送範例-1">傳送範例</h3>
+<h4 id="http-method-1">HTTP Method</h4>
+<pre tabindex="0"><code>POST
+</code></pre><h4 id="request-url-1">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contribution&amp;action=create
+</code></pre><h4 id="request-content-type">Request Content Type</h4>
+<pre tabindex="0"><code>application/json
+</code></pre><h4 id="request-body">Request body</h4>
+<pre tabindex="0"><code>{
+    &quot;contact_id&quot;: 540,
+    &quot;receive_date&quot;: &quot;2021-11-23 19:19:49&quot;,
+    &quot;total_amount&quot;: 100,
+    &quot;contribution_type_id&quot;: 1,
+    &quot;non_deductible_amount&quot;: 10,
+    &quot;fee_amount&quot;: 50,
+    &quot;net_amount&quot;: 90,
+    &quot;source&quot;: &quot;Contribution Unit Test&quot;,
+    &quot;contribution_status_id&quot;: 1,
+    &quot;trxn_id&quot;: &quot;30IuTSVS39&quot;,
+    &quot;invoice_id&quot;: &quot;SPVZjY9rpK&quot;,
+    &quot;payment_instrument_id&quot;: 1
+}
+</code></pre><h4 id="api-explorer-1">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&amp;action=create&amp;pretty=1&amp;json={&quot;contact_id&quot;:540,&quot;receive_date&quot;:&quot;2021-11-23 19:19:49&quot;,&quot;total_amount&quot;:100,&quot;contribution_type_id&quot;:1,&quot;non_deductible_amount&quot;:10,&quot;fee_amount&quot;:50,&quot;net_amount&quot;:90,&quot;source&quot;:&quot;Contribution Unit Test&quot;,&quot;contribution_status_id&quot;:1,&quot;trxn_id&quot;:&quot;30IuTSVS39&quot;,&quot;invoice_id&quot;:&quot;SPVZjY9rpK&quot;,&quot;payment_instrument_id&quot;:1}
+</code></pre><h4 id="curl-example-1">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{&quot;contact_id&quot;:540,&quot;receive_date&quot;:&quot;2021-11-23 19:19:49&quot;,&quot;total_amount&quot;:100,&quot;contribution_type_id&quot;:1,&quot;non_deductible_amount&quot;:10,&quot;fee_amount&quot;:50,&quot;net_amount&quot;:90,&quot;source&quot;:&quot;Contribution Unit Test&quot;,&quot;contribution_status_id&quot;:1,&quot;trxn_id&quot;:&quot;30IuTSVS39&quot;,&quot;invoice_id&quot;:&quot;SPVZjY9rpK&quot;,&quot;payment_instrument_id&quot;:1}' \
+  '&lt;entrypoint&gt;?entity=Contribution&amp;action=create'
+</code></pre><h3 id="回傳範例-1">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 1,
+    &quot;id&quot;: 188,
+    &quot;values&quot;: {
+        &quot;188&quot;: {
+            &quot;id&quot;: &quot;188&quot;,
+            &quot;contact_id&quot;: &quot;540&quot;,
+            &quot;contribution_type_id&quot;: &quot;1&quot;,
+            &quot;contribution_page_id&quot;: &quot;&quot;,
+            &quot;payment_processor_id&quot;: &quot;&quot;,
+            &quot;payment_instrument_id&quot;: &quot;1&quot;,
+            &quot;created_date&quot;: &quot;20211123191949&quot;,
+            &quot;receive_date&quot;: &quot;20211123191949&quot;,
+            &quot;non_deductible_amount&quot;: &quot;10&quot;,
+            &quot;total_amount&quot;: &quot;100&quot;,
+            &quot;fee_amount&quot;: &quot;50&quot;,
+            &quot;net_amount&quot;: &quot;90&quot;,
+            &quot;trxn_id&quot;: &quot;30IuTSVS39&quot;,
+            &quot;invoice_id&quot;: &quot;SPVZjY9rpK&quot;,
+            &quot;currency&quot;: &quot;USD&quot;,
+            &quot;cancel_date&quot;: &quot;&quot;,
+            &quot;cancel_reason&quot;: &quot;&quot;,
+            &quot;receipt_date&quot;: &quot;&quot;,
+            &quot;thankyou_date&quot;: &quot;&quot;,
+            &quot;source&quot;: &quot;Contribution Unit Test&quot;,
+            &quot;amount_level&quot;: &quot;&quot;,
+            &quot;contribution_recur_id&quot;: &quot;&quot;,
+            &quot;honor_contact_id&quot;: &quot;&quot;,
+            &quot;is_test&quot;: &quot;&quot;,
+            &quot;is_pay_later&quot;: &quot;&quot;,
+            &quot;contribution_status_id&quot;: &quot;1&quot;,
+            &quot;honor_type_id&quot;: &quot;&quot;,
+            &quot;address_id&quot;: &quot;&quot;,
+            &quot;check_number&quot;: &quot;null&quot;,
+            &quot;receipt_id&quot;: &quot;&quot;,
+            &quot;expire_date&quot;: &quot;&quot;
+        }
+    }
+}
+</code></pre><h2 id="contribution-update-api">Contribution Update API</h2>
+<h3 id="傳送範例-2">傳送範例</h3>
+<h4 id="http-method-2">HTTP Method</h4>
+<pre tabindex="0"><code>POST
+</code></pre><h4 id="request-url-2">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contribution&amp;action=create
+</code></pre><h4 id="request-content-type-1">Request Content Type</h4>
+<pre tabindex="0"><code>application/json
+</code></pre><h4 id="request-body-1">Request body</h4>
+<pre tabindex="0"><code>{
+    &quot;id&quot;: 194,
+    &quot;total_amount&quot;: 9999,
+    &quot;contribution_type_id&quot;: 1,
+    &quot;non_deductible_amount&quot;: 10,
+    &quot;net_amount&quot;: 100,
+    &quot;contribution_status_id&quot;: 3,
+    &quot;cancel_date&quot;: &quot;20211123191951&quot;,
+    &quot;cancel_reason&quot;: &quot;The reason to cancel&quot;
+}
+</code></pre><h4 id="api-explorer-2">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&amp;action=create&amp;pretty=1&amp;json={&quot;id&quot;:194,&quot;total_amount&quot;:9999,&quot;contribution_type_id&quot;:1,&quot;non_deductible_amount&quot;:10,&quot;net_amount&quot;:100,&quot;contribution_status_id&quot;:3,&quot;cancel_date&quot;:&quot;20211123191951&quot;,&quot;cancel_reason&quot;:&quot;The reason to cancel&quot;}
+</code></pre><h4 id="curl-example-2">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{&quot;id&quot;:194,&quot;total_amount&quot;:9999,&quot;contribution_type_id&quot;:1,&quot;non_deductible_amount&quot;:10,&quot;net_amount&quot;:100,&quot;contribution_status_id&quot;:3,&quot;cancel_date&quot;:&quot;20211123191951&quot;,&quot;cancel_reason&quot;:&quot;The reason to cancel&quot;}' \
+  '&lt;entrypoint&gt;?entity=Contribution&amp;action=create'
+</code></pre><h3 id="回傳範例-2">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 1,
+    &quot;id&quot;: 194,
+    &quot;values&quot;: {
+        &quot;194&quot;: {
+            &quot;id&quot;: &quot;194&quot;,
+            &quot;contact_id&quot;: &quot;&quot;,
+            &quot;contribution_type_id&quot;: &quot;1&quot;,
+            &quot;contribution_page_id&quot;: &quot;&quot;,
+            &quot;payment_processor_id&quot;: &quot;&quot;,
+            &quot;payment_instrument_id&quot;: &quot;&quot;,
+            &quot;created_date&quot;: &quot;&quot;,
+            &quot;receive_date&quot;: &quot;&quot;,
+            &quot;non_deductible_amount&quot;: &quot;10&quot;,
+            &quot;total_amount&quot;: &quot;9999&quot;,
+            &quot;fee_amount&quot;: &quot;&quot;,
+            &quot;net_amount&quot;: &quot;100&quot;,
+            &quot;trxn_id&quot;: &quot;&quot;,
+            &quot;invoice_id&quot;: &quot;&quot;,
+            &quot;currency&quot;: &quot;USD&quot;,
+            &quot;cancel_date&quot;: &quot;20211123191951&quot;,
+            &quot;cancel_reason&quot;: &quot;The reason to cancel&quot;,
+            &quot;receipt_date&quot;: &quot;&quot;,
+            &quot;thankyou_date&quot;: &quot;&quot;,
+            &quot;source&quot;: &quot;&quot;,
+            &quot;amount_level&quot;: &quot;&quot;,
+            &quot;contribution_recur_id&quot;: &quot;&quot;,
+            &quot;honor_contact_id&quot;: &quot;&quot;,
+            &quot;is_test&quot;: &quot;&quot;,
+            &quot;is_pay_later&quot;: &quot;&quot;,
+            &quot;contribution_status_id&quot;: &quot;3&quot;,
+            &quot;honor_type_id&quot;: &quot;&quot;,
+            &quot;address_id&quot;: &quot;&quot;,
+            &quot;check_number&quot;: &quot;&quot;,
+            &quot;receipt_id&quot;: &quot;&quot;,
+            &quot;expire_date&quot;: &quot;&quot;
+        }
+    }
+}
+</code></pre><h2 id="contribution-delete-api">Contribution Delete API</h2>
+<h3 id="傳送範例-3">傳送範例</h3>
+<h4 id="http-method-3">HTTP Method</h4>
+<pre tabindex="0"><code>POST
+</code></pre><h4 id="request-url-3">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contribution&amp;action=delete
+</code></pre><h4 id="request-content-type-2">Request Content Type</h4>
+<pre tabindex="0"><code>application/json
+</code></pre><h4 id="request-body-2">Request body</h4>
+<pre tabindex="0"><code>{
+    &quot;id&quot;: 195
+}
+</code></pre><h4 id="api-explorer-3">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&amp;action=delete&amp;pretty=1&amp;json={&quot;id&quot;:195}
+</code></pre><h4 id="curl-example-3">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{&quot;id&quot;:195}' \
+  '&lt;entrypoint&gt;?entity=Contribution&amp;action=delete'
+</code></pre><h3 id="回傳範例-3">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 1,
+    &quot;id&quot;: 195,
+    &quot;values&quot;: {
+        &quot;195&quot;: 1
+    }
+}
+</code></pre>
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/api-document/3/contact/" title="Contact API"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/api-document/3/contributionpage/" title="Contribution Page API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/api-document/js/clipboard.min.js?1637835093"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1637835093"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1637835093"></script>
+    <script src="/api-document/js/jquery.sticky.js?1637835093"></script>
+    <script src="/api-document/js/featherlight.min.js?1637835093"></script>
+    <script src="/api-document/js/highlight.pack.js?1637835093"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1637835093"></script>
+    <script src="/api-document/js/learn.js?1637835093"></script>
+    <script src="/api-document/js/hugo-learn.js?1637835093"></script>
+    
+        
+            <script src="/api-document/mermaid/mermaid.js?1637835093"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+

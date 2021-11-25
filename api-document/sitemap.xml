@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>/api-document/3/basic/</loc>
+  </url><url>
+    <loc>/api-document/3/contact/</loc>
+  </url><url>
+    <loc>/api-document/categories/</loc>
+  </url><url>
+    <loc>/api-document/3/contribution/</loc>
+  </url><url>
+    <loc>/api-document/3/contributionpage/</loc>
+  </url><url>
+    <loc>/api-document/3/contributionrecur/</loc>
+  </url><url>
+    <loc>/api-document/3/email/</loc>
+  </url><url>
+    <loc>/api-document/3/event/</loc>
+  </url><url>
+    <loc>/api-document/3/</loc>
+  </url><url>
+    <loc>/api-document/</loc>
+  </url><url>
+    <loc>/api-document/tags/</loc>
+  </url><url>
+    <loc>/api-document/webhook/</loc>
+  </url>
+</urlset>

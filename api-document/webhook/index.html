@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/api-document/images/favicon.png" type="image/png">
+
+    <title>Webhook API 簡介 :: netiCRM API Documentation</title>
+
+    
+    <link href="/api-document/css/nucleus.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1637835093" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1637835093" rel="stylesheet">
+    
+    
+
+    <script src="/api-document/js/jquery-3.3.1.min.js?1637835093"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/api-document/webhook/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1637835093"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1637835093"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/api-document";
+    
+</script>
+<script type="text/javascript" src="/api-document/js/search.js?1637835093"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/api-document/3/" title="netiCRM API v3 簡介" class="dd-item
+        
+        
+        
+        ">
+      <a href="/api-document/3/">
+          API 簡介
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/basic/" title="API 基礎操作" class="dd-item ">
+        <a href="/api-document/3/basic/">
+        API 基礎操作
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contact/" title="Contact API" class="dd-item ">
+        <a href="/api-document/3/contact/">
+        Contact
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contribution/" title="Contribution API" class="dd-item ">
+        <a href="/api-document/3/contribution/">
+        Contribution
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contributionpage/" title="Contribution Page API" class="dd-item ">
+        <a href="/api-document/3/contributionpage/">
+        Contribution Page
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contributionrecur/" title="ContributionRecur API" class="dd-item ">
+        <a href="/api-document/3/contributionrecur/">
+        ContributionRecur
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/email/" title="Email API" class="dd-item ">
+        <a href="/api-document/3/email/">
+        Email
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/event/" title="Event API" class="dd-item ">
+        <a href="/api-document/3/event/">
+        Event
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/api-document/webhook/" title="Webhook API 簡介" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="/api-document/webhook/">
+          Webhook 簡介
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>本文件製作<br>
+  <a href='/'><img src="https://neticrm.tw/sites/neticrm.tw/files/vigor_logo.png" width="100"></a></p>
+
+<p>This Theme Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/api-document/'>netiCRM API 手冊</a> > Webhook API 簡介
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#webhook-api-簡介">Webhook API 簡介</a></li>
+    <li><a href="#webhook-api-使用入口">Webhook API 使用入口</a></li>
+    <li><a href="#設定">設定</a></li>
+    <li><a href="#redirection-webhook">Redirection Webhook</a>
+      <ul>
+        <li><a href="#發送範例">發送範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#notification-webhook">Notification Webhook</a>
+      <ul>
+        <li><a href="#發送範例-1">發送範例</a></li>
+        <li><a href="#回傳範例">回傳範例</a></li>
+        <li><a href="#驗證回傳值">驗證回傳值</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Webhook API 簡介
+            </h1>
+          
+
+        
+
+
+
+	<h2 id="webhook-api-簡介">Webhook API 簡介</h2>
+<p>可以自訂當捐款者捐款交易完成後，以及通知最新一筆捐款交易的資訊到指定的網址。
+利用 HTTP POST 傳送請求，帶入指定參數可以進行Webhook的觸發動作。</p>
+<h2 id="webhook-api-使用入口">Webhook API 使用入口</h2>
+<p>本文件所述的 <!-- raw HTML omitted --> 表示網站網域名稱
+本文件所有的 <!-- raw HTML omitted --> ，也就是 API 的入口，為CRM的活動頁或募款頁</p>
+<pre tabindex="0"><code>https://&lt;site-domain&gt;/civicrm/contribute/transact?reset=1&amp;id=&lt;page_id&gt;
+</code></pre><pre tabindex="0"><code>https://&lt;site-domain&gt;/civicrm/event/info?reset=1&amp;id=&lt;event_id&gt;
+</code></pre><p>之後文件所述的<!-- raw HTML omitted -->替代符號，皆是此網址，也請注意，網址需要將<!-- raw HTML omitted -->替換為自己網站的網域名稱。</p>
+<h2 id="設定">設定</h2>
+<p>netiCRM的網站設定中，需要事先設定完以下常數，Webhook僅會於指定的網域驗證通過後觸發。</p>
+<p>以https開頭指定Webhook網域: <code>&lt;civicrm_webhook_domain&gt;</code>
+驗證用的Secret: <code>&lt;civicrm_webhook_secret&gt;</code></p>
+<p>下文將會以這兩個變數說明</p>
+<h2 id="redirection-webhook">Redirection Webhook</h2>
+<p>_wh_redirect&quot;回傳value中的網址，進行轉址。設定轉址網址只需要更改value雙引號中間的網址。</p>
+<h3 id="發送範例">發送範例</h3>
+<h4 id="http-方法">HTTP 方法</h4>
+<p><code>POST</code></p>
+<h4 id="request-content-type">Request Content Type</h4>
+<p><code>application/x-www-form-urlencoded</code></p>
+<h4 id="request-url">Request URL</h4>
+<p><code>&lt;entrypoint&gt;</code></p>
+<h4 id="request-body">Request Body</h4>
+<p><code>_wh_redirect=&lt;civicrm_webhook_domain&gt;/your-redirection-path</code></p>
+<h4 id="curl-發送範例">curl 發送範例</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--request POST -d <span style="color:#e6db74">&#39;_wh_redirect=&lt;civicrm_webhook_domain&gt;/your-redirection-path&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#39;&lt;endpoint&gt;&#39;</span>
+</code></pre></div><h2 id="notification-webhook">Notification Webhook</h2>
+<h3 id="發送範例-1">發送範例</h3>
+<h4 id="http-方法-1">HTTP 方法</h4>
+<p><code>POST</code></p>
+<h4 id="request-content-type-1">Request Content Type</h4>
+<p><code>application/x-www-form-urlencoded</code></p>
+<h4 id="request-url-1">Request URL</h4>
+<p><code>&lt;entrypoint&gt;</code></p>
+<h4 id="request-body-1">Request Body</h4>
+<p><code>_wh_notify=&lt;civicrm_webhook_domain&gt;</code></p>
+<h4 id="curl-發送範例-1">curl 發送範例</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl <span style="color:#ae81ff">\ </span>
+--request POST -d <span style="color:#e6db74">&#39;_wh_notify=&lt;civicrm_webhook_domain&gt;/your-notification-path&#39;</span> <span style="color:#ae81ff">\ </span>
+<span style="color:#e6db74">&#39;&lt;endpoint&gt;&#39;</span>
+</code></pre></div><h3 id="回傳範例">回傳範例</h3>
+<p>回傳的捐款資訊會通知到指定的網址。回傳的捐款資訊內容請見下方回傳格式的範例。</p>
+<h5 id="response-header">Response Header:</h5>
+<p>記錄網站網域、捐款通知回傳的格式、WebhookID與內容的字數</p>
+<pre tabindex="0"><code>Content-Type: application/json
+X-Civicrm-Webhook-Signature: ********************
+</code></pre><h5 id="response-body">Response Body:</h5>
+<p>預設回傳格式為JSON，被記錄的捐款資訊欄位是固定的，如下範例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;contact_id&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,
+    <span style="color:#f92672">&#34;external_identifier&#34;</span>:<span style="color:#e6db74">&#34;abcd1234&#34;</span>,
+    <span style="color:#f92672">&#34;contribution_id&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,
+    <span style="color:#f92672">&#34;contribution_page_id&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,
+    <span style="color:#f92672">&#34;contribution_type_id&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,
+    <span style="color:#f92672">&#34;payment_instrument_id&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;trxn_id&#34;</span>:<span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;contribution_status_id&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,
+    <span style="color:#f92672">&#34;amount_level&#34;</span>:<span style="color:#e6db74">&#34;XXX&#34;</span>,
+    <span style="color:#f92672">&#34;currency&#34;</span>:<span style="color:#e6db74">&#34;TWD&#34;</span>,
+    <span style="color:#f92672">&#34;total_amount&#34;</span>:<span style="color:#e6db74">&#34;200.00&#34;</span>,
+    <span style="color:#f92672">&#34;receipt_id&#34;</span>:<span style="color:#e6db74">&#34;***********&#34;</span>,
+    <span style="color:#f92672">&#34;receipt_date&#34;</span>:<span style="color:#e6db74">&#34;2021-08-18 15:51:00&#34;</span>,
+    <span style="color:#f92672">&#34;created_date&#34;</span>:<span style="color:#e6db74">&#34;2021-08-18 15:07:13&#34;</span>,
+    <span style="color:#f92672">&#34;receive_date&#34;</span>:<span style="color:#e6db74">&#34;2021-08-18 17:13:00&#34;</span>
+}
+</code></pre></div><h3 id="驗證回傳值">驗證回傳值</h3>
+<p>接收到 Notification 後，建議您務必驗證來源
+HTTP Header 將會附上 <code>X-Civicrm-Webhook-Signature</code> 這個字串標記。
+接收到此標記後，請您使用 <code>&lt;civicrm_webhook_secret&gt;</code> 密鑰搭配進行驗證</p>
+<p>驗證方式說明如下：
+netiCRM 使用 HMAC sha1演算法進行加密，針對每筆捐款交易產生一組簽名與密鑰。透過相同方式進行驗算，比對 <code>X-Civicrm-Webhook-Signature</code> 的簽名與 <code>&lt;civicrm_webhook_secret&gt;</code> 密鑰雜湊運算後是否相符合，驗證 HTTP POST request 是不是來自於 netiCRM。以下以PHP為例。</p>
+<h4 id="驗證範例">驗證範例</h4>
+<pre tabindex="0"><code>$hash = hash_hmac('sha1', $json_body, '&lt;civicrm_webhook_secret&gt;');
+echo $hash; # this should be the same with X-Civicrm-Webhook-Signature
+</code></pre>
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/api-document/3/event/" title="Event API"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/api-document/3/" title="netiCRM API v3 簡介" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/api-document/js/clipboard.min.js?1637835093"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1637835093"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1637835093"></script>
+    <script src="/api-document/js/jquery.sticky.js?1637835093"></script>
+    <script src="/api-document/js/featherlight.min.js?1637835093"></script>
+    <script src="/api-document/js/highlight.pack.js?1637835093"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1637835093"></script>
+    <script src="/api-document/js/learn.js?1637835093"></script>
+    <script src="/api-document/js/hugo-learn.js?1637835093"></script>
+    
+        
+            <script src="/api-document/mermaid/mermaid.js?1637835093"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
