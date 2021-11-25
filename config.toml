@@ -3,6 +3,7 @@ languageCode = "zh-tw"
 title = "netiCRM API Documentation"
 theme = "hugo-theme-learn"
 
+publishDir = "api-document"
 [outputs]
   home = ["HTML", "JSON"]
 

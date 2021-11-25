@@ -23,14 +23,21 @@ curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest \
  && dpkg -i hugo*_Linux-64bit.deb
  ```
 
-2. Get hugo [themes/book](https://github.com/alex-shpak/hugo-book)
-Run this command to clone the theme from github if themes/book folder is empty:
-```bash
-git submodule update --init
-```
+2. We aleady download [hugo theme learn](https://github.com/matcornic/hugo-theme-learn)
 
-3. Build html file
+3. Build html file with default config.toml
 Run this command and you will get html file in public folder.
 ```bash
 hugo
+```
+
+# Update theme
+
+We have modified some theme tempalte and css.
+Make sure test before publish
+Run this command to clone the theme from github if themes/book folder is empty:
+```bash
+cd /tmp
+git clone https://github.com/matcornic/hugo-theme-learn
+cp -R hugo-theme-learn/* themes/hugo-theme-learn/
 ```
