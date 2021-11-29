@@ -1,7 +1,7 @@
 {
-    "contact_id": 337,
-    "location_type_id": 640,
+    "contact_id": 26,
+    "location_type_id": 16,
     "email": "test.update@civicrm.test.org",
     "is_primary": 1,
-    "id": 570
+    "id": 27
 }

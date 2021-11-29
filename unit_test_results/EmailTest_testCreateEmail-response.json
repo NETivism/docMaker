@@ -2,12 +2,12 @@
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 566,
-    "values": {
-        "566": {
-            "id": "566",
-            "contact_id": "333",
-            "location_type_id": "632",
+    "id": 23,
+    "values": [
+        {
+            "id": "23",
+            "contact_id": "22",
+            "location_type_id": "8",
             "email": "api.test@civicrm.test.org",
             "is_primary": "1",
             "is_billing": "",
@@ -18,5 +18,5 @@
             "signature_text": "",
             "signature_html": ""
         }
-    }
+    ]
 }
