@@ -63,7 +63,7 @@ CURL 發送範例 curl -g \ --header &amp;#39;x-civicrm-api-key: &amp;lt;secret-
     </item>
     
     <item>
-      <title>ContributionRecur API</title>
+      <title>Contribution Recurring API</title>
       <link>/api-document/3/contributionrecur/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
