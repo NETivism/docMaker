@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/api-document/images/favicon.png" type="image/png">
+
+    <title>Get Options API :: netiCRM API Documentation</title>
+
+    
+    <link href="/api-document/css/nucleus.css?1638216959" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1638216959" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1638216959" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1638216959" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1638216959" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1638216959" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1638216959" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1638216959" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1638216959" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1638216959" rel="stylesheet">
+    
+    
+
+    <script src="/api-document/js/jquery-3.3.1.min.js?1638216959"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/api-document/3/getoptions/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1638216959"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1638216959"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/api-document";
+    
+</script>
+<script type="text/javascript" src="/api-document/js/search.js?1638216959"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/api-document/3/" title="netiCRM API v3 簡介" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/api-document/3/">
+          API 簡介
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/basic/" title="API 基礎操作" class="dd-item ">
+        <a href="/api-document/3/basic/">
+        API 基礎操作
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contact/" title="Contact API" class="dd-item ">
+        <a href="/api-document/3/contact/">
+        Contact
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contribution/" title="Contribution API" class="dd-item ">
+        <a href="/api-document/3/contribution/">
+        Contribution
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contributionpage/" title="Contribution Page API" class="dd-item ">
+        <a href="/api-document/3/contributionpage/">
+        Contribution Page
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contributionrecur/" title="Contribution Recurring API" class="dd-item ">
+        <a href="/api-document/3/contributionrecur/">
+        Contribution Recurring
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/email/" title="Email API" class="dd-item ">
+        <a href="/api-document/3/email/">
+        Email
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/event/" title="Event API" class="dd-item ">
+        <a href="/api-document/3/event/">
+        Event
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/getoptions/" title="Get Options API" class="dd-item active">
+        <a href="/api-document/3/getoptions/">
+        Get Options
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/api-document/webhook/" title="Webhook API 簡介" class="dd-item
+        
+        
+        
+        ">
+      <a href="/api-document/webhook/">
+          Webhook 簡介
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>本文件製作<br>
+  <a href='/'><img src="https://neticrm.tw/sites/neticrm.tw/files/vigor_logo.png" width="100"></a></p>
+
+<p>This Theme Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/api-document/'>netiCRM API 手冊</a> > <a href='/api-document/3/'>netiCRM API v3 簡介</a> > Get Options API
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#field_name-options-api">&lt;field_name&gt; options API</a>
+      <ul>
+        <li><a href="#傳送範例">傳送範例</a></li>
+        <li><a href="#回傳範例">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact_type-options-api">contact_type options API</a>
+      <ul>
+        <li><a href="#傳送範例-1">傳送範例</a></li>
+        <li><a href="#回傳範例-1">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact_sub_type-options-api">contact_sub_type options API</a>
+      <ul>
+        <li><a href="#傳送範例-2">傳送範例</a></li>
+        <li><a href="#回傳範例-2">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#prefix_id-options-api">prefix_id options API</a>
+      <ul>
+        <li><a href="#傳送範例-3">傳送範例</a></li>
+        <li><a href="#回傳範例-3">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#suffix_id-options-api">suffix_id options API</a>
+      <ul>
+        <li><a href="#傳送範例-4">傳送範例</a></li>
+        <li><a href="#回傳範例-4">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#gender_id-options-api">gender_id options API</a>
+      <ul>
+        <li><a href="#傳送範例-5">傳送範例</a></li>
+        <li><a href="#回傳範例-5">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#location_type_id-options-api">location_type_id options API</a>
+      <ul>
+        <li><a href="#傳送範例-6">傳送範例</a></li>
+        <li><a href="#回傳範例-6">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#worldregion_id-options-api">worldregion_id options API</a>
+      <ul>
+        <li><a href="#傳送範例-7">傳送範例</a></li>
+        <li><a href="#回傳範例-7">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#country_id-options-api">country_id options API</a>
+      <ul>
+        <li><a href="#傳送範例-8">傳送範例</a></li>
+        <li><a href="#回傳範例-8">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#state_province_id-options-api">state_province_id options API</a>
+      <ul>
+        <li><a href="#傳送範例-9">傳送範例</a></li>
+        <li><a href="#回傳範例-9">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#phone_type_id-options-api">phone_type_id options API</a>
+      <ul>
+        <li><a href="#傳送範例-10">傳送範例</a></li>
+        <li><a href="#回傳範例-10">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#provider_id-options-api">provider_id options API</a>
+      <ul>
+        <li><a href="#傳送範例-11">傳送範例</a></li>
+        <li><a href="#回傳範例-11">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#contribution_type_id-options-api">contribution_type_id options API</a>
+      <ul>
+        <li><a href="#傳送範例-12">傳送範例</a></li>
+        <li><a href="#回傳範例-12">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#contribution_page_id-options-api">contribution_page_id options API</a>
+      <ul>
+        <li><a href="#傳送範例-13">傳送範例</a></li>
+        <li><a href="#回傳範例-13">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#contribution_status_id-options-api">contribution_status_id options API</a>
+      <ul>
+        <li><a href="#傳送範例-14">傳送範例</a></li>
+        <li><a href="#回傳範例-14">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#currency-options-api">currency options API</a>
+      <ul>
+        <li><a href="#傳送範例-15">傳送範例</a></li>
+        <li><a href="#回傳範例-15">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#payment_instrument_id--options-api">payment_instrument_id  options API</a>
+      <ul>
+        <li><a href="#傳送範例-16">傳送範例</a></li>
+        <li><a href="#回傳範例-16">回傳範例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Get Options API
+            </h1>
+          
+
+        
+
+
+<p>This is a API document about getoptions action.</p>
+<h2 id="field_name-options-api">&lt;field_name&gt; options API</h2>
+<h3 id="傳送範例">傳送範例</h3>
+<h4 id="http-method">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=&lt;entity&gt;&amp;action=getoptions&amp;json=
+</code></pre><h4 id="curl-example">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=&lt;entity&gt;&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 3,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: 1001,
+            &quot;label&quot;: &quot;example label 1&quot;
+        },
+        {
+            &quot;value&quot;: 1002,
+            &quot;label&quot;: &quot;example label 2&quot;
+        },
+        {
+            &quot;value&quot;: 1003,
+            &quot;label&quot;: &quot;example label 3&quot;
+        }
+    ]
+}
+</code></pre><h2 id="contact_type-options-api">contact_type options API</h2>
+<h3 id="傳送範例-1">傳送範例</h3>
+<h4 id="http-method-1">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-1">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json=null
+</code></pre><h4 id="api-explorer">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json=null
+</code></pre><h4 id="curl-example-1">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json=null'
+</code></pre><h3 id="回傳範例-1">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 3,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: &quot;Individual&quot;,
+            &quot;label&quot;: &quot;個人&quot;
+        },
+        {
+            &quot;value&quot;: &quot;Household&quot;,
+            &quot;label&quot;: &quot;家庭&quot;
+        },
+        {
+            &quot;value&quot;: &quot;Organization&quot;,
+            &quot;label&quot;: &quot;組織&quot;
+        }
+    ]
+}
+</code></pre><h2 id="contact_sub_type-options-api">contact_sub_type options API</h2>
+<h3 id="傳送範例-2">傳送範例</h3>
+<h4 id="http-method-2">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-2">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;contact_sub_type&quot;}
+</code></pre><h4 id="api-explorer-1">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;contact_sub_type&quot;}
+</code></pre><h4 id="curl-example-2">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例-2">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 1,
+    &quot;values&quot;: [
+        {
+            &quot;id&quot;: &quot;4&quot;,
+            &quot;name&quot;: &quot;NPO&quot;,
+            &quot;label&quot;: &quot;NPO&quot;,
+            &quot;parent&quot;: &quot;Organization&quot;,
+            &quot;value&quot;: &quot;4&quot;
+        }
+    ]
+}
+</code></pre><h2 id="prefix_id-options-api">prefix_id options API</h2>
+<h3 id="傳送範例-3">傳送範例</h3>
+<h4 id="http-method-3">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-3">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;prefix_id&quot;}
+</code></pre><h4 id="api-explorer-2">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;prefix_id&quot;}
+</code></pre><h4 id="curl-example-3">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例-3">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 4,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: 1,
+            &quot;label&quot;: &quot;女士&quot;
+        },
+        {
+            &quot;value&quot;: 2,
+            &quot;label&quot;: &quot;小姐&quot;
+        },
+        {
+            &quot;value&quot;: 3,
+            &quot;label&quot;: &quot;先生&quot;
+        },
+        {
+            &quot;value&quot;: 4,
+            &quot;label&quot;: &quot;博士&quot;
+        }
+    ]
+}
+</code></pre><h2 id="suffix_id-options-api">suffix_id options API</h2>
+<h3 id="傳送範例-4">傳送範例</h3>
+<h4 id="http-method-4">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-4">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;suffix_id&quot;}
+</code></pre><h4 id="api-explorer-3">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;suffix_id&quot;}
+</code></pre><h4 id="curl-example-4">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例-4">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 8,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: 1,
+            &quot;label&quot;: &quot;Jr.&quot;
+        },
+        {
+            &quot;value&quot;: 2,
+            &quot;label&quot;: &quot;Sr.&quot;
+        },
+        {
+            &quot;value&quot;: 3,
+            &quot;label&quot;: &quot;II&quot;
+        },
+        {
+            &quot;value&quot;: 4,
+            &quot;label&quot;: &quot;III&quot;
+        },
+        {
+            &quot;value&quot;: 5,
+            &quot;label&quot;: &quot;IV&quot;
+        },
+        {
+            &quot;value&quot;: 6,
+            &quot;label&quot;: &quot;V&quot;
+        },
+        {
+            &quot;value&quot;: 7,
+            &quot;label&quot;: &quot;VI&quot;
+        },
+        {
+            &quot;value&quot;: 8,
+            &quot;label&quot;: &quot;VII&quot;
+        }
+    ]
+}
+</code></pre><h2 id="gender_id-options-api">gender_id options API</h2>
+<h3 id="傳送範例-5">傳送範例</h3>
+<h4 id="http-method-5">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-5">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;gender_id&quot;}
+</code></pre><h4 id="api-explorer-4">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;gender_id&quot;}
+</code></pre><h4 id="curl-example-5">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例-5">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 3,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: 1,
+            &quot;label&quot;: &quot;女&quot;
+        },
+        {
+            &quot;value&quot;: 2,
+            &quot;label&quot;: &quot;男&quot;
+        },
+        {
+            &quot;value&quot;: 3,
+            &quot;label&quot;: &quot;跨性別&quot;
+        }
+    ]
+}
+</code></pre><h2 id="location_type_id-options-api">location_type_id options API</h2>
+<h3 id="傳送範例-6">傳送範例</h3>
+<h4 id="http-method-6">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-6">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;location_type_id&quot;}
+</code></pre><h4 id="api-explorer-5">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;location_type_id&quot;}
+</code></pre><h4 id="curl-example-6">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例-6">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 5,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: 3,
+            &quot;label&quot;: &quot;主要&quot;
+        },
+        {
+            &quot;value&quot;: 1,
+            &quot;label&quot;: &quot;住家&quot;
+        },
+        {
+            &quot;value&quot;: 4,
+            &quot;label&quot;: &quot;其他&quot;
+        },
+        {
+            &quot;value&quot;: 2,
+            &quot;label&quot;: &quot;工作&quot;
+        },
+        {
+            &quot;value&quot;: 5,
+            &quot;label&quot;: &quot;帳單&quot;
+        }
+    ]
+}
+</code></pre><h2 id="worldregion_id-options-api">worldregion_id options API</h2>
+<h3 id="傳送範例-7">傳送範例</h3>
+<h4 id="http-method-7">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-7">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;worldregion_id&quot;}
+</code></pre><h4 id="api-explorer-6">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;worldregion_id&quot;}
+</code></pre><h4 id="curl-example-7">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例-7">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 6,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: 1,
+            &quot;label&quot;: &quot;Europe and Central Asia&quot;
+        },
+        {
+            &quot;value&quot;: 2,
+            &quot;label&quot;: &quot;America South, Central, North and Caribbean&quot;
+        },
+        {
+            &quot;value&quot;: 3,
+            &quot;label&quot;: &quot;Middle East and North Africa&quot;
+        },
+        {
+            &quot;value&quot;: 4,
+            &quot;label&quot;: &quot;Asia-Pacific&quot;
+        },
+        {
+            &quot;value&quot;: 5,
+            &quot;label&quot;: &quot;Africa West, East, Central and Southern&quot;
+        },
+        {
+            &quot;value&quot;: 99,
+            &quot;label&quot;: &quot;unassigned&quot;
+        }
+    ]
+}
+</code></pre><h2 id="country_id-options-api">country_id options API</h2>
+<h3 id="傳送範例-8">傳送範例</h3>
+<h4 id="http-method-8">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-8">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;country_id&quot;}
+</code></pre><h4 id="api-explorer-7">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;country_id&quot;}
+</code></pre><h4 id="curl-example-8">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例-8">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 2,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: 1228,
+            &quot;label&quot;: &quot;美國&quot;
+        },
+        {
+            &quot;value&quot;: 1208,
+            &quot;label&quot;: &quot;臺灣&quot;
+        }
+    ]
+}
+</code></pre><h2 id="state_province_id-options-api">state_province_id options API</h2>
+<h3 id="傳送範例-9">傳送範例</h3>
+<h4 id="http-method-9">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-9">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;state_province_id&quot;}
+</code></pre><h4 id="api-explorer-8">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;state_province_id&quot;}
+</code></pre><h4 id="curl-example-9">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例-9">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 22,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: 4855,
+            &quot;label&quot;: &quot;南投縣&quot;
+        },
+        {
+            &quot;value&quot;: 5222,
+            &quot;label&quot;: &quot;嘉義市&quot;
+        },
+        {
+            &quot;value&quot;: 4849,
+            &quot;label&quot;: &quot;嘉義縣&quot;
+        },
+        {
+            &quot;value&quot;: 4864,
+            &quot;label&quot;: &quot;基隆市&quot;
+        },
+        {
+            &quot;value&quot;: 4852,
+            &quot;label&quot;: &quot;宜蘭縣&quot;
+        },
+        {
+            &quot;value&quot;: 4857,
+            &quot;label&quot;: &quot;屏東縣&quot;
+        },
+        {
+            &quot;value&quot;: 4848,
+            &quot;label&quot;: &quot;彰化縣&quot;
+        },
+        {
+            &quot;value&quot;: 4860,
+            &quot;label&quot;: &quot;新北市&quot;
+        },
+        {
+            &quot;value&quot;: 5223,
+            &quot;label&quot;: &quot;新竹市&quot;
+        },
+        {
+            &quot;value&quot;: 4850,
+            &quot;label&quot;: &quot;新竹縣&quot;
+        },
+        {
+            &quot;value&quot;: 4862,
+            &quot;label&quot;: &quot;桃園市&quot;
+        },
+        {
+            &quot;value&quot;: 4856,
+            &quot;label&quot;: &quot;澎湖縣&quot;
+        },
+        {
+            &quot;value&quot;: 5219,
+            &quot;label&quot;: &quot;臺中市&quot;
+        },
+        {
+            &quot;value&quot;: 5221,
+            &quot;label&quot;: &quot;臺北市&quot;
+        },
+        {
+            &quot;value&quot;: 5224,
+            &quot;label&quot;: &quot;臺南市&quot;
+        },
+        {
+            &quot;value&quot;: 4861,
+            &quot;label&quot;: &quot;臺東縣&quot;
+        },
+        {
+            &quot;value&quot;: 4851,
+            &quot;label&quot;: &quot;花蓮縣&quot;
+        },
+        {
+            &quot;value&quot;: 4854,
+            &quot;label&quot;: &quot;苗栗縣&quot;
+        },
+        {
+            &quot;value&quot;: 5225,
+            &quot;label&quot;: &quot;連江縣&quot;
+        },
+        {
+            &quot;value&quot;: 5226,
+            &quot;label&quot;: &quot;金門縣&quot;
+        },
+        {
+            &quot;value&quot;: 4863,
+            &quot;label&quot;: &quot;雲林縣&quot;
+        },
+        {
+            &quot;value&quot;: 5220,
+            &quot;label&quot;: &quot;高雄市&quot;
+        }
+    ]
+}
+</code></pre><h2 id="phone_type_id-options-api">phone_type_id options API</h2>
+<h3 id="傳送範例-10">傳送範例</h3>
+<h4 id="http-method-10">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-10">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;phone_type_id&quot;}
+</code></pre><h4 id="api-explorer-9">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;phone_type_id&quot;}
+</code></pre><h4 id="curl-example-10">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例-10">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 5,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: 2,
+            &quot;label&quot;: &quot;行動電話&quot;
+        },
+        {
+            &quot;value&quot;: 1,
+            &quot;label&quot;: &quot;電話&quot;
+        },
+        {
+            &quot;value&quot;: 3,
+            &quot;label&quot;: &quot;傳真&quot;
+        },
+        {
+            &quot;value&quot;: 4,
+            &quot;label&quot;: &quot;呼叫器&quot;
+        },
+        {
+            &quot;value&quot;: 5,
+            &quot;label&quot;: &quot;語音郵件&quot;
+        }
+    ]
+}
+</code></pre><h2 id="provider_id-options-api">provider_id options API</h2>
+<h3 id="傳送範例-11">傳送範例</h3>
+<h4 id="http-method-11">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-11">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;provider_id&quot;}
+</code></pre><h4 id="api-explorer-10">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;provider_id&quot;}
+</code></pre><h4 id="curl-example-11">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例-11">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 3,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: 6,
+            &quot;label&quot;: &quot;Skype&quot;
+        },
+        {
+            &quot;value&quot;: 7,
+            &quot;label&quot;: &quot;LINE&quot;
+        },
+        {
+            &quot;value&quot;: 8,
+            &quot;label&quot;: &quot;Facebook&quot;
+        }
+    ]
+}
+</code></pre><h2 id="contribution_type_id-options-api">contribution_type_id options API</h2>
+<h3 id="傳送範例-12">傳送範例</h3>
+<h4 id="http-method-12">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-12">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;contribution_type_id&quot;}
+</code></pre><h4 id="api-explorer-11">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;contribution_type_id&quot;}
+</code></pre><h4 id="curl-example-12">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例-12">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 4,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: 1,
+            &quot;label&quot;: &quot;一般捐款&quot;
+        },
+        {
+            &quot;value&quot;: 3,
+            &quot;label&quot;: &quot;指定捐款&quot;
+        },
+        {
+            &quot;value&quot;: 2,
+            &quot;label&quot;: &quot;會費&quot;
+        },
+        {
+            &quot;value&quot;: 4,
+            &quot;label&quot;: &quot;活動費用&quot;
+        }
+    ]
+}
+</code></pre><h2 id="contribution_page_id-options-api">contribution_page_id options API</h2>
+<h3 id="傳送範例-13">傳送範例</h3>
+<h4 id="http-method-13">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-13">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;contribution_page_id&quot;}
+</code></pre><h4 id="api-explorer-12">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;contribution_page_id&quot;}
+</code></pre><h4 id="curl-example-13">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例-13">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 4,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: 1,
+            &quot;label&quot;: &quot;捐款贊助&quot;
+        },
+        {
+            &quot;value&quot;: 2,
+            &quot;label&quot;: &quot;捐款贊助&quot;
+        },
+        {
+            &quot;value&quot;: 3,
+            &quot;label&quot;: &quot;捐款贊助&quot;
+        },
+        {
+            &quot;value&quot;: 4,
+            &quot;label&quot;: &quot;捐款贊助&quot;
+        }
+    ]
+}
+</code></pre><h2 id="contribution_status_id-options-api">contribution_status_id options API</h2>
+<h3 id="傳送範例-14">傳送範例</h3>
+<h4 id="http-method-14">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-14">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;contribution_status_id&quot;}
+</code></pre><h4 id="api-explorer-13">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;contribution_status_id&quot;}
+</code></pre><h4 id="curl-example-14">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例-14">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 7,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: 1,
+            &quot;label&quot;: &quot;已完成&quot;
+        },
+        {
+            &quot;value&quot;: 2,
+            &quot;label&quot;: &quot;待處理&quot;
+        },
+        {
+            &quot;value&quot;: 3,
+            &quot;label&quot;: &quot;已取消&quot;
+        },
+        {
+            &quot;value&quot;: 4,
+            &quot;label&quot;: &quot;已失敗&quot;
+        },
+        {
+            &quot;value&quot;: 5,
+            &quot;label&quot;: &quot;進行中&quot;
+        },
+        {
+            &quot;value&quot;: 6,
+            &quot;label&quot;: &quot;已過期&quot;
+        },
+        {
+            &quot;value&quot;: 7,
+            &quot;label&quot;: &quot;暫停中&quot;
+        }
+    ]
+}
+</code></pre><h2 id="currency-options-api">currency options API</h2>
+<h3 id="傳送範例-15">傳送範例</h3>
+<h4 id="http-method-15">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-15">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;currency&quot;}
+</code></pre><h4 id="api-explorer-14">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;currency&quot;}
+</code></pre><h4 id="curl-example-15">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例-15">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 1,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: &quot;TWD&quot;,
+            &quot;label&quot;: &quot;TWD (NT$)&quot;
+        }
+    ]
+}
+</code></pre><h2 id="payment_instrument_id--options-api">payment_instrument_id  options API</h2>
+<h3 id="傳送範例-16">傳送範例</h3>
+<h4 id="http-method-16">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-16">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;payment_instrument_id&quot;}
+</code></pre><h4 id="api-explorer-15">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;payment_instrument_id&quot;}
+</code></pre><h4 id="curl-example-16">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
+  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
+  '&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json='
+</code></pre><h3 id="回傳範例-16">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &quot;is_error&quot;: 0,
+    &quot;version&quot;: 3,
+    &quot;count&quot;: 18,
+    &quot;values&quot;: [
+        {
+            &quot;value&quot;: 10,
+            &quot;label&quot;: &quot;超商代碼&quot;
+        },
+        {
+            &quot;value&quot;: 9,
+            &quot;label&quot;: &quot;超商條碼繳費&quot;
+        },
+        {
+            &quot;value&quot;: 12,
+            &quot;label&quot;: &quot;ATM 轉帳&quot;
+        },
+        {
+            &quot;value&quot;: 1,
+            &quot;label&quot;: &quot;信用卡&quot;
+        },
+        {
+            &quot;value&quot;: 20,
+            &quot;label&quot;: &quot;支付寶&quot;
+        },
+        {
+            &quot;value&quot;: 15,
+            &quot;label&quot;: &quot;Apple Pay&quot;
+        },
+        {
+            &quot;value&quot;: 17,
+            &quot;label&quot;: &quot;LINE Pay&quot;
+        },
+        {
+            &quot;value&quot;: 16,
+            &quot;label&quot;: &quot;Google Pay&quot;
+        },
+        {
+            &quot;value&quot;: 13,
+            &quot;label&quot;: &quot;Yahoo公益&quot;
+        },
+        {
+            &quot;value&quot;: 7,
+            &quot;label&quot;: &quot;信用卡定期定額（非線上）&quot;
+        },
+        {
+            &quot;value&quot;: 8,
+            &quot;label&quot;: &quot;郵政劃撥&quot;
+        },
+        {
+            &quot;value&quot;: 6,
+            &quot;label&quot;: &quot;信用卡（非線上）&quot;
+        },
+        {
+            &quot;value&quot;: 2,
+            &quot;label&quot;: &quot;簽帳卡&quot;
+        },
+        {
+            &quot;value&quot;: 3,
+            &quot;label&quot;: &quot;現金&quot;
+        },
+        {
+            &quot;value&quot;: 4,
+            &quot;label&quot;: &quot;支票&quot;
+        },
+        {
+            &quot;value&quot;: 5,
+            &quot;label&quot;: &quot;電子轉帳（EFT）&quot;
+        },
+        {
+            &quot;value&quot;: 18,
+            &quot;label&quot;: &quot;ACH 銀行&quot;
+        },
+        {
+            &quot;value&quot;: 19,
+            &quot;label&quot;: &quot;ACH 郵局&quot;
+        }
+    ]
+}
+</code></pre>
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/api-document/3/event/" title="Event API"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/api-document/webhook/" title="Webhook API 簡介" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/api-document/js/clipboard.min.js?1638216959"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1638216959"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1638216959"></script>
+    <script src="/api-document/js/jquery.sticky.js?1638216959"></script>
+    <script src="/api-document/js/featherlight.min.js?1638216959"></script>
+    <script src="/api-document/js/highlight.pack.js?1638216959"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1638216959"></script>
+    <script src="/api-document/js/learn.js?1638216959"></script>
+    <script src="/api-document/js/hugo-learn.js?1638216959"></script>
+    
+        
+            <script src="/api-document/mermaid/mermaid.js?1638216959"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+
