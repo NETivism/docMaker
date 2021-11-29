@@ -64,8 +64,8 @@ function doGenSampleCode($params) {
     // Load Funcname json
     $unitTestRequest = file_get_contents($baseDir.'/docMaker/unit_test_results/'.$entityName."Test_".$funcName.'-request.json');
     $unitTestResponse = file_get_contents($baseDir.'/docMaker/unit_test_results/'.$entityName."Test_".$funcName.'-response.json');
-    genDoc::$_smarty->assign('request_body', $unitTestRequest);
-    genDoc::$_smarty->assign('response_body', $unitTestResponse);
+    genDoc::$_smarty->assign('request_body', json_encode(json_decode($unitTestRequest), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+    genDoc::$_smarty->assign('response_body', json_encode(json_decode($unitTestResponse), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
     genDoc::$_smarty->assign('request_body_inline', json_encode(json_decode($unitTestRequest), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
     genDoc::$_smarty->assign('response_body_inline', json_encode(json_decode($unitTestResponse), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
     foreach($tplParams as $varName => $val) {
