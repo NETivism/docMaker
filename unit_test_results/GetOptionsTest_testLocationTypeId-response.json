@@ -1,0 +1,27 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 5,
+    "values": [
+        {
+            "value": 3,
+            "label": "\u4e3b\u8981"
+        },
+        {
+            "value": 1,
+            "label": "\u4f4f\u5bb6"
+        },
+        {
+            "value": 4,
+            "label": "\u5176\u4ed6"
+        },
+        {
+            "value": 2,
+            "label": "\u5de5\u4f5c"
+        },
+        {
+            "value": 5,
+            "label": "\u5e33\u55ae"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 6,
+    "values": [
+        {
+            "value": 1,
+            "label": "Europe and Central Asia"
+        },
+        {
+            "value": 2,
+            "label": "America South, Central, North and Caribbean"
+        },
+        {
+            "value": 3,
+            "label": "Middle East and North Africa"
+        },
+        {
+            "value": 4,
+            "label": "Asia-Pacific"
+        },
+        {
+            "value": 5,
+            "label": "Africa West, East, Central and Southern"
+        },
+        {
+            "value": 99,
+            "label": "unassigned"
+        }
+    ]
+}

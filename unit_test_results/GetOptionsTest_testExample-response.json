@@ -1,0 +1,19 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 3,
+    "values": [
+        {
+            "value": 1001,
+            "label": "example label 1"
+        },
+        {
+            "value": 1002,
+            "label": "example label 2"
+        },
+        {
+            "value": 1003,
+            "label": "example label 3"
+        }
+    ]
+}

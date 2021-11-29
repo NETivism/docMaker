@@ -1,0 +1,23 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 4,
+    "values": [
+        {
+            "value": 1,
+            "label": "\u6350\u6b3e\u8d0a\u52a9"
+        },
+        {
+            "value": 2,
+            "label": "\u6350\u6b3e\u8d0a\u52a9"
+        },
+        {
+            "value": 3,
+            "label": "\u6350\u6b3e\u8d0a\u52a9"
+        },
+        {
+            "value": 4,
+            "label": "\u6350\u6b3e\u8d0a\u52a9"
+        }
+    ]
+}

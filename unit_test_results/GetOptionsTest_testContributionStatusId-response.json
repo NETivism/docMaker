@@ -1,0 +1,35 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 7,
+    "values": [
+        {
+            "value": 1,
+            "label": "\u5df2\u5b8c\u6210"
+        },
+        {
+            "value": 2,
+            "label": "\u5f85\u8655\u7406"
+        },
+        {
+            "value": 3,
+            "label": "\u5df2\u53d6\u6d88"
+        },
+        {
+            "value": 4,
+            "label": "\u5df2\u5931\u6557"
+        },
+        {
+            "value": 5,
+            "label": "\u9032\u884c\u4e2d"
+        },
+        {
+            "value": 6,
+            "label": "\u5df2\u904e\u671f"
+        },
+        {
+            "value": 7,
+            "label": "\u66ab\u505c\u4e2d"
+        }
+    ]
+}

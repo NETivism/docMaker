@@ -1,0 +1,95 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 22,
+    "values": [
+        {
+            "value": 4855,
+            "label": "\u5357\u6295\u7e23"
+        },
+        {
+            "value": 5222,
+            "label": "\u5609\u7fa9\u5e02"
+        },
+        {
+            "value": 4849,
+            "label": "\u5609\u7fa9\u7e23"
+        },
+        {
+            "value": 4864,
+            "label": "\u57fa\u9686\u5e02"
+        },
+        {
+            "value": 4852,
+            "label": "\u5b9c\u862d\u7e23"
+        },
+        {
+            "value": 4857,
+            "label": "\u5c4f\u6771\u7e23"
+        },
+        {
+            "value": 4848,
+            "label": "\u5f70\u5316\u7e23"
+        },
+        {
+            "value": 4860,
+            "label": "\u65b0\u5317\u5e02"
+        },
+        {
+            "value": 5223,
+            "label": "\u65b0\u7af9\u5e02"
+        },
+        {
+            "value": 4850,
+            "label": "\u65b0\u7af9\u7e23"
+        },
+        {
+            "value": 4862,
+            "label": "\u6843\u5712\u5e02"
+        },
+        {
+            "value": 4856,
+            "label": "\u6f8e\u6e56\u7e23"
+        },
+        {
+            "value": 5219,
+            "label": "\u81fa\u4e2d\u5e02"
+        },
+        {
+            "value": 5221,
+            "label": "\u81fa\u5317\u5e02"
+        },
+        {
+            "value": 5224,
+            "label": "\u81fa\u5357\u5e02"
+        },
+        {
+            "value": 4861,
+            "label": "\u81fa\u6771\u7e23"
+        },
+        {
+            "value": 4851,
+            "label": "\u82b1\u84ee\u7e23"
+        },
+        {
+            "value": 4854,
+            "label": "\u82d7\u6817\u7e23"
+        },
+        {
+            "value": 5225,
+            "label": "\u9023\u6c5f\u7e23"
+        },
+        {
+            "value": 5226,
+            "label": "\u91d1\u9580\u7e23"
+        },
+        {
+            "value": 4863,
+            "label": "\u96f2\u6797\u7e23"
+        },
+        {
+            "value": 5220,
+            "label": "\u9ad8\u96c4\u5e02"
+        }
+    ]
+}

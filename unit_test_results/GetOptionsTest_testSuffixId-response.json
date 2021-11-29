@@ -1,0 +1,39 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 8,
+    "values": [
+        {
+            "value": 1,
+            "label": "Jr."
+        },
+        {
+            "value": 2,
+            "label": "Sr."
+        },
+        {
+            "value": 3,
+            "label": "II"
+        },
+        {
+            "value": 4,
+            "label": "III"
+        },
+        {
+            "value": 5,
+            "label": "IV"
+        },
+        {
+            "value": 6,
+            "label": "V"
+        },
+        {
+            "value": 7,
+            "label": "VI"
+        },
+        {
+            "value": 8,
+            "label": "VII"
+        }
+    ]
+}

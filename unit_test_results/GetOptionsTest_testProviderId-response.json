@@ -1,0 +1,19 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 3,
+    "values": [
+        {
+            "value": 6,
+            "label": "Skype"
+        },
+        {
+            "value": 7,
+            "label": "LINE"
+        },
+        {
+            "value": 8,
+            "label": "Facebook"
+        }
+    ]
+}

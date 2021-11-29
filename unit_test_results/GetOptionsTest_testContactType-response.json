@@ -1,0 +1,19 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 3,
+    "values": [
+        {
+            "value": "Individual",
+            "label": "\u500b\u4eba"
+        },
+        {
+            "value": "Household",
+            "label": "\u5bb6\u5ead"
+        },
+        {
+            "value": "Organization",
+            "label": "\u7d44\u7e54"
+        }
+    ]
+}

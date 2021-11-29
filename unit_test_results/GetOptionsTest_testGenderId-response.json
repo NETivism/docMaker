@@ -1,0 +1,19 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 3,
+    "values": [
+        {
+            "value": 1,
+            "label": "\u5973"
+        },
+        {
+            "value": 2,
+            "label": "\u7537"
+        },
+        {
+            "value": 3,
+            "label": "\u8de8\u6027\u5225"
+        }
+    ]
+}

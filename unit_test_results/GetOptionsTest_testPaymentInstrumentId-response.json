@@ -1,0 +1,79 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 18,
+    "values": [
+        {
+            "value": 10,
+            "label": "\u8d85\u5546\u4ee3\u78bc"
+        },
+        {
+            "value": 9,
+            "label": "\u8d85\u5546\u689d\u78bc\u7e73\u8cbb"
+        },
+        {
+            "value": 12,
+            "label": "ATM \u8f49\u5e33"
+        },
+        {
+            "value": 1,
+            "label": "\u4fe1\u7528\u5361"
+        },
+        {
+            "value": 20,
+            "label": "\u652f\u4ed8\u5bf6"
+        },
+        {
+            "value": 15,
+            "label": "Apple Pay"
+        },
+        {
+            "value": 17,
+            "label": "LINE Pay"
+        },
+        {
+            "value": 16,
+            "label": "Google Pay"
+        },
+        {
+            "value": 13,
+            "label": "Yahoo\u516c\u76ca"
+        },
+        {
+            "value": 7,
+            "label": "\u4fe1\u7528\u5361\u5b9a\u671f\u5b9a\u984d\uff08\u975e\u7dda\u4e0a\uff09"
+        },
+        {
+            "value": 8,
+            "label": "\u90f5\u653f\u5283\u64a5"
+        },
+        {
+            "value": 6,
+            "label": "\u4fe1\u7528\u5361\uff08\u975e\u7dda\u4e0a\uff09"
+        },
+        {
+            "value": 2,
+            "label": "\u7c3d\u5e33\u5361"
+        },
+        {
+            "value": 3,
+            "label": "\u73fe\u91d1"
+        },
+        {
+            "value": 4,
+            "label": "\u652f\u7968"
+        },
+        {
+            "value": 5,
+            "label": "\u96fb\u5b50\u8f49\u5e33\uff08EFT\uff09"
+        },
+        {
+            "value": 18,
+            "label": "ACH \u9280\u884c"
+        },
+        {
+            "value": 19,
+            "label": "ACH \u90f5\u5c40"
+        }
+    ]
+}
