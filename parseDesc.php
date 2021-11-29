@@ -35,12 +35,26 @@ function doParseDesc($params) {
     $fileDocComment = preg_replace('/^\s+\*[ ]*/m', '', $fileDocComment);
     preg_match('#@docmaker_intro_start(.+)@docmaker_intro_end#s', $fileDocComment, $matches);
     if (!empty($matches[1])) {
-      $replaceDesc = $replaceDesc . $matches[1];
+      $lines = explode("\n", $matches[1]);
+      $tplParams = array();
+      foreach($lines as $line) {
+        preg_match('/^@(\w+)\s+(.*)$/', $line, $matches);
+        if (!empty($matches)) {
+          genDoc::$_smarty->assign($matches[1], $matches[2]);
+        }
+        elseif(!empty(trim($line))){
+          $replaceDesc .= $line;
+        }
+      }
+      // only accept first per doc
+      break;
     }
   }
 
-  $search = "{{DESC}}";
+  $search = "@DESC@";
+
   $content = str_replace($search, $replaceDesc, $content);
+  $content = genDoc::$_smarty->fetch('string:'.$content);
 
   $params['content'] = $content;
   return $params;

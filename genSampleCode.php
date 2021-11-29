@@ -87,7 +87,7 @@ function doGenSampleCode($params) {
   $replaceDesc = str_replace("\{", "{literal}{{/literal}", $replaceDesc);
   $replaceDesc = str_replace("\}", "{literal}}{/literal}", $replaceDesc);
 
-  $search = "{{SAMPLE_CODE}}";
+  $search = "@SAMPLE_CODE@";
   $content = str_replace($search, $replaceDesc, $content);
   $params['content'] = $content;
 

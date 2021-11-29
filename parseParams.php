@@ -30,7 +30,6 @@ function doParseParams($params) {
   $xmlFolder = $baseDir .'/xml/schema/';
   $filePathArray = glob($xmlFolder.'*/'.$entityName.'.xml');
   $file = reset($filePathArray);
-  print $file;
 
   $xml = simplexml_load_file("$file") or die("Error: Cannot create object");
   $replaceParams = 
@@ -149,7 +148,7 @@ function doParseParams($params) {
   }
   // $replaceParams = $replaceParams . "\n" . implode("\n", $row);
 
-  $search = "{{PARAMS}}";
+  $search = "@PARAMS@";
   $content = str_replace($search, $replaceParams, $content);
 
   $params['content'] = $content;

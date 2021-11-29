@@ -26,17 +26,17 @@ class genDoc {
     }
 
     // check https://learn.netlify.app/en/cont/pages/#front-matter-configuration for fomatting
-    $content = <<<TEXTBLOCK
+    $content = <<<'TEXTBLOCK'
 +++
-title = "{$entityName} API"
-menuTitle = "{$entityName}"
+title = "{$api_title} API"
+menuTitle = "{$api_title}"
 chapter = false
 +++
-{{DESC}}
+@DESC@
 
-{{PARAMS}}
+@PARAMS@
 
-{{SAMPLE_CODE}}
+@SAMPLE_CODE@
 TEXTBLOCK;
     $params['content'] = $content;
 
