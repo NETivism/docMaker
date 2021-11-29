@@ -3,9 +3,7 @@ title = "Contribution API"
 menuTitle = "Contribution"
 chapter = false
 +++
-
 This is a API Document about contribution.
-
 
 | {ts}Parameter Name{/ts} | {ts}Type{/ts} | {ts}Length{/ts} | {ts}Format{/ts} | {ts}Create Rule{/ts} | {ts}Field Help{/ts} |
 | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -54,12 +52,12 @@ GET
 
 #### Request URL
 ```{literal}
-<entrypoint>?entity=Contribution&action=get&json={"contribution_id":186}
+<entrypoint>?entity=Contribution&action=get&json={"contribution_id":51}
 {/literal}```
 
 #### API Explorer
 ```{literal}
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&action=get&pretty=1&json={"contribution_id":186}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&action=get&pretty=1&json={"contribution_id":51}
 {/literal}```
 
 #### curl Example
@@ -67,7 +65,7 @@ GET
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
   --header 'x-civicrm-site-key: <site-key>' \ 
-  '<entrypoint>?entity=Contribution&action=get&json={"contribution_id":186}'
+  '<entrypoint>?entity=Contribution&action=get&json={"contribution_id":51}'
 ```
 
 ### 回傳範例
@@ -76,25 +74,25 @@ curl -g \
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 186,
+    "id": 51,
     "values": {
-        "186": {
-            "contact_id": "539",
+        "51": {
+            "contact_id": "28",
             "contact_type": "Individual",
             "contact_sub_type": "",
-            "sort_name": "Test axcKQ Unit",
-            "display_name": "Test axcKQ Unit",
-            "contribution_id": "186",
+            "sort_name": "Test ARDeN Unit",
+            "display_name": "Test ARDeN Unit",
+            "contribution_id": "51",
             "currency": "USD",
             "contribution_page_id": "",
-            "created_date": "2021-11-23 19:19:49",
-            "receive_date": "2021-11-23 19:19:49",
+            "created_date": "2021-11-29 15:04:09",
+            "receive_date": "2021-11-29 15:04:09",
             "non_deductible_amount": "10.00",
             "total_amount": "100.00",
             "fee_amount": "50.00",
             "net_amount": "90.00",
-            "trxn_id": "P026IUyL9B",
-            "invoice_id": "xQNLHVDVSM",
+            "trxn_id": "eQTmpujhlN",
+            "invoice_id": "hi3KyqRwZW",
             "cancel_date": "",
             "cancel_reason": "",
             "receipt_date": "",
@@ -156,8 +154,8 @@ application/json
 #### Request body
 ```{literal}
 {
-    "contact_id": 540,
-    "receive_date": "2021-11-23 19:19:49",
+    "contact_id": 29,
+    "receive_date": "2021-11-29 15:04:09",
     "total_amount": 100,
     "contribution_type_id": 1,
     "non_deductible_amount": 10,
@@ -165,15 +163,15 @@ application/json
     "net_amount": 90,
     "source": "Contribution Unit Test",
     "contribution_status_id": 1,
-    "trxn_id": "30IuTSVS39",
-    "invoice_id": "SPVZjY9rpK",
+    "trxn_id": "pxhaDtwFII",
+    "invoice_id": "e1uGoCG25Q",
     "payment_instrument_id": 1
 }
 {/literal}```
 
 #### API Explorer
 ```{literal}
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&action=create&pretty=1&json={"contact_id":540,"receive_date":"2021-11-23 19:19:49","total_amount":100,"contribution_type_id":1,"non_deductible_amount":10,"fee_amount":50,"net_amount":90,"source":"Contribution Unit Test","contribution_status_id":1,"trxn_id":"30IuTSVS39","invoice_id":"SPVZjY9rpK","payment_instrument_id":1}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&action=create&pretty=1&json={"contact_id":29,"receive_date":"2021-11-29 15:04:09","total_amount":100,"contribution_type_id":1,"non_deductible_amount":10,"fee_amount":50,"net_amount":90,"source":"Contribution Unit Test","contribution_status_id":1,"trxn_id":"pxhaDtwFII","invoice_id":"e1uGoCG25Q","payment_instrument_id":1}
 {/literal}```
 
 #### curl Example
@@ -183,7 +181,7 @@ curl -g \
   --header 'x-civicrm-site-key: <site-key>' \ 
   --header 'content-type: application/json' \
   --request POST \
-  --data '{literal}{"contact_id":540,"receive_date":"2021-11-23 19:19:49","total_amount":100,"contribution_type_id":1,"non_deductible_amount":10,"fee_amount":50,"net_amount":90,"source":"Contribution Unit Test","contribution_status_id":1,"trxn_id":"30IuTSVS39","invoice_id":"SPVZjY9rpK","payment_instrument_id":1}{/literal}' \
+  --data '{literal}{"contact_id":29,"receive_date":"2021-11-29 15:04:09","total_amount":100,"contribution_type_id":1,"non_deductible_amount":10,"fee_amount":50,"net_amount":90,"source":"Contribution Unit Test","contribution_status_id":1,"trxn_id":"pxhaDtwFII","invoice_id":"e1uGoCG25Q","payment_instrument_id":1}{/literal}' \
   '<entrypoint>?entity=Contribution&action=create'
 ```
 
@@ -193,23 +191,23 @@ curl -g \
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 188,
-    "values": {
-        "188": {
-            "id": "188",
-            "contact_id": "540",
+    "id": 53,
+    "values": [
+        {
+            "id": "53",
+            "contact_id": "29",
             "contribution_type_id": "1",
             "contribution_page_id": "",
             "payment_processor_id": "",
             "payment_instrument_id": "1",
-            "created_date": "20211123191949",
-            "receive_date": "20211123191949",
+            "created_date": "20211129150409",
+            "receive_date": "20211129150409",
             "non_deductible_amount": "10",
             "total_amount": "100",
             "fee_amount": "50",
             "net_amount": "90",
-            "trxn_id": "30IuTSVS39",
-            "invoice_id": "SPVZjY9rpK",
+            "trxn_id": "pxhaDtwFII",
+            "invoice_id": "e1uGoCG25Q",
             "currency": "USD",
             "cancel_date": "",
             "cancel_reason": "",
@@ -228,7 +226,7 @@ curl -g \
             "receipt_id": "",
             "expire_date": ""
         }
-    }
+    ]
 }
 {/literal}```
 
@@ -253,20 +251,20 @@ application/json
 #### Request body
 ```{literal}
 {
-    "id": 194,
+    "id": 59,
     "total_amount": 9999,
     "contribution_type_id": 1,
     "non_deductible_amount": 10,
     "net_amount": 100,
     "contribution_status_id": 3,
-    "cancel_date": "20211123191951",
+    "cancel_date": "20211129150410",
     "cancel_reason": "The reason to cancel"
 }
 {/literal}```
 
 #### API Explorer
 ```{literal}
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&action=create&pretty=1&json={"id":194,"total_amount":9999,"contribution_type_id":1,"non_deductible_amount":10,"net_amount":100,"contribution_status_id":3,"cancel_date":"20211123191951","cancel_reason":"The reason to cancel"}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&action=create&pretty=1&json={"id":59,"total_amount":9999,"contribution_type_id":1,"non_deductible_amount":10,"net_amount":100,"contribution_status_id":3,"cancel_date":"20211129150410","cancel_reason":"The reason to cancel"}
 {/literal}```
 
 #### curl Example
@@ -276,7 +274,7 @@ curl -g \
   --header 'x-civicrm-site-key: <site-key>' \ 
   --header 'content-type: application/json' \
   --request POST \
-  --data '{literal}{"id":194,"total_amount":9999,"contribution_type_id":1,"non_deductible_amount":10,"net_amount":100,"contribution_status_id":3,"cancel_date":"20211123191951","cancel_reason":"The reason to cancel"}{/literal}' \
+  --data '{literal}{"id":59,"total_amount":9999,"contribution_type_id":1,"non_deductible_amount":10,"net_amount":100,"contribution_status_id":3,"cancel_date":"20211129150410","cancel_reason":"The reason to cancel"}{/literal}' \
   '<entrypoint>?entity=Contribution&action=create'
 ```
 
@@ -286,10 +284,10 @@ curl -g \
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 194,
+    "id": 59,
     "values": {
-        "194": {
-            "id": "194",
+        "59": {
+            "id": "59",
             "contact_id": "",
             "contribution_type_id": "1",
             "contribution_page_id": "",
@@ -304,7 +302,7 @@ curl -g \
             "trxn_id": "",
             "invoice_id": "",
             "currency": "USD",
-            "cancel_date": "20211123191951",
+            "cancel_date": "20211129150410",
             "cancel_reason": "The reason to cancel",
             "receipt_date": "",
             "thankyou_date": "",
@@ -346,13 +344,13 @@ application/json
 #### Request body
 ```{literal}
 {
-    "id": 195
+    "id": 60
 }
 {/literal}```
 
 #### API Explorer
 ```{literal}
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&action=delete&pretty=1&json={"id":195}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&action=delete&pretty=1&json={"id":60}
 {/literal}```
 
 #### curl Example
@@ -362,7 +360,7 @@ curl -g \
   --header 'x-civicrm-site-key: <site-key>' \ 
   --header 'content-type: application/json' \
   --request POST \
-  --data '{literal}{"id":195}{/literal}' \
+  --data '{literal}{"id":60}{/literal}' \
   '<entrypoint>?entity=Contribution&action=delete'
 ```
 
@@ -372,9 +370,6 @@ curl -g \
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 195,
-    "values": {
-        "195": 1
-    }
+    "values": 1
 }
 {/literal}```

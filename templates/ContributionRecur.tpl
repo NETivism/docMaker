@@ -1,11 +1,9 @@
 +++
-title = "ContributionRecur API"
-menuTitle = "ContributionRecur"
+title = "Contribution Recurring API"
+menuTitle = "Contribution Recurring"
 chapter = false
 +++
-
 This is a API document about recurring contribution.
-
 
 | {ts}Parameter Name{/ts} | {ts}Type{/ts} | {ts}Length{/ts} | {ts}Format{/ts} | {ts}Create Rule{/ts} | {ts}Field Help{/ts} |
 | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -45,12 +43,12 @@ GET
 
 #### Request URL
 ```{literal}
-<entrypoint>?entity=contribution_recur&action=get&json={"id":85}
+<entrypoint>?entity=contribution_recur&action=get&json={"id":1}
 {/literal}```
 
 #### API Explorer
 ```{literal}
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=get&pretty=1&json={"id":85}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=get&pretty=1&json={"id":1}
 {/literal}```
 
 #### curl Example
@@ -58,7 +56,7 @@ GET
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
   --header 'x-civicrm-site-key: <site-key>' \ 
-  '<entrypoint>?entity=contribution_recur&action=get&json={"id":85}'
+  '<entrypoint>?entity=contribution_recur&action=get&json={"id":1}'
 ```
 
 ### 回傳範例
@@ -67,29 +65,29 @@ curl -g \
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 85,
-    "values": {
-        "85": {
-            "id": "85",
-            "contact_id": "660",
+    "id": 1,
+    "values": [
+        {
+            "id": "1",
+            "contact_id": "46",
             "amount": "500.00",
             "currency": "TWD",
             "frequency_unit": "month",
             "frequency_interval": "1",
             "installments": "12",
-            "start_date": "2021-10-25 14:03:01",
-            "create_date": "2021-10-01 14:03:01",
-            "modified_date": "2021-11-24 14:03:01",
-            "trxn_id": "HKOVvvL4mi",
-            "invoice_id": "ogQMpTGr1XOP45N0XQamuiVoYWn7Jfru",
+            "start_date": "2021-10-25 13:31:13",
+            "create_date": "2021-10-01 13:31:13",
+            "modified_date": "2021-11-29 13:31:13",
+            "trxn_id": "NRLOHgp8jE",
+            "invoice_id": "ae836EMdxfLyYG4AjhSK9u1h83hgO3Tx",
             "contribution_status_id": "5",
             "is_test": "0",
             "cycle_day": "5",
-            "next_sched_contribution": "2021-11-25 14:03:01",
+            "next_sched_contribution": "2021-11-25 13:31:13",
             "failure_count": "0",
             "auto_renew": "0"
         }
-    }
+    ]
 }
 {/literal}```
 
@@ -114,24 +112,24 @@ application/json
 #### Request body
 ```{literal}
 {
-    "contact_id": 661,
+    "contact_id": 47,
     "amount": "500.00",
     "currency": "TWD",
     "frequency_unit": "month",
     "frequency_interval": "1",
     "installments": "12",
-    "start_date": "2021-10-25 14:03:01",
-    "create_date": "2021-10-01 14:03:01",
+    "start_date": "2021-10-25 13:31:13",
+    "create_date": "2021-10-01 13:31:13",
     "cancel_date": "",
     "end_date": "",
     "processor_id": "",
     "external_id": "",
-    "trxn_id": "JBDIxFGe8D",
-    "invoice_id": "aYKfxYoCDImHqOqididjLhsvZeOx1yKX",
+    "trxn_id": "qYL8Pp0tLb",
+    "invoice_id": "CXn30Uj2Cebpt1ZsQMwWv8Y5ABtn54VH",
     "contribution_status_id": 5,
     "is_test": 0,
     "cycle_day": 5,
-    "next_sched_contribution": "2021-11-25 14:03:01",
+    "next_sched_contribution": "2021-11-25 13:31:13",
     "failure_count": 0,
     "failure_retry_date": "",
     "auto_renew": 0,
@@ -141,7 +139,7 @@ application/json
 
 #### API Explorer
 ```{literal}
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=create&pretty=1&json={"contact_id":661,"amount":"500.00","currency":"TWD","frequency_unit":"month","frequency_interval":"1","installments":"12","start_date":"2021-10-25 14:03:01","create_date":"2021-10-01 14:03:01","cancel_date":"","end_date":"","processor_id":"","external_id":"","trxn_id":"JBDIxFGe8D","invoice_id":"aYKfxYoCDImHqOqididjLhsvZeOx1yKX","contribution_status_id":5,"is_test":0,"cycle_day":5,"next_sched_contribution":"2021-11-25 14:03:01","failure_count":0,"failure_retry_date":"","auto_renew":0,"last_execute_date":""}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=create&pretty=1&json={"contact_id":47,"amount":"500.00","currency":"TWD","frequency_unit":"month","frequency_interval":"1","installments":"12","start_date":"2021-10-25 13:31:13","create_date":"2021-10-01 13:31:13","cancel_date":"","end_date":"","processor_id":"","external_id":"","trxn_id":"qYL8Pp0tLb","invoice_id":"CXn30Uj2Cebpt1ZsQMwWv8Y5ABtn54VH","contribution_status_id":5,"is_test":0,"cycle_day":5,"next_sched_contribution":"2021-11-25 13:31:13","failure_count":0,"failure_retry_date":"","auto_renew":0,"last_execute_date":""}
 {/literal}```
 
 #### curl Example
@@ -151,7 +149,7 @@ curl -g \
   --header 'x-civicrm-site-key: <site-key>' \ 
   --header 'content-type: application/json' \
   --request POST \
-  --data '{literal}{"contact_id":661,"amount":"500.00","currency":"TWD","frequency_unit":"month","frequency_interval":"1","installments":"12","start_date":"2021-10-25 14:03:01","create_date":"2021-10-01 14:03:01","cancel_date":"","end_date":"","processor_id":"","external_id":"","trxn_id":"JBDIxFGe8D","invoice_id":"aYKfxYoCDImHqOqididjLhsvZeOx1yKX","contribution_status_id":5,"is_test":0,"cycle_day":5,"next_sched_contribution":"2021-11-25 14:03:01","failure_count":0,"failure_retry_date":"","auto_renew":0,"last_execute_date":""}{/literal}' \
+  --data '{literal}{"contact_id":47,"amount":"500.00","currency":"TWD","frequency_unit":"month","frequency_interval":"1","installments":"12","start_date":"2021-10-25 13:31:13","create_date":"2021-10-01 13:31:13","cancel_date":"","end_date":"","processor_id":"","external_id":"","trxn_id":"qYL8Pp0tLb","invoice_id":"CXn30Uj2Cebpt1ZsQMwWv8Y5ABtn54VH","contribution_status_id":5,"is_test":0,"cycle_day":5,"next_sched_contribution":"2021-11-25 13:31:13","failure_count":0,"failure_retry_date":"","auto_renew":0,"last_execute_date":""}{/literal}' \
   '<entrypoint>?entity=contribution_recur&action=create'
 ```
 
@@ -161,35 +159,35 @@ curl -g \
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 86,
-    "values": {
-        "86": {
-            "id": "86",
-            "contact_id": "661",
+    "id": 2,
+    "values": [
+        {
+            "id": "2",
+            "contact_id": "47",
             "amount": "500.00",
             "currency": "TWD",
             "frequency_unit": "month",
             "frequency_interval": "1",
             "installments": "12",
-            "start_date": "20211025140301",
-            "create_date": "20211001140301",
-            "modified_date": "20211124140301",
+            "start_date": "20211025133113",
+            "create_date": "20211001133113",
+            "modified_date": "20211129133113",
             "cancel_date": "null",
             "end_date": "null",
             "processor_id": "null",
             "external_id": "null",
-            "trxn_id": "JBDIxFGe8D",
-            "invoice_id": "aYKfxYoCDImHqOqididjLhsvZeOx1yKX",
+            "trxn_id": "qYL8Pp0tLb",
+            "invoice_id": "CXn30Uj2Cebpt1ZsQMwWv8Y5ABtn54VH",
             "contribution_status_id": "5",
             "is_test": "0",
             "cycle_day": "5",
-            "next_sched_contribution": "20211125140301",
+            "next_sched_contribution": "20211125133113",
             "failure_count": "0",
             "failure_retry_date": "null",
             "auto_renew": "0",
             "last_execute_date": "null"
         }
-    }
+    ]
 }
 {/literal}```
 
@@ -214,16 +212,16 @@ application/json
 #### Request body
 ```{literal}
 {
-    "id": 87,
+    "id": 3,
     "contribution_status_id": 1,
     "next_sched_contribution": "",
-    "end_date": "2021-11-24 14:03:01"
+    "end_date": "2021-11-29 13:31:13"
 }
 {/literal}```
 
 #### API Explorer
 ```{literal}
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=create&pretty=1&json={"id":87,"contribution_status_id":1,"next_sched_contribution":"","end_date":"2021-11-24 14:03:01"}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=create&pretty=1&json={"id":3,"contribution_status_id":1,"next_sched_contribution":"","end_date":"2021-11-29 13:31:13"}
 {/literal}```
 
 #### curl Example
@@ -233,7 +231,7 @@ curl -g \
   --header 'x-civicrm-site-key: <site-key>' \ 
   --header 'content-type: application/json' \
   --request POST \
-  --data '{literal}{"id":87,"contribution_status_id":1,"next_sched_contribution":"","end_date":"2021-11-24 14:03:01"}{/literal}' \
+  --data '{literal}{"id":3,"contribution_status_id":1,"next_sched_contribution":"","end_date":"2021-11-29 13:31:13"}{/literal}' \
   '<entrypoint>?entity=contribution_recur&action=create'
 ```
 
@@ -243,25 +241,25 @@ curl -g \
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 87,
-    "values": {
-        "87": {
-            "id": "87",
-            "contact_id": "662",
+    "id": 3,
+    "values": [
+        {
+            "id": "3",
+            "contact_id": "48",
             "amount": "500.00",
             "currency": "TWD",
             "frequency_unit": "month",
             "frequency_interval": "1",
             "installments": "12",
-            "start_date": "20211025140301",
-            "create_date": "20211001140301",
-            "modified_date": "20211124140301",
+            "start_date": "20211025133113",
+            "create_date": "20211001133113",
+            "modified_date": "20211129133113",
             "cancel_date": "",
-            "end_date": "20211124140301",
+            "end_date": "20211129133113",
             "processor_id": "",
             "external_id": "",
-            "trxn_id": "CvzMMwGynz",
-            "invoice_id": "lcxgKmGInd8seyEw2QVcKcOj6Foe4N44",
+            "trxn_id": "TpKKXvwiVo",
+            "invoice_id": "Rzvma2K6NZh3ws1jWMDUvDyblbotfvD1",
             "contribution_status_id": "1",
             "is_test": "0",
             "cycle_day": "5",
@@ -271,7 +269,7 @@ curl -g \
             "auto_renew": "0",
             "last_execute_date": ""
         }
-    }
+    ]
 }
 {/literal}```
 
@@ -296,13 +294,13 @@ application/json
 #### Request body
 ```{literal}
 {
-    "id": 88
+    "id": 4
 }
 {/literal}```
 
 #### API Explorer
 ```{literal}
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=delete&pretty=1&json={"id":88}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution_recur&action=delete&pretty=1&json={"id":4}
 {/literal}```
 
 #### curl Example
@@ -312,7 +310,7 @@ curl -g \
   --header 'x-civicrm-site-key: <site-key>' \ 
   --header 'content-type: application/json' \
   --request POST \
-  --data '{literal}{"id":88}{/literal}' \
+  --data '{literal}{"id":4}{/literal}' \
   '<entrypoint>?entity=contribution_recur&action=delete'
 ```
 
@@ -322,6 +320,6 @@ curl -g \
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "values": 1
+    "values": []
 }
 {/literal}```

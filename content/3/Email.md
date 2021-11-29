@@ -3,9 +3,7 @@ title = "Email API"
 menuTitle = "Email"
 chapter = false
 +++
-
 This is a API Document about Email.
-
 
 | 變數名稱 | 類型 | 長度 | 格式 | 建立規則 | 說明 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -33,12 +31,12 @@ GET
 
 #### Request URL
 ```
-<entrypoint>?entity=Email&action=get&json={"contact_id":332,"location_type_id":630,"email":"api.test@civicrm.test.org"}
+<entrypoint>?entity=Email&action=get&json={"contact_id":21,"location_type_id":6,"email":"api.test@civicrm.test.org"}
 ```
 
 #### API Explorer
 ```
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=get&pretty=1&json={"contact_id":332,"location_type_id":630,"email":"api.test@civicrm.test.org"}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=get&pretty=1&json={"contact_id":21,"location_type_id":6,"email":"api.test@civicrm.test.org"}
 ```
 
 #### curl Example
@@ -55,19 +53,19 @@ curl -g \
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 565,
-    "values": {
-        "565": {
-            "id": "565",
-            "contact_id": "332",
-            "location_type_id": "630",
+    "id": 22,
+    "values": [
+        {
+            "id": "22",
+            "contact_id": "21",
+            "location_type_id": "6",
             "email": "api.test@civicrm.test.org",
             "is_primary": "1",
             "is_billing": "0",
             "on_hold": "0",
             "is_bulkmail": "0"
         }
-    }
+    ]
 }
 ```
 
@@ -92,8 +90,8 @@ application/json
 #### Request body
 ```
 {
-    "contact_id": 333,
-    "location_type_id": 632,
+    "contact_id": 22,
+    "location_type_id": 8,
     "email": "api.test@civicrm.test.org",
     "is_primary": 1
 }
@@ -101,7 +99,7 @@ application/json
 
 #### API Explorer
 ```
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=create&pretty=1&json={"contact_id":333,"location_type_id":632,"email":"api.test@civicrm.test.org","is_primary":1}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=create&pretty=1&json={"contact_id":22,"location_type_id":8,"email":"api.test@civicrm.test.org","is_primary":1}
 ```
 
 #### curl Example
@@ -111,7 +109,7 @@ curl -g \
   --header 'x-civicrm-site-key: <site-key>' \ 
   --header 'content-type: application/json' \
   --request POST \
-  --data '{"contact_id":333,"location_type_id":632,"email":"api.test@civicrm.test.org","is_primary":1}' \
+  --data '{"contact_id":22,"location_type_id":8,"email":"api.test@civicrm.test.org","is_primary":1}' \
   '<entrypoint>?entity=Email&action=create'
 ```
 
@@ -121,12 +119,12 @@ curl -g \
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 566,
-    "values": {
-        "566": {
-            "id": "566",
-            "contact_id": "333",
-            "location_type_id": "632",
+    "id": 23,
+    "values": [
+        {
+            "id": "23",
+            "contact_id": "22",
+            "location_type_id": "8",
             "email": "api.test@civicrm.test.org",
             "is_primary": "1",
             "is_billing": "",
@@ -137,7 +135,7 @@ curl -g \
             "signature_text": "",
             "signature_html": ""
         }
-    }
+    ]
 }
 ```
 
@@ -162,17 +160,17 @@ application/json
 #### Request body
 ```
 {
-    "contact_id": 337,
-    "location_type_id": 640,
+    "contact_id": 26,
+    "location_type_id": 16,
     "email": "test.update@civicrm.test.org",
     "is_primary": 1,
-    "id": 570
+    "id": 27
 }
 ```
 
 #### API Explorer
 ```
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=create&pretty=1&json={"contact_id":337,"location_type_id":640,"email":"test.update@civicrm.test.org","is_primary":1,"id":570}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=create&pretty=1&json={"contact_id":26,"location_type_id":16,"email":"test.update@civicrm.test.org","is_primary":1,"id":27}
 ```
 
 #### curl Example
@@ -182,7 +180,7 @@ curl -g \
   --header 'x-civicrm-site-key: <site-key>' \ 
   --header 'content-type: application/json' \
   --request POST \
-  --data '{"contact_id":337,"location_type_id":640,"email":"test.update@civicrm.test.org","is_primary":1,"id":570}' \
+  --data '{"contact_id":26,"location_type_id":16,"email":"test.update@civicrm.test.org","is_primary":1,"id":27}' \
   '<entrypoint>?entity=Email&action=create'
 ```
 
@@ -192,23 +190,23 @@ curl -g \
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 570,
-    "values": {
-        "570": {
-            "id": "570",
-            "contact_id": "337",
-            "location_type_id": "640",
+    "id": 27,
+    "values": [
+        {
+            "id": "27",
+            "contact_id": "26",
+            "location_type_id": "16",
             "email": "test.update@civicrm.test.org",
             "is_primary": "1",
-            "is_billing": "",
-            "on_hold": "",
-            "is_bulkmail": "",
+            "is_billing": "0",
+            "on_hold": "0",
+            "is_bulkmail": "0",
             "hold_date": "",
             "reset_date": "",
             "signature_text": "",
             "signature_html": ""
         }
-    }
+    ]
 }
 ```
 
@@ -233,13 +231,13 @@ application/json
 #### Request body
 ```
 {
-    "id": 571
+    "id": 28
 }
 ```
 
 #### API Explorer
 ```
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=delete&pretty=1&json={"id":571}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&action=delete&pretty=1&json={"id":28}
 ```
 
 #### curl Example
@@ -249,7 +247,7 @@ curl -g \
   --header 'x-civicrm-site-key: <site-key>' \ 
   --header 'content-type: application/json' \
   --request POST \
-  --data '{"id":571}' \
+  --data '{"id":28}' \
   '<entrypoint>?entity=Email&action=delete'
 ```
 
