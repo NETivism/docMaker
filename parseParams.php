@@ -30,6 +30,13 @@ function doParseParams($params) {
   $xmlFolder = $baseDir .'/xml/schema/';
   $filePathArray = glob($xmlFolder.'*/'.$entityName.'.xml');
   $file = reset($filePathArray);
+  if (!file_exists($file)) {
+    $search = "@PARAMS@";
+    $content = str_replace($search, '', $content);
+
+    $params['content'] = $content;
+    return $params;
+  }
 
   $xml = simplexml_load_file("$file") or die("Error: Cannot create object");
   $replaceParams = 
