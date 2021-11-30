@@ -11,28 +11,37 @@ menuTitle = "Contribution Page"
 
 #### HTTP方法
 
-`GET`
+```
+GET
+```
 
 #### Request URL
 
 取得所有募款頁
-`<entrypoint>?entity=ContributionPage&action=get`
+```
+<entrypoint>?entity=ContributionPage&action=get
+```
 
 取得編號3的募款頁
-`<entrypoint>?entity=ContributionPage&action=get&json={"id":"3"}`
+```
+<entrypoint>?entity=ContributionPage&action=get&json={"id":"3"}
+```
 
 
 #### API Explorer 路徑
 
-`https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=ContributionPage&action=get&pretty=1`
+```
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=ContributionPage&action=get&pretty=1
+```
 
 
-#### CURL 發送範例
+#### curl Example
 
 ```bash
 curl -g \
---header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
-'<entrypoint>?entity=ContributionPage&action=get'
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  '<entrypoint>?entity=ContributionPage&action=get'
 ```
 
 ### 回傳範例
@@ -135,22 +144,29 @@ curl -g \
 
 #### HTTP方法
 
-`GET`
+```
+GET
+```
 
 #### Request URL
 
-`<entrypoint>?entity=ContributionPage&action=get&json={"api.CustomValue.get":{"entity_id":"$value.id"}}`
+```
+<entrypoint>?entity=ContributionPage&action=get&json={"api.CustomValue.get":{"entity_id":"$value.id"}}
+```
 
 #### API Explorer 路徑
 
-`https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=ContributionPage&action=get&pretty=1&json={%22api.CustomValue.get%22:{%22entity_id%22:%22$value.id%22}}`
+```
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=ContributionPage&action=get&pretty=1&json={%22api.CustomValue.get%22:{%22entity_id%22:%22$value.id%22}}
+```
 
-#### CURL 發送範例
+#### curl Example
 
-```bash
+```
 curl -g \
---header 'x-civicrm-api-key: <secret-key>' --header 'x-civicrm-site-key: <site-key>' \
- '<entrypoint>?entity=ContributionPage&action=get&json={"api.CustomValue.get":{"entity_id":"$value.id"}}'
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  '<entrypoint>?entity=ContributionPage&action=get&json={"api.CustomValue.get":{"entity_id":"$value.id"}}'
 ```
 
 ### 回傳範例

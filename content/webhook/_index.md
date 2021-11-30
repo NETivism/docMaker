@@ -26,32 +26,40 @@ https://<site-domain>/civicrm/event/info?reset=1&id=<event_id>
 
 netiCRM的網站設定中，需要事先設定完以下常數，Webhook僅會於指定的網域驗證通過後觸發。
 
-以https開頭指定Webhook網域: `<civicrm_webhook_domain>`
+以`https`開頭指定Webhook網域: `<civicrm_webhook_domain>`
 驗證用的Secret: `<civicrm_webhook_secret>`
 
 下文將會以這兩個變數說明
 
 
 ## Redirection Webhook
-_wh_redirect"回傳value中的網址，進行轉址。設定轉址網址只需要更改value雙引號中間的網址。
+`_wh_redirect` 回傳value中的網址，進行轉址。設定轉址網址只需要更改value雙引號中間的網址。
 
 ### 發送範例
 
 #### HTTP 方法
 
-`POST`
+```
+POST
+```
 
 #### Request Content Type
 
-`application/x-www-form-urlencoded`
+```
+application/x-www-form-urlencoded
+```
 
 #### Request URL
 
-`<entrypoint>`
+```
+<entrypoint>
+```
 
 #### Request Body
 
-`_wh_redirect=<civicrm_webhook_domain>/your-redirection-path`
+```
+_wh_redirect=<civicrm_webhook_domain>/your-redirection-path
+```
 
 #### curl 發送範例
 
@@ -68,19 +76,27 @@ curl \
 
 #### HTTP 方法
 
-`POST`
+```
+POST
+```
 
 #### Request Content Type
 
-`application/x-www-form-urlencoded`
+```
+application/x-www-form-urlencoded
+```
 
 #### Request URL
 
-`<entrypoint>`
+```
+<entrypoint>
+```
 
 #### Request Body
 
-`_wh_notify=<civicrm_webhook_domain>`
+```
+_wh_notify=<civicrm_webhook_domain>/your-notification-path
+```
 
 #### curl 發送範例
 
@@ -94,14 +110,14 @@ curl \
 
 回傳的捐款資訊會通知到指定的網址。回傳的捐款資訊內容請見下方回傳格式的範例。
 
-##### Response Header:
+#### Response Header:
 記錄網站網域、捐款通知回傳的格式、WebhookID與內容的字數
 ```
 Content-Type: application/json
 X-Civicrm-Webhook-Signature: ********************
 ```
 
-##### Response Body:
+#### Response Body:
 
 預設回傳格式為JSON，被記錄的捐款資訊欄位是固定的，如下範例：
 
@@ -124,6 +140,7 @@ X-Civicrm-Webhook-Signature: ********************
     "receive_date":"2021-08-18 17:13:00"
 }
 ```
+
 ### 驗證回傳值
 
 接收到 Notification 後，建議您務必驗證來源
