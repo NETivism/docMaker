@@ -420,16 +420,14 @@ application/json
     {
       "email":"abcd@test.com",
       "location_type_id":"1",
-      "append":"1"
     },
     ...
   ]
   "phone": [
     {
-      "phone":"abcd@test.com",
+      "phone":"0911-222333",
       "location_type_id":"1",
       "phone_type_id":"1",
-      "append":"1"
     },
     ...
   ],
