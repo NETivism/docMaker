@@ -65,6 +65,15 @@ API Explorer /civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;amp;actio
     </item>
     
     <item>
+      <title>Custom Value API</title>
+      <link>/api-document/3/customvalues/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/api-document/3/customvalues/</guid>
+      <description>取得自訂欄位群組、欄位與選項 Custom Group Get API 傳送範例 HTTP Method GET Request URL &amp;lt;entrypoint&amp;gt;?entity=CustomGroup&amp;amp;action=get API Explorer /civicrm/apibrowser#/civicrm/ajax/rest?entity=CustomGroup&amp;amp;action=get curl Example curl -g \ --header &#39;x-civicrm-api-key: &amp;lt;secret-key&amp;gt;&#39; \ --header &#39;x-civicrm-site-key: &amp;lt;site-key&amp;gt;&#39; \ &#39;&amp;lt;entrypoint&amp;gt;?entity=CustomGroup&amp;amp;action=get&#39; 回傳範例 { &amp;quot;is_error&amp;quot;: 0, &amp;quot;version&amp;quot;: 3, &amp;quot;count&amp;quot;: 10, &amp;quot;values&amp;quot;: [ { &amp;quot;id&amp;quot;: &amp;quot;1&amp;quot;, &amp;quot;name&amp;quot;: &amp;quot;ge_ren_bei_jing&amp;quot;, &amp;quot;title&amp;quot;: &amp;quot;個人背景&amp;quot;, &amp;quot;extends&amp;quot;: &amp;quot;Individual&amp;quot;, &amp;quot;style&amp;quot;: &amp;quot;Inline&amp;quot;, &amp;quot;collapse_display&amp;quot;: &amp;quot;0&amp;quot;, &amp;quot;help_pre&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;help_post&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;weight&amp;quot;: &amp;quot;1&amp;quot;, &amp;quot;is_active&amp;quot;: &amp;quot;1&amp;quot;, &amp;quot;table_name&amp;quot;: &amp;quot;civicrm_value_ge_ren_bei_jing_1&amp;quot;, &amp;quot;is_multiple&amp;quot;: &amp;quot;0&amp;quot;, &amp;quot;collapse_adv_display&amp;quot;: &amp;quot;0&amp;quot; }, ... ] } Custom Field Get API 傳送範例 HTTP Method GET Request URL &amp;lt;entrypoint&amp;gt;?</description>
+    </item>
+    
+    <item>
       <title>Email API</title>
       <link>/api-document/3/email/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
