@@ -12,20 +12,20 @@
     <title>Contact API :: netiCRM API Documentation</title>
 
     
-    <link href="/api-document/css/nucleus.css?1639034031" rel="stylesheet">
-    <link href="/api-document/css/fontawesome-all.min.css?1639034031" rel="stylesheet">
-    <link href="/api-document/css/hybrid.css?1639034031" rel="stylesheet">
-    <link href="/api-document/css/featherlight.min.css?1639034031" rel="stylesheet">
-    <link href="/api-document/css/perfect-scrollbar.min.css?1639034031" rel="stylesheet">
-    <link href="/api-document/css/auto-complete.css?1639034031" rel="stylesheet">
-    <link href="/api-document/css/atom-one-dark-reasonable.css?1639034031" rel="stylesheet">
-    <link href="/api-document/css/theme.css?1639034031" rel="stylesheet">
-    <link href="/api-document/css/tabs.css?1639034031" rel="stylesheet">
-    <link href="/api-document/css/hugo-theme.css?1639034031" rel="stylesheet">
+    <link href="/api-document/css/nucleus.css?1639119081" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1639119081" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1639119081" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1639119081" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1639119081" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1639119081" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1639119081" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1639119081" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1639119081" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1639119081" rel="stylesheet">
     
     
 
-    <script src="/api-document/js/jquery-3.3.1.min.js?1639034031"></script>
+    <script src="/api-document/js/jquery-3.3.1.min.js?1639119081"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/api-document/js/lunr.min.js?1639034031"></script>
-<script type="text/javascript" src="/api-document/js/auto-complete.js?1639034031"></script>
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1639119081"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1639119081"></script>
 <script type="text/javascript">
     
         var baseurl = "\/api-document";
     
 </script>
-<script type="text/javascript" src="/api-document/js/search.js?1639034031"></script>
+<script type="text/javascript" src="/api-document/js/search.js?1639119081"></script>
 
     
   </div>
@@ -459,6 +459,444 @@
         
 
 
+<table>
+<thead>
+<tr>
+<th>變數名稱</th>
+<th>類型</th>
+<th>長度</th>
+<th>格式</th>
+<th>建立規則</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td>更新時必填</td>
+<td>Unique Contact ID</td>
+</tr>
+<tr>
+<td>contact_type</td>
+<td>字串(varchar)</td>
+<td>64</td>
+<td></td>
+<td></td>
+<td>Type of Contact.</td>
+</tr>
+<tr>
+<td>contact_sub_type</td>
+<td>字串(varchar)</td>
+<td>64</td>
+<td></td>
+<td></td>
+<td>May be used to over-ride contact view and edit templates.</td>
+</tr>
+<tr>
+<td>do_not_email</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 0</td>
+<td></td>
+</tr>
+<tr>
+<td>do_not_phone</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 0</td>
+<td></td>
+</tr>
+<tr>
+<td>do_not_mail</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 0</td>
+<td></td>
+</tr>
+<tr>
+<td>do_not_sms</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 0</td>
+<td></td>
+</tr>
+<tr>
+<td>do_not_trade</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 0</td>
+<td></td>
+</tr>
+<tr>
+<td>is_opt_out</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>必填, 預設值: 0</td>
+<td>Has the contact opted out from receiving all bulk email from the organization or site domain?</td>
+</tr>
+<tr>
+<td>legal_identifier</td>
+<td>字串(varchar)</td>
+<td>32</td>
+<td></td>
+<td></td>
+<td>May be used for SSN, EIN/TIN, Household ID (census) or other applicable unique legal/government ID.</td>
+</tr>
+<tr>
+<td>external_identifier</td>
+<td>字串(varchar)</td>
+<td>128</td>
+<td></td>
+<td></td>
+<td>Unique trusted external ID (generally from a legacy app/datasource). Particularly useful for deduping operations.</td>
+</tr>
+<tr>
+<td>sort_name</td>
+<td>字串(varchar)</td>
+<td>128</td>
+<td></td>
+<td></td>
+<td>Name used for sorting different contact types</td>
+</tr>
+<tr>
+<td>display_name</td>
+<td>字串(varchar)</td>
+<td>128</td>
+<td></td>
+<td></td>
+<td>Formatted name representing preferred format for display/print/other output.</td>
+</tr>
+<tr>
+<td>nick_name</td>
+<td>字串(varchar)</td>
+<td>128</td>
+<td></td>
+<td></td>
+<td>Nick Name.</td>
+</tr>
+<tr>
+<td>legal_name</td>
+<td>字串(varchar)</td>
+<td>128</td>
+<td></td>
+<td></td>
+<td>Legal Name.</td>
+</tr>
+<tr>
+<td>home_URL</td>
+<td>字串(varchar)</td>
+<td>128</td>
+<td></td>
+<td></td>
+<td>optional &ldquo;home page&rdquo; URL for this contact.</td>
+</tr>
+<tr>
+<td>image_URL</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td>optional URL for preferred image (photo, logo, etc.) to display for this contact.</td>
+</tr>
+<tr>
+<td>preferred_communication_method</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td>What is the preferred mode of communication.</td>
+</tr>
+<tr>
+<td>preferred_language</td>
+<td>字串(varchar)</td>
+<td>5</td>
+<td></td>
+<td></td>
+<td>Which language is preferred for communication. FK to languages in civicrm_option_value.</td>
+</tr>
+<tr>
+<td>preferred_mail_format</td>
+<td>字串(enum)</td>
+<td></td>
+<td>Text, HTML, Both</td>
+<td>預設值: &ldquo;Both&rdquo;</td>
+<td>What is the preferred mode of sending an email.</td>
+</tr>
+<tr>
+<td>hash</td>
+<td>字串(varchar)</td>
+<td>32</td>
+<td></td>
+<td></td>
+<td>Key for validating requests related to this contact.</td>
+</tr>
+<tr>
+<td>api_key</td>
+<td>字串(varchar)</td>
+<td>32</td>
+<td></td>
+<td></td>
+<td>API Key for validating requests related to this contact.</td>
+</tr>
+<tr>
+<td>source</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td>where contact come from, e.g. import, donate module insert&hellip;</td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>字串(varchar)</td>
+<td>64</td>
+<td></td>
+<td></td>
+<td>First Name.</td>
+</tr>
+<tr>
+<td>middle_name</td>
+<td>字串(varchar)</td>
+<td>64</td>
+<td></td>
+<td></td>
+<td>Middle Name.</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>字串(varchar)</td>
+<td>64</td>
+<td></td>
+<td></td>
+<td>Last Name.</td>
+</tr>
+<tr>
+<td>prefix_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Prefix or Title for name (Ms, Mr&hellip;). FK to prefix ID</td>
+</tr>
+<tr>
+<td>suffix_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Suffix for name (Jr, Sr&hellip;). FK to suffix ID</td>
+</tr>
+<tr>
+<td>greeting_type</td>
+<td>字串(varchar)</td>
+<td>128</td>
+<td></td>
+<td></td>
+<td>Preferred greeting format.</td>
+</tr>
+<tr>
+<td>greeting_type_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>FK to civicrm_option_value.id, that has to be valid, registered Greeting type.</td>
+</tr>
+<tr>
+<td>custom_greeting</td>
+<td>字串(varchar)</td>
+<td>128</td>
+<td></td>
+<td></td>
+<td>Custom greeting message.</td>
+</tr>
+<tr>
+<td>email_greeting_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>FK to civicrm_option_value.id, that has to be valid registered Email Greeting.</td>
+</tr>
+<tr>
+<td>email_greeting_custom</td>
+<td>字串(varchar)</td>
+<td>128</td>
+<td></td>
+<td></td>
+<td>Custom Email Greeting.</td>
+</tr>
+<tr>
+<td>email_greeting_display</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td>Cache Email Greeting.</td>
+</tr>
+<tr>
+<td>postal_greeting_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>FK to civicrm_option_value.id, that has to be valid registered Postal Greeting.</td>
+</tr>
+<tr>
+<td>postal_greeting_custom</td>
+<td>字串(varchar)</td>
+<td>128</td>
+<td></td>
+<td></td>
+<td>Custom Postal greeting.</td>
+</tr>
+<tr>
+<td>postal_greeting_display</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td>Cache Postal greeting.</td>
+</tr>
+<tr>
+<td>addressee_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>FK to civicrm_option_value.id, that has to be valid registered Addressee.</td>
+</tr>
+<tr>
+<td>addressee_custom</td>
+<td>字串(varchar)</td>
+<td>128</td>
+<td></td>
+<td></td>
+<td>Custom Addressee.</td>
+</tr>
+<tr>
+<td>addressee_display</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td>Cache Addressee.</td>
+</tr>
+<tr>
+<td>job_title</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td>職稱</td>
+</tr>
+<tr>
+<td>gender_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>FK to gender ID</td>
+</tr>
+<tr>
+<td>birth_date</td>
+<td>日期(date)</td>
+<td></td>
+<td>yyyy-mm-dd</td>
+<td></td>
+<td>出生日期</td>
+</tr>
+<tr>
+<td>is_deceased</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 0</td>
+<td></td>
+</tr>
+<tr>
+<td>deceased_date</td>
+<td>日期(date)</td>
+<td></td>
+<td>yyyy-mm-dd</td>
+<td></td>
+<td>Date of deceased</td>
+</tr>
+<tr>
+<td>mail_to_household_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>OPTIONAL FK to civicrm_contact_household record. If NOT NULL, direct mail communications to household rather than individual location.</td>
+</tr>
+<tr>
+<td>household_name</td>
+<td>字串(varchar)</td>
+<td>128</td>
+<td></td>
+<td></td>
+<td>Household Name.</td>
+</tr>
+<tr>
+<td>primary_contact_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Optional FK to Primary Contact for this household.</td>
+</tr>
+<tr>
+<td>organization_name</td>
+<td>字串(varchar)</td>
+<td>128</td>
+<td></td>
+<td></td>
+<td>Organization Name.</td>
+</tr>
+<tr>
+<td>sic_code</td>
+<td>字串(varchar)</td>
+<td>8</td>
+<td></td>
+<td></td>
+<td>Standard Industry Classification Code.</td>
+</tr>
+<tr>
+<td>user_unique_id</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td>the OpenID (or OpenID-style <a href="http://username.domain/">http://username.domain/</a>) unique identifier for this contact mainly used for logging in to CiviCRM</td>
+</tr>
+<tr>
+<td>employer_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>OPTIONAL FK to civicrm_contact record.</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>必填, 預設值: 0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h1 id="基本使用">基本使用</h1>
 <h2 id="contact-get-api">Contact Get API</h2>
 <h3 id="發送範例">發送範例</h3>
@@ -996,19 +1434,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/api-document/js/clipboard.min.js?1639034031"></script>
-    <script src="/api-document/js/perfect-scrollbar.min.js?1639034031"></script>
-    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1639034031"></script>
-    <script src="/api-document/js/jquery.sticky.js?1639034031"></script>
-    <script src="/api-document/js/featherlight.min.js?1639034031"></script>
-    <script src="/api-document/js/highlight.pack.js?1639034031"></script>
+    <script src="/api-document/js/clipboard.min.js?1639119081"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1639119081"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1639119081"></script>
+    <script src="/api-document/js/jquery.sticky.js?1639119081"></script>
+    <script src="/api-document/js/featherlight.min.js?1639119081"></script>
+    <script src="/api-document/js/highlight.pack.js?1639119081"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/api-document/js/modernizr.custom-3.6.0.js?1639034031"></script>
-    <script src="/api-document/js/learn.js?1639034031"></script>
-    <script src="/api-document/js/hugo-learn.js?1639034031"></script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1639119081"></script>
+    <script src="/api-document/js/learn.js?1639119081"></script>
+    <script src="/api-document/js/hugo-learn.js?1639119081"></script>
     
         
-            <script src="/api-document/mermaid/mermaid.js?1639034031"></script>
+            <script src="/api-document/mermaid/mermaid.js?1639119081"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
