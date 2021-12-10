@@ -536,3 +536,109 @@ curl -g \
   "values": true
 }
 ```
+
+### 進階範例：建立聯絡人同時更新自訂欄位
+
+#### 傳送範例
+##### HTTP Method
+```
+POST
+```
+
+##### Request URL
+```
+<entrypoint>?entity=Contact&action=create
+```
+
+##### Request Content Type
+```
+application/json
+```
+
+##### Request body
+
+```
+{
+  "contact_type": "Individual",
+  "last_name": "王",
+  "first_name": "陽明",
+  "nick_name": "小明",
+  "api.CustomValue.create": {
+    "entity_table": "<entity_table>", # 請參照 "範例替換符號" <entity_table> 說明
+    "entity_id": "$value.id",         # $value.id 固定會取上層API的id欄位，若是建立聯絡人，將會取新建立的聯絡人ID
+    "custom_<field_id>":"highschool", # 欲更新的欄位，<field_id>為自訂欄位編號
+                                      # 單值請直接帶入字串，允許值為自訂欄位選項「值」
+    "custom_<field_id>": [            # 多值範例，請傳入陣列，將會清掉現有選項值，重新指定新的選項值
+      1,
+      2
+    ],
+    "custom_<field_id>": "[null]"     # 將欄位值清空（NULL）範例，帶入字串"[null]"
+  }
+}
+```
+
+#### 回傳範例
+
+```
+{
+  "is_error": 0,
+  "version": 3,
+  "count": 1,
+  "id": 1234,
+  "values": [
+    {
+      "id": "1234",
+      "contact_type": "Individual",
+      "contact_sub_type": "",
+      "do_not_email": "",
+      "do_not_phone": "",
+      "do_not_mail": "",
+      "do_not_sms": "",
+      "do_not_trade": "",
+      "is_opt_out": "",
+      "legal_identifier": "",
+      "external_identifier": "",
+      "sort_name": "王陽明",
+      "display_name": "王陽明",
+      "nick_name": "小明",
+      "legal_name": "",
+      "image_URL": "",
+      "preferred_communication_method": "",
+      "preferred_language": "",
+      "preferred_mail_format": "",
+      "hash": "",
+      "api_key": "",
+      "first_name": "陽明",
+      "middle_name": "",
+      "last_name": "王",
+      "prefix_id": "",
+      "suffix_id": "",
+      "email_greeting_id": "",
+      "email_greeting_custom": "",
+      "email_greeting_display": "",
+      "postal_greeting_id": "",
+      "postal_greeting_custom": "",
+      "postal_greeting_display": "",
+      "addressee_id": "",
+      "addressee_custom": "",
+      "addressee_display": "",
+      "job_title": "",
+      "gender_id": "",
+      "birth_date": "",
+      "is_deceased": "",
+      "deceased_date": "",
+      "household_name": "",
+      "primary_contact_id": "",
+      "organization_name": "",
+      "sic_code": "",
+      "user_unique_id": "",
+      "api.CustomValue.create": {
+        "is_error": 0,
+        "version": 3,
+        "count": 1,
+        "values": true
+      }
+    }
+  ]
+}
+```
