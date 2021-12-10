@@ -143,10 +143,15 @@ function doParseParams($params) {
 
     $create_rule = array();
     if(property_exists($field, 'required') && $field->required == 'true') {
-        $create_rule[] = '{ts}Required{/ts}';
+      if ($field->name == 'id') {
+        $create_rule[] = '更新時必填';
+      }
+      else {
+        $create_rule[] = '必填';
+      }
     }
     if (property_exists($field, 'default')) {
-      $create_rule[] = "{ts}Default Value{/ts}: {$field->default}";
+      $create_rule[] = "預設值: {$field->default}";
     }
     $create_rule = implode(', ', $create_rule);
 

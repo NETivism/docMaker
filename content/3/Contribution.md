@@ -7,7 +7,7 @@ This is a API Document about contribution.
 
 | 變數名稱 | 類型 | 長度 | 格式 | 建立規則 | 說明 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| id | 數字(int unsigned) | 10 | >= 0 | 必填 | Unique Contribution ID |
+| id | 數字(int unsigned) | 10 | >= 0 | 更新時必填 | Unique Contribution ID |
 | contact_id | 數字(int unsigned) | 10 | >= 0 | 必填 | FK to Contact ID |
 | solicitor_id | 數字(int unsigned) | 10 | >= 0 |  | FK to Solicitor ID |
 | contribution_type_id | 數字(int unsigned) | 10 | >= 0 |  | FK to Contribution Type |

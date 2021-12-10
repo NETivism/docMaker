@@ -4,6 +4,62 @@ menuTitle = "Contact"
 weight = 50
 +++
 
+| 變數名稱 | 類型 | 長度 | 格式 | 建立規則 | 說明 |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| id | 數字(int unsigned) | 10 | >= 0 | 更新時必填 | Unique Contact ID |
+| contact_type | 字串(varchar) | 64 |  |  | Type of Contact. |
+| contact_sub_type | 字串(varchar) | 64 |  |  | May be used to over-ride contact view and edit templates. |
+| do_not_email | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 |  |
+| do_not_phone | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 |  |
+| do_not_mail | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 |  |
+| do_not_sms | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 |  |
+| do_not_trade | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 |  |
+| is_opt_out | 布林值(boolean) | 1 | 0 or 1 | 必填, 預設值: 0 | Has the contact opted out from receiving all bulk email from the organization or site domain? |
+| legal_identifier | 字串(varchar) | 32 |  |  | May be used for SSN, EIN/TIN, Household ID (census) or other applicable unique legal/government ID. |
+| external_identifier | 字串(varchar) | 128 |  |  | Unique trusted external ID (generally from a legacy app/datasource). Particularly useful for deduping operations. |
+| sort_name | 字串(varchar) | 128 |  |  | Name used for sorting different contact types |
+| display_name | 字串(varchar) | 128 |  |  | Formatted name representing preferred format for display/print/other output. |
+| nick_name | 字串(varchar) | 128 |  |  | Nick Name. |
+| legal_name | 字串(varchar) | 128 |  |  | Legal Name. |
+| home_URL | 字串(varchar) | 128 |  |  | optional "home page" URL for this contact. |
+| image_URL | 字串(varchar) | 255 |  |  | optional URL for preferred image (photo, logo, etc.) to display for this contact. |
+| preferred_communication_method | 字串(varchar) | 255 |  |  | What is the preferred mode of communication. |
+| preferred_language | 字串(varchar) | 5 |  |  | Which language is preferred for communication. FK to languages in civicrm_option_value. |
+| preferred_mail_format | 字串(enum) |  | Text, HTML, Both | 預設值: "Both" | What is the preferred mode of sending an email. |
+| hash | 字串(varchar) | 32 |  |  | Key for validating requests related to this contact. |
+| api_key | 字串(varchar) | 32 |  |  | API Key for validating requests related to this contact. |
+| source | 字串(varchar) | 255 |  |  | where contact come from, e.g. import, donate module insert... |
+| first_name | 字串(varchar) | 64 |  |  | First Name. |
+| middle_name | 字串(varchar) | 64 |  |  | Middle Name. |
+| last_name | 字串(varchar) | 64 |  |  | Last Name. |
+| prefix_id | 數字(int unsigned) | 10 | >= 0 |  | Prefix or Title for name (Ms, Mr...). FK to prefix ID |
+| suffix_id | 數字(int unsigned) | 10 | >= 0 |  | Suffix for name (Jr, Sr...). FK to suffix ID |
+| greeting_type | 字串(varchar) | 128 |  |  | Preferred greeting format. |
+| greeting_type_id | 數字(int unsigned) | 10 | >= 0 |  | FK to civicrm_option_value.id, that has to be valid, registered Greeting type. |
+| custom_greeting | 字串(varchar) | 128 |  |  | Custom greeting message. |
+| email_greeting_id | 數字(int unsigned) | 10 | >= 0 |  | FK to civicrm_option_value.id, that has to be valid registered Email Greeting. |
+| email_greeting_custom | 字串(varchar) | 128 |  |  | Custom Email Greeting. |
+| email_greeting_display | 字串(varchar) | 255 |  |  | Cache Email Greeting. |
+| postal_greeting_id | 數字(int unsigned) | 10 | >= 0 |  | FK to civicrm_option_value.id, that has to be valid registered Postal Greeting. |
+| postal_greeting_custom | 字串(varchar) | 128 |  |  | Custom Postal greeting. |
+| postal_greeting_display | 字串(varchar) | 255 |  |  | Cache Postal greeting. |
+| addressee_id | 數字(int unsigned) | 10 | >= 0 |  | FK to civicrm_option_value.id, that has to be valid registered Addressee. |
+| addressee_custom | 字串(varchar) | 128 |  |  | Custom Addressee. |
+| addressee_display | 字串(varchar) | 255 |  |  | Cache Addressee. |
+| job_title | 字串(varchar) | 255 |  |  | 職稱 |
+| gender_id | 數字(int unsigned) | 10 | >= 0 |  | FK to gender ID |
+| birth_date | 日期(date) |  | yyyy-mm-dd |  | 出生日期 |
+| is_deceased | 布林值(boolean) | 1 | 0 or 1 | 預設值: 0 |  |
+| deceased_date | 日期(date) |  | yyyy-mm-dd |  | Date of deceased |
+| mail_to_household_id | 數字(int unsigned) | 10 | >= 0 |  | OPTIONAL FK to civicrm_contact_household record. If NOT NULL, direct mail communications to household rather than individual location. |
+| household_name | 字串(varchar) | 128 |  |  | Household Name. |
+| primary_contact_id | 數字(int unsigned) | 10 | >= 0 |  | Optional FK to Primary Contact for this household. |
+| organization_name | 字串(varchar) | 128 |  |  | Organization Name. |
+| sic_code | 字串(varchar) | 8 |  |  | Standard Industry Classification Code. |
+| user_unique_id | 字串(varchar) | 255 |  |  | the OpenID (or OpenID-style http://username.domain/) unique identifier for this contact mainly used for logging in to CiviCRM |
+| employer_id | 數字(int unsigned) | 10 | >= 0 |  | OPTIONAL FK to civicrm_contact record. |
+| is_deleted | 布林值(boolean) | 1 | 0 or 1 | 必填, 預設值: 0 |  |
+
 # 基本使用
 
 ## Contact Get API
