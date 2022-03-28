@@ -31,8 +31,8 @@ https://<site-domain>/sites/all/modules/civicrm/extern/rest.php
 ### API 認證金鑰使用流程
 
 請於每次請求加入指定的API Secret Key、Site Key，建議驗證方式為使用 HTTP Header 加入這兩個密鑰，密鑰取得方式如下：
-* API的 <secret-key> 需要由 netiCRM 客服協助設定
-* API的 <site-key> 則於網站登入後，可以於「設定>則於網站登入後，可以於「設定 > 全域設定 > CiviCRM 私密金鑰 」中呈現。(網址路徑：`https://<site-domain>/civicrm/admin/setting?reset=1`)
+* API的 `<secret-key>` 需要由 netiCRM 客服協助設定
+* API的 `<site-key>` 則於網站登入後，可以於「設定>則於網站登入後，可以於「設定 > 全域設定 > CiviCRM 私密金鑰 」中呈現。(網址路徑：`https://<site-domain>/civicrm/admin/setting?reset=1`)
 
 密鑰的 HTTP Header 格式如下：
 x-civicrm-api-key: `<secret-key>`
