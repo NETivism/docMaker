@@ -12,20 +12,20 @@
     <title>netiCRM API v3 簡介 :: netiCRM API Documentation</title>
 
     
-    <link href="/api-document/css/nucleus.css?1638289366" rel="stylesheet">
-    <link href="/api-document/css/fontawesome-all.min.css?1638289366" rel="stylesheet">
-    <link href="/api-document/css/hybrid.css?1638289366" rel="stylesheet">
-    <link href="/api-document/css/featherlight.min.css?1638289366" rel="stylesheet">
-    <link href="/api-document/css/perfect-scrollbar.min.css?1638289366" rel="stylesheet">
-    <link href="/api-document/css/auto-complete.css?1638289366" rel="stylesheet">
-    <link href="/api-document/css/atom-one-dark-reasonable.css?1638289366" rel="stylesheet">
-    <link href="/api-document/css/theme.css?1638289366" rel="stylesheet">
-    <link href="/api-document/css/tabs.css?1638289366" rel="stylesheet">
-    <link href="/api-document/css/hugo-theme.css?1638289366" rel="stylesheet">
+    <link href="/api-document/css/nucleus.css?1648464081" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1648464081" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1648464081" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1648464081" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1648464081" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1648464081" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1648464081" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1648464081" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1648464081" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1648464081" rel="stylesheet">
     
     
 
-    <script src="/api-document/js/jquery-3.3.1.min.js?1638289366"></script>
+    <script src="/api-document/js/jquery-3.3.1.min.js?1648464081"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/api-document/js/lunr.min.js?1638289366"></script>
-<script type="text/javascript" src="/api-document/js/auto-complete.js?1638289366"></script>
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1648464081"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1648464081"></script>
 <script type="text/javascript">
     
         var baseurl = "\/api-document";
     
 </script>
-<script type="text/javascript" src="/api-document/js/search.js?1638289366"></script>
+<script type="text/javascript" src="/api-document/js/search.js?1648464081"></script>
 
     
   </div>
@@ -200,6 +200,27 @@
       <li data-nav-id="/api-document/3/contributionrecur/" title="Contribution Recurring API" class="dd-item ">
         <a href="/api-document/3/contributionrecur/">
         Contribution Recurring
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/customvalues/" title="Custom Value API" class="dd-item ">
+        <a href="/api-document/3/customvalues/">
+        Custom Value
         
         </a>
     </li>
@@ -421,8 +442,8 @@
 <h3 id="api-認證金鑰使用流程">API 認證金鑰使用流程</h3>
 <p>請於每次請求加入指定的API Secret Key、Site Key，建議驗證方式為使用 HTTP Header 加入這兩個密鑰，密鑰取得方式如下：</p>
 <ul>
-<li>API的 <!-- raw HTML omitted --> 需要由 netiCRM 客服協助設定</li>
-<li>API的 <!-- raw HTML omitted --> 則於網站登入後，可以於「設定&gt;則於網站登入後，可以於「設定 &gt; 全域設定 &gt; CiviCRM 私密金鑰 」中呈現。(網址路徑：<code>https://&lt;site-domain&gt;/civicrm/admin/setting?reset=1</code>)</li>
+<li>API的 <code>&lt;secret-key&gt;</code> 需要由 netiCRM 客服協助設定</li>
+<li>API的 <code>&lt;site-key&gt;</code> 則於網站登入後，可以於「設定&gt;則於網站登入後，可以於「設定 &gt; 全域設定 &gt; CiviCRM 私密金鑰 」中呈現。(網址路徑：<code>https://&lt;site-domain&gt;/civicrm/admin/setting?reset=1</code>)</li>
 </ul>
 <p>密鑰的 HTTP Header 格式如下：
 x-civicrm-api-key: <code>&lt;secret-key&gt;</code>
@@ -674,6 +695,22 @@ x-civicrm-site-key: <code>&lt;site-key&gt;</code></p>
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -715,19 +752,19 @@ x-civicrm-site-key: <code>&lt;site-key&gt;</code></p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/api-document/js/clipboard.min.js?1638289366"></script>
-    <script src="/api-document/js/perfect-scrollbar.min.js?1638289366"></script>
-    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1638289366"></script>
-    <script src="/api-document/js/jquery.sticky.js?1638289366"></script>
-    <script src="/api-document/js/featherlight.min.js?1638289366"></script>
-    <script src="/api-document/js/highlight.pack.js?1638289366"></script>
+    <script src="/api-document/js/clipboard.min.js?1648464081"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1648464081"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1648464081"></script>
+    <script src="/api-document/js/jquery.sticky.js?1648464081"></script>
+    <script src="/api-document/js/featherlight.min.js?1648464081"></script>
+    <script src="/api-document/js/highlight.pack.js?1648464081"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/api-document/js/modernizr.custom-3.6.0.js?1638289366"></script>
-    <script src="/api-document/js/learn.js?1638289366"></script>
-    <script src="/api-document/js/hugo-learn.js?1638289366"></script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1648464081"></script>
+    <script src="/api-document/js/learn.js?1648464081"></script>
+    <script src="/api-document/js/hugo-learn.js?1648464081"></script>
     
         
-            <script src="/api-document/mermaid/mermaid.js?1638289366"></script>
+            <script src="/api-document/mermaid/mermaid.js?1648464081"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -5,7 +5,7 @@ include_once("translateFromTpl.php"); // it needs to be place here
 class genDoc {
   static public $_smarty = NULL;
 
-  function __construct($entityName) {
+  function __construct($entityName, $phase = NULl) {
     $config   = CRM_Core_Config::singleton();
     $i18n = CRM_Core_I18n::Singleton();
     $i18n->_localeCustomStrings =  prepareLocalTranslate();
@@ -40,17 +40,23 @@ chapter = false
 TEXTBLOCK;
     $params['content'] = $content;
 
-    # 2. Parse description from comments of API file
-    include_once("parseDesc.php");
-    $params = doParseDesc($params);
+    if (!$phase || $phase === 'desc') {
+      # 2. Parse description from comments of API file
+      include_once("parseDesc.php");
+      $params = doParseDesc($params);
+    }
 
     # 3. Parse available parameters from xml
-    include_once("parseParams.php");
-    $params = doParseParams($params);
+    if (!$phase || $phase === 'params') {
+      include_once("parseParams.php");
+      $params = doParseParams($params);
+    }
 
     # 4. Get Sample Code from API test file
-    include_once("genSampleCode.php");
-    $params = doGenSampleCode($params);
+    if (!$phase || $phase === 'sample') {
+      include_once("genSampleCode.php");
+      $params = doGenSampleCode($params);
+    }
 
     # 6. Generate html file from markdown file
     include_once("genHtmlFromMD.php");
@@ -73,6 +79,10 @@ TEXTBLOCK;
 }
 
 if (!empty($argv[1])) {
-  $entityName = $argv[1];
-  new genDoc($entityName);
+  if (!empty($argv[2])) {
+    new genDoc($argv[1], $argv[2]);
+  }
+  else {
+    new genDoc($argv[1]);
+  }
 }

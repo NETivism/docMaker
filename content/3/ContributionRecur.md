@@ -7,7 +7,7 @@ This is a API document about recurring contribution.
 
 | 變數名稱 | 類型 | 長度 | 格式 | 建立規則 | 說明 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| id | 數字(int unsigned) | 10 | >= 0 | 必填 | Unique Contribution Recur ID |
+| id | 數字(int unsigned) | 10 | >= 0 | 更新時必填 | Unique Contribution Recur ID |
 | contact_id | 數字(int unsigned) | 10 | >= 0 | 必填 | Foreign key to civicrm_contact.id |
 | amount | 數字(decimal) | 20,2 | 00.00 | 必填 | Amount to be contributed or charged each recurrence. |
 | currency | 字串(varchar) | 3 |  | 預設值: NULL | 3 character string, value from config setting. |
