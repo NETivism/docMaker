@@ -1,14 +1,14 @@
 # How to use
 
-1. Clone folder to root of civicrm.
+1. Clone folder to root of civicrm. Checkout civicrm to `develop` branch.
 
-2. There need paragraph between `@start_document` and `@end_document` used in comment of file `api/v3/xxx.php`.
+2. There need paragraph between `@docmaker_start` and `@docmaker_end` used in comment of file `tests/phpunit/api/v3/{entity}Test.php`.
 
-3. Enter docMaker folder.
+3. Go to API tests folder and run `phpunit {entity}Test.php` to generate request and response json files in folder `unit_test_result`
 
-4. Execute `php genDoc.php xxx`.
+4. Enter docMaker folder. Execute command `php genDoc.php {entity}`.
 
-5. Markdown result file will be generated in `markdown` folder.
+5. Markdown result file will be generated to `api-document/3/{entity}/index.html`.
 
 # Generate html document using hugo
 
