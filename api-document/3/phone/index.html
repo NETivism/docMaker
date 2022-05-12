@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.97.2" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/api-document/images/favicon.png" type="image/png">
+
+    <title>Phone API :: netiCRM API Documentation</title>
+
+    
+    <link href="/api-document/css/nucleus.css?1652345483" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1652345483" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1652345483" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1652345483" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1652345483" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1652345483" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1652345483" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1652345483" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1652345483" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1652345483" rel="stylesheet">
+    
+    
+
+    <script src="/api-document/js/jquery-3.3.1.min.js?1652345483"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/api-document/3/phone/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1652345483"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1652345483"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/api-document";
+    
+</script>
+<script type="text/javascript" src="/api-document/js/search.js?1652345483"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/api-document/3/" title="netiCRM API v3 簡介" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/api-document/3/">
+          API 簡介
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/basic/" title="API 基礎操作" class="dd-item ">
+        <a href="/api-document/3/basic/">
+        API 基礎操作
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contact/" title="Contact API" class="dd-item ">
+        <a href="/api-document/3/contact/">
+        Contact
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contribution/" title="Contribution API" class="dd-item ">
+        <a href="/api-document/3/contribution/">
+        Contribution
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contributionpage/" title="Contribution Page API" class="dd-item ">
+        <a href="/api-document/3/contributionpage/">
+        Contribution Page
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contributionrecur/" title="Contribution Recurring API" class="dd-item ">
+        <a href="/api-document/3/contributionrecur/">
+        Contribution Recurring
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/customvalues/" title="Custom Value API" class="dd-item ">
+        <a href="/api-document/3/customvalues/">
+        Custom Value
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/email/" title="Email API" class="dd-item ">
+        <a href="/api-document/3/email/">
+        Email
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/event/" title="Event API" class="dd-item ">
+        <a href="/api-document/3/event/">
+        Event
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/getoptions/" title="Get Options API" class="dd-item ">
+        <a href="/api-document/3/getoptions/">
+        Get Options
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/phone/" title="Phone API" class="dd-item active">
+        <a href="/api-document/3/phone/">
+        Phone
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/api-document/webhook/" title="Webhook API 簡介" class="dd-item
+        
+        
+        
+        ">
+      <a href="/api-document/webhook/">
+          Webhook 簡介
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>本文件製作<br>
+  <a href='/'><img src="https://neticrm.tw/sites/neticrm.tw/files/vigor_logo.png" width="100"></a></p>
+
+<p>This Theme Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/api-document/'>netiCRM API 手冊</a> > <a href='/api-document/3/'>netiCRM API v3 簡介</a> > Phone API
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#phone-create-api">Phone Create API</a>
+      <ul>
+        <li><a href="#傳送範例">傳送範例</a></li>
+        <li><a href="#回傳範例">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#phone-delete-api">Phone Delete API</a>
+      <ul>
+        <li><a href="#傳送範例-1">傳送範例</a></li>
+        <li><a href="#回傳範例-1">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#phone-get-api">Phone Get API</a>
+      <ul>
+        <li><a href="#傳送範例-2">傳送範例</a></li>
+        <li><a href="#回傳範例-2">回傳範例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Phone API
+            </h1>
+          
+
+        
+
+
+<p>This is a API Document about Phone.</p>
+<table>
+<thead>
+<tr>
+<th>變數名稱</th>
+<th>類型</th>
+<th>長度</th>
+<th>格式</th>
+<th>建立規則</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td>更新時必填</td>
+<td>Unique Phone ID</td>
+</tr>
+<tr>
+<td>contact_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>FK to Contact ID</td>
+</tr>
+<tr>
+<td>location_type_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Which Location does this phone belong to.</td>
+</tr>
+<tr>
+<td>is_primary</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 0</td>
+<td>Is this the primary phone for this contact and location.</td>
+</tr>
+<tr>
+<td>is_billing</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 0</td>
+<td>Is this the billing?</td>
+</tr>
+<tr>
+<td>mobile_provider_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Which Mobile Provider does this phone belong to.</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>字串(varchar)</td>
+<td>32</td>
+<td></td>
+<td></td>
+<td>Complete phone number.</td>
+</tr>
+<tr>
+<td>phone_type</td>
+<td>字串(enum)</td>
+<td></td>
+<td>Phone, Mobile, Fax, Pager</td>
+<td></td>
+<td>What type of telecom device is this.</td>
+</tr>
+<tr>
+<td>phone_type_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Which type of phone does this number belongs.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="phone-create-api">Phone Create API</h2>
+<h3 id="傳送範例">傳送範例</h3>
+<h4 id="http-method">HTTP Method</h4>
+<pre tabindex="0"><code>POST
+</code></pre><h4 id="request-url">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Phone&amp;action=create
+</code></pre><h4 id="request-content-type">Request Content Type</h4>
+<pre tabindex="0"><code>application/json
+</code></pre><h4 id="request-body">Request body</h4>
+<pre tabindex="0"><code>{
+    &#34;contact_id&#34;: 308,
+    &#34;location_type_id&#34;: 287,
+    &#34;phone&#34;: &#34;021 512 755&#34;,
+    &#34;is_primary&#34;: 1
+}
+</code></pre><h4 id="api-explorer">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Phone&amp;action=get&amp;pretty=1&amp;json={&#34;contact_id&#34;:308,&#34;location_type_id&#34;:287,&#34;phone&#34;:&#34;021 512 755&#34;,&#34;is_primary&#34;:1}
+</code></pre><h4 id="curl-example">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
+  --request POST \
+  --data &#39;{&#34;contact_id&#34;:308,&#34;location_type_id&#34;:287,&#34;phone&#34;:&#34;021 512 755&#34;,&#34;is_primary&#34;:1}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Phone&amp;action=create&#39;
+</code></pre><h3 id="回傳範例">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 1,
+    &#34;values&#34;: {
+        &#34;1&#34;: {
+            &#34;id&#34;: &#34;1&#34;,
+            &#34;contact_id&#34;: &#34;308&#34;,
+            &#34;location_type_id&#34;: &#34;287&#34;,
+            &#34;is_primary&#34;: &#34;1&#34;,
+            &#34;is_billing&#34;: &#34;&#34;,
+            &#34;mobile_provider_id&#34;: &#34;&#34;,
+            &#34;phone&#34;: &#34;021 512 755&#34;,
+            &#34;phone_type_id&#34;: &#34;&#34;
+        }
+    }
+}
+</code></pre><h2 id="phone-delete-api">Phone Delete API</h2>
+<h3 id="傳送範例-1">傳送範例</h3>
+<h4 id="http-method-1">HTTP Method</h4>
+<pre tabindex="0"><code>POST
+</code></pre><h4 id="request-url-1">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Phone&amp;action=delete
+</code></pre><h4 id="request-content-type-1">Request Content Type</h4>
+<pre tabindex="0"><code>application/json
+</code></pre><h4 id="request-body-1">Request body</h4>
+<pre tabindex="0"><code>{
+    &#34;contact_id&#34;: 309,
+    &#34;location_type_id&#34;: 288,
+    &#34;phone&#34;: &#34;021 512 755&#34;,
+    &#34;is_primary&#34;: 1
+}
+</code></pre><h4 id="api-explorer-1">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Phone&amp;action=delete&amp;pretty=1&amp;json={&#34;contact_id&#34;:309,&#34;location_type_id&#34;:288,&#34;phone&#34;:&#34;021 512 755&#34;,&#34;is_primary&#34;:1}
+</code></pre><h4 id="curl-example-1">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
+  --request POST \
+  --data &#39;{&#34;contact_id&#34;:309,&#34;location_type_id&#34;:288,&#34;phone&#34;:&#34;021 512 755&#34;,&#34;is_primary&#34;:1}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Phone&amp;action=delete&#39;
+</code></pre><h3 id="回傳範例-1">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;values&#34;: &#34;1&#34;
+}
+</code></pre><h2 id="phone-get-api">Phone Get API</h2>
+<h3 id="傳送範例-2">傳送範例</h3>
+<h4 id="http-method-2">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-2">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Phone&amp;action=get&amp;json={&#34;contact_id&#34;:&#34;313&#34;,&#34;phone&#34;:&#34;021 512 755&#34;}
+</code></pre><h4 id="api-explorer-2">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Phone&amp;action=get&amp;pretty=1&amp;json={&#34;contact_id&#34;:&#34;313&#34;,&#34;phone&#34;:&#34;021 512 755&#34;}
+</code></pre><h4 id="curl-example-2">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=Phone&amp;action=get&amp;json=&#39;
+</code></pre><h3 id="回傳範例-2">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 1,
+    &#34;values&#34;: {
+        &#34;1&#34;: {
+            &#34;id&#34;: &#34;1&#34;,
+            &#34;contact_id&#34;: &#34;313&#34;,
+            &#34;location_type_id&#34;: &#34;292&#34;,
+            &#34;is_primary&#34;: &#34;1&#34;,
+            &#34;is_billing&#34;: &#34;0&#34;,
+            &#34;phone&#34;: &#34;021 512 755&#34;
+        }
+    }
+}
+</code></pre>
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/api-document/3/getoptions/" title="Get Options API"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/api-document/webhook/" title="Webhook API 簡介" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/api-document/js/clipboard.min.js?1652345483"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1652345483"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1652345483"></script>
+    <script src="/api-document/js/jquery.sticky.js?1652345483"></script>
+    <script src="/api-document/js/featherlight.min.js?1652345483"></script>
+    <script src="/api-document/js/highlight.pack.js?1652345483"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1652345483"></script>
+    <script src="/api-document/js/learn.js?1652345483"></script>
+    <script src="/api-document/js/hugo-learn.js?1652345483"></script>
+    
+        
+            <script src="/api-document/mermaid/mermaid.js?1652345483"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+

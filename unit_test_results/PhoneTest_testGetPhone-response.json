@@ -1,0 +1,16 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "id": 1,
+    "values": {
+        "1": {
+            "id": "1",
+            "contact_id": "313",
+            "location_type_id": "292",
+            "is_primary": "1",
+            "is_billing": "0",
+            "phone": "021 512 755"
+        }
+    }
+}
