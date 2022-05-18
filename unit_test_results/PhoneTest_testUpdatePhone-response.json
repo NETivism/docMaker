@@ -1,0 +1,18 @@
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "id": 1,
+    "values": {
+        "1": {
+            "id": "1",
+            "contact_id": "361",
+            "location_type_id": "342",
+            "is_primary": "1",
+            "is_billing": "0",
+            "mobile_provider_id": "",
+            "phone": "000 512 755",
+            "phone_type_id": ""
+        }
+    }
+}

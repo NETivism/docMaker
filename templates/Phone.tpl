@@ -39,8 +39,8 @@ application/json
 #### Request body
 ```{literal}
 {
-    "contact_id": 308,
-    "location_type_id": 287,
+    "contact_id": 348,
+    "location_type_id": 329,
     "phone": "021 512 755",
     "is_primary": 1
 }
@@ -48,7 +48,7 @@ application/json
 
 #### API Explorer
 ```{literal}
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Phone&action=get&pretty=1&json={"contact_id":308,"location_type_id":287,"phone":"021 512 755","is_primary":1}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Phone&action=get&pretty=1&json={"contact_id":348,"location_type_id":329,"phone":"021 512 755","is_primary":1}
 {/literal}```
 
 #### curl Example
@@ -58,7 +58,7 @@ curl -g \
   --header 'x-civicrm-site-key: <site-key>' \ 
   --header 'content-type: application/json' \
   --request POST \
-  --data '{literal}{"contact_id":308,"location_type_id":287,"phone":"021 512 755","is_primary":1}{/literal}' \
+  --data '{literal}{"contact_id":348,"location_type_id":329,"phone":"021 512 755","is_primary":1}{/literal}' \
   '<entrypoint>?entity=Phone&action=create'
 ```
 
@@ -72,8 +72,8 @@ curl -g \
     "values": {
         "1": {
             "id": "1",
-            "contact_id": "308",
-            "location_type_id": "287",
+            "contact_id": "348",
+            "location_type_id": "329",
             "is_primary": "1",
             "is_billing": "",
             "mobile_provider_id": "",
@@ -105,8 +105,8 @@ application/json
 #### Request body
 ```{literal}
 {
-    "contact_id": 309,
-    "location_type_id": 288,
+    "contact_id": 349,
+    "location_type_id": 330,
     "phone": "021 512 755",
     "is_primary": 1
 }
@@ -114,7 +114,7 @@ application/json
 
 #### API Explorer
 ```{literal}
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Phone&action=delete&pretty=1&json={"contact_id":309,"location_type_id":288,"phone":"021 512 755","is_primary":1}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Phone&action=delete&pretty=1&json={"contact_id":349,"location_type_id":330,"phone":"021 512 755","is_primary":1}
 {/literal}```
 
 #### curl Example
@@ -124,7 +124,7 @@ curl -g \
   --header 'x-civicrm-site-key: <site-key>' \ 
   --header 'content-type: application/json' \
   --request POST \
-  --data '{literal}{"contact_id":309,"location_type_id":288,"phone":"021 512 755","is_primary":1}{/literal}' \
+  --data '{literal}{"contact_id":349,"location_type_id":330,"phone":"021 512 755","is_primary":1}{/literal}' \
   '<entrypoint>?entity=Phone&action=delete'
 ```
 
@@ -148,12 +148,12 @@ GET
 
 #### Request URL
 ```{literal}
-<entrypoint>?entity=Phone&action=get&json={"contact_id":"313","phone":"021 512 755"}
+<entrypoint>?entity=Phone&action=get&json={"contact_id":"353","phone":"021 512 755"}
 {/literal}```
 
 #### API Explorer
 ```{literal}
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Phone&action=get&pretty=1&json={"contact_id":"313","phone":"021 512 755"}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Phone&action=get&pretty=1&json={"contact_id":"353","phone":"021 512 755"}
 {/literal}```
 
 #### curl Example
@@ -161,7 +161,7 @@ GET
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
   --header 'x-civicrm-site-key: <site-key>' \ 
-  '<entrypoint>?entity=Phone&action=get&json={"contact_id":"313","phone":"021 512 755"}'
+  '<entrypoint>?entity=Phone&action=get&json={"contact_id":"353","phone":"021 512 755"}'
 ```
 
 ### 回傳範例
@@ -174,11 +174,78 @@ curl -g \
     "values": {
         "1": {
             "id": "1",
-            "contact_id": "313",
-            "location_type_id": "292",
+            "contact_id": "353",
+            "location_type_id": "334",
             "is_primary": "1",
             "is_billing": "0",
             "phone": "021 512 755"
+        }
+    }
+}
+{/literal}```
+
+## Phone Update API
+
+### 傳送範例
+#### HTTP Method
+```
+POST
+```
+
+#### Request URL
+```{literal}
+<entrypoint>?entity=Phone&action=create
+{/literal}```
+
+#### Request Content Type
+```{literal}
+application/json
+{/literal}```
+
+#### Request body
+```{literal}
+{
+    "contact_id": 361,
+    "location_type_id": 342,
+    "phone": "000 512 755",
+    "is_primary": 1,
+    "id": 1
+}
+{/literal}```
+
+#### API Explorer
+```{literal}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Phone&action=create&pretty=1&json={"contact_id":361,"location_type_id":342,"phone":"000 512 755","is_primary":1,"id":1}
+{/literal}```
+
+#### curl Example
+```
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{literal}{"contact_id":361,"location_type_id":342,"phone":"000 512 755","is_primary":1,"id":1}{/literal}' \
+  '<entrypoint>?entity=Phone&action=create'
+```
+
+### 回傳範例
+```{literal}
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "id": 1,
+    "values": {
+        "1": {
+            "id": "1",
+            "contact_id": "361",
+            "location_type_id": "342",
+            "is_primary": "1",
+            "is_billing": "0",
+            "mobile_provider_id": "",
+            "phone": "000 512 755",
+            "phone_type_id": ""
         }
     }
 }
