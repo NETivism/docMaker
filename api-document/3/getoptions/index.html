@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="generator" content="Hugo 0.99.1" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>Get Options API :: netiCRM API Documentation</title>
 
     
-    <link href="/api-document/css/nucleus.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/fontawesome-all.min.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/hybrid.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/featherlight.min.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/perfect-scrollbar.min.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/auto-complete.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/atom-one-dark-reasonable.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/theme.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/tabs.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/hugo-theme.css?1648464081" rel="stylesheet">
+    <link href="/api-document/css/nucleus.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1653633711" rel="stylesheet">
     
     
 
-    <script src="/api-document/js/jquery-3.3.1.min.js?1648464081"></script>
+    <script src="/api-document/js/jquery-3.3.1.min.js?1653633711"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/api-document/js/lunr.min.js?1648464081"></script>
-<script type="text/javascript" src="/api-document/js/auto-complete.js?1648464081"></script>
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1653633711"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1653633711"></script>
 <script type="text/javascript">
     
         var baseurl = "\/api-document";
     
 </script>
-<script type="text/javascript" src="/api-document/js/search.js?1648464081"></script>
+<script type="text/javascript" src="/api-document/js/search.js?1653633711"></script>
 
     
   </div>
@@ -284,6 +284,27 @@
       <li data-nav-id="/api-document/3/getoptions/" title="Get Options API" class="dd-item active">
         <a href="/api-document/3/getoptions/">
         Get Options
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/phone/" title="Phone API" class="dd-item ">
+        <a href="/api-document/3/phone/">
+        Phone
         
         </a>
     </li>
@@ -526,26 +547,26 @@
 <pre tabindex="0"><code>&lt;entrypoint&gt;?entity=&lt;entity&gt;&amp;action=getoptions&amp;json=
 </code></pre><h4 id="curl-example">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=&lt;entity&gt;&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=&lt;entity&gt;&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 3,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 3,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: 1001,
-            &quot;label&quot;: &quot;example label 1&quot;
+            &#34;value&#34;: 1001,
+            &#34;label&#34;: &#34;example label 1&#34;
         },
         {
-            &quot;value&quot;: 1002,
-            &quot;label&quot;: &quot;example label 2&quot;
+            &#34;value&#34;: 1002,
+            &#34;label&#34;: &#34;example label 2&#34;
         },
         {
-            &quot;value&quot;: 1003,
-            &quot;label&quot;: &quot;example label 3&quot;
+            &#34;value&#34;: 1003,
+            &#34;label&#34;: &#34;example label 3&#34;
         }
     ]
 }
@@ -559,26 +580,26 @@
 <pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json=null
 </code></pre><h4 id="curl-example-1">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json=null'
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json=null&#39;
 </code></pre><h3 id="回傳範例-1">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 3,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 3,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: &quot;Individual&quot;,
-            &quot;label&quot;: &quot;個人&quot;
+            &#34;value&#34;: &#34;Individual&#34;,
+            &#34;label&#34;: &#34;個人&#34;
         },
         {
-            &quot;value&quot;: &quot;Household&quot;,
-            &quot;label&quot;: &quot;家庭&quot;
+            &#34;value&#34;: &#34;Household&#34;,
+            &#34;label&#34;: &#34;家庭&#34;
         },
         {
-            &quot;value&quot;: &quot;Organization&quot;,
-            &quot;label&quot;: &quot;組織&quot;
+            &#34;value&#34;: &#34;Organization&#34;,
+            &#34;label&#34;: &#34;組織&#34;
         }
     ]
 }
@@ -587,26 +608,26 @@
 <h4 id="http-method-2">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-2">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;contact_sub_type&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&#34;field&#34;:&#34;contact_sub_type&#34;}
 </code></pre><h4 id="api-explorer-1">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;contact_sub_type&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&#34;field&#34;:&#34;contact_sub_type&#34;}
 </code></pre><h4 id="curl-example-2">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例-2">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 1,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;values&#34;: [
         {
-            &quot;id&quot;: &quot;4&quot;,
-            &quot;name&quot;: &quot;NPO&quot;,
-            &quot;label&quot;: &quot;NPO&quot;,
-            &quot;parent&quot;: &quot;Organization&quot;,
-            &quot;value&quot;: &quot;4&quot;
+            &#34;id&#34;: &#34;4&#34;,
+            &#34;name&#34;: &#34;NPO&#34;,
+            &#34;label&#34;: &#34;NPO&#34;,
+            &#34;parent&#34;: &#34;Organization&#34;,
+            &#34;value&#34;: &#34;4&#34;
         }
     ]
 }
@@ -615,35 +636,35 @@
 <h4 id="http-method-3">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-3">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;prefix_id&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&#34;field&#34;:&#34;prefix_id&#34;}
 </code></pre><h4 id="api-explorer-2">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;prefix_id&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&#34;field&#34;:&#34;prefix_id&#34;}
 </code></pre><h4 id="curl-example-3">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例-3">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 4,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 4,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: 1,
-            &quot;label&quot;: &quot;女士&quot;
+            &#34;value&#34;: 1,
+            &#34;label&#34;: &#34;女士&#34;
         },
         {
-            &quot;value&quot;: 2,
-            &quot;label&quot;: &quot;小姐&quot;
+            &#34;value&#34;: 2,
+            &#34;label&#34;: &#34;小姐&#34;
         },
         {
-            &quot;value&quot;: 3,
-            &quot;label&quot;: &quot;先生&quot;
+            &#34;value&#34;: 3,
+            &#34;label&#34;: &#34;先生&#34;
         },
         {
-            &quot;value&quot;: 4,
-            &quot;label&quot;: &quot;博士&quot;
+            &#34;value&#34;: 4,
+            &#34;label&#34;: &#34;博士&#34;
         }
     ]
 }
@@ -652,51 +673,51 @@
 <h4 id="http-method-4">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-4">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;suffix_id&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&#34;field&#34;:&#34;suffix_id&#34;}
 </code></pre><h4 id="api-explorer-3">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;suffix_id&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&#34;field&#34;:&#34;suffix_id&#34;}
 </code></pre><h4 id="curl-example-4">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例-4">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 8,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 8,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: 1,
-            &quot;label&quot;: &quot;Jr.&quot;
+            &#34;value&#34;: 1,
+            &#34;label&#34;: &#34;Jr.&#34;
         },
         {
-            &quot;value&quot;: 2,
-            &quot;label&quot;: &quot;Sr.&quot;
+            &#34;value&#34;: 2,
+            &#34;label&#34;: &#34;Sr.&#34;
         },
         {
-            &quot;value&quot;: 3,
-            &quot;label&quot;: &quot;II&quot;
+            &#34;value&#34;: 3,
+            &#34;label&#34;: &#34;II&#34;
         },
         {
-            &quot;value&quot;: 4,
-            &quot;label&quot;: &quot;III&quot;
+            &#34;value&#34;: 4,
+            &#34;label&#34;: &#34;III&#34;
         },
         {
-            &quot;value&quot;: 5,
-            &quot;label&quot;: &quot;IV&quot;
+            &#34;value&#34;: 5,
+            &#34;label&#34;: &#34;IV&#34;
         },
         {
-            &quot;value&quot;: 6,
-            &quot;label&quot;: &quot;V&quot;
+            &#34;value&#34;: 6,
+            &#34;label&#34;: &#34;V&#34;
         },
         {
-            &quot;value&quot;: 7,
-            &quot;label&quot;: &quot;VI&quot;
+            &#34;value&#34;: 7,
+            &#34;label&#34;: &#34;VI&#34;
         },
         {
-            &quot;value&quot;: 8,
-            &quot;label&quot;: &quot;VII&quot;
+            &#34;value&#34;: 8,
+            &#34;label&#34;: &#34;VII&#34;
         }
     ]
 }
@@ -705,31 +726,31 @@
 <h4 id="http-method-5">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-5">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;gender_id&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&#34;field&#34;:&#34;gender_id&#34;}
 </code></pre><h4 id="api-explorer-4">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;gender_id&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&#34;field&#34;:&#34;gender_id&#34;}
 </code></pre><h4 id="curl-example-5">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例-5">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 3,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 3,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: 1,
-            &quot;label&quot;: &quot;女&quot;
+            &#34;value&#34;: 1,
+            &#34;label&#34;: &#34;女&#34;
         },
         {
-            &quot;value&quot;: 2,
-            &quot;label&quot;: &quot;男&quot;
+            &#34;value&#34;: 2,
+            &#34;label&#34;: &#34;男&#34;
         },
         {
-            &quot;value&quot;: 3,
-            &quot;label&quot;: &quot;跨性別&quot;
+            &#34;value&#34;: 3,
+            &#34;label&#34;: &#34;跨性別&#34;
         }
     ]
 }
@@ -738,39 +759,39 @@
 <h4 id="http-method-6">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-6">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;location_type_id&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&#34;field&#34;:&#34;location_type_id&#34;}
 </code></pre><h4 id="api-explorer-5">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;location_type_id&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&#34;field&#34;:&#34;location_type_id&#34;}
 </code></pre><h4 id="curl-example-6">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例-6">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 5,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 5,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: 3,
-            &quot;label&quot;: &quot;主要&quot;
+            &#34;value&#34;: 3,
+            &#34;label&#34;: &#34;主要&#34;
         },
         {
-            &quot;value&quot;: 1,
-            &quot;label&quot;: &quot;住家&quot;
+            &#34;value&#34;: 1,
+            &#34;label&#34;: &#34;住家&#34;
         },
         {
-            &quot;value&quot;: 4,
-            &quot;label&quot;: &quot;其他&quot;
+            &#34;value&#34;: 4,
+            &#34;label&#34;: &#34;其他&#34;
         },
         {
-            &quot;value&quot;: 2,
-            &quot;label&quot;: &quot;工作&quot;
+            &#34;value&#34;: 2,
+            &#34;label&#34;: &#34;工作&#34;
         },
         {
-            &quot;value&quot;: 5,
-            &quot;label&quot;: &quot;帳單&quot;
+            &#34;value&#34;: 5,
+            &#34;label&#34;: &#34;帳單&#34;
         }
     ]
 }
@@ -779,43 +800,43 @@
 <h4 id="http-method-7">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-7">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;worldregion_id&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&#34;field&#34;:&#34;worldregion_id&#34;}
 </code></pre><h4 id="api-explorer-6">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;worldregion_id&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&#34;field&#34;:&#34;worldregion_id&#34;}
 </code></pre><h4 id="curl-example-7">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例-7">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 6,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 6,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: 1,
-            &quot;label&quot;: &quot;Europe and Central Asia&quot;
+            &#34;value&#34;: 1,
+            &#34;label&#34;: &#34;Europe and Central Asia&#34;
         },
         {
-            &quot;value&quot;: 2,
-            &quot;label&quot;: &quot;America South, Central, North and Caribbean&quot;
+            &#34;value&#34;: 2,
+            &#34;label&#34;: &#34;America South, Central, North and Caribbean&#34;
         },
         {
-            &quot;value&quot;: 3,
-            &quot;label&quot;: &quot;Middle East and North Africa&quot;
+            &#34;value&#34;: 3,
+            &#34;label&#34;: &#34;Middle East and North Africa&#34;
         },
         {
-            &quot;value&quot;: 4,
-            &quot;label&quot;: &quot;Asia-Pacific&quot;
+            &#34;value&#34;: 4,
+            &#34;label&#34;: &#34;Asia-Pacific&#34;
         },
         {
-            &quot;value&quot;: 5,
-            &quot;label&quot;: &quot;Africa West, East, Central and Southern&quot;
+            &#34;value&#34;: 5,
+            &#34;label&#34;: &#34;Africa West, East, Central and Southern&#34;
         },
         {
-            &quot;value&quot;: 99,
-            &quot;label&quot;: &quot;unassigned&quot;
+            &#34;value&#34;: 99,
+            &#34;label&#34;: &#34;unassigned&#34;
         }
     ]
 }
@@ -824,27 +845,27 @@
 <h4 id="http-method-8">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-8">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;country_id&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&#34;field&#34;:&#34;country_id&#34;}
 </code></pre><h4 id="api-explorer-7">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;country_id&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&#34;field&#34;:&#34;country_id&#34;}
 </code></pre><h4 id="curl-example-8">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例-8">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 2,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 2,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: 1228,
-            &quot;label&quot;: &quot;美國&quot;
+            &#34;value&#34;: 1228,
+            &#34;label&#34;: &#34;美國&#34;
         },
         {
-            &quot;value&quot;: 1208,
-            &quot;label&quot;: &quot;臺灣&quot;
+            &#34;value&#34;: 1208,
+            &#34;label&#34;: &#34;臺灣&#34;
         }
     ]
 }
@@ -853,107 +874,107 @@
 <h4 id="http-method-9">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-9">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;state_province_id&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&#34;field&#34;:&#34;state_province_id&#34;}
 </code></pre><h4 id="api-explorer-8">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;state_province_id&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&#34;field&#34;:&#34;state_province_id&#34;}
 </code></pre><h4 id="curl-example-9">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例-9">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 22,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 22,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: 4855,
-            &quot;label&quot;: &quot;南投縣&quot;
+            &#34;value&#34;: 4855,
+            &#34;label&#34;: &#34;南投縣&#34;
         },
         {
-            &quot;value&quot;: 5222,
-            &quot;label&quot;: &quot;嘉義市&quot;
+            &#34;value&#34;: 5222,
+            &#34;label&#34;: &#34;嘉義市&#34;
         },
         {
-            &quot;value&quot;: 4849,
-            &quot;label&quot;: &quot;嘉義縣&quot;
+            &#34;value&#34;: 4849,
+            &#34;label&#34;: &#34;嘉義縣&#34;
         },
         {
-            &quot;value&quot;: 4864,
-            &quot;label&quot;: &quot;基隆市&quot;
+            &#34;value&#34;: 4864,
+            &#34;label&#34;: &#34;基隆市&#34;
         },
         {
-            &quot;value&quot;: 4852,
-            &quot;label&quot;: &quot;宜蘭縣&quot;
+            &#34;value&#34;: 4852,
+            &#34;label&#34;: &#34;宜蘭縣&#34;
         },
         {
-            &quot;value&quot;: 4857,
-            &quot;label&quot;: &quot;屏東縣&quot;
+            &#34;value&#34;: 4857,
+            &#34;label&#34;: &#34;屏東縣&#34;
         },
         {
-            &quot;value&quot;: 4848,
-            &quot;label&quot;: &quot;彰化縣&quot;
+            &#34;value&#34;: 4848,
+            &#34;label&#34;: &#34;彰化縣&#34;
         },
         {
-            &quot;value&quot;: 4860,
-            &quot;label&quot;: &quot;新北市&quot;
+            &#34;value&#34;: 4860,
+            &#34;label&#34;: &#34;新北市&#34;
         },
         {
-            &quot;value&quot;: 5223,
-            &quot;label&quot;: &quot;新竹市&quot;
+            &#34;value&#34;: 5223,
+            &#34;label&#34;: &#34;新竹市&#34;
         },
         {
-            &quot;value&quot;: 4850,
-            &quot;label&quot;: &quot;新竹縣&quot;
+            &#34;value&#34;: 4850,
+            &#34;label&#34;: &#34;新竹縣&#34;
         },
         {
-            &quot;value&quot;: 4862,
-            &quot;label&quot;: &quot;桃園市&quot;
+            &#34;value&#34;: 4862,
+            &#34;label&#34;: &#34;桃園市&#34;
         },
         {
-            &quot;value&quot;: 4856,
-            &quot;label&quot;: &quot;澎湖縣&quot;
+            &#34;value&#34;: 4856,
+            &#34;label&#34;: &#34;澎湖縣&#34;
         },
         {
-            &quot;value&quot;: 5219,
-            &quot;label&quot;: &quot;臺中市&quot;
+            &#34;value&#34;: 5219,
+            &#34;label&#34;: &#34;臺中市&#34;
         },
         {
-            &quot;value&quot;: 5221,
-            &quot;label&quot;: &quot;臺北市&quot;
+            &#34;value&#34;: 5221,
+            &#34;label&#34;: &#34;臺北市&#34;
         },
         {
-            &quot;value&quot;: 5224,
-            &quot;label&quot;: &quot;臺南市&quot;
+            &#34;value&#34;: 5224,
+            &#34;label&#34;: &#34;臺南市&#34;
         },
         {
-            &quot;value&quot;: 4861,
-            &quot;label&quot;: &quot;臺東縣&quot;
+            &#34;value&#34;: 4861,
+            &#34;label&#34;: &#34;臺東縣&#34;
         },
         {
-            &quot;value&quot;: 4851,
-            &quot;label&quot;: &quot;花蓮縣&quot;
+            &#34;value&#34;: 4851,
+            &#34;label&#34;: &#34;花蓮縣&#34;
         },
         {
-            &quot;value&quot;: 4854,
-            &quot;label&quot;: &quot;苗栗縣&quot;
+            &#34;value&#34;: 4854,
+            &#34;label&#34;: &#34;苗栗縣&#34;
         },
         {
-            &quot;value&quot;: 5225,
-            &quot;label&quot;: &quot;連江縣&quot;
+            &#34;value&#34;: 5225,
+            &#34;label&#34;: &#34;連江縣&#34;
         },
         {
-            &quot;value&quot;: 5226,
-            &quot;label&quot;: &quot;金門縣&quot;
+            &#34;value&#34;: 5226,
+            &#34;label&#34;: &#34;金門縣&#34;
         },
         {
-            &quot;value&quot;: 4863,
-            &quot;label&quot;: &quot;雲林縣&quot;
+            &#34;value&#34;: 4863,
+            &#34;label&#34;: &#34;雲林縣&#34;
         },
         {
-            &quot;value&quot;: 5220,
-            &quot;label&quot;: &quot;高雄市&quot;
+            &#34;value&#34;: 5220,
+            &#34;label&#34;: &#34;高雄市&#34;
         }
     ]
 }
@@ -962,39 +983,39 @@
 <h4 id="http-method-10">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-10">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;phone_type_id&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&#34;field&#34;:&#34;phone_type_id&#34;}
 </code></pre><h4 id="api-explorer-9">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;phone_type_id&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&#34;field&#34;:&#34;phone_type_id&#34;}
 </code></pre><h4 id="curl-example-10">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例-10">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 5,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 5,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: 2,
-            &quot;label&quot;: &quot;行動電話&quot;
+            &#34;value&#34;: 2,
+            &#34;label&#34;: &#34;行動電話&#34;
         },
         {
-            &quot;value&quot;: 1,
-            &quot;label&quot;: &quot;電話&quot;
+            &#34;value&#34;: 1,
+            &#34;label&#34;: &#34;電話&#34;
         },
         {
-            &quot;value&quot;: 3,
-            &quot;label&quot;: &quot;傳真&quot;
+            &#34;value&#34;: 3,
+            &#34;label&#34;: &#34;傳真&#34;
         },
         {
-            &quot;value&quot;: 4,
-            &quot;label&quot;: &quot;呼叫器&quot;
+            &#34;value&#34;: 4,
+            &#34;label&#34;: &#34;呼叫器&#34;
         },
         {
-            &quot;value&quot;: 5,
-            &quot;label&quot;: &quot;語音郵件&quot;
+            &#34;value&#34;: 5,
+            &#34;label&#34;: &#34;語音郵件&#34;
         }
     ]
 }
@@ -1003,31 +1024,31 @@
 <h4 id="http-method-11">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-11">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;provider_id&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json={&#34;field&#34;:&#34;provider_id&#34;}
 </code></pre><h4 id="api-explorer-10">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;provider_id&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contact&amp;action=getoptions&amp;pretty=1&amp;json={&#34;field&#34;:&#34;provider_id&#34;}
 </code></pre><h4 id="curl-example-11">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contact&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例-11">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 3,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 3,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: 6,
-            &quot;label&quot;: &quot;Skype&quot;
+            &#34;value&#34;: 6,
+            &#34;label&#34;: &#34;Skype&#34;
         },
         {
-            &quot;value&quot;: 7,
-            &quot;label&quot;: &quot;LINE&quot;
+            &#34;value&#34;: 7,
+            &#34;label&#34;: &#34;LINE&#34;
         },
         {
-            &quot;value&quot;: 8,
-            &quot;label&quot;: &quot;Facebook&quot;
+            &#34;value&#34;: 8,
+            &#34;label&#34;: &#34;Facebook&#34;
         }
     ]
 }
@@ -1036,35 +1057,35 @@
 <h4 id="http-method-12">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-12">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;contribution_type_id&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json={&#34;field&#34;:&#34;contribution_type_id&#34;}
 </code></pre><h4 id="api-explorer-11">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;contribution_type_id&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution&amp;action=getoptions&amp;pretty=1&amp;json={&#34;field&#34;:&#34;contribution_type_id&#34;}
 </code></pre><h4 id="curl-example-12">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例-12">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 4,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 4,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: 1,
-            &quot;label&quot;: &quot;一般捐款&quot;
+            &#34;value&#34;: 1,
+            &#34;label&#34;: &#34;一般捐款&#34;
         },
         {
-            &quot;value&quot;: 3,
-            &quot;label&quot;: &quot;指定捐款&quot;
+            &#34;value&#34;: 3,
+            &#34;label&#34;: &#34;指定捐款&#34;
         },
         {
-            &quot;value&quot;: 2,
-            &quot;label&quot;: &quot;會費&quot;
+            &#34;value&#34;: 2,
+            &#34;label&#34;: &#34;會費&#34;
         },
         {
-            &quot;value&quot;: 4,
-            &quot;label&quot;: &quot;活動費用&quot;
+            &#34;value&#34;: 4,
+            &#34;label&#34;: &#34;活動費用&#34;
         }
     ]
 }
@@ -1073,35 +1094,35 @@
 <h4 id="http-method-13">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-13">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;contribution_page_id&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json={&#34;field&#34;:&#34;contribution_page_id&#34;}
 </code></pre><h4 id="api-explorer-12">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;contribution_page_id&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution&amp;action=getoptions&amp;pretty=1&amp;json={&#34;field&#34;:&#34;contribution_page_id&#34;}
 </code></pre><h4 id="curl-example-13">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例-13">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 4,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 4,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: 1,
-            &quot;label&quot;: &quot;捐款贊助&quot;
+            &#34;value&#34;: 1,
+            &#34;label&#34;: &#34;捐款贊助&#34;
         },
         {
-            &quot;value&quot;: 2,
-            &quot;label&quot;: &quot;捐款贊助&quot;
+            &#34;value&#34;: 2,
+            &#34;label&#34;: &#34;捐款贊助&#34;
         },
         {
-            &quot;value&quot;: 3,
-            &quot;label&quot;: &quot;捐款贊助&quot;
+            &#34;value&#34;: 3,
+            &#34;label&#34;: &#34;捐款贊助&#34;
         },
         {
-            &quot;value&quot;: 4,
-            &quot;label&quot;: &quot;捐款贊助&quot;
+            &#34;value&#34;: 4,
+            &#34;label&#34;: &#34;捐款贊助&#34;
         }
     ]
 }
@@ -1110,47 +1131,47 @@
 <h4 id="http-method-14">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-14">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;contribution_status_id&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json={&#34;field&#34;:&#34;contribution_status_id&#34;}
 </code></pre><h4 id="api-explorer-13">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;contribution_status_id&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution&amp;action=getoptions&amp;pretty=1&amp;json={&#34;field&#34;:&#34;contribution_status_id&#34;}
 </code></pre><h4 id="curl-example-14">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例-14">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 7,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 7,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: 1,
-            &quot;label&quot;: &quot;已完成&quot;
+            &#34;value&#34;: 1,
+            &#34;label&#34;: &#34;已完成&#34;
         },
         {
-            &quot;value&quot;: 2,
-            &quot;label&quot;: &quot;待處理&quot;
+            &#34;value&#34;: 2,
+            &#34;label&#34;: &#34;待處理&#34;
         },
         {
-            &quot;value&quot;: 3,
-            &quot;label&quot;: &quot;已取消&quot;
+            &#34;value&#34;: 3,
+            &#34;label&#34;: &#34;已取消&#34;
         },
         {
-            &quot;value&quot;: 4,
-            &quot;label&quot;: &quot;已失敗&quot;
+            &#34;value&#34;: 4,
+            &#34;label&#34;: &#34;已失敗&#34;
         },
         {
-            &quot;value&quot;: 5,
-            &quot;label&quot;: &quot;進行中&quot;
+            &#34;value&#34;: 5,
+            &#34;label&#34;: &#34;進行中&#34;
         },
         {
-            &quot;value&quot;: 6,
-            &quot;label&quot;: &quot;已過期&quot;
+            &#34;value&#34;: 6,
+            &#34;label&#34;: &#34;已過期&#34;
         },
         {
-            &quot;value&quot;: 7,
-            &quot;label&quot;: &quot;暫停中&quot;
+            &#34;value&#34;: 7,
+            &#34;label&#34;: &#34;暫停中&#34;
         }
     ]
 }
@@ -1159,23 +1180,23 @@
 <h4 id="http-method-15">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-15">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;currency&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json={&#34;field&#34;:&#34;currency&#34;}
 </code></pre><h4 id="api-explorer-14">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;currency&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution&amp;action=getoptions&amp;pretty=1&amp;json={&#34;field&#34;:&#34;currency&#34;}
 </code></pre><h4 id="curl-example-15">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例-15">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 1,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: &quot;TWD&quot;,
-            &quot;label&quot;: &quot;TWD (NT$)&quot;
+            &#34;value&#34;: &#34;TWD&#34;,
+            &#34;label&#34;: &#34;TWD (NT$)&#34;
         }
     ]
 }
@@ -1184,91 +1205,91 @@
 <h4 id="http-method-16">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-16">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json={&quot;field&quot;:&quot;payment_instrument_id&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json={&#34;field&#34;:&#34;payment_instrument_id&#34;}
 </code></pre><h4 id="api-explorer-15">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution&amp;action=getoptions&amp;pretty=1&amp;json={&quot;field&quot;:&quot;payment_instrument_id&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=contribution&amp;action=getoptions&amp;pretty=1&amp;json={&#34;field&#34;:&#34;payment_instrument_id&#34;}
 </code></pre><h4 id="curl-example-16">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=contribution&amp;action=getoptions&amp;json=&#39;
 </code></pre><h3 id="回傳範例-16">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 18,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 18,
+    &#34;values&#34;: [
         {
-            &quot;value&quot;: 10,
-            &quot;label&quot;: &quot;超商代碼&quot;
+            &#34;value&#34;: 10,
+            &#34;label&#34;: &#34;超商代碼&#34;
         },
         {
-            &quot;value&quot;: 9,
-            &quot;label&quot;: &quot;超商條碼繳費&quot;
+            &#34;value&#34;: 9,
+            &#34;label&#34;: &#34;超商條碼繳費&#34;
         },
         {
-            &quot;value&quot;: 12,
-            &quot;label&quot;: &quot;ATM 轉帳&quot;
+            &#34;value&#34;: 12,
+            &#34;label&#34;: &#34;ATM 轉帳&#34;
         },
         {
-            &quot;value&quot;: 1,
-            &quot;label&quot;: &quot;信用卡&quot;
+            &#34;value&#34;: 1,
+            &#34;label&#34;: &#34;信用卡&#34;
         },
         {
-            &quot;value&quot;: 20,
-            &quot;label&quot;: &quot;支付寶&quot;
+            &#34;value&#34;: 20,
+            &#34;label&#34;: &#34;支付寶&#34;
         },
         {
-            &quot;value&quot;: 15,
-            &quot;label&quot;: &quot;Apple Pay&quot;
+            &#34;value&#34;: 15,
+            &#34;label&#34;: &#34;Apple Pay&#34;
         },
         {
-            &quot;value&quot;: 17,
-            &quot;label&quot;: &quot;LINE Pay&quot;
+            &#34;value&#34;: 17,
+            &#34;label&#34;: &#34;LINE Pay&#34;
         },
         {
-            &quot;value&quot;: 16,
-            &quot;label&quot;: &quot;Google Pay&quot;
+            &#34;value&#34;: 16,
+            &#34;label&#34;: &#34;Google Pay&#34;
         },
         {
-            &quot;value&quot;: 13,
-            &quot;label&quot;: &quot;Yahoo公益&quot;
+            &#34;value&#34;: 13,
+            &#34;label&#34;: &#34;Yahoo公益&#34;
         },
         {
-            &quot;value&quot;: 7,
-            &quot;label&quot;: &quot;信用卡定期定額（非線上）&quot;
+            &#34;value&#34;: 7,
+            &#34;label&#34;: &#34;信用卡定期定額（非線上）&#34;
         },
         {
-            &quot;value&quot;: 8,
-            &quot;label&quot;: &quot;郵政劃撥&quot;
+            &#34;value&#34;: 8,
+            &#34;label&#34;: &#34;郵政劃撥&#34;
         },
         {
-            &quot;value&quot;: 6,
-            &quot;label&quot;: &quot;信用卡（非線上）&quot;
+            &#34;value&#34;: 6,
+            &#34;label&#34;: &#34;信用卡（非線上）&#34;
         },
         {
-            &quot;value&quot;: 2,
-            &quot;label&quot;: &quot;簽帳卡&quot;
+            &#34;value&#34;: 2,
+            &#34;label&#34;: &#34;簽帳卡&#34;
         },
         {
-            &quot;value&quot;: 3,
-            &quot;label&quot;: &quot;現金&quot;
+            &#34;value&#34;: 3,
+            &#34;label&#34;: &#34;現金&#34;
         },
         {
-            &quot;value&quot;: 4,
-            &quot;label&quot;: &quot;支票&quot;
+            &#34;value&#34;: 4,
+            &#34;label&#34;: &#34;支票&#34;
         },
         {
-            &quot;value&quot;: 5,
-            &quot;label&quot;: &quot;電子轉帳（EFT）&quot;
+            &#34;value&#34;: 5,
+            &#34;label&#34;: &#34;電子轉帳（EFT）&#34;
         },
         {
-            &quot;value&quot;: 18,
-            &quot;label&quot;: &quot;ACH 銀行&quot;
+            &#34;value&#34;: 18,
+            &#34;label&#34;: &#34;ACH 銀行&#34;
         },
         {
-            &quot;value&quot;: 19,
-            &quot;label&quot;: &quot;ACH 郵局&quot;
+            &#34;value&#34;: 19,
+            &#34;label&#34;: &#34;ACH 郵局&#34;
         }
     ]
 }
@@ -1466,9 +1487,6 @@
             
         
                     
-            
-        
-                    
                         
             
             
@@ -1476,6 +1494,25 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1500,7 +1537,7 @@
 			<a class="nav nav-prev" href="/api-document/3/event/" title="Event API"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/api-document/webhook/" title="Webhook API 簡介" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/api-document/3/phone/" title="Phone API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1510,19 +1547,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/api-document/js/clipboard.min.js?1648464081"></script>
-    <script src="/api-document/js/perfect-scrollbar.min.js?1648464081"></script>
-    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1648464081"></script>
-    <script src="/api-document/js/jquery.sticky.js?1648464081"></script>
-    <script src="/api-document/js/featherlight.min.js?1648464081"></script>
-    <script src="/api-document/js/highlight.pack.js?1648464081"></script>
+    <script src="/api-document/js/clipboard.min.js?1653633711"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1653633711"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1653633711"></script>
+    <script src="/api-document/js/jquery.sticky.js?1653633711"></script>
+    <script src="/api-document/js/featherlight.min.js?1653633711"></script>
+    <script src="/api-document/js/highlight.pack.js?1653633711"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/api-document/js/modernizr.custom-3.6.0.js?1648464081"></script>
-    <script src="/api-document/js/learn.js?1648464081"></script>
-    <script src="/api-document/js/hugo-learn.js?1648464081"></script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1653633711"></script>
+    <script src="/api-document/js/learn.js?1653633711"></script>
+    <script src="/api-document/js/hugo-learn.js?1653633711"></script>
     
         
-            <script src="/api-document/mermaid/mermaid.js?1648464081"></script>
+            <script src="/api-document/mermaid/mermaid.js?1653633711"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

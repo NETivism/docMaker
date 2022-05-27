@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="generator" content="Hugo 0.99.1" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>Contribution API :: netiCRM API Documentation</title>
 
     
-    <link href="/api-document/css/nucleus.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/fontawesome-all.min.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/hybrid.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/featherlight.min.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/perfect-scrollbar.min.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/auto-complete.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/atom-one-dark-reasonable.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/theme.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/tabs.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/hugo-theme.css?1648464081" rel="stylesheet">
+    <link href="/api-document/css/nucleus.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1653633711" rel="stylesheet">
     
     
 
-    <script src="/api-document/js/jquery-3.3.1.min.js?1648464081"></script>
+    <script src="/api-document/js/jquery-3.3.1.min.js?1653633711"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/api-document/js/lunr.min.js?1648464081"></script>
-<script type="text/javascript" src="/api-document/js/auto-complete.js?1648464081"></script>
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1653633711"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1653633711"></script>
 <script type="text/javascript">
     
         var baseurl = "\/api-document";
     
 </script>
-<script type="text/javascript" src="/api-document/js/search.js?1648464081"></script>
+<script type="text/javascript" src="/api-document/js/search.js?1653633711"></script>
 
     
   </div>
@@ -284,6 +284,27 @@
       <li data-nav-id="/api-document/3/getoptions/" title="Get Options API" class="dd-item ">
         <a href="/api-document/3/getoptions/">
         Get Options
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/phone/" title="Phone API" class="dd-item ">
+        <a href="/api-document/3/phone/">
+        Phone
         
         </a>
     </li>
@@ -723,73 +744,73 @@
 <h4 id="http-method">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contribution&amp;action=get&amp;json={&quot;contribution_id&quot;:51}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contribution&amp;action=get&amp;json={&#34;contribution_id&#34;:51}
 </code></pre><h4 id="api-explorer">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&amp;action=get&amp;pretty=1&amp;json={&quot;contribution_id&quot;:51}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&amp;action=get&amp;pretty=1&amp;json={&#34;contribution_id&#34;:51}
 </code></pre><h4 id="curl-example">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=Contribution&amp;action=get&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=Contribution&amp;action=get&amp;json=&#39;
 </code></pre><h3 id="回傳範例">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 1,
-    &quot;id&quot;: 51,
-    &quot;values&quot;: {
-        &quot;51&quot;: {
-            &quot;contact_id&quot;: &quot;28&quot;,
-            &quot;contact_type&quot;: &quot;Individual&quot;,
-            &quot;contact_sub_type&quot;: &quot;&quot;,
-            &quot;sort_name&quot;: &quot;Test ARDeN Unit&quot;,
-            &quot;display_name&quot;: &quot;Test ARDeN Unit&quot;,
-            &quot;contribution_id&quot;: &quot;51&quot;,
-            &quot;currency&quot;: &quot;USD&quot;,
-            &quot;contribution_page_id&quot;: &quot;&quot;,
-            &quot;created_date&quot;: &quot;2021-11-29 15:04:09&quot;,
-            &quot;receive_date&quot;: &quot;2021-11-29 15:04:09&quot;,
-            &quot;non_deductible_amount&quot;: &quot;10.00&quot;,
-            &quot;total_amount&quot;: &quot;100.00&quot;,
-            &quot;fee_amount&quot;: &quot;50.00&quot;,
-            &quot;net_amount&quot;: &quot;90.00&quot;,
-            &quot;trxn_id&quot;: &quot;eQTmpujhlN&quot;,
-            &quot;invoice_id&quot;: &quot;hi3KyqRwZW&quot;,
-            &quot;cancel_date&quot;: &quot;&quot;,
-            &quot;cancel_reason&quot;: &quot;&quot;,
-            &quot;receipt_date&quot;: &quot;&quot;,
-            &quot;thankyou_date&quot;: &quot;&quot;,
-            &quot;contribution_source&quot;: &quot;Contribution Unit Test&quot;,
-            &quot;amount_level&quot;: &quot;&quot;,
-            &quot;is_test&quot;: &quot;0&quot;,
-            &quot;is_pay_later&quot;: &quot;0&quot;,
-            &quot;check_number&quot;: &quot;&quot;,
-            &quot;receipt_id&quot;: &quot;&quot;,
-            &quot;contribution_type_id&quot;: &quot;1&quot;,
-            &quot;contribution_type&quot;: &quot;\u4e00\u822c\u6350\u6b3e&quot;,
-            &quot;accounting_code&quot;: &quot;&quot;,
-            &quot;payment_instrument_id&quot;: &quot;&quot;,
-            &quot;payment_instrument&quot;: &quot;&quot;,
-            &quot;product_id&quot;: &quot;&quot;,
-            &quot;product_name&quot;: &quot;&quot;,
-            &quot;sku&quot;: &quot;&quot;,
-            &quot;contribution_product_id&quot;: &quot;&quot;,
-            &quot;product_option&quot;: &quot;&quot;,
-            &quot;fulfilled_date&quot;: &quot;&quot;,
-            &quot;contribution_start_date&quot;: &quot;&quot;,
-            &quot;contribution_end_date&quot;: &quot;&quot;,
-            &quot;contribution_recur_id&quot;: &quot;&quot;,
-            &quot;contribution_note&quot;: &quot;&quot;,
-            &quot;contribution_status_id&quot;: &quot;1&quot;,
-            &quot;contribution_status&quot;: &quot;\u5df2\u5b8c\u6210&quot;,
-            &quot;contribution_payment_instrument&quot;: &quot;&quot;,
-            &quot;contribution_check_number&quot;: &quot;&quot;,
-            &quot;contribution_referrer_type&quot;: &quot;&quot;,
-            &quot;civicrm_value_shou_ju_zi_xun_1_id&quot;: &quot;&quot;,
-            &quot;custom_1&quot;: &quot;&quot;,
-            &quot;custom_2&quot;: &quot;&quot;,
-            &quot;custom_3&quot;: &quot;&quot;,
-            &quot;custom_4&quot;: &quot;&quot;
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 51,
+    &#34;values&#34;: {
+        &#34;51&#34;: {
+            &#34;contact_id&#34;: &#34;28&#34;,
+            &#34;contact_type&#34;: &#34;Individual&#34;,
+            &#34;contact_sub_type&#34;: &#34;&#34;,
+            &#34;sort_name&#34;: &#34;Test ARDeN Unit&#34;,
+            &#34;display_name&#34;: &#34;Test ARDeN Unit&#34;,
+            &#34;contribution_id&#34;: &#34;51&#34;,
+            &#34;currency&#34;: &#34;USD&#34;,
+            &#34;contribution_page_id&#34;: &#34;&#34;,
+            &#34;created_date&#34;: &#34;2021-11-29 15:04:09&#34;,
+            &#34;receive_date&#34;: &#34;2021-11-29 15:04:09&#34;,
+            &#34;non_deductible_amount&#34;: &#34;10.00&#34;,
+            &#34;total_amount&#34;: &#34;100.00&#34;,
+            &#34;fee_amount&#34;: &#34;50.00&#34;,
+            &#34;net_amount&#34;: &#34;90.00&#34;,
+            &#34;trxn_id&#34;: &#34;eQTmpujhlN&#34;,
+            &#34;invoice_id&#34;: &#34;hi3KyqRwZW&#34;,
+            &#34;cancel_date&#34;: &#34;&#34;,
+            &#34;cancel_reason&#34;: &#34;&#34;,
+            &#34;receipt_date&#34;: &#34;&#34;,
+            &#34;thankyou_date&#34;: &#34;&#34;,
+            &#34;contribution_source&#34;: &#34;Contribution Unit Test&#34;,
+            &#34;amount_level&#34;: &#34;&#34;,
+            &#34;is_test&#34;: &#34;0&#34;,
+            &#34;is_pay_later&#34;: &#34;0&#34;,
+            &#34;check_number&#34;: &#34;&#34;,
+            &#34;receipt_id&#34;: &#34;&#34;,
+            &#34;contribution_type_id&#34;: &#34;1&#34;,
+            &#34;contribution_type&#34;: &#34;\u4e00\u822c\u6350\u6b3e&#34;,
+            &#34;accounting_code&#34;: &#34;&#34;,
+            &#34;payment_instrument_id&#34;: &#34;&#34;,
+            &#34;payment_instrument&#34;: &#34;&#34;,
+            &#34;product_id&#34;: &#34;&#34;,
+            &#34;product_name&#34;: &#34;&#34;,
+            &#34;sku&#34;: &#34;&#34;,
+            &#34;contribution_product_id&#34;: &#34;&#34;,
+            &#34;product_option&#34;: &#34;&#34;,
+            &#34;fulfilled_date&#34;: &#34;&#34;,
+            &#34;contribution_start_date&#34;: &#34;&#34;,
+            &#34;contribution_end_date&#34;: &#34;&#34;,
+            &#34;contribution_recur_id&#34;: &#34;&#34;,
+            &#34;contribution_note&#34;: &#34;&#34;,
+            &#34;contribution_status_id&#34;: &#34;1&#34;,
+            &#34;contribution_status&#34;: &#34;\u5df2\u5b8c\u6210&#34;,
+            &#34;contribution_payment_instrument&#34;: &#34;&#34;,
+            &#34;contribution_check_number&#34;: &#34;&#34;,
+            &#34;contribution_referrer_type&#34;: &#34;&#34;,
+            &#34;civicrm_value_shou_ju_zi_xun_1_id&#34;: &#34;&#34;,
+            &#34;custom_1&#34;: &#34;&#34;,
+            &#34;custom_2&#34;: &#34;&#34;,
+            &#34;custom_3&#34;: &#34;&#34;,
+            &#34;custom_4&#34;: &#34;&#34;
         }
     }
 }
@@ -803,68 +824,68 @@
 <pre tabindex="0"><code>application/json
 </code></pre><h4 id="request-body">Request body</h4>
 <pre tabindex="0"><code>{
-    &quot;contact_id&quot;: 29,
-    &quot;receive_date&quot;: &quot;2021-11-29 15:04:09&quot;,
-    &quot;total_amount&quot;: 100,
-    &quot;contribution_type_id&quot;: 1,
-    &quot;non_deductible_amount&quot;: 10,
-    &quot;fee_amount&quot;: 50,
-    &quot;net_amount&quot;: 90,
-    &quot;source&quot;: &quot;Contribution Unit Test&quot;,
-    &quot;contribution_status_id&quot;: 1,
-    &quot;trxn_id&quot;: &quot;pxhaDtwFII&quot;,
-    &quot;invoice_id&quot;: &quot;e1uGoCG25Q&quot;,
-    &quot;payment_instrument_id&quot;: 1
+    &#34;contact_id&#34;: 29,
+    &#34;receive_date&#34;: &#34;2021-11-29 15:04:09&#34;,
+    &#34;total_amount&#34;: 100,
+    &#34;contribution_type_id&#34;: 1,
+    &#34;non_deductible_amount&#34;: 10,
+    &#34;fee_amount&#34;: 50,
+    &#34;net_amount&#34;: 90,
+    &#34;source&#34;: &#34;Contribution Unit Test&#34;,
+    &#34;contribution_status_id&#34;: 1,
+    &#34;trxn_id&#34;: &#34;pxhaDtwFII&#34;,
+    &#34;invoice_id&#34;: &#34;e1uGoCG25Q&#34;,
+    &#34;payment_instrument_id&#34;: 1
 }
 </code></pre><h4 id="api-explorer-1">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&amp;action=create&amp;pretty=1&amp;json={&quot;contact_id&quot;:29,&quot;receive_date&quot;:&quot;2021-11-29 15:04:09&quot;,&quot;total_amount&quot;:100,&quot;contribution_type_id&quot;:1,&quot;non_deductible_amount&quot;:10,&quot;fee_amount&quot;:50,&quot;net_amount&quot;:90,&quot;source&quot;:&quot;Contribution Unit Test&quot;,&quot;contribution_status_id&quot;:1,&quot;trxn_id&quot;:&quot;pxhaDtwFII&quot;,&quot;invoice_id&quot;:&quot;e1uGoCG25Q&quot;,&quot;payment_instrument_id&quot;:1}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&amp;action=create&amp;pretty=1&amp;json={&#34;contact_id&#34;:29,&#34;receive_date&#34;:&#34;2021-11-29 15:04:09&#34;,&#34;total_amount&#34;:100,&#34;contribution_type_id&#34;:1,&#34;non_deductible_amount&#34;:10,&#34;fee_amount&#34;:50,&#34;net_amount&#34;:90,&#34;source&#34;:&#34;Contribution Unit Test&#34;,&#34;contribution_status_id&#34;:1,&#34;trxn_id&#34;:&#34;pxhaDtwFII&#34;,&#34;invoice_id&#34;:&#34;e1uGoCG25Q&#34;,&#34;payment_instrument_id&#34;:1}
 </code></pre><h4 id="curl-example-1">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  --header 'content-type: application/json' \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
   --request POST \
-  --data '{&quot;contact_id&quot;:29,&quot;receive_date&quot;:&quot;2021-11-29 15:04:09&quot;,&quot;total_amount&quot;:100,&quot;contribution_type_id&quot;:1,&quot;non_deductible_amount&quot;:10,&quot;fee_amount&quot;:50,&quot;net_amount&quot;:90,&quot;source&quot;:&quot;Contribution Unit Test&quot;,&quot;contribution_status_id&quot;:1,&quot;trxn_id&quot;:&quot;pxhaDtwFII&quot;,&quot;invoice_id&quot;:&quot;e1uGoCG25Q&quot;,&quot;payment_instrument_id&quot;:1}' \
-  '&lt;entrypoint&gt;?entity=Contribution&amp;action=create'
+  --data &#39;{&#34;contact_id&#34;:29,&#34;receive_date&#34;:&#34;2021-11-29 15:04:09&#34;,&#34;total_amount&#34;:100,&#34;contribution_type_id&#34;:1,&#34;non_deductible_amount&#34;:10,&#34;fee_amount&#34;:50,&#34;net_amount&#34;:90,&#34;source&#34;:&#34;Contribution Unit Test&#34;,&#34;contribution_status_id&#34;:1,&#34;trxn_id&#34;:&#34;pxhaDtwFII&#34;,&#34;invoice_id&#34;:&#34;e1uGoCG25Q&#34;,&#34;payment_instrument_id&#34;:1}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Contribution&amp;action=create&#39;
 </code></pre><h3 id="回傳範例-1">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 1,
-    &quot;id&quot;: 53,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 53,
+    &#34;values&#34;: [
         {
-            &quot;id&quot;: &quot;53&quot;,
-            &quot;contact_id&quot;: &quot;29&quot;,
-            &quot;contribution_type_id&quot;: &quot;1&quot;,
-            &quot;contribution_page_id&quot;: &quot;&quot;,
-            &quot;payment_processor_id&quot;: &quot;&quot;,
-            &quot;payment_instrument_id&quot;: &quot;1&quot;,
-            &quot;created_date&quot;: &quot;20211129150409&quot;,
-            &quot;receive_date&quot;: &quot;20211129150409&quot;,
-            &quot;non_deductible_amount&quot;: &quot;10&quot;,
-            &quot;total_amount&quot;: &quot;100&quot;,
-            &quot;fee_amount&quot;: &quot;50&quot;,
-            &quot;net_amount&quot;: &quot;90&quot;,
-            &quot;trxn_id&quot;: &quot;pxhaDtwFII&quot;,
-            &quot;invoice_id&quot;: &quot;e1uGoCG25Q&quot;,
-            &quot;currency&quot;: &quot;USD&quot;,
-            &quot;cancel_date&quot;: &quot;&quot;,
-            &quot;cancel_reason&quot;: &quot;&quot;,
-            &quot;receipt_date&quot;: &quot;&quot;,
-            &quot;thankyou_date&quot;: &quot;&quot;,
-            &quot;source&quot;: &quot;Contribution Unit Test&quot;,
-            &quot;amount_level&quot;: &quot;&quot;,
-            &quot;contribution_recur_id&quot;: &quot;&quot;,
-            &quot;honor_contact_id&quot;: &quot;&quot;,
-            &quot;is_test&quot;: &quot;&quot;,
-            &quot;is_pay_later&quot;: &quot;&quot;,
-            &quot;contribution_status_id&quot;: &quot;1&quot;,
-            &quot;honor_type_id&quot;: &quot;&quot;,
-            &quot;address_id&quot;: &quot;&quot;,
-            &quot;check_number&quot;: &quot;null&quot;,
-            &quot;receipt_id&quot;: &quot;&quot;,
-            &quot;expire_date&quot;: &quot;&quot;
+            &#34;id&#34;: &#34;53&#34;,
+            &#34;contact_id&#34;: &#34;29&#34;,
+            &#34;contribution_type_id&#34;: &#34;1&#34;,
+            &#34;contribution_page_id&#34;: &#34;&#34;,
+            &#34;payment_processor_id&#34;: &#34;&#34;,
+            &#34;payment_instrument_id&#34;: &#34;1&#34;,
+            &#34;created_date&#34;: &#34;20211129150409&#34;,
+            &#34;receive_date&#34;: &#34;20211129150409&#34;,
+            &#34;non_deductible_amount&#34;: &#34;10&#34;,
+            &#34;total_amount&#34;: &#34;100&#34;,
+            &#34;fee_amount&#34;: &#34;50&#34;,
+            &#34;net_amount&#34;: &#34;90&#34;,
+            &#34;trxn_id&#34;: &#34;pxhaDtwFII&#34;,
+            &#34;invoice_id&#34;: &#34;e1uGoCG25Q&#34;,
+            &#34;currency&#34;: &#34;USD&#34;,
+            &#34;cancel_date&#34;: &#34;&#34;,
+            &#34;cancel_reason&#34;: &#34;&#34;,
+            &#34;receipt_date&#34;: &#34;&#34;,
+            &#34;thankyou_date&#34;: &#34;&#34;,
+            &#34;source&#34;: &#34;Contribution Unit Test&#34;,
+            &#34;amount_level&#34;: &#34;&#34;,
+            &#34;contribution_recur_id&#34;: &#34;&#34;,
+            &#34;honor_contact_id&#34;: &#34;&#34;,
+            &#34;is_test&#34;: &#34;&#34;,
+            &#34;is_pay_later&#34;: &#34;&#34;,
+            &#34;contribution_status_id&#34;: &#34;1&#34;,
+            &#34;honor_type_id&#34;: &#34;&#34;,
+            &#34;address_id&#34;: &#34;&#34;,
+            &#34;check_number&#34;: &#34;null&#34;,
+            &#34;receipt_id&#34;: &#34;&#34;,
+            &#34;expire_date&#34;: &#34;&#34;
         }
     ]
 }
@@ -878,64 +899,64 @@
 <pre tabindex="0"><code>application/json
 </code></pre><h4 id="request-body-1">Request body</h4>
 <pre tabindex="0"><code>{
-    &quot;id&quot;: 59,
-    &quot;total_amount&quot;: 9999,
-    &quot;contribution_type_id&quot;: 1,
-    &quot;non_deductible_amount&quot;: 10,
-    &quot;net_amount&quot;: 100,
-    &quot;contribution_status_id&quot;: 3,
-    &quot;cancel_date&quot;: &quot;20211129150410&quot;,
-    &quot;cancel_reason&quot;: &quot;The reason to cancel&quot;
+    &#34;id&#34;: 59,
+    &#34;total_amount&#34;: 9999,
+    &#34;contribution_type_id&#34;: 1,
+    &#34;non_deductible_amount&#34;: 10,
+    &#34;net_amount&#34;: 100,
+    &#34;contribution_status_id&#34;: 3,
+    &#34;cancel_date&#34;: &#34;20211129150410&#34;,
+    &#34;cancel_reason&#34;: &#34;The reason to cancel&#34;
 }
 </code></pre><h4 id="api-explorer-2">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&amp;action=create&amp;pretty=1&amp;json={&quot;id&quot;:59,&quot;total_amount&quot;:9999,&quot;contribution_type_id&quot;:1,&quot;non_deductible_amount&quot;:10,&quot;net_amount&quot;:100,&quot;contribution_status_id&quot;:3,&quot;cancel_date&quot;:&quot;20211129150410&quot;,&quot;cancel_reason&quot;:&quot;The reason to cancel&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&amp;action=create&amp;pretty=1&amp;json={&#34;id&#34;:59,&#34;total_amount&#34;:9999,&#34;contribution_type_id&#34;:1,&#34;non_deductible_amount&#34;:10,&#34;net_amount&#34;:100,&#34;contribution_status_id&#34;:3,&#34;cancel_date&#34;:&#34;20211129150410&#34;,&#34;cancel_reason&#34;:&#34;The reason to cancel&#34;}
 </code></pre><h4 id="curl-example-2">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  --header 'content-type: application/json' \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
   --request POST \
-  --data '{&quot;id&quot;:59,&quot;total_amount&quot;:9999,&quot;contribution_type_id&quot;:1,&quot;non_deductible_amount&quot;:10,&quot;net_amount&quot;:100,&quot;contribution_status_id&quot;:3,&quot;cancel_date&quot;:&quot;20211129150410&quot;,&quot;cancel_reason&quot;:&quot;The reason to cancel&quot;}' \
-  '&lt;entrypoint&gt;?entity=Contribution&amp;action=create'
+  --data &#39;{&#34;id&#34;:59,&#34;total_amount&#34;:9999,&#34;contribution_type_id&#34;:1,&#34;non_deductible_amount&#34;:10,&#34;net_amount&#34;:100,&#34;contribution_status_id&#34;:3,&#34;cancel_date&#34;:&#34;20211129150410&#34;,&#34;cancel_reason&#34;:&#34;The reason to cancel&#34;}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Contribution&amp;action=create&#39;
 </code></pre><h3 id="回傳範例-2">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 1,
-    &quot;id&quot;: 59,
-    &quot;values&quot;: {
-        &quot;59&quot;: {
-            &quot;id&quot;: &quot;59&quot;,
-            &quot;contact_id&quot;: &quot;&quot;,
-            &quot;contribution_type_id&quot;: &quot;1&quot;,
-            &quot;contribution_page_id&quot;: &quot;&quot;,
-            &quot;payment_processor_id&quot;: &quot;&quot;,
-            &quot;payment_instrument_id&quot;: &quot;&quot;,
-            &quot;created_date&quot;: &quot;&quot;,
-            &quot;receive_date&quot;: &quot;&quot;,
-            &quot;non_deductible_amount&quot;: &quot;10&quot;,
-            &quot;total_amount&quot;: &quot;9999&quot;,
-            &quot;fee_amount&quot;: &quot;&quot;,
-            &quot;net_amount&quot;: &quot;100&quot;,
-            &quot;trxn_id&quot;: &quot;&quot;,
-            &quot;invoice_id&quot;: &quot;&quot;,
-            &quot;currency&quot;: &quot;USD&quot;,
-            &quot;cancel_date&quot;: &quot;20211129150410&quot;,
-            &quot;cancel_reason&quot;: &quot;The reason to cancel&quot;,
-            &quot;receipt_date&quot;: &quot;&quot;,
-            &quot;thankyou_date&quot;: &quot;&quot;,
-            &quot;source&quot;: &quot;&quot;,
-            &quot;amount_level&quot;: &quot;&quot;,
-            &quot;contribution_recur_id&quot;: &quot;&quot;,
-            &quot;honor_contact_id&quot;: &quot;&quot;,
-            &quot;is_test&quot;: &quot;&quot;,
-            &quot;is_pay_later&quot;: &quot;&quot;,
-            &quot;contribution_status_id&quot;: &quot;3&quot;,
-            &quot;honor_type_id&quot;: &quot;&quot;,
-            &quot;address_id&quot;: &quot;&quot;,
-            &quot;check_number&quot;: &quot;&quot;,
-            &quot;receipt_id&quot;: &quot;&quot;,
-            &quot;expire_date&quot;: &quot;&quot;
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 59,
+    &#34;values&#34;: {
+        &#34;59&#34;: {
+            &#34;id&#34;: &#34;59&#34;,
+            &#34;contact_id&#34;: &#34;&#34;,
+            &#34;contribution_type_id&#34;: &#34;1&#34;,
+            &#34;contribution_page_id&#34;: &#34;&#34;,
+            &#34;payment_processor_id&#34;: &#34;&#34;,
+            &#34;payment_instrument_id&#34;: &#34;&#34;,
+            &#34;created_date&#34;: &#34;&#34;,
+            &#34;receive_date&#34;: &#34;&#34;,
+            &#34;non_deductible_amount&#34;: &#34;10&#34;,
+            &#34;total_amount&#34;: &#34;9999&#34;,
+            &#34;fee_amount&#34;: &#34;&#34;,
+            &#34;net_amount&#34;: &#34;100&#34;,
+            &#34;trxn_id&#34;: &#34;&#34;,
+            &#34;invoice_id&#34;: &#34;&#34;,
+            &#34;currency&#34;: &#34;USD&#34;,
+            &#34;cancel_date&#34;: &#34;20211129150410&#34;,
+            &#34;cancel_reason&#34;: &#34;The reason to cancel&#34;,
+            &#34;receipt_date&#34;: &#34;&#34;,
+            &#34;thankyou_date&#34;: &#34;&#34;,
+            &#34;source&#34;: &#34;&#34;,
+            &#34;amount_level&#34;: &#34;&#34;,
+            &#34;contribution_recur_id&#34;: &#34;&#34;,
+            &#34;honor_contact_id&#34;: &#34;&#34;,
+            &#34;is_test&#34;: &#34;&#34;,
+            &#34;is_pay_later&#34;: &#34;&#34;,
+            &#34;contribution_status_id&#34;: &#34;3&#34;,
+            &#34;honor_type_id&#34;: &#34;&#34;,
+            &#34;address_id&#34;: &#34;&#34;,
+            &#34;check_number&#34;: &#34;&#34;,
+            &#34;receipt_id&#34;: &#34;&#34;,
+            &#34;expire_date&#34;: &#34;&#34;
         }
     }
 }
@@ -949,24 +970,24 @@
 <pre tabindex="0"><code>application/json
 </code></pre><h4 id="request-body-2">Request body</h4>
 <pre tabindex="0"><code>{
-    &quot;id&quot;: 60
+    &#34;id&#34;: 60
 }
 </code></pre><h4 id="api-explorer-3">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&amp;action=delete&amp;pretty=1&amp;json={&quot;id&quot;:60}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&amp;action=delete&amp;pretty=1&amp;json={&#34;id&#34;:60}
 </code></pre><h4 id="curl-example-3">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  --header 'content-type: application/json' \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
   --request POST \
-  --data '{&quot;id&quot;:60}' \
-  '&lt;entrypoint&gt;?entity=Contribution&amp;action=delete'
+  --data &#39;{&#34;id&#34;:60}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Contribution&amp;action=delete&#39;
 </code></pre><h3 id="回傳範例-3">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 1,
-    &quot;values&quot;: 1
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;values&#34;: 1
 }
 </code></pre>
 
@@ -1165,6 +1186,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1206,19 +1243,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/api-document/js/clipboard.min.js?1648464081"></script>
-    <script src="/api-document/js/perfect-scrollbar.min.js?1648464081"></script>
-    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1648464081"></script>
-    <script src="/api-document/js/jquery.sticky.js?1648464081"></script>
-    <script src="/api-document/js/featherlight.min.js?1648464081"></script>
-    <script src="/api-document/js/highlight.pack.js?1648464081"></script>
+    <script src="/api-document/js/clipboard.min.js?1653633711"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1653633711"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1653633711"></script>
+    <script src="/api-document/js/jquery.sticky.js?1653633711"></script>
+    <script src="/api-document/js/featherlight.min.js?1653633711"></script>
+    <script src="/api-document/js/highlight.pack.js?1653633711"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/api-document/js/modernizr.custom-3.6.0.js?1648464081"></script>
-    <script src="/api-document/js/learn.js?1648464081"></script>
-    <script src="/api-document/js/hugo-learn.js?1648464081"></script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1653633711"></script>
+    <script src="/api-document/js/learn.js?1653633711"></script>
+    <script src="/api-document/js/hugo-learn.js?1653633711"></script>
     
         
-            <script src="/api-document/mermaid/mermaid.js?1648464081"></script>
+            <script src="/api-document/mermaid/mermaid.js?1653633711"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

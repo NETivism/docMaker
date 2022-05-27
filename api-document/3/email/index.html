@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="generator" content="Hugo 0.99.1" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>Email API :: netiCRM API Documentation</title>
 
     
-    <link href="/api-document/css/nucleus.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/fontawesome-all.min.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/hybrid.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/featherlight.min.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/perfect-scrollbar.min.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/auto-complete.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/atom-one-dark-reasonable.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/theme.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/tabs.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/hugo-theme.css?1648464081" rel="stylesheet">
+    <link href="/api-document/css/nucleus.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1653633711" rel="stylesheet">
     
     
 
-    <script src="/api-document/js/jquery-3.3.1.min.js?1648464081"></script>
+    <script src="/api-document/js/jquery-3.3.1.min.js?1653633711"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/api-document/js/lunr.min.js?1648464081"></script>
-<script type="text/javascript" src="/api-document/js/auto-complete.js?1648464081"></script>
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1653633711"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1653633711"></script>
 <script type="text/javascript">
     
         var baseurl = "\/api-document";
     
 </script>
-<script type="text/javascript" src="/api-document/js/search.js?1648464081"></script>
+<script type="text/javascript" src="/api-document/js/search.js?1653633711"></script>
 
     
   </div>
@@ -284,6 +284,27 @@
       <li data-nav-id="/api-document/3/getoptions/" title="Get Options API" class="dd-item ">
         <a href="/api-document/3/getoptions/">
         Get Options
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/phone/" title="Phone API" class="dd-item ">
+        <a href="/api-document/3/phone/">
+        Phone
         
         </a>
     </li>
@@ -555,30 +576,30 @@
 <h4 id="http-method">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Email&amp;action=get&amp;json={&quot;contact_id&quot;:21,&quot;location_type_id&quot;:6,&quot;email&quot;:&quot;api.test@civicrm.test.org&quot;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Email&amp;action=get&amp;json={&#34;contact_id&#34;:21,&#34;location_type_id&#34;:6,&#34;email&#34;:&#34;api.test@civicrm.test.org&#34;}
 </code></pre><h4 id="api-explorer">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&amp;action=get&amp;pretty=1&amp;json={&quot;contact_id&quot;:21,&quot;location_type_id&quot;:6,&quot;email&quot;:&quot;api.test@civicrm.test.org&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&amp;action=get&amp;pretty=1&amp;json={&#34;contact_id&#34;:21,&#34;location_type_id&#34;:6,&#34;email&#34;:&#34;api.test@civicrm.test.org&#34;}
 </code></pre><h4 id="curl-example">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=Email&amp;action=get&amp;json='
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=Email&amp;action=get&amp;json=&#39;
 </code></pre><h3 id="回傳範例">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 1,
-    &quot;id&quot;: 22,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 22,
+    &#34;values&#34;: [
         {
-            &quot;id&quot;: &quot;22&quot;,
-            &quot;contact_id&quot;: &quot;21&quot;,
-            &quot;location_type_id&quot;: &quot;6&quot;,
-            &quot;email&quot;: &quot;api.test@civicrm.test.org&quot;,
-            &quot;is_primary&quot;: &quot;1&quot;,
-            &quot;is_billing&quot;: &quot;0&quot;,
-            &quot;on_hold&quot;: &quot;0&quot;,
-            &quot;is_bulkmail&quot;: &quot;0&quot;
+            &#34;id&#34;: &#34;22&#34;,
+            &#34;contact_id&#34;: &#34;21&#34;,
+            &#34;location_type_id&#34;: &#34;6&#34;,
+            &#34;email&#34;: &#34;api.test@civicrm.test.org&#34;,
+            &#34;is_primary&#34;: &#34;1&#34;,
+            &#34;is_billing&#34;: &#34;0&#34;,
+            &#34;on_hold&#34;: &#34;0&#34;,
+            &#34;is_bulkmail&#34;: &#34;0&#34;
         }
     ]
 }
@@ -592,41 +613,41 @@
 <pre tabindex="0"><code>application/json
 </code></pre><h4 id="request-body">Request body</h4>
 <pre tabindex="0"><code>{
-    &quot;contact_id&quot;: 22,
-    &quot;location_type_id&quot;: 8,
-    &quot;email&quot;: &quot;api.test@civicrm.test.org&quot;,
-    &quot;is_primary&quot;: 1
+    &#34;contact_id&#34;: 22,
+    &#34;location_type_id&#34;: 8,
+    &#34;email&#34;: &#34;api.test@civicrm.test.org&#34;,
+    &#34;is_primary&#34;: 1
 }
 </code></pre><h4 id="api-explorer-1">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&amp;action=create&amp;pretty=1&amp;json={&quot;contact_id&quot;:22,&quot;location_type_id&quot;:8,&quot;email&quot;:&quot;api.test@civicrm.test.org&quot;,&quot;is_primary&quot;:1}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&amp;action=create&amp;pretty=1&amp;json={&#34;contact_id&#34;:22,&#34;location_type_id&#34;:8,&#34;email&#34;:&#34;api.test@civicrm.test.org&#34;,&#34;is_primary&#34;:1}
 </code></pre><h4 id="curl-example-1">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  --header 'content-type: application/json' \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
   --request POST \
-  --data '{&quot;contact_id&quot;:22,&quot;location_type_id&quot;:8,&quot;email&quot;:&quot;api.test@civicrm.test.org&quot;,&quot;is_primary&quot;:1}' \
-  '&lt;entrypoint&gt;?entity=Email&amp;action=create'
+  --data &#39;{&#34;contact_id&#34;:22,&#34;location_type_id&#34;:8,&#34;email&#34;:&#34;api.test@civicrm.test.org&#34;,&#34;is_primary&#34;:1}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Email&amp;action=create&#39;
 </code></pre><h3 id="回傳範例-1">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 1,
-    &quot;id&quot;: 23,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 23,
+    &#34;values&#34;: [
         {
-            &quot;id&quot;: &quot;23&quot;,
-            &quot;contact_id&quot;: &quot;22&quot;,
-            &quot;location_type_id&quot;: &quot;8&quot;,
-            &quot;email&quot;: &quot;api.test@civicrm.test.org&quot;,
-            &quot;is_primary&quot;: &quot;1&quot;,
-            &quot;is_billing&quot;: &quot;&quot;,
-            &quot;on_hold&quot;: &quot;&quot;,
-            &quot;is_bulkmail&quot;: &quot;&quot;,
-            &quot;hold_date&quot;: &quot;&quot;,
-            &quot;reset_date&quot;: &quot;&quot;,
-            &quot;signature_text&quot;: &quot;&quot;,
-            &quot;signature_html&quot;: &quot;&quot;
+            &#34;id&#34;: &#34;23&#34;,
+            &#34;contact_id&#34;: &#34;22&#34;,
+            &#34;location_type_id&#34;: &#34;8&#34;,
+            &#34;email&#34;: &#34;api.test@civicrm.test.org&#34;,
+            &#34;is_primary&#34;: &#34;1&#34;,
+            &#34;is_billing&#34;: &#34;&#34;,
+            &#34;on_hold&#34;: &#34;&#34;,
+            &#34;is_bulkmail&#34;: &#34;&#34;,
+            &#34;hold_date&#34;: &#34;&#34;,
+            &#34;reset_date&#34;: &#34;&#34;,
+            &#34;signature_text&#34;: &#34;&#34;,
+            &#34;signature_html&#34;: &#34;&#34;
         }
     ]
 }
@@ -640,42 +661,42 @@
 <pre tabindex="0"><code>application/json
 </code></pre><h4 id="request-body-1">Request body</h4>
 <pre tabindex="0"><code>{
-    &quot;contact_id&quot;: 26,
-    &quot;location_type_id&quot;: 16,
-    &quot;email&quot;: &quot;test.update@civicrm.test.org&quot;,
-    &quot;is_primary&quot;: 1,
-    &quot;id&quot;: 27
+    &#34;contact_id&#34;: 26,
+    &#34;location_type_id&#34;: 16,
+    &#34;email&#34;: &#34;test.update@civicrm.test.org&#34;,
+    &#34;is_primary&#34;: 1,
+    &#34;id&#34;: 27
 }
 </code></pre><h4 id="api-explorer-2">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&amp;action=create&amp;pretty=1&amp;json={&quot;contact_id&quot;:26,&quot;location_type_id&quot;:16,&quot;email&quot;:&quot;test.update@civicrm.test.org&quot;,&quot;is_primary&quot;:1,&quot;id&quot;:27}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&amp;action=create&amp;pretty=1&amp;json={&#34;contact_id&#34;:26,&#34;location_type_id&#34;:16,&#34;email&#34;:&#34;test.update@civicrm.test.org&#34;,&#34;is_primary&#34;:1,&#34;id&#34;:27}
 </code></pre><h4 id="curl-example-2">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  --header 'content-type: application/json' \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
   --request POST \
-  --data '{&quot;contact_id&quot;:26,&quot;location_type_id&quot;:16,&quot;email&quot;:&quot;test.update@civicrm.test.org&quot;,&quot;is_primary&quot;:1,&quot;id&quot;:27}' \
-  '&lt;entrypoint&gt;?entity=Email&amp;action=create'
+  --data &#39;{&#34;contact_id&#34;:26,&#34;location_type_id&#34;:16,&#34;email&#34;:&#34;test.update@civicrm.test.org&#34;,&#34;is_primary&#34;:1,&#34;id&#34;:27}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Email&amp;action=create&#39;
 </code></pre><h3 id="回傳範例-2">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 1,
-    &quot;id&quot;: 27,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 27,
+    &#34;values&#34;: [
         {
-            &quot;id&quot;: &quot;27&quot;,
-            &quot;contact_id&quot;: &quot;26&quot;,
-            &quot;location_type_id&quot;: &quot;16&quot;,
-            &quot;email&quot;: &quot;test.update@civicrm.test.org&quot;,
-            &quot;is_primary&quot;: &quot;1&quot;,
-            &quot;is_billing&quot;: &quot;0&quot;,
-            &quot;on_hold&quot;: &quot;0&quot;,
-            &quot;is_bulkmail&quot;: &quot;0&quot;,
-            &quot;hold_date&quot;: &quot;&quot;,
-            &quot;reset_date&quot;: &quot;&quot;,
-            &quot;signature_text&quot;: &quot;&quot;,
-            &quot;signature_html&quot;: &quot;&quot;
+            &#34;id&#34;: &#34;27&#34;,
+            &#34;contact_id&#34;: &#34;26&#34;,
+            &#34;location_type_id&#34;: &#34;16&#34;,
+            &#34;email&#34;: &#34;test.update@civicrm.test.org&#34;,
+            &#34;is_primary&#34;: &#34;1&#34;,
+            &#34;is_billing&#34;: &#34;0&#34;,
+            &#34;on_hold&#34;: &#34;0&#34;,
+            &#34;is_bulkmail&#34;: &#34;0&#34;,
+            &#34;hold_date&#34;: &#34;&#34;,
+            &#34;reset_date&#34;: &#34;&#34;,
+            &#34;signature_text&#34;: &#34;&#34;,
+            &#34;signature_html&#34;: &#34;&#34;
         }
     ]
 }
@@ -689,24 +710,24 @@
 <pre tabindex="0"><code>application/json
 </code></pre><h4 id="request-body-2">Request body</h4>
 <pre tabindex="0"><code>{
-    &quot;id&quot;: 28
+    &#34;id&#34;: 28
 }
 </code></pre><h4 id="api-explorer-3">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&amp;action=delete&amp;pretty=1&amp;json={&quot;id&quot;:28}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Email&amp;action=delete&amp;pretty=1&amp;json={&#34;id&#34;:28}
 </code></pre><h4 id="curl-example-3">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  --header 'content-type: application/json' \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
   --request POST \
-  --data '{&quot;id&quot;:28}' \
-  '&lt;entrypoint&gt;?entity=Email&amp;action=delete'
+  --data &#39;{&#34;id&#34;:28}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Email&amp;action=delete&#39;
 </code></pre><h3 id="回傳範例-3">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 1,
-    &quot;values&quot;: 1
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;values&#34;: 1
 }
 </code></pre>
 
@@ -905,6 +926,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -946,19 +983,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/api-document/js/clipboard.min.js?1648464081"></script>
-    <script src="/api-document/js/perfect-scrollbar.min.js?1648464081"></script>
-    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1648464081"></script>
-    <script src="/api-document/js/jquery.sticky.js?1648464081"></script>
-    <script src="/api-document/js/featherlight.min.js?1648464081"></script>
-    <script src="/api-document/js/highlight.pack.js?1648464081"></script>
+    <script src="/api-document/js/clipboard.min.js?1653633711"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1653633711"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1653633711"></script>
+    <script src="/api-document/js/jquery.sticky.js?1653633711"></script>
+    <script src="/api-document/js/featherlight.min.js?1653633711"></script>
+    <script src="/api-document/js/highlight.pack.js?1653633711"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/api-document/js/modernizr.custom-3.6.0.js?1648464081"></script>
-    <script src="/api-document/js/learn.js?1648464081"></script>
-    <script src="/api-document/js/hugo-learn.js?1648464081"></script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1653633711"></script>
+    <script src="/api-document/js/learn.js?1653633711"></script>
+    <script src="/api-document/js/hugo-learn.js?1653633711"></script>
     
         
-            <script src="/api-document/mermaid/mermaid.js?1648464081"></script>
+            <script src="/api-document/mermaid/mermaid.js?1653633711"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

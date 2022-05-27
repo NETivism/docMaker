@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="generator" content="Hugo 0.99.1" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>Contact API :: netiCRM API Documentation</title>
 
     
-    <link href="/api-document/css/nucleus.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/fontawesome-all.min.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/hybrid.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/featherlight.min.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/perfect-scrollbar.min.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/auto-complete.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/atom-one-dark-reasonable.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/theme.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/tabs.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/hugo-theme.css?1648464081" rel="stylesheet">
+    <link href="/api-document/css/nucleus.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1653633711" rel="stylesheet">
     
     
 
-    <script src="/api-document/js/jquery-3.3.1.min.js?1648464081"></script>
+    <script src="/api-document/js/jquery-3.3.1.min.js?1653633711"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/api-document/js/lunr.min.js?1648464081"></script>
-<script type="text/javascript" src="/api-document/js/auto-complete.js?1648464081"></script>
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1653633711"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1653633711"></script>
 <script type="text/javascript">
     
         var baseurl = "\/api-document";
     
 </script>
-<script type="text/javascript" src="/api-document/js/search.js?1648464081"></script>
+<script type="text/javascript" src="/api-document/js/search.js?1653633711"></script>
 
     
   </div>
@@ -284,6 +284,27 @@
       <li data-nav-id="/api-document/3/getoptions/" title="Get Options API" class="dd-item ">
         <a href="/api-document/3/getoptions/">
         Get Options
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/phone/" title="Phone API" class="dd-item ">
+        <a href="/api-document/3/phone/">
+        Phone
         
         </a>
     </li>
@@ -906,32 +927,32 @@
 <p>取得所有聯絡人</p>
 <pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={}
 </code></pre><p>取得特定篩選條件的聯絡人</p>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&quot;&lt;field&gt;&quot;:&quot;&lt;value&gt;&quot;}}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;&lt;field&gt;&#34;:&#34;&lt;value&gt;&#34;}}
 </code></pre><p>聯絡人編號1234的聯絡人</p>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&quot;id&quot;:&quot;1234&quot;}}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;id&#34;:&#34;1234&#34;}}
 </code></pre><p>姓氏是王、名字是小明的聯絡人</p>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&quot;last_name&quot;:&quot;王&quot;,&quot;first_name&quot;:&quot;小明&quot;}}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;last_name&#34;:&#34;王&#34;,&#34;first_name&#34;:&#34;小明&#34;}}
 </code></pre><h4 id="api-explorer">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=get&amp;json={&quot;&lt;field&gt;&quot;:&quot;&lt;value&gt;&quot;}&gt;
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=get&amp;json={&#34;&lt;field&gt;&#34;:&#34;&lt;value&gt;&#34;}&gt;
 </code></pre><h4 id="curl-example">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  '&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&quot;&lt;field&gt;&quot;:&quot;&lt;value&gt;&quot;}'
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;&lt;field&gt;&#34;:&#34;&lt;value&gt;&#34;}&#39;
 </code></pre><h3 id="回傳範例">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 25,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 25,
+    &#34;values&#34;: [
         {
-            &quot;contact_id&quot;: &quot;1&quot;,
-            &quot;contact_type&quot;: &quot;Individual&quot;,
-            &quot;contact_sub_type&quot;: &quot;&quot;,
-            &quot;sort_name&quot;: &quot;蔡怡君&quot;,
-            &quot;display_name&quot;: &quot;蔡怡君&quot;,
+            &#34;contact_id&#34;: &#34;1&#34;,
+            &#34;contact_type&#34;: &#34;Individual&#34;,
+            &#34;contact_sub_type&#34;: &#34;&#34;,
+            &#34;sort_name&#34;: &#34;蔡怡君&#34;,
+            &#34;display_name&#34;: &#34;蔡怡君&#34;,
             ......
-            &quot;id&quot;: &quot;1&quot;
+            &#34;id&#34;: &#34;1&#34;
             ......
         },
         ......
@@ -945,31 +966,31 @@
 </code></pre><h4 id="request-url-1">Request URL</h4>
 <pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=create
 </code></pre><h4 id="request-body">Request Body</h4>
-<pre tabindex="0"><code>{&quot;first_name&quot;:&quot;小明&quot;,&quot;last_name&quot;:&quot;王&quot;,&quot;contact_type&quot;:&quot;Individual&quot;}
+<pre tabindex="0"><code>{&#34;first_name&#34;:&#34;小明&#34;,&#34;last_name&#34;:&#34;王&#34;,&#34;contact_type&#34;:&#34;Individual&#34;}
 </code></pre><h4 id="api-explorer-1">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=create&amp;json={&quot;first_name&quot;:&quot;小明&quot;,&quot;last_name&quot;:&quot;王&quot;,&quot;contact_type&quot;:&quot;Individual&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=create&amp;json={&#34;first_name&#34;:&#34;小明&#34;,&#34;last_name&#34;:&#34;王&#34;,&#34;contact_type&#34;:&#34;Individual&#34;}
 </code></pre><h4 id="curl-example-1">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  --header 'content-type: application/json' \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
   --request POST \
-  --data '{&quot;first_name&quot;:&quot;小明&quot;,&quot;last_name&quot;:&quot;王&quot;,&quot;contact_type&quot;:&quot;Individual&quot;}' \
-  '&lt;entrypoint&gt;?entity=Contact&amp;action=create'
+  --data &#39;{&#34;first_name&#34;:&#34;小明&#34;,&#34;last_name&#34;:&#34;王&#34;,&#34;contact_type&#34;:&#34;Individual&#34;}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Contact&amp;action=create&#39;
 </code></pre><h3 id="回傳範例-1">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 1,
-    &quot;id&quot;: 14678,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 14678,
+    &#34;values&#34;: [
         {
-            &quot;id&quot;: &quot;14678&quot;,
-            &quot;contact_type&quot;: &quot;Individual&quot;,
+            &#34;id&#34;: &#34;14678&#34;,
+            &#34;contact_type&#34;: &#34;Individual&#34;,
             ......
-            &quot;first_name&quot;: &quot;小明&quot;,
-            &quot;middle_name&quot;: &quot;&quot;,
-            &quot;last_name&quot;: &quot;王&quot;,
+            &#34;first_name&#34;: &#34;小明&#34;,
+            &#34;middle_name&#34;: &#34;&#34;,
+            &#34;last_name&#34;: &#34;王&#34;,
             ......
         }
     ]
@@ -984,33 +1005,33 @@
 </code></pre><h4 id="request-body-1">Request Body</h4>
 <p>更新聯絡人編號14678的個資</p>
 <pre tabindex="0"><code>{
-  &quot;id&quot;:&quot;14678&quot;,
-  &quot;first_name&quot;:&quot;大明&quot;
+  &#34;id&#34;:&#34;14678&#34;,
+  &#34;first_name&#34;:&#34;大明&#34;
 }
 </code></pre><h4 id="api-explorer-2">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=create&amp;json={&quot;first_name&quot;:&quot;小明&quot;,&quot;last_name&quot;:&quot;王&quot;,&quot;contact_type&quot;:&quot;Individual&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=create&amp;json={&#34;first_name&#34;:&#34;小明&#34;,&#34;last_name&#34;:&#34;王&#34;,&#34;contact_type&#34;:&#34;Individual&#34;}
 </code></pre><h4 id="curl-example-2">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  --header 'content-type: application/json' \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
   --request POST \
-  --data 'json={&quot;first_name&quot;:&quot;小明&quot;,&quot;last_name&quot;:&quot;王&quot;,&quot;contact_type&quot;:&quot;Individual&quot;}' \
-'&lt;entrypoint&gt;?entity=Contact&amp;action=create'
+  --data &#39;json={&#34;first_name&#34;:&#34;小明&#34;,&#34;last_name&#34;:&#34;王&#34;,&#34;contact_type&#34;:&#34;Individual&#34;}&#39; \
+&#39;&lt;entrypoint&gt;?entity=Contact&amp;action=create&#39;
 </code></pre><h3 id="回傳範例-2">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 1,
-    &quot;id&quot;: 14678,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 14678,
+    &#34;values&#34;: [
         {
-            &quot;id&quot;: &quot;14678&quot;,
-            &quot;contact_type&quot;: &quot;Individual&quot;,
+            &#34;id&#34;: &#34;14678&#34;,
+            &#34;contact_type&#34;: &#34;Individual&#34;,
             ......
-            &quot;first_name&quot;: &quot;小明&quot;,
-            &quot;middle_name&quot;: &quot;&quot;,
-            &quot;last_name&quot;: &quot;王&quot;,
+            &#34;first_name&#34;: &#34;小明&#34;,
+            &#34;middle_name&#34;: &#34;&#34;,
+            &#34;last_name&#34;: &#34;王&#34;,
             ......
         }
     ]
@@ -1025,25 +1046,25 @@
 </code></pre><h4 id="request-url-3">Request URL</h4>
 <pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=delete
 </code></pre><h4 id="request-body-2">Request Body</h4>
-<pre tabindex="0"><code>{&quot;id&quot;:&quot;14678&quot;}
+<pre tabindex="0"><code>{&#34;id&#34;:&#34;14678&#34;}
 </code></pre><h4 id="api-explorer-3">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=delete&amp;json={&quot;id&quot;:&quot;14678&quot;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=delete&amp;json={&#34;id&#34;:&#34;14678&#34;}
 </code></pre><h4 id="curl-發送範例">curl 發送範例</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -g <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;x-civicrm-api-key: &lt;secret-key&gt;&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;x-civicrm-site-key: &lt;site-key&gt;&#39;</span> <span style="color:#ae81ff">\ </span>
-  --header <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --request POST <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --data <span style="color:#e6db74">&#39;json={&#34;id&#34;:&#34;14678&#34;}&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#39;&lt;entrypoint&gt;?entity=Contact&amp;action=delete&#39;</span>
-</code></pre></div><h3 id="回傳範例-3">回傳範例</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;is_error&#34;</span>: <span style="color:#ae81ff">0</span>,
-    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#ae81ff">3</span>,
-    <span style="color:#f92672">&#34;count&#34;</span>: <span style="color:#ae81ff">1</span>,
-    <span style="color:#f92672">&#34;values&#34;</span>: <span style="color:#ae81ff">1</span>
-}
-</code></pre></div><h1 id="進階使用">進階使用</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -g <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;x-civicrm-api-key: &lt;secret-key&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;x-civicrm-site-key: &lt;site-key&gt;&#39;</span> <span style="color:#ae81ff">\ </span>
+</span></span><span style="display:flex;"><span>  --header <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --request POST <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --data <span style="color:#e6db74">&#39;json={&#34;id&#34;:&#34;14678&#34;}&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#39;&lt;entrypoint&gt;?entity=Contact&amp;action=delete&#39;</span>
+</span></span></code></pre></div><h3 id="回傳範例-3">回傳範例</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;is_error&#34;</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;count&#34;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;values&#34;</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="進階使用">進階使用</h1>
 <h2 id="取得聯絡人-巢狀資料">取得聯絡人-巢狀資料</h2>
 <p>使用 get API取得聯絡人時，可以一併取得跟聯絡人相關的其他資料，以「取得聯絡人時，同時取得所有Email、自訂欄位」為例</p>
 <h3 id="發送範例-2">發送範例</h3>
@@ -1051,77 +1072,77 @@
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-4">Request URL</h4>
 <p>語法</p>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&quot;api.&lt;相關類型API名稱&gt;.get&quot;:{&quot;&lt;相關類型API對應欄位&gt;&quot;:&quot;$value.&lt;上層類型對應ID&gt;&quot;, &quot;&lt;相關類型篩選欄位&gt;&quot;:&quot;&lt;篩選值&gt;&quot;}}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;api.&lt;相關類型API名稱&gt;.get&#34;:{&#34;&lt;相關類型API對應欄位&gt;&#34;:&#34;$value.&lt;上層類型對應ID&gt;&#34;, &#34;&lt;相關類型篩選欄位&gt;&#34;:&#34;&lt;篩選值&gt;&#34;}}
 </code></pre><p>取得聯絡人1234的資料，以及非主要Email</p>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&quot;id&quot;:1234,&quot;api.Email.get&quot;:{&quot;contact_id&quot;:&quot;$value.id&quot;,&quot;is_primary&quot;:&quot;0&quot;}}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;id&#34;:1234,&#34;api.Email.get&#34;:{&#34;contact_id&#34;:&#34;$value.id&#34;,&#34;is_primary&#34;:&#34;0&#34;}}
 </code></pre><p>取得聯絡人1234的資料，以及自訂欄位</p>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&quot;id&quot;:1234,&quot;api.CustomValue.get&quot;:{&quot;entity_table&quot;:&quot;civicrm_contact&quot;,&quot;entity_id&quot;:&quot;$value.id&quot;}}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;id&#34;:1234,&#34;api.CustomValue.get&#34;:{&#34;entity_table&#34;:&#34;civicrm_contact&#34;,&#34;entity_id&#34;:&#34;$value.id&#34;}}
 </code></pre><p>串連取得上述資料</p>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&quot;id&quot;:1234,&quot;api.Email.get&quot;:{&quot;contact_id&quot;:&quot;$value.id&quot;,&quot;is_primary&quot;:&quot;0&quot;},&quot;api.CustomValue.get&quot;:{&quot;entity_table&quot;:&quot;civicrm_contact&quot;,&quot;entity_id&quot;:&quot;$value.id&quot;}}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;id&#34;:1234,&#34;api.Email.get&#34;:{&#34;contact_id&#34;:&#34;$value.id&#34;,&#34;is_primary&#34;:&#34;0&#34;},&#34;api.CustomValue.get&#34;:{&#34;entity_table&#34;:&#34;civicrm_contact&#34;,&#34;entity_id&#34;:&#34;$value.id&#34;}}
 </code></pre><h4 id="api-explorer-4">API Explorer</h4>
-<pre tabindex="0"><code>https://&lt;site-domain&gt;/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=get&amp;json={&quot;id&quot;:1234,&quot;api.Email.get&quot;:{&quot;contact_id&quot;:&quot;$value.id&quot;,&quot;is_primary&quot;:&quot;0&quot;},&quot;api.CustomValue.get&quot;:{&quot;entity_table&quot;:&quot;civicrm_contact&quot;,&quot;entity_id&quot;:&quot;$value.id&quot;}}
+<pre tabindex="0"><code>https://&lt;site-domain&gt;/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=get&amp;json={&#34;id&#34;:1234,&#34;api.Email.get&#34;:{&#34;contact_id&#34;:&#34;$value.id&#34;,&#34;is_primary&#34;:&#34;0&#34;},&#34;api.CustomValue.get&#34;:{&#34;entity_table&#34;:&#34;civicrm_contact&#34;,&#34;entity_id&#34;:&#34;$value.id&#34;}}
 </code></pre><h4 id="curl-發送範例-1">curl 發送範例</h4>
 <pre tabindex="0"><code>curl -g \
-  --header 'x-civicrm-api-key: &lt;secret-key&gt;' \
-  --header 'x-civicrm-site-key: &lt;site-key&gt;' \ 
-  --header 'content-type: application/json' \
-  '&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&quot;id&quot;:1234,&quot;api.Email.get&quot;:{&quot;contact_id&quot;:&quot;$value.id&quot;,&quot;is_primary&quot;:&quot;0&quot;},&quot;api.CustomValue.get&quot;:{&quot;entity_table&quot;:&quot;civicrm_contact&quot;,&quot;entity_id&quot;:&quot;$value.id&quot;}}'
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;id&#34;:1234,&#34;api.Email.get&#34;:{&#34;contact_id&#34;:&#34;$value.id&#34;,&#34;is_primary&#34;:&#34;0&#34;},&#34;api.CustomValue.get&#34;:{&#34;entity_table&#34;:&#34;civicrm_contact&#34;,&#34;entity_id&#34;:&#34;$value.id&#34;}}&#39;
 </code></pre><h3 id="回傳範例-4">回傳範例</h3>
 <pre tabindex="0"><code>{
-    &quot;is_error&quot;: 0,
-    &quot;version&quot;: 3,
-    &quot;count&quot;: 1,
-    &quot;values&quot;: [
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;values&#34;: [
         {
-            &quot;id&quot;: &quot;1234&quot;,
-            &quot;contact_id&quot;: &quot;1234&quot;,
-            &quot;contact_type&quot;: &quot;Individual&quot;,
-            &quot;contact_sub_type&quot;: &quot;&quot;,
-            &quot;sort_name&quot;: &quot;蔡怡君&quot;,
-            &quot;display_name&quot;: &quot;蔡怡君&quot;,
+            &#34;id&#34;: &#34;1234&#34;,
+            &#34;contact_id&#34;: &#34;1234&#34;,
+            &#34;contact_type&#34;: &#34;Individual&#34;,
+            &#34;contact_sub_type&#34;: &#34;&#34;,
+            &#34;sort_name&#34;: &#34;蔡怡君&#34;,
+            &#34;display_name&#34;: &#34;蔡怡君&#34;,
             ......
-            &quot;api.Email.get&quot;: {
-                &quot;is_error&quot;: 0,
-                &quot;version&quot;: 3,
-                &quot;count&quot;: 1,
-                &quot;values&quot;: [
+            &#34;api.Email.get&#34;: {
+                &#34;is_error&#34;: 0,
+                &#34;version&#34;: 3,
+                &#34;count&#34;: 1,
+                &#34;values&#34;: [
                     {
-                        &quot;id&quot;: &quot;2&quot;,
-                        &quot;contact_id&quot;: &quot;1234&quot;,
-                        &quot;location_type_id&quot;: &quot;1&quot;,
-                        &quot;email&quot;: &quot;jayden.nelson@netivism-is-best.com.tw&quot;,
-                        &quot;is_primary&quot;: &quot;0&quot;,
-                        &quot;is_billing&quot;: &quot;0&quot;,
-                        &quot;on_hold&quot;: &quot;0&quot;,
-                        &quot;is_bulkmail&quot;: &quot;0&quot;
+                        &#34;id&#34;: &#34;2&#34;,
+                        &#34;contact_id&#34;: &#34;1234&#34;,
+                        &#34;location_type_id&#34;: &#34;1&#34;,
+                        &#34;email&#34;: &#34;jayden.nelson@netivism-is-best.com.tw&#34;,
+                        &#34;is_primary&#34;: &#34;0&#34;,
+                        &#34;is_billing&#34;: &#34;0&#34;,
+                        &#34;on_hold&#34;: &#34;0&#34;,
+                        &#34;is_bulkmail&#34;: &#34;0&#34;
                     }
                 ]
             },
-            &quot;api.CustomValue.get&quot;: {
-                &quot;is_error&quot;: 0,
-                &quot;version&quot;: 3,
-                &quot;count&quot;: 3,
-                &quot;values&quot;: [
+            &#34;api.CustomValue.get&#34;: {
+                &#34;is_error&#34;: 0,
+                &#34;version&#34;: 3,
+                &#34;count&#34;: 3,
+                &#34;values&#34;: [
                     {
-                        &quot;entity_id&quot;: &quot;1234&quot;,
-                        &quot;latest&quot;: &quot;&quot;,
-                        &quot;id&quot;: &quot;1&quot;,
-                        &quot;0&quot;: &quot;&quot;
+                        &#34;entity_id&#34;: &#34;1234&#34;,
+                        &#34;latest&#34;: &#34;&#34;,
+                        &#34;id&#34;: &#34;1&#34;,
+                        &#34;0&#34;: &#34;&#34;
                     },
                     {
-                        &quot;entity_table&quot;: &quot;Contact&quot;
+                        &#34;entity_table&#34;: &#34;Contact&#34;
                     },
                     {
-                        &quot;entity_id&quot;: &quot;1234&quot;,
-                        &quot;latest&quot;: &quot;500,000&quot;,
-                        &quot;id&quot;: &quot;2&quot;,
-                        &quot;0&quot;: &quot;500,000&quot;
+                        &#34;entity_id&#34;: &#34;1234&#34;,
+                        &#34;latest&#34;: &#34;500,000&#34;,
+                        &#34;id&#34;: &#34;2&#34;,
+                        &#34;0&#34;: &#34;500,000&#34;
                     },
                     {
-                        &quot;entity_id&quot;: &quot;1234&quot;,
-                        &quot;latest&quot;: &quot;&quot;,
-                        &quot;id&quot;: &quot;3&quot;,
-                        &quot;0&quot;: &quot;&quot;
+                        &#34;entity_id&#34;: &#34;1234&#34;,
+                        &#34;latest&#34;: &#34;&#34;,
+                        &#34;id&#34;: &#34;3&#34;,
+                        &#34;0&#34;: &#34;&#34;
                     }
                 ]
             }
@@ -1140,32 +1161,32 @@
 <pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=create
 </code></pre><h4 id="request-body-3">Request Body</h4>
 <pre tabindex="0"><code>{
-  &quot;first_name&quot;:&quot;小明&quot;,
-  &quot;last_name&quot;:&quot;王&quot;,
-  &quot;contact_type&quot;:&quot;Individual&quot;,
-  &quot;email&quot;: [
+  &#34;first_name&#34;:&#34;小明&#34;,
+  &#34;last_name&#34;:&#34;王&#34;,
+  &#34;contact_type&#34;:&#34;Individual&#34;,
+  &#34;email&#34;: [
     {
-      &quot;email&quot;:&quot;abcd@test.com&quot;,
-      &quot;location_type_id&quot;:&quot;1&quot;,
+      &#34;email&#34;:&#34;abcd@test.com&#34;,
+      &#34;location_type_id&#34;:&#34;1&#34;,
     },
     ...
   ]
-  &quot;phone&quot;: [
+  &#34;phone&#34;: [
     {
-      &quot;phone&quot;:&quot;0911-222333&quot;,
-      &quot;location_type_id&quot;:&quot;1&quot;,
-      &quot;phone_type_id&quot;:&quot;1&quot;,
+      &#34;phone&#34;:&#34;0911-222333&#34;,
+      &#34;location_type_id&#34;:&#34;1&#34;,
+      &#34;phone_type_id&#34;:&#34;1&#34;,
     },
     ...
   ],
-  &quot;address&quot;: [
+  &#34;address&#34;: [
     {
-        &quot;location_type_id&quot;:&quot;1&quot;,
-        &quot;country&quot;: &quot;TW&quot;,
-        &quot;postal_code&quot;: 100,
-        &quot;state_province_name&quot;: &quot;臺北市&quot;,
-        &quot;city&quot;: &quot;中正區&quot;,
-        &quot;street_address&quot;: &quot;林森南路...&quot;    
+        &#34;location_type_id&#34;:&#34;1&#34;,
+        &#34;country&#34;: &#34;TW&#34;,
+        &#34;postal_code&#34;: 100,
+        &#34;state_province_name&#34;: &#34;臺北市&#34;,
+        &#34;city&#34;: &#34;中正區&#34;,
+        &#34;street_address&#34;: &#34;林森南路...&#34;    
     },
     ...
   ]
@@ -1178,25 +1199,25 @@
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-6">Request URL</h4>
 <p>格式</p>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=checksum&amp;json={&quot;contact_id&quot;:&quot;&lt;contact id&gt;&quot;, &quot;live&quot;:&lt;valid hours&gt;}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=checksum&amp;json={&#34;contact_id&#34;:&#34;&lt;contact id&gt;&#34;, &#34;live&#34;:&lt;valid hours&gt;}
 </code></pre><p>取得聯絡人編號1234的Checksum，並設定3小時後失效</p>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=checksum&amp;json={&quot;contact_id&quot;:&quot;1234&quot;, &quot;live&quot;:3}
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=checksum&amp;json={&#34;contact_id&#34;:&#34;1234&#34;, &#34;live&#34;:3}
 </code></pre><h4 id="api-explorer-5">API Explorer</h4>
-<pre tabindex="0"><code>https://&lt;site-domain&gt;/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=checksum&amp;json={&quot;contact_id&quot;:&quot;1234&quot;, &quot;live&quot;:3}
+<pre tabindex="0"><code>https://&lt;site-domain&gt;/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=checksum&amp;json={&#34;contact_id&#34;:&#34;1234&#34;, &#34;live&#34;:3}
 </code></pre><h3 id="回傳範例-5">回傳範例</h3>
 <p>回傳的 values 內儲存的 key 為設定的聯絡人id，value 為 checksum。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;is_error&#34;</span>: <span style="color:#ae81ff">0</span>,
-    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#ae81ff">3</span>,
-    <span style="color:#f92672">&#34;count&#34;</span>: <span style="color:#ae81ff">1</span>,
-    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">0</span>,
-    <span style="color:#f92672">&#34;values&#34;</span>: [
-        {
-            <span style="color:#f92672">&#34;1234&#34;</span>: <span style="color:#e6db74">&#34;abcde12345HQWEQWEASDSASD_1631155364_3&#34;</span>
-        }
-    ]
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;is_error&#34;</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;count&#34;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;values&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;1234&#34;</span>: <span style="color:#e6db74">&#34;abcde12345HQWEQWEASDSASD_1631155364_3&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -1393,6 +1414,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1434,19 +1471,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/api-document/js/clipboard.min.js?1648464081"></script>
-    <script src="/api-document/js/perfect-scrollbar.min.js?1648464081"></script>
-    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1648464081"></script>
-    <script src="/api-document/js/jquery.sticky.js?1648464081"></script>
-    <script src="/api-document/js/featherlight.min.js?1648464081"></script>
-    <script src="/api-document/js/highlight.pack.js?1648464081"></script>
+    <script src="/api-document/js/clipboard.min.js?1653633711"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1653633711"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1653633711"></script>
+    <script src="/api-document/js/jquery.sticky.js?1653633711"></script>
+    <script src="/api-document/js/featherlight.min.js?1653633711"></script>
+    <script src="/api-document/js/highlight.pack.js?1653633711"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/api-document/js/modernizr.custom-3.6.0.js?1648464081"></script>
-    <script src="/api-document/js/learn.js?1648464081"></script>
-    <script src="/api-document/js/hugo-learn.js?1648464081"></script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1653633711"></script>
+    <script src="/api-document/js/learn.js?1653633711"></script>
+    <script src="/api-document/js/hugo-learn.js?1653633711"></script>
     
         
-            <script src="/api-document/mermaid/mermaid.js?1648464081"></script>
+            <script src="/api-document/mermaid/mermaid.js?1653633711"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

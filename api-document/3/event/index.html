@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="generator" content="Hugo 0.99.1" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>Event API :: netiCRM API Documentation</title>
 
     
-    <link href="/api-document/css/nucleus.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/fontawesome-all.min.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/hybrid.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/featherlight.min.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/perfect-scrollbar.min.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/auto-complete.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/atom-one-dark-reasonable.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/theme.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/tabs.css?1648464081" rel="stylesheet">
-    <link href="/api-document/css/hugo-theme.css?1648464081" rel="stylesheet">
+    <link href="/api-document/css/nucleus.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1653633711" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1653633711" rel="stylesheet">
     
     
 
-    <script src="/api-document/js/jquery-3.3.1.min.js?1648464081"></script>
+    <script src="/api-document/js/jquery-3.3.1.min.js?1653633711"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/api-document/js/lunr.min.js?1648464081"></script>
-<script type="text/javascript" src="/api-document/js/auto-complete.js?1648464081"></script>
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1653633711"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1653633711"></script>
 <script type="text/javascript">
     
         var baseurl = "\/api-document";
     
 </script>
-<script type="text/javascript" src="/api-document/js/search.js?1648464081"></script>
+<script type="text/javascript" src="/api-document/js/search.js?1653633711"></script>
 
     
   </div>
@@ -293,6 +293,27 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/phone/" title="Phone API" class="dd-item ">
+        <a href="/api-document/3/phone/">
+        Phone
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
       
@@ -434,67 +455,67 @@
 <h4 id="api-explorer-路徑">API Explorer 路徑</h4>
 <p><code>https://&lt;site-domain&gt;/civicrm/apibrowser#/civicrm/ajax/rest?entity=Event&amp;action=get&amp;pretty=1</code></p>
 <h4 id="curl-發送範例">CURL 發送範例</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-curl -g <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;x-civicrm-api-key: &lt;secret-key&gt;&#39;</span> --header <span style="color:#e6db74">&#39;x-civicrm-site-key: &lt;site-key&gt;&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#39;&lt;entrypoint&gt;?entity=Event&amp;action=get&#39;</span>
-</code></pre></div><h3 id="回傳範例">回傳範例</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>curl -g <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;x-civicrm-api-key: &lt;secret-key&gt;&#39;</span> --header <span style="color:#e6db74">&#39;x-civicrm-site-key: &lt;site-key&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#39;&lt;entrypoint&gt;?entity=Event&amp;action=get&#39;</span>
+</span></span></code></pre></div><h3 id="回傳範例">回傳範例</h3>
 <pre tabindex="0"><code class="language-json=" data-lang="json=">{
-    &quot;is_error&quot;: 0,                                     #是否有錯誤
-    &quot;version&quot;: 3,                                      #API的版本
-    &quot;count&quot;: 1,                                        #此次查詢比數
-    &quot;values&quot;: [                                        #此次查詢結果
+    &#34;is_error&#34;: 0,                                     #是否有錯誤
+    &#34;version&#34;: 3,                                      #API的版本
+    &#34;count&#34;: 1,                                        #此次查詢比數
+    &#34;values&#34;: [                                        #此次查詢結果
         {
-            &quot;id&quot;: &quot;9&quot;,                                 #活動編號
-            &quot;title&quot;: &quot;OOOO&quot;,                           #活動標題
-            &quot;event_title&quot;: &quot;OOOO&quot;,                     #同上
-            &quot;event_type_id&quot;: &quot;1&quot;,                      #活動類型
-            &quot;is_public&quot;: &quot;1&quot;,                          #是否為公開活動，未公開活動仍可存取、報名&quot;0&quot;或&quot;1&quot;
-            &quot;start_date&quot;: &quot;2020-12-24 16:01:00&quot;,       #活動開始日期時間（時區固定為Asia/Taipei）
-            &quot;event_start_date&quot;: &quot;2020-12-24 16:01:00&quot;, #同上
-            &quot;is_online_registration&quot;: &quot;1&quot;,             #是否允許線上報名，&quot;0&quot;或&quot;1&quot;，&quot;0&quot;時無法線上報名
-            &quot;is_qrcode&quot;: &quot;0&quot;,                          #是否啟用報到碼
-            &quot;registration_start_date&quot;: &quot;2020-01-13 00:00:00&quot;,
+            &#34;id&#34;: &#34;9&#34;,                                 #活動編號
+            &#34;title&#34;: &#34;OOOO&#34;,                           #活動標題
+            &#34;event_title&#34;: &#34;OOOO&#34;,                     #同上
+            &#34;event_type_id&#34;: &#34;1&#34;,                      #活動類型
+            &#34;is_public&#34;: &#34;1&#34;,                          #是否為公開活動，未公開活動仍可存取、報名&#34;0&#34;或&#34;1&#34;
+            &#34;start_date&#34;: &#34;2020-12-24 16:01:00&#34;,       #活動開始日期時間（時區固定為Asia/Taipei）
+            &#34;event_start_date&#34;: &#34;2020-12-24 16:01:00&#34;, #同上
+            &#34;is_online_registration&#34;: &#34;1&#34;,             #是否允許線上報名，&#34;0&#34;或&#34;1&#34;，&#34;0&#34;時無法線上報名
+            &#34;is_qrcode&#34;: &#34;0&#34;,                          #是否啟用報到碼
+            &#34;registration_start_date&#34;: &#34;2020-01-13 00:00:00&#34;,
                                                        #報名開始日期時間
-            &quot;registration_end_date&quot;: &quot;2020-01-21 00:00:00&quot;,
+            &#34;registration_end_date&#34;: &#34;2020-01-21 00:00:00&#34;,
                                                        #報名截止日期時間
-            &quot;max_participants&quot;: &quot;5&quot;,                   #活動名額（最大參加數量），若未限制，則無此欄位
-            &quot;event_full_text&quot;: &quot;此活動目前已報名額滿。&quot;,   #額滿時，出現的文字
-            &quot;is_monetary&quot;: &quot;0&quot;,                        #活動是否啟付費功能，&quot;0&quot;或&quot;1&quot;
-            &quot;contribution_type_id&quot;: &quot;0&quot;,               #當is_monetary=&quot;1&quot;時，需要有費用類型的編號
-            &quot;is_map&quot;: &quot;0&quot;,                             #活動是否顯示地圖於地點
-            &quot;is_active&quot;: &quot;1&quot;,                          #活動是否啟用，&quot;0&quot;為停用或&quot;1&quot;啟用，當活動停用時，活動無法存取、報名
-            &quot;is_show_location&quot;: &quot;1&quot;,                   #活動是否顯示活動地點
-            &quot;loc_block_id&quot;: &quot;5&quot;,                       #內部紀錄，請略過
-            &quot;default_role_id&quot;: &quot;1&quot;,                    #活動的參加者預設角色
-            &quot;is_email_confirm&quot;: &quot;0&quot;,                   #是否寄送報名確認信件，&quot;0&quot;或&quot;1&quot;
-            &quot;allow_cancel_by_link&quot;: &quot;0&quot;,               #當is_email_confirm=&quot;1&quot;時，是否包含取消活動報名的連結
-            &quot;is_pay_later&quot;: &quot;0&quot;,                       #是否啟用稍後付款，僅於is_monetary=&quot;1&quot;時有用
-            &quot;is_multiple_registrations&quot;: &quot;0&quot;,          #一次是否可報名多位參加者，&quot;0&quot;或&quot;1&quot;
-            &quot;allow_same_participant_emails&quot;: &quot;0&quot;,      #多位參加者報名時，是否允許用相同Email，&quot;0&quot;或&quot;1&quot;
-            &quot;has_waitlist&quot;: &quot;0&quot;,                       #是否啟用了候補功能，&quot;0&quot;或&quot;1&quot;
-            &quot;waitlist_text&quot;: &quot;此活動已額滿，您的報名將列為候補，若有名額將再通知您完成報名。&quot;,
+            &#34;max_participants&#34;: &#34;5&#34;,                   #活動名額（最大參加數量），若未限制，則無此欄位
+            &#34;event_full_text&#34;: &#34;此活動目前已報名額滿。&#34;,   #額滿時，出現的文字
+            &#34;is_monetary&#34;: &#34;0&#34;,                        #活動是否啟付費功能，&#34;0&#34;或&#34;1&#34;
+            &#34;contribution_type_id&#34;: &#34;0&#34;,               #當is_monetary=&#34;1&#34;時，需要有費用類型的編號
+            &#34;is_map&#34;: &#34;0&#34;,                             #活動是否顯示地圖於地點
+            &#34;is_active&#34;: &#34;1&#34;,                          #活動是否啟用，&#34;0&#34;為停用或&#34;1&#34;啟用，當活動停用時，活動無法存取、報名
+            &#34;is_show_location&#34;: &#34;1&#34;,                   #活動是否顯示活動地點
+            &#34;loc_block_id&#34;: &#34;5&#34;,                       #內部紀錄，請略過
+            &#34;default_role_id&#34;: &#34;1&#34;,                    #活動的參加者預設角色
+            &#34;is_email_confirm&#34;: &#34;0&#34;,                   #是否寄送報名確認信件，&#34;0&#34;或&#34;1&#34;
+            &#34;allow_cancel_by_link&#34;: &#34;0&#34;,               #當is_email_confirm=&#34;1&#34;時，是否包含取消活動報名的連結
+            &#34;is_pay_later&#34;: &#34;0&#34;,                       #是否啟用稍後付款，僅於is_monetary=&#34;1&#34;時有用
+            &#34;is_multiple_registrations&#34;: &#34;0&#34;,          #一次是否可報名多位參加者，&#34;0&#34;或&#34;1&#34;
+            &#34;allow_same_participant_emails&#34;: &#34;0&#34;,      #多位參加者報名時，是否允許用相同Email，&#34;0&#34;或&#34;1&#34;
+            &#34;has_waitlist&#34;: &#34;0&#34;,                       #是否啟用了候補功能，&#34;0&#34;或&#34;1&#34;
+            &#34;waitlist_text&#34;: &#34;此活動已額滿，您的報名將列為候補，若有名額將再通知您完成報名。&#34;,
                                                        #候補功能時，名額已滿的顯示文字
-            &quot;is_template&quot;: &quot;0&quot;,                        #是否為活動範本，固定為&quot;0&quot;
-            &quot;template_title&quot;: &quot;有名額限制，不開放候補&quot;,    #活動範本的標題，請略過
-            &quot;created_id&quot;: &quot;1&quot;,                         #活動建立者的聯絡人編號
-            &quot;created_date&quot;: &quot;2020-12-24 16:01:35&quot;,     #活動建立時的日期時間
-            &quot;available_places&quot;: &quot;5&quot;,                   #活動剩餘名額，若未限制max_participants時，此固定為&quot;&quot;
-            &quot;is_full&quot;: &quot;0&quot;,                            #活動是否額滿，若已額滿，為&quot;1&quot;，未額滿，為&quot;0&quot;
-                                                       #當未提供max_participants時，永遠為&quot;0&quot;
-            &quot;location_address&quot;: &quot;512 彰化縣永靖鄉ABCD&quot;,  #活動地點完整地址
-            &quot;location_phone&quot;: &quot;0955533333&quot;,            #活動資訊聯絡電話
-            &quot;location_email&quot;: &quot;jjj@bbb.com&quot;            #活動資訊聯絡Email
-            &quot;is_discount&quot;: &quot;0&quot;,                        #活動是否提供早鳥優惠，&quot;0&quot;或&quot;1&quot;
-            &quot;price_set_id&quot;: &quot;0&quot;,                       #若啟用價格表，則為價格表ID，&quot;0&quot;表示未啟用價格表
-            &quot;fee_block&quot;: [                             #活動費用，每個項目一個費用
+            &#34;is_template&#34;: &#34;0&#34;,                        #是否為活動範本，固定為&#34;0&#34;
+            &#34;template_title&#34;: &#34;有名額限制，不開放候補&#34;,    #活動範本的標題，請略過
+            &#34;created_id&#34;: &#34;1&#34;,                         #活動建立者的聯絡人編號
+            &#34;created_date&#34;: &#34;2020-12-24 16:01:35&#34;,     #活動建立時的日期時間
+            &#34;available_places&#34;: &#34;5&#34;,                   #活動剩餘名額，若未限制max_participants時，此固定為&#34;&#34;
+            &#34;is_full&#34;: &#34;0&#34;,                            #活動是否額滿，若已額滿，為&#34;1&#34;，未額滿，為&#34;0&#34;
+                                                       #當未提供max_participants時，永遠為&#34;0&#34;
+            &#34;location_address&#34;: &#34;512 彰化縣永靖鄉ABCD&#34;,  #活動地點完整地址
+            &#34;location_phone&#34;: &#34;0955533333&#34;,            #活動資訊聯絡電話
+            &#34;location_email&#34;: &#34;jjj@bbb.com&#34;            #活動資訊聯絡Email
+            &#34;is_discount&#34;: &#34;0&#34;,                        #活動是否提供早鳥優惠，&#34;0&#34;或&#34;1&#34;
+            &#34;price_set_id&#34;: &#34;0&#34;,                       #若啟用價格表，則為價格表ID，&#34;0&#34;表示未啟用價格表
+            &#34;fee_block&#34;: [                             #活動費用，每個項目一個費用
                 {
-                    &quot;label&quot;: &quot;OOO&quot;,                    #費用名稱
-                    &quot;value&quot;: &quot;111&quot;                     #費用金額
+                    &#34;label&#34;: &#34;OOO&#34;,                    #費用名稱
+                    &#34;value&#34;: &#34;111&#34;                     #費用金額
                 },
                 {
-                    &quot;label&quot;: &quot;PPP&quot;,
-                    &quot;value&quot;: &quot;222&quot;
+                    &#34;label&#34;: &#34;PPP&#34;,
+                    &#34;value&#34;: &#34;222&#34;
                 }
             ]
         }
@@ -697,6 +718,22 @@ curl -g <span style="color:#ae81ff">\
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -738,19 +775,19 @@ curl -g <span style="color:#ae81ff">\
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/api-document/js/clipboard.min.js?1648464081"></script>
-    <script src="/api-document/js/perfect-scrollbar.min.js?1648464081"></script>
-    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1648464081"></script>
-    <script src="/api-document/js/jquery.sticky.js?1648464081"></script>
-    <script src="/api-document/js/featherlight.min.js?1648464081"></script>
-    <script src="/api-document/js/highlight.pack.js?1648464081"></script>
+    <script src="/api-document/js/clipboard.min.js?1653633711"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1653633711"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1653633711"></script>
+    <script src="/api-document/js/jquery.sticky.js?1653633711"></script>
+    <script src="/api-document/js/featherlight.min.js?1653633711"></script>
+    <script src="/api-document/js/highlight.pack.js?1653633711"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/api-document/js/modernizr.custom-3.6.0.js?1648464081"></script>
-    <script src="/api-document/js/learn.js?1648464081"></script>
-    <script src="/api-document/js/hugo-learn.js?1648464081"></script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1653633711"></script>
+    <script src="/api-document/js/learn.js?1653633711"></script>
+    <script src="/api-document/js/hugo-learn.js?1653633711"></script>
     
         
-            <script src="/api-document/mermaid/mermaid.js?1648464081"></script>
+            <script src="/api-document/mermaid/mermaid.js?1653633711"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
