@@ -67,12 +67,38 @@ $(document).ready(function(){
 
 
 jQuery(document).ready(function() {
+  var parentHref = window.parent.location.href;
+  var currentHref = window.location.href;
+
+  // it's iframe embed
+  if (parentHref !== currentHref) {
+    $("a").each(function(){
+      let href = $(this).attr("href");
+      if (href.match(/^\/api-document/)) {
+        href = href.replace(/^\/api-document/, "/api-doc");
+        $(this).prop('href', href);
+      }
+    });
+    let parentHash = window.parent.location.hash;
+    if (parentHash.length > 0) {
+      window.location.href = parentHash;
+    }
+  }
   // Add link button for every
   var text, clip = new ClipboardJS('.anchor');
   $("h1~h2,h1~h3,h1~h4,h1~h5,h1~h6").append(function(index, html){
     var element = $(this);
-    var url = encodeURI(document.location.origin + document.location.pathname.replace(/^\/api-document/, '/api-doc'));
-    var link = url + "?hash="+element[0].id;
+
+    // it's iframe embed
+    if (parentHref !== currentHref) {
+      var path = document.location.pathname.replace(/^\/api-document/, '/api-doc').replace(/index\.html$/, '');
+    }
+    else {
+      var path = document.location.pathname;
+    }
+    var hash = '#'+encodeURI(element[0].id);
+    var url = encodeURI(document.location.origin + path);
+    var link = url + hash;
     return " <span title='Copy Link' class='anchor' data-clipboard-text='"+link+"'>" +
       "<i class='fas fa-link fa-lg'></i>" +
       "</span>"
