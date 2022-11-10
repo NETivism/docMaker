@@ -71,9 +71,9 @@ jQuery(document).ready(function() {
   var text, clip = new ClipboardJS('.anchor');
   $("h1~h2,h1~h3,h1~h4,h1~h5,h1~h6").append(function(index, html){
     var element = $(this);
-    var url = encodeURI(document.location.origin + document.location.pathname);
-    var link = url + "#"+element[0].id;
-    return " <span class='anchor' data-clipboard-text='"+link+"'>" +
+    var url = encodeURI(document.location.origin + document.location.pathname.replace(/^\/api-document/, '/api-doc'));
+    var link = url + "?hash="+element[0].id;
+    return " <span title='Copy Link' class='anchor' data-clipboard-text='"+link+"'>" +
       "<i class='fas fa-link fa-lg'></i>" +
       "</span>"
     ;
