@@ -48,19 +48,46 @@ body {
 #body a.highlight:hover:after, #body a.highlight:focus:after {
     width: 100%;
 }
+#top-bar {
+    position: relative;
+}
+#body #breadcrumbs {
+  width: 100%;
+}
 .progress {
     position:absolute;
-    background-color: rgba(246, 246, 246, 0.97);
+    background-color: rgba(250, 250, 250, 0.85);
     width: auto;
+    min-width: 220px;
+    width: 80%;
     border: thin solid #ECECEC;
-    display:none;
+    display: block;
     z-index:200;
+    right: 0;
+    top: 70px;
+    display: none;
 }
 
 #toc-menu {
-  border-right: thin solid #DAD8D8 !important;
-  padding-right: 1rem !important;
-  margin-right: 0.5rem !important;
+  border-left: thin solid #DAD8D8 !important;
+  padding-left: 1rem !important;
+  margin-left: 0.5rem !important;
+  cursor: pointer;
+  float: right;
+  width: 35px;
+}
+
+@media screen and (min-width: 768px) {
+  #toc-menu {
+    width: calc(25% + 35px);
+  }
+  .progress {
+    width: 25%;
+    left: 75%;
+    top: 0;
+    max-width: 25%;
+    display: block;
+  }
 }
 
 #sidebar-toggle-span {
@@ -149,8 +176,9 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 
 h2 {
   font-size: 2.5rem;
-  line-height: 110% !important;
-  margin: 2.5rem 0 1.5rem 0;
+  line-height: 3.5rem !important;
+  margin: 2.5rem 0 1.0rem 0;
+  border-bottom: 5px solid #EFEFEF;
 }
 
 h3 {

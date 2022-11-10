@@ -276,44 +276,32 @@ jQuery(document).ready(function() {
         });
     });
 
-    jQuery('input, textarea').keydown(function (e) {
-         //  left and right arrow keys
-         if (e.which == '37' || e.which == '39') {
-             e.stopPropagation();
-         }
-     });
-
-    jQuery(document).keydown(function(e) {
-      // prev links - left arrow key
-      if(e.which == '37') {
-        jQuery('.nav.nav-prev').click();
-      }
-
-      // next links - right arrow key
-      if(e.which == '39') {
-        jQuery('.nav.nav-next').click();
-      }
-    });
-
     $('#top-bar a:not(:has(img)):not(.btn)').addClass('highlight');
     $('#body-inner a:not(:has(img)):not(.btn):not(a[rel="footnote"])').addClass('highlight');
+
+    var toggleTocIcon = function() {
+      var icon = $('#toc-menu > i.fas');
+      if (icon.hasClass('fa-book')) {
+        icon.removeClass('fa-book').addClass('fa-times');
+      }
+      else if (icon.hasClass('fa-times')) {
+        icon.removeClass('fa-times').addClass('fa-book');
+      }
+    }
+    if ($('#top-bar .progress').is(':visible')) {
+      toggleTocIcon();
+    }
 
     var touchsupport = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
     if (!touchsupport){ // browser doesn't support touch
         $('#toc-menu').hover(function() {
             $('.progress').stop(true, false, true).fadeToggle(100);
         });
-
-        $('.progress').hover(function() {
-            $('.progress').stop(true, false, true).fadeToggle(100);
-        });
     }
     if (touchsupport){ // browser does support touch
         $('#toc-menu').click(function() {
             $('.progress').stop(true, false, true).fadeToggle(100);
-        });
-        $('.progress').click(function() {
-            $('.progress').stop(true, false, true).fadeToggle(100);
+            toggleTocIcon();
         });
     }
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Page.Language | default "en" }}" class="js csstransforms3d">
   <head>
+    <base target="_parent">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{ hugo.Generator }}
@@ -67,9 +68,6 @@
                           <i class="fas fa-bars"></i>
                         </a>
                     </span>
-                  {{ if $toc }}
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  {{ end }}
                   <span class="links">
                  {{$showBreadcrumb := (and (not .Params.disableBreadcrumb) (not .Site.Params.disableBreadcrumb))}}
                  {{if $showBreadcrumb}}
@@ -78,6 +76,9 @@
                    {{ .Title }}
                  {{ end }}
                   </span>
+                  {{ if $toc }}
+                  <span id="toc-menu"><i class="fas fa-book"></i></span>
+                  {{ end }}
                 </div>
                 {{ if $toc }}
                     {{ partial "toc.html" . }}

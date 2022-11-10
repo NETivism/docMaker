@@ -1,8 +1,26 @@
 # How to use
 
-1. Clone folder to root of civicrm. Checkout civicrm to `develop` branch.
+1. Clone folder to root of civicrm.
 
-2. There need paragraph between `@docmaker_start` and `@docmaker_end` used in comment of file `tests/phpunit/api/v3/{entity}Test.php`.
+2. Write comments between `@docmaker_start` and `@docmaker_end` in `tests/phpunit/api/v3/{entity}Test.php`. Example usage:
+```
+  /**
+   * Participant Create Unit Test
+   *
+   * @docmaker_start
+   *
+   * @api_entity Participant
+   * @api_action Create
+   * @http_method POST
+   * @request_content_type application/json
+   * @request_url <entrypoint>?entity=Participant&action=create
+   * @request_body {$request_body}
+   * @api_explorer /civicrm/apibrowser#/civicrm/ajax/rest?entity=Participant&action=get&pretty=1&json={$request_body_inline}
+   * @response_body {$response_body}
+   *
+   * @docmaker_end
+   */
+```
 
 3. Go to API tests folder and run `phpunit {entity}Test.php` to generate request and response json files in folder `unit_test_result`
 
@@ -23,7 +41,7 @@ curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest \
  && dpkg -i hugo*_Linux-64bit.deb
  ```
 
-2. We aleady download [hugo theme learn](https://github.com/matcornic/hugo-theme-learn)
+2. The hugo theme [hugo theme learn](https://github.com/matcornic/hugo-theme-learn) is already inside themes. We made a little change to this theme for better use of iframe embed scenario.
 
 3. Build html file with default config.toml
 Run this command and you will get html file in public folder.
