@@ -26,6 +26,10 @@
   </url><url>
     <loc>/api-document/</loc>
   </url><url>
+    <loc>/api-document/3/participant/</loc>
+  </url><url>
+    <loc>/api-document/3/phone/</loc>
+  </url><url>
     <loc>/api-document/tags/</loc>
   </url><url>
     <loc>/api-document/webhook/</loc>
