@@ -306,17 +306,6 @@ jQuery(document).ready(function() {
     }
 
     /**
-     * Use hard-coded path api-doc to make iframe embed doc more friendly
-     */
-    $("a").each(function(){
-      let href = $(this).attr("href");
-      if (href.match(/^\/api-document/)) {
-        href = href.replace(/^\/api-document/, "/api-doc");
-        $(this).prop('href', href);
-      }
-    });
-
-    /**
     * Fix anchor scrolling that hides behind top nav bar
     * Courtesy of https://stackoverflow.com/a/13067009/28106
     *
@@ -328,7 +317,7 @@ jQuery(document).ready(function() {
 
         var anchorScrolls = {
             ANCHOR_REGEX: /^#[^ ]+$/,
-            OFFSET_HEIGHT_PX: 50,
+            OFFSET_HEIGHT_PX: 0,
 
             /**
              * Establish events, and fix initial scroll position if a hash is provided.
