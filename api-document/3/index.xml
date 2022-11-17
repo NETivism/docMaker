@@ -29,6 +29,16 @@ API Explorer /civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;amp;actio
     </item>
     
     <item>
+      <title>Activity API</title>
+      <link>/api-document/3/activity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/api-document/3/activity/</guid>
+      <description>This is a API Document about Activity.
+變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 Unique Other Activity ID source_contact_id 數字(int unsigned) 10 &amp;gt;= 0 Contact ID of the person scheduling or logging this Activity. Usually the authenticated user. source_record_id 數字(int unsigned) 10 &amp;gt;= 0 Artificial FK to original transaction (e.g. contribution) IF it is not an Activity. Table can be figured out through activity_type_id, and further through component registry.</description>
+    </item>
+    
+    <item>
       <title>Contribution API</title>
       <link>/api-document/3/contribution/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
