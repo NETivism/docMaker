@@ -1,0 +1,11 @@
+{
+    "source_contact_id": 1,
+    "activity_type_id": "43",
+    "subject": "test activity type id",
+    "activity_date_time": "2011-06-02 14:36:13",
+    "status_id": 2,
+    "priority_id": 1,
+    "duration": 120,
+    "location": "Pensulvania",
+    "details": "a test activity"
+}

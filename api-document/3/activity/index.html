@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <base target="_parent">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.105.0">
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/api-document/images/favicon.png" type="image/png">
+
+    <title>Activity API :: netiCRM API Documentation</title>
+
+    
+    <link href="/api-document/css/nucleus.css?1668672016" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1668672016" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1668672016" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1668672016" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1668672016" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1668672016" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1668672016" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1668672016" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1668672016" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1668672016" rel="stylesheet">
+    
+    
+
+    <script src="/api-document/js/jquery-3.3.1.min.js?1668672016"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/api-document/3/activity/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1668672016"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1668672016"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/api-document";
+    
+</script>
+<script type="text/javascript" src="/api-document/js/search.js?1668672016"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/api-document/3/" title="netiCRM API v3 簡介" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/api-document/3/">
+          API 簡介
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/basic/" title="API 基礎操作" class="dd-item ">
+        <a href="/api-document/3/basic/">
+        API 基礎操作
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contact/" title="Contact API" class="dd-item ">
+        <a href="/api-document/3/contact/">
+        Contact
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/activity/" title="Activity API" class="dd-item active">
+        <a href="/api-document/3/activity/">
+        Activity
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contribution/" title="Contribution API" class="dd-item ">
+        <a href="/api-document/3/contribution/">
+        Contribution
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contributionpage/" title="Contribution Page API" class="dd-item ">
+        <a href="/api-document/3/contributionpage/">
+        Contribution Page
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/contributionrecur/" title="Contribution Recurring API" class="dd-item ">
+        <a href="/api-document/3/contributionrecur/">
+        Contribution Recurring
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/customvalues/" title="Custom Value API" class="dd-item ">
+        <a href="/api-document/3/customvalues/">
+        Custom Value
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/email/" title="Email API" class="dd-item ">
+        <a href="/api-document/3/email/">
+        Email
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/event/" title="Event API" class="dd-item ">
+        <a href="/api-document/3/event/">
+        Event
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/getoptions/" title="Get Options API" class="dd-item ">
+        <a href="/api-document/3/getoptions/">
+        Get Options
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/participant/" title="Participant API" class="dd-item ">
+        <a href="/api-document/3/participant/">
+        Participant
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/api-document/3/phone/" title="Phone API" class="dd-item ">
+        <a href="/api-document/3/phone/">
+        Phone
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/api-document/webhook/" title="Webhook API 簡介" class="dd-item
+        
+        
+        
+        ">
+      <a href="/api-document/webhook/">
+          Webhook 簡介
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>本文件製作<br>
+  <a href='/'><img src="https://neticrm.tw/sites/neticrm.tw/files/vigor_logo.png" width="100"></a></p>
+
+<p>This Theme Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/api-document/'>netiCRM API 手冊</a> > <a href='/api-document/3/'>netiCRM API v3 簡介</a> > Activity API
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-book"></i></span>
+                  
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#activity-create-api">Activity Create API</a>
+      <ul>
+        <li><a href="#傳送範例">傳送範例</a></li>
+        <li><a href="#回傳範例">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#activity-get-api">Activity Get API</a>
+      <ul>
+        <li><a href="#傳送範例-1">傳送範例</a></li>
+        <li><a href="#回傳範例-1">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#activity-update-api">Activity Update API</a>
+      <ul>
+        <li><a href="#傳送範例-2">傳送範例</a></li>
+        <li><a href="#回傳範例-2">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#activity-delete-api">Activity Delete API</a>
+      <ul>
+        <li><a href="#傳送範例-3">傳送範例</a></li>
+        <li><a href="#回傳範例-3">回傳範例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Activity API
+            </h1>
+          
+
+        
+
+
+<p>This is a API Document about Activity.</p>
+<table>
+<thead>
+<tr>
+<th>變數名稱</th>
+<th>類型</th>
+<th>長度</th>
+<th>格式</th>
+<th>建立規則</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td>更新時必填</td>
+<td>Unique  Other Activity ID</td>
+</tr>
+<tr>
+<td>source_contact_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Contact ID of the person scheduling or logging this Activity. Usually the authenticated user.</td>
+</tr>
+<tr>
+<td>source_record_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Artificial FK to original transaction (e.g. contribution) IF it is not an Activity. Table can be figured out through activity_type_id, and further through component registry.</td>
+</tr>
+<tr>
+<td>activity_type_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td>必填, 預設值: 1</td>
+<td>FK to civicrm_option_value.id, that has to be valid, registered activity type.</td>
+</tr>
+<tr>
+<td>target_entity_table</td>
+<td>字串(varchar)</td>
+<td>64</td>
+<td></td>
+<td>必填</td>
+<td>Name of table where item being referenced is stored.</td>
+</tr>
+<tr>
+<td>target_entity_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td>必填</td>
+<td>Foreign key to the referenced item.</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td>The subject/purpose/short description of the activity.</td>
+</tr>
+<tr>
+<td>scheduled_date</td>
+<td>日期(datetime)</td>
+<td></td>
+<td>yyyy-mm-dd hh:ii:ss</td>
+<td></td>
+<td>Date and time meeting is scheduled to occur.</td>
+</tr>
+<tr>
+<td>activity_date_time</td>
+<td>日期(datetime)</td>
+<td></td>
+<td>yyyy-mm-dd hh:ii:ss</td>
+<td></td>
+<td>Date and time this activity is scheduled to occur. Formerly named scheduled_date_time.</td>
+</tr>
+<tr>
+<td>due_date_time</td>
+<td>日期(datetime)</td>
+<td></td>
+<td>yyyy-mm-dd hh:ii:ss</td>
+<td></td>
+<td>Date and time this activity is due.</td>
+</tr>
+<tr>
+<td>duration_hours</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Planned or actual duration of meeting - hours.</td>
+</tr>
+<tr>
+<td>duration_minutes</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Planned or actual duration of meeting - minutes.</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Planned or actual duration of activity expressed in minutes. Conglomerate of former duration_hours and duration_minutes.</td>
+</tr>
+<tr>
+<td>location</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td>Location of the activity (optional, open text).</td>
+</tr>
+<tr>
+<td>phone_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Phone ID of the number called (optional - used if an existing phone number is selected).</td>
+</tr>
+<tr>
+<td>phone_number</td>
+<td>字串(varchar)</td>
+<td>64</td>
+<td></td>
+<td></td>
+<td>Phone number in case the number does not exist in the civicrm_phone table.</td>
+</tr>
+<tr>
+<td>details</td>
+<td>字串(text)</td>
+<td>65535</td>
+<td></td>
+<td></td>
+<td>Details about the activity (agenda, notes, etc).</td>
+</tr>
+<tr>
+<td>status</td>
+<td>字串(enum)</td>
+<td></td>
+<td>Scheduled, Completed</td>
+<td></td>
+<td>What is the status of this meeting? Completed meeting status results in activity history entry.</td>
+</tr>
+<tr>
+<td>status_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>ID of the status this activity is currently in. Foreign key to civicrm_option_value.</td>
+</tr>
+<tr>
+<td>priority_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>ID of the priority given to this activity. Foreign key to civicrm_option_value.</td>
+</tr>
+<tr>
+<td>parent_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Parent meeting ID (if this is a follow-up item). This is not currently implemented</td>
+</tr>
+<tr>
+<td>is_test</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 0</td>
+<td></td>
+</tr>
+<tr>
+<td>medium_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td>預設值: NULL</td>
+<td>Activity Medium, Implicit FK to civicrm_option_value where option_group = encounter_medium.</td>
+</tr>
+<tr>
+<td>is_auto</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 0</td>
+<td></td>
+</tr>
+<tr>
+<td>relationship_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td>預設值: NULL</td>
+<td>FK to Relationship ID</td>
+</tr>
+<tr>
+<td>is_current_revision</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 1</td>
+<td></td>
+</tr>
+<tr>
+<td>original_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Activity ID of the first activity record in versioning chain.</td>
+</tr>
+<tr>
+<td>result</td>
+<td>字串(varchar)</td>
+<td>255</td>
+<td></td>
+<td></td>
+<td>Currently being used to store result id for survey activity, FK to option value.</td>
+</tr>
+<tr>
+<td>is_deleted</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="activity-create-api">Activity Create API</h2>
+<h3 id="傳送範例">傳送範例</h3>
+<h4 id="http-method">HTTP Method</h4>
+<pre tabindex="0"><code>POST
+</code></pre><h4 id="request-url">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Activity&amp;action=create
+</code></pre><h4 id="request-content-type">Request Content Type</h4>
+<pre tabindex="0"><code>application/json
+</code></pre><h4 id="request-body">Request body</h4>
+<pre tabindex="0"><code>{
+    &#34;source_contact_id&#34;: 1,
+    &#34;activity_type_id&#34;: &#34;43&#34;,
+    &#34;subject&#34;: &#34;test activity type id&#34;,
+    &#34;activity_date_time&#34;: &#34;2011-06-02 14:36:13&#34;,
+    &#34;status_id&#34;: 2,
+    &#34;priority_id&#34;: 1,
+    &#34;duration&#34;: 120,
+    &#34;location&#34;: &#34;Pensulvania&#34;,
+    &#34;details&#34;: &#34;a test activity&#34;
+}
+</code></pre><h4 id="api-explorer">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Activity&amp;action=get&amp;pretty=1&amp;json={&#34;source_contact_id&#34;:1,&#34;activity_type_id&#34;:&#34;43&#34;,&#34;subject&#34;:&#34;test activity type id&#34;,&#34;activity_date_time&#34;:&#34;2011-06-02 14:36:13&#34;,&#34;status_id&#34;:2,&#34;priority_id&#34;:1,&#34;duration&#34;:120,&#34;location&#34;:&#34;Pensulvania&#34;,&#34;details&#34;:&#34;a test activity&#34;}
+</code></pre><h4 id="curl-example">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
+  --request POST \
+  --data &#39;{&#34;source_contact_id&#34;:1,&#34;activity_type_id&#34;:&#34;43&#34;,&#34;subject&#34;:&#34;test activity type id&#34;,&#34;activity_date_time&#34;:&#34;2011-06-02 14:36:13&#34;,&#34;status_id&#34;:2,&#34;priority_id&#34;:1,&#34;duration&#34;:120,&#34;location&#34;:&#34;Pensulvania&#34;,&#34;details&#34;:&#34;a test activity&#34;}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Activity&amp;action=create&#39;
+</code></pre><h3 id="回傳範例">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 1,
+    &#34;values&#34;: {
+        &#34;1&#34;: {
+            &#34;id&#34;: &#34;1&#34;,
+            &#34;source_contact_id&#34;: &#34;1&#34;,
+            &#34;source_record_id&#34;: &#34;&#34;,
+            &#34;activity_type_id&#34;: &#34;43&#34;,
+            &#34;subject&#34;: &#34;test activity type id&#34;,
+            &#34;activity_date_time&#34;: &#34;20110602143613&#34;,
+            &#34;duration&#34;: &#34;120&#34;,
+            &#34;location&#34;: &#34;Pensulvania&#34;,
+            &#34;phone_id&#34;: &#34;&#34;,
+            &#34;phone_number&#34;: &#34;&#34;,
+            &#34;details&#34;: &#34;a test activity&#34;,
+            &#34;status_id&#34;: &#34;2&#34;,
+            &#34;priority_id&#34;: &#34;1&#34;,
+            &#34;parent_id&#34;: &#34;&#34;,
+            &#34;is_test&#34;: &#34;&#34;,
+            &#34;medium_id&#34;: &#34;&#34;,
+            &#34;is_auto&#34;: &#34;&#34;,
+            &#34;relationship_id&#34;: &#34;&#34;,
+            &#34;is_current_revision&#34;: &#34;&#34;,
+            &#34;original_id&#34;: &#34;&#34;,
+            &#34;result&#34;: &#34;&#34;,
+            &#34;is_deleted&#34;: &#34;&#34;
+        }
+    }
+}
+</code></pre><h2 id="activity-get-api">Activity Get API</h2>
+<h3 id="傳送範例-1">傳送範例</h3>
+<h4 id="http-method-1">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-1">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Activity&amp;action=get&amp;json={&#34;source_contact_id&#34;:54,&#34;activity_type_id&#34;:&#34;45&#34;,&#34;subject&#34;:&#34;test activity type id&#34;,&#34;activity_date_time&#34;:&#34;2011-06-02 14:36:13&#34;,&#34;status_id&#34;:2,&#34;priority_id&#34;:1,&#34;duration&#34;:120,&#34;location&#34;:&#34;Pensulvania&#34;,&#34;details&#34;:&#34;a test activity&#34;}
+</code></pre><h4 id="api-explorer-1">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Activity&amp;action=get&amp;pretty=1&amp;json={&#34;source_contact_id&#34;:54,&#34;activity_type_id&#34;:&#34;45&#34;,&#34;subject&#34;:&#34;test activity type id&#34;,&#34;activity_date_time&#34;:&#34;2011-06-02 14:36:13&#34;,&#34;status_id&#34;:2,&#34;priority_id&#34;:1,&#34;duration&#34;:120,&#34;location&#34;:&#34;Pensulvania&#34;,&#34;details&#34;:&#34;a test activity&#34;}
+</code></pre><h4 id="curl-example-1">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=Activity&amp;action=get&amp;json=&#39;
+</code></pre><h3 id="回傳範例-1">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 18,
+    &#34;values&#34;: {
+        &#34;18&#34;: {
+            &#34;id&#34;: &#34;18&#34;,
+            &#34;source_contact_id&#34;: &#34;54&#34;,
+            &#34;activity_type_id&#34;: &#34;45&#34;,
+            &#34;subject&#34;: &#34;test activity type id&#34;,
+            &#34;activity_date_time&#34;: &#34;2011-06-02 14:36:13&#34;,
+            &#34;duration&#34;: &#34;120&#34;,
+            &#34;location&#34;: &#34;Pensulvania&#34;,
+            &#34;details&#34;: &#34;a test activity&#34;,
+            &#34;status_id&#34;: &#34;2&#34;,
+            &#34;priority_id&#34;: &#34;1&#34;,
+            &#34;is_test&#34;: &#34;0&#34;,
+            &#34;is_auto&#34;: &#34;0&#34;,
+            &#34;is_current_revision&#34;: &#34;1&#34;,
+            &#34;is_deleted&#34;: &#34;0&#34;
+        }
+    }
+}
+</code></pre><h2 id="activity-update-api">Activity Update API</h2>
+<h3 id="傳送範例-2">傳送範例</h3>
+<h4 id="http-method-2">HTTP Method</h4>
+<pre tabindex="0"><code>POST
+</code></pre><h4 id="request-url-2">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Activity&amp;action=create
+</code></pre><h4 id="request-content-type-1">Request Content Type</h4>
+<pre tabindex="0"><code>application/json
+</code></pre><h4 id="request-body-1">Request body</h4>
+<pre tabindex="0"><code>{
+    &#34;id&#34;: 22,
+    &#34;subject&#34;: &#34;Updated Make-it-Happen Meeting&#34;,
+    &#34;duration&#34;: 120,
+    &#34;location&#34;: &#34;21, Park Avenue&#34;,
+    &#34;details&#34;: &#34;Lets update Meeting&#34;,
+    &#34;status_id&#34;: 1,
+    &#34;activity_name&#34;: &#34;Test activity type&#34;,
+    &#34;priority_id&#34;: 1
+}
+</code></pre><h4 id="api-explorer-2">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Activity&amp;action=create&amp;pretty=1&amp;json={&#34;id&#34;:22,&#34;subject&#34;:&#34;Updated Make-it-Happen Meeting&#34;,&#34;duration&#34;:120,&#34;location&#34;:&#34;21, Park Avenue&#34;,&#34;details&#34;:&#34;Lets update Meeting&#34;,&#34;status_id&#34;:1,&#34;activity_name&#34;:&#34;Test activity type&#34;,&#34;priority_id&#34;:1}
+</code></pre><h4 id="curl-example-2">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
+  --request POST \
+  --data &#39;{&#34;id&#34;:22,&#34;subject&#34;:&#34;Updated Make-it-Happen Meeting&#34;,&#34;duration&#34;:120,&#34;location&#34;:&#34;21, Park Avenue&#34;,&#34;details&#34;:&#34;Lets update Meeting&#34;,&#34;status_id&#34;:1,&#34;activity_name&#34;:&#34;Test activity type&#34;,&#34;priority_id&#34;:1}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Activity&amp;action=create&#39;
+</code></pre><h3 id="回傳範例-2">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 22,
+    &#34;values&#34;: {
+        &#34;22&#34;: {
+            &#34;id&#34;: &#34;22&#34;,
+            &#34;source_contact_id&#34;: &#34;&#34;,
+            &#34;source_record_id&#34;: &#34;&#34;,
+            &#34;activity_type_id&#34;: &#34;41&#34;,
+            &#34;subject&#34;: &#34;Updated Make-it-Happen Meeting&#34;,
+            &#34;activity_date_time&#34;: &#34;&#34;,
+            &#34;duration&#34;: &#34;120&#34;,
+            &#34;location&#34;: &#34;21, Park Avenue&#34;,
+            &#34;phone_id&#34;: &#34;&#34;,
+            &#34;phone_number&#34;: &#34;&#34;,
+            &#34;details&#34;: &#34;Lets update Meeting&#34;,
+            &#34;status_id&#34;: &#34;1&#34;,
+            &#34;priority_id&#34;: &#34;1&#34;,
+            &#34;parent_id&#34;: &#34;&#34;,
+            &#34;is_test&#34;: &#34;&#34;,
+            &#34;medium_id&#34;: &#34;&#34;,
+            &#34;is_auto&#34;: &#34;&#34;,
+            &#34;relationship_id&#34;: &#34;&#34;,
+            &#34;is_current_revision&#34;: &#34;&#34;,
+            &#34;original_id&#34;: &#34;&#34;,
+            &#34;result&#34;: &#34;&#34;,
+            &#34;is_deleted&#34;: &#34;&#34;
+        }
+    }
+}
+</code></pre><h2 id="activity-delete-api">Activity Delete API</h2>
+<h3 id="傳送範例-3">傳送範例</h3>
+<h4 id="http-method-3">HTTP Method</h4>
+<pre tabindex="0"><code>POST
+</code></pre><h4 id="request-url-3">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Activity&amp;action=delete
+</code></pre><h4 id="request-content-type-2">Request Content Type</h4>
+<pre tabindex="0"><code>application/json
+</code></pre><h4 id="request-body-2">Request body</h4>
+<pre tabindex="0"><code>{
+    &#34;id&#34;: 20
+}
+</code></pre><h4 id="api-explorer-3">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Activity&amp;action=delete&amp;pretty=1&amp;json={&#34;id&#34;:20}
+</code></pre><h4 id="curl-example-3">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
+  --request POST \
+  --data &#39;{&#34;id&#34;:20}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Activity&amp;action=delete&#39;
+</code></pre><h3 id="回傳範例-3">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;values&#34;: 1
+}
+</code></pre>
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/api-document/3/contact/" title="Contact API"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/api-document/3/contribution/" title="Contribution API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/api-document/js/clipboard.min.js?1668672016"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1668672016"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1668672016"></script>
+    <script src="/api-document/js/jquery.sticky.js?1668672016"></script>
+    <script src="/api-document/js/featherlight.min.js?1668672016"></script>
+    <script src="/api-document/js/highlight.pack.js?1668672016"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1668672016"></script>
+    <script src="/api-document/js/learn.js?1668672016"></script>
+    <script src="/api-document/js/hugo-learn.js?1668672016"></script>
+    
+        
+            <script src="/api-document/mermaid/mermaid.js?1668672016"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+

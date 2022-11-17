@@ -1,0 +1,10 @@
+{
+    "id": 22,
+    "subject": "Updated Make-it-Happen Meeting",
+    "duration": 120,
+    "location": "21, Park Avenue",
+    "details": "Lets update Meeting",
+    "status_id": 1,
+    "activity_name": "Test activity type",
+    "priority_id": 1
+}
