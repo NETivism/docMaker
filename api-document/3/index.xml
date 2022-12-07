@@ -114,6 +114,16 @@ CURL 發送範例 curl -g \ --header &amp;#39;x-civicrm-api-key: &amp;lt;secret-
     </item>
     
     <item>
+      <title>Membership API</title>
+      <link>/api-document/3/membership/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/api-document/3/membership/</guid>
+      <description>This is a API Document about Membership.
+變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 Membership Id contact_id 數字(int unsigned) 10 &amp;gt;= 0 必填 FK to Contact ID membership_type_id 數字(int unsigned) 10 &amp;gt;= 0 必填 FK to Membership Type join_date 日期(date) yyyy-mm-dd Beginning of initial membership period (member since&amp;hellip;). start_date 日期(date) yyyy-mm-dd Beginning of current uninterrupted membership period. end_date 日期(date) yyyy-mm-dd Current membership period expire date.</description>
+    </item>
+    
+    <item>
       <title>Participant API</title>
       <link>/api-document/3/participant/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

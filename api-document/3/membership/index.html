@@ -10,7 +10,7 @@
 
     <link rel="icon" href="/api-document/images/favicon.png" type="image/png">
 
-    <title>netiCRM API v3 簡介 :: netiCRM API Documentation</title>
+    <title>Membership API :: netiCRM API Documentation</title>
 
     
     <link href="/api-document/css/nucleus.css?1670387156" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/api-document/3/">
+  <body class="" data-url="/api-document/3/membership/">
     <nav id="sidebar" class="">
 
 
@@ -88,8 +88,8 @@
   
     
     <li data-nav-id="/api-document/3/" title="netiCRM API v3 簡介" class="dd-item
+        parent
         
-        active
         
         ">
       <a href="/api-document/3/">
@@ -324,7 +324,7 @@
  
   
     
-      <li data-nav-id="/api-document/3/membership/" title="Membership API" class="dd-item ">
+      <li data-nav-id="/api-document/3/membership/" title="Membership API" class="dd-item active">
         <a href="/api-document/3/membership/">
         Membership
         
@@ -454,7 +454,13 @@
             
           
           
-            <a href='/api-document/'>netiCRM API 手冊</a> > netiCRM API v3 簡介
+            
+            
+          
+          
+            <a href='/api-document/'>netiCRM API 手冊</a> > <a href='/api-document/3/'>netiCRM API v3 簡介</a> > Membership API
+          
+        
           
         
           
@@ -470,19 +476,30 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#api-簡介">API 簡介</a></li>
-    <li><a href="#api-使用入口">API 使用入口</a></li>
-    <li><a href="#api-認證">API 認證</a>
+    <li><a href="#membership-create-api">Membership Create API</a>
       <ul>
-        <li><a href="#api-取得認證金鑰流程">API 取得認證金鑰流程</a></li>
-        <li><a href="#api-認證金鑰使用流程">API 認證金鑰使用流程</a></li>
+        <li><a href="#傳送範例">傳送範例</a></li>
+        <li><a href="#回傳範例">回傳範例</a></li>
       </ul>
     </li>
-    <li><a href="#api-限制">API 限制</a></li>
-    <li><a href="#api-請求方法">API 請求方法</a></li>
-    <li><a href="#權限控管">權限控管</a></li>
-    <li><a href="#回傳格式">回傳格式</a></li>
-    <li><a href="#api-explorer">API Explorer</a></li>
+    <li><a href="#membership-get-api">Membership Get API</a>
+      <ul>
+        <li><a href="#傳送範例-1">傳送範例</a></li>
+        <li><a href="#回傳範例-1">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#membership-update-api">Membership Update API</a>
+      <ul>
+        <li><a href="#傳送範例-2">傳送範例</a></li>
+        <li><a href="#回傳範例-2">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#membership-delete-api">Membership Delete API</a>
+      <ul>
+        <li><a href="#傳送範例-3">傳送範例</a></li>
+        <li><a href="#回傳範例-3">回傳範例</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -500,112 +517,309 @@
           
             <h1>
               
-              netiCRM API v3 簡介
+              Membership API
             </h1>
           
 
         
 
 
-
-	<h2 id="api-簡介">API 簡介</h2>
-<p>netiCRM API 可藉由後端觸發的 Curl 程式取得 CRM 資料，此功能並非一開站即設定完成，需先向 Netivism 申請後才會開通，預設並未啟用此功能。</p>
-<h2 id="api-使用入口">API 使用入口</h2>
-<p>本文件所述的 <!-- raw HTML omitted --> 表示網站網域名稱
-本文件所有的 <!-- raw HTML omitted --> ，也就是 API 的入口如下</p>
-<pre tabindex="0"><code>https://&lt;site-domain&gt;/sites/all/modules/civicrm/extern/rest.php
-</code></pre><p>之後文件所述的<!-- raw HTML omitted -->替代符號，皆是此網址，也請注意，網址需要將<!-- raw HTML omitted -->替換為自己網站的網域名稱。</p>
-<h2 id="api-認證">API 認證</h2>
-<h3 id="api-取得認證金鑰流程">API 取得認證金鑰流程</h3>
-<ol>
-<li>請新增一個網站使用者帳號，密碼建議為亂數，接著填寫聯絡人的個資，並確保網站使用者有連結該聯絡人</li>
-<li>請為該使用者帳號設定角色（參考<a href="#%E6%AC%8A%E9%99%90%E6%8E%A7%E7%AE%A1">權限控管</a>）</li>
-<li>透過 netiCRM 客服設定後，會透過系統產生一組 API Secret Key 儲存於聯絡人中</li>
-<li>存取請都帶入API Secret Key，等同於該登入的使用者操作網站（參考<a href="#API-%E8%AA%8D%E8%AD%89%E9%87%91%E9%91%B0%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B">API 認證金鑰使用流程</a>）</li>
-<li>同一個聯絡人、網站使用者，只能有一組API Secret Key</li>
-</ol>
-<h3 id="api-認證金鑰使用流程">API 認證金鑰使用流程</h3>
-<p>請於每次請求加入指定的API Secret Key、Site Key，建議驗證方式為使用 HTTP Header 加入這兩個密鑰，密鑰取得方式如下：</p>
-<ul>
-<li>API的 <code>&lt;secret-key&gt;</code> 需要由 netiCRM 客服協助設定</li>
-<li>API的 <code>&lt;site-key&gt;</code> 則於網站登入後，可以於「設定&gt;則於網站登入後，可以於「設定 &gt; 全域設定 &gt; CiviCRM 私密金鑰 」中呈現。(網址路徑：<code>https://&lt;site-domain&gt;/civicrm/admin/setting?reset=1</code>)</li>
-</ul>
-<p>密鑰的 HTTP Header 格式如下：
-x-civicrm-api-key: <code>&lt;secret-key&gt;</code>
-x-civicrm-site-key: <code>&lt;site-key&gt;</code></p>
-<h4 id="curl-操作範例">curl 操作範例：</h4>
-<p><code>&lt;entrypoint&gt;</code>、<code>&lt;secret-key&gt;</code>、<code>&lt;site-key&gt;</code>、<code>&lt;entity-name&gt;</code>請自行替換</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -g <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;x-civicrm-api-key: &lt;secret-key&gt;&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;x-civicrm-site-key: &lt;site-key&gt;&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#39;&lt;entrypoint&gt;?entity=&lt;entity-name&gt;&amp;action=get&#39;</span>
-</span></span></code></pre></div><h2 id="api-限制">API 限制</h2>
-<ul>
-<li>頻率限制：系統有針對連線、IP進行流量控管，並會針對太過頻繁存取的IP自動封鎖。大量抓取資料時，請每次Request間隔0.5秒或以上，以免影響線上網站運作。</li>
-<li>抓取數量限制：預設抓取數量為每次Request 25筆，改變數量請參照<a href="#%E5%8F%96%E5%BE%97%E7%89%B9%E5%AE%9A%E6%95%B8%E9%87%8F%E8%B3%87%E6%96%99">取得特定數量資料</a>的方式，然而一次獲取數量將有上限100筆的限制。</li>
-</ul>
-<h2 id="api-請求方法">API 請求方法</h2>
-<p>目前提供 POST / GET 方式儲存、刪除以及取得資料</p>
+<p>This is a API Document about Membership.</p>
 <table>
 <thead>
 <tr>
-<th>METHOD</th>
-<th>用法</th>
-<th>Request Header Content-Type</th>
+<th>變數名稱</th>
+<th>類型</th>
+<th>長度</th>
+<th>格式</th>
+<th>建立規則</th>
+<th>說明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>GET</td>
-<td>取得單筆或多筆資料</td>
-<td>API忽略傳入的Content Type請求，網址若帶入json(小寫)參數，將可以進行進階查詢</td>
+<td>id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td>更新時必填</td>
+<td>Membership Id</td>
 </tr>
 <tr>
-<td>POST</td>
-<td>新增或刪除單筆資料</td>
-<td>Content Type為<code>application/json</code>時：整個Request Body需要是合法的JSON物件</td>
+<td>contact_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td>必填</td>
+<td>FK to Contact ID</td>
 </tr>
 <tr>
-<td>POST</td>
-<td>新增或刪除單筆資料</td>
-<td>Content Type為其他時，如 <code>Content-Type: application/x-www-form-urlencoded</code>：需要傳入<code>json</code>欄位值</td>
+<td>membership_type_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td>必填</td>
+<td>FK to Membership Type</td>
+</tr>
+<tr>
+<td>join_date</td>
+<td>日期(date)</td>
+<td></td>
+<td>yyyy-mm-dd</td>
+<td></td>
+<td>Beginning of initial membership period (member since&hellip;).</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>日期(date)</td>
+<td></td>
+<td>yyyy-mm-dd</td>
+<td></td>
+<td>Beginning of current uninterrupted membership period.</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>日期(date)</td>
+<td></td>
+<td>yyyy-mm-dd</td>
+<td></td>
+<td>Current membership period expire date.</td>
+</tr>
+<tr>
+<td>source</td>
+<td>字串(varchar)</td>
+<td>128</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>status_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td>必填</td>
+<td>FK to Membership Status</td>
+</tr>
+<tr>
+<td>is_override</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td></td>
+<td>Admin users may set a manual status which overrides the calculated status. When this flag is true, automated status update scripts should NOT modify status for the record.</td>
+</tr>
+<tr>
+<td>reminder_date</td>
+<td>日期(date)</td>
+<td></td>
+<td>yyyy-mm-dd</td>
+<td></td>
+<td>When should a reminder be sent.</td>
+</tr>
+<tr>
+<td>owner_membership_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>Optional FK to Parent Membership.</td>
+</tr>
+<tr>
+<td>is_test</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 0</td>
+<td></td>
+</tr>
+<tr>
+<td>is_pay_later</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td>預設值: 0</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="權限控管">權限控管</h2>
-<p>API 的權限為綁定聯絡人所連結的網站使用者決定。簡而言之，該使用者的角色決定了API有哪些權限。詳細權限設定，可參考網站中的權限設定。
-<code>https://&lt;site-domain&gt;/admin/people/permissions</code></p>
-<p>注意：若使用者需要能連到 <a href="#API-Explorer">API Explorer</a>，需有 <code>administer CiviCRM</code> 權限。</p>
-<h2 id="回傳格式">回傳格式</h2>
-<p>預設回傳格式為JSON，並會於回應的類型中，在 HTTP Response Header 加入 <code>Content-Type</code> 宣告
-<code>Content-Type: application/json</code></p>
-<p>若 Url 代入參數 <code>pretty=1</code>，則回傳的 JSON 會有易讀性排版的格式。</p>
-<p>範例，上述呼叫 <!-- raw HTML omitted -->?entity=Contact&amp;action=get&amp;pretty=1` 的回傳結果：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;is_error&#34;</span>: <span style="color:#ae81ff">0</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#ae81ff">3</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;count&#34;</span>: <span style="color:#ae81ff">25</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;values&#34;</span>: [
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;contact_id&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;contact_type&#34;</span>: <span style="color:#e6db74">&#34;Individual&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;contact_sub_type&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;sort_name&#34;</span>: <span style="color:#e6db74">&#34;林怡君&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;display_name&#34;</span>: <span style="color:#e6db74">&#34;林怡君&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#960050;background-color:#1e0010">......</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>
-</span></span><span style="display:flex;"><span>        },
-</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">......</span>
-</span></span><span style="display:flex;"><span>    ]
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="api-explorer">API Explorer</h2>
-<p>使用管理員帳號，進入到 netiCRM 網站的 <code>https://&lt;site-domain&gt;/civicrm/apibrowser</code> 網址，可透過網頁 UI 介面取得或測試相關的 API。</p>
+<h2 id="membership-create-api">Membership Create API</h2>
+<h3 id="傳送範例">傳送範例</h3>
+<h4 id="http-method">HTTP Method</h4>
+<pre tabindex="0"><code>POST
+</code></pre><h4 id="request-url">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Membership&amp;action=create
+</code></pre><h4 id="request-content-type">Request Content Type</h4>
+<pre tabindex="0"><code>application/json
+</code></pre><h4 id="request-body">Request body</h4>
+<pre tabindex="0"><code>{
+    &#34;contact_id&#34;: &#34;54&#34;,
+    &#34;membership_type_id&#34;: &#34;9&#34;,
+    &#34;join_date&#34;: &#34;2009-01-21&#34;,
+    &#34;start_date&#34;: &#34;2009-01-21&#34;,
+    &#34;end_date&#34;: &#34;2009-12-21&#34;,
+    &#34;source&#34;: &#34;Payment&#34;,
+    &#34;is_override&#34;: 1,
+    &#34;status_id&#34;: &#34;2&#34;
+}
+</code></pre><h4 id="api-explorer">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Membership&amp;action=get&amp;pretty=1&amp;json={&#34;contact_id&#34;:&#34;54&#34;,&#34;membership_type_id&#34;:&#34;9&#34;,&#34;join_date&#34;:&#34;2009-01-21&#34;,&#34;start_date&#34;:&#34;2009-01-21&#34;,&#34;end_date&#34;:&#34;2009-12-21&#34;,&#34;source&#34;:&#34;Payment&#34;,&#34;is_override&#34;:1,&#34;status_id&#34;:&#34;2&#34;}
+</code></pre><h4 id="curl-example">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
+  --request POST \
+  --data &#39;{&#34;contact_id&#34;:&#34;54&#34;,&#34;membership_type_id&#34;:&#34;9&#34;,&#34;join_date&#34;:&#34;2009-01-21&#34;,&#34;start_date&#34;:&#34;2009-01-21&#34;,&#34;end_date&#34;:&#34;2009-12-21&#34;,&#34;source&#34;:&#34;Payment&#34;,&#34;is_override&#34;:1,&#34;status_id&#34;:&#34;2&#34;}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Membership&amp;action=create&#39;
+</code></pre><h3 id="回傳範例">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 27,
+    &#34;values&#34;: {
+        &#34;27&#34;: {
+            &#34;id&#34;: &#34;27&#34;,
+            &#34;contact_id&#34;: &#34;54&#34;,
+            &#34;membership_type_id&#34;: &#34;9&#34;,
+            &#34;join_date&#34;: &#34;2009-01-21&#34;,
+            &#34;start_date&#34;: &#34;2009-01-21&#34;,
+            &#34;end_date&#34;: &#34;2009-12-21&#34;,
+            &#34;source&#34;: &#34;Payment&#34;,
+            &#34;status_id&#34;: &#34;2&#34;,
+            &#34;is_override&#34;: &#34;1&#34;,
+            &#34;reminder_date&#34;: &#34;&#34;,
+            &#34;owner_membership_id&#34;: &#34;&#34;,
+            &#34;is_test&#34;: &#34;0&#34;,
+            &#34;is_pay_later&#34;: &#34;0&#34;
+        }
+    }
+}
+</code></pre><h2 id="membership-get-api">Membership Get API</h2>
+<h3 id="傳送範例-1">傳送範例</h3>
+<h4 id="http-method-1">HTTP Method</h4>
+<pre tabindex="0"><code>GET
+</code></pre><h4 id="request-url-1">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Membership&amp;action=get&amp;json={&#34;id&#34;:29}
+</code></pre><h4 id="api-explorer-1">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Membership&amp;action=get&amp;pretty=1&amp;json={&#34;id&#34;:29}
+</code></pre><h4 id="curl-example-1">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  &#39;&lt;entrypoint&gt;?entity=Membership&amp;action=get&amp;json=&#39;
+</code></pre><h3 id="回傳範例-1">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 29,
+    &#34;values&#34;: {
+        &#34;29&#34;: {
+            &#34;id&#34;: &#34;29&#34;,
+            &#34;contact_id&#34;: &#34;54&#34;,
+            &#34;membership_type_id&#34;: &#34;9&#34;,
+            &#34;join_date&#34;: &#34;2009-01-21&#34;,
+            &#34;start_date&#34;: &#34;2009-01-21&#34;,
+            &#34;end_date&#34;: &#34;2009-12-21&#34;,
+            &#34;source&#34;: &#34;Payment&#34;,
+            &#34;status_id&#34;: &#34;2&#34;,
+            &#34;is_override&#34;: &#34;1&#34;,
+            &#34;is_test&#34;: &#34;0&#34;,
+            &#34;is_pay_later&#34;: &#34;0&#34;,
+            &#34;membership_name&#34;: &#34;測試會員&#34;,
+            &#34;relationship_name&#34;: &#34;Child of&#34;
+        }
+    }
+}
+</code></pre><h2 id="membership-update-api">Membership Update API</h2>
+<h3 id="傳送範例-2">傳送範例</h3>
+<h4 id="http-method-2">HTTP Method</h4>
+<pre tabindex="0"><code>POST
+</code></pre><h4 id="request-url-2">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Membership&amp;action=create
+</code></pre><h4 id="request-content-type-1">Request Content Type</h4>
+<pre tabindex="0"><code>application/json
+</code></pre><h4 id="request-body-1">Request body</h4>
+<pre tabindex="0"><code>{
+    &#34;id&#34;: 31,
+    &#34;membership_type_id&#34;: &#34;9&#34;,
+    &#34;contact_id&#34;: &#34;54&#34;,
+    &#34;join_date&#34;: &#34;2006-01-21&#34;,
+    &#34;start_date&#34;: &#34;2006-01-21&#34;,
+    &#34;end_date&#34;: &#34;2006-12-21&#34;,
+    &#34;source&#34;: &#34;Payment&#34;,
+    &#34;is_override&#34;: 1,
+    &#34;status_id&#34;: &#34;2&#34;
+}
+</code></pre><h4 id="api-explorer-2">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Membership&amp;action=create&amp;pretty=1&amp;json={&#34;id&#34;:31,&#34;membership_type_id&#34;:&#34;9&#34;,&#34;contact_id&#34;:&#34;54&#34;,&#34;join_date&#34;:&#34;2006-01-21&#34;,&#34;start_date&#34;:&#34;2006-01-21&#34;,&#34;end_date&#34;:&#34;2006-12-21&#34;,&#34;source&#34;:&#34;Payment&#34;,&#34;is_override&#34;:1,&#34;status_id&#34;:&#34;2&#34;}
+</code></pre><h4 id="curl-example-2">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
+  --request POST \
+  --data &#39;{&#34;id&#34;:31,&#34;membership_type_id&#34;:&#34;9&#34;,&#34;contact_id&#34;:&#34;54&#34;,&#34;join_date&#34;:&#34;2006-01-21&#34;,&#34;start_date&#34;:&#34;2006-01-21&#34;,&#34;end_date&#34;:&#34;2006-12-21&#34;,&#34;source&#34;:&#34;Payment&#34;,&#34;is_override&#34;:1,&#34;status_id&#34;:&#34;2&#34;}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Membership&amp;action=create&#39;
+</code></pre><h3 id="回傳範例-2">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 31,
+    &#34;values&#34;: {
+        &#34;31&#34;: {
+            &#34;id&#34;: &#34;31&#34;,
+            &#34;contact_id&#34;: &#34;54&#34;,
+            &#34;membership_type_id&#34;: &#34;9&#34;,
+            &#34;join_date&#34;: &#34;2006-01-21&#34;,
+            &#34;start_date&#34;: &#34;2006-01-21&#34;,
+            &#34;end_date&#34;: &#34;2006-12-21&#34;,
+            &#34;source&#34;: &#34;Payment&#34;,
+            &#34;status_id&#34;: &#34;2&#34;,
+            &#34;is_override&#34;: &#34;1&#34;,
+            &#34;reminder_date&#34;: &#34;&#34;,
+            &#34;owner_membership_id&#34;: &#34;&#34;,
+            &#34;is_test&#34;: &#34;0&#34;,
+            &#34;is_pay_later&#34;: &#34;0&#34;
+        }
+    }
+}
+</code></pre><h2 id="membership-delete-api">Membership Delete API</h2>
+<h3 id="傳送範例-3">傳送範例</h3>
+<h4 id="http-method-3">HTTP Method</h4>
+<pre tabindex="0"><code>POST
+</code></pre><h4 id="request-url-3">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Membership&amp;action=delete
+</code></pre><h4 id="request-content-type-2">Request Content Type</h4>
+<pre tabindex="0"><code>application/json
+</code></pre><h4 id="request-body-2">Request body</h4>
+<pre tabindex="0"><code>{
+    &#34;id&#34;: 48,
+    &#34;contact_id&#34;: &#34;54&#34;
+}
+</code></pre><h4 id="api-explorer-3">API Explorer</h4>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Membership&amp;action=delete&amp;pretty=1&amp;json={&#34;id&#34;:48,&#34;contact_id&#34;:&#34;54&#34;}
+</code></pre><h4 id="curl-example-3">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;content-type: application/json&#39; \
+  --request POST \
+  --data &#39;{&#34;id&#34;:48,&#34;contact_id&#34;:&#34;54&#34;}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Membership&amp;action=delete&#39;
+</code></pre><h3 id="回傳範例-3">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;values&#34;: 1
+}
+</code></pre>
 
-
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -817,6 +1031,7 @@ x-civicrm-site-key: <code>&lt;site-key&gt;</code></p>
             
                 
                     
+                    
                 
                 
 
@@ -832,6 +1047,9 @@ x-civicrm-site-key: <code>&lt;site-key&gt;</code></p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -888,10 +1106,10 @@ x-civicrm-site-key: <code>&lt;site-key&gt;</code></p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/api-document/" title="netiCRM API 手冊"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/api-document/3/getoptions/" title="Get Options API"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/api-document/3/basic/" title="API 基礎操作" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/api-document/3/participant/" title="Participant API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -923,3 +1141,4 @@ x-civicrm-site-key: <code>&lt;site-key&gt;</code></p>
 
   </body>
 </html>
+
