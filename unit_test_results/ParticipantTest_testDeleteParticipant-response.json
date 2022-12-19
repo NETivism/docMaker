@@ -1,5 +1,6 @@
 {
-    "is_error": 1,
-    "error_message": "Not enough data to create activity object,",
-    "tip": "add debug=1 to your API call to have more info about the error"
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "values": 1
 }

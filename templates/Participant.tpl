@@ -262,13 +262,13 @@ application/json
 #### Request body
 ```{literal}
 {
-    "id": 1
+    "id": 49
 }
 {/literal}```
 
 #### API Explorer
 ```{literal}
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Participant&action=delete&pretty=1&json={"id":1}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Participant&action=delete&pretty=1&json={"id":49}
 {/literal}```
 
 #### curl Example
@@ -278,15 +278,16 @@ curl -g \
   --header 'x-civicrm-site-key: <site-key>' \ 
   --header 'content-type: application/json' \
   --request POST \
-  --data '{literal}{"id":1}{/literal}' \
+  --data '{literal}{"id":49}{/literal}' \
   '<entrypoint>?entity=Participant&action=delete'
 ```
 
 ### 回傳範例
 ```{literal}
 {
-    "is_error": 1,
-    "error_message": "Not enough data to create activity object,",
-    "tip": "add debug=1 to your API call to have more info about the error"
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "values": 1
 }
 {/literal}```
