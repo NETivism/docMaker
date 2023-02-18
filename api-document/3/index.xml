@@ -114,6 +114,16 @@ CURL 發送範例 curl -g \ --header &amp;#39;x-civicrm-api-key: &amp;lt;secret-
     </item>
     
     <item>
+      <title>Group API</title>
+      <link>/api-document/3/group/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/api-document/3/group/</guid>
+      <description>This is a API Document about Group.
+變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 群組編號 name 字串(varchar) 64 Internal name of Group. title 字串(varchar) 64 Name of Group. description 字串(text) 65535 Optional verbose description of the group. source 字串(varchar) 64 Module or process which created this group. saved_search_id 數字(int unsigned) 10 &amp;gt;= 0 FK to saved search table. is_active 布林值(boolean) 1 0 or 1 Is this entry active?</description>
+    </item>
+    
+    <item>
       <title>Membership API</title>
       <link>/api-document/3/membership/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

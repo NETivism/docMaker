@@ -10,7 +10,7 @@
 
     <link rel="icon" href="/api-document/images/favicon.png" type="image/png">
 
-    <title>Membership API :: netiCRM API Documentation</title>
+    <title>Group API :: netiCRM API Documentation</title>
 
     
     <link href="/api-document/css/nucleus.css?1676713948" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/api-document/3/membership/">
+  <body class="" data-url="/api-document/3/group/">
     <nav id="sidebar" class="">
 
 
@@ -324,7 +324,7 @@
  
   
     
-      <li data-nav-id="/api-document/3/group/" title="Group API" class="dd-item ">
+      <li data-nav-id="/api-document/3/group/" title="Group API" class="dd-item active">
         <a href="/api-document/3/group/">
         Group
         
@@ -345,7 +345,7 @@
  
   
     
-      <li data-nav-id="/api-document/3/membership/" title="Membership API" class="dd-item active">
+      <li data-nav-id="/api-document/3/membership/" title="Membership API" class="dd-item ">
         <a href="/api-document/3/membership/">
         Membership
         
@@ -479,7 +479,7 @@
             
           
           
-            <a href='/api-document/'>netiCRM API 手冊</a> > <a href='/api-document/3/'>netiCRM API v3 簡介</a> > Membership API
+            <a href='/api-document/'>netiCRM API 手冊</a> > <a href='/api-document/3/'>netiCRM API v3 簡介</a> > Group API
           
         
           
@@ -497,28 +497,10 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#membership-create-api">Membership Create API</a>
+    <li><a href="#group-create-api">Group Create API</a>
       <ul>
         <li><a href="#傳送範例">傳送範例</a></li>
         <li><a href="#回傳範例">回傳範例</a></li>
-      </ul>
-    </li>
-    <li><a href="#membership-get-api">Membership Get API</a>
-      <ul>
-        <li><a href="#傳送範例-1">傳送範例</a></li>
-        <li><a href="#回傳範例-1">回傳範例</a></li>
-      </ul>
-    </li>
-    <li><a href="#membership-update-api">Membership Update API</a>
-      <ul>
-        <li><a href="#傳送範例-2">傳送範例</a></li>
-        <li><a href="#回傳範例-2">回傳範例</a></li>
-      </ul>
-    </li>
-    <li><a href="#membership-delete-api">Membership Delete API</a>
-      <ul>
-        <li><a href="#傳送範例-3">傳送範例</a></li>
-        <li><a href="#回傳範例-3">回傳範例</a></li>
       </ul>
     </li>
   </ul>
@@ -538,14 +520,14 @@
           
             <h1>
               
-              Membership API
+              Group API
             </h1>
           
 
         
 
 
-<p>This is a API Document about Membership.</p>
+<p>This is a API Document about Group.</p>
 <table>
 <thead>
 <tr>
@@ -564,279 +546,184 @@
 <td>10</td>
 <td>&gt;= 0</td>
 <td>更新時必填</td>
-<td>Membership Id</td>
+<td>群組編號</td>
 </tr>
 <tr>
-<td>contact_id</td>
-<td>數字(int unsigned)</td>
-<td>10</td>
-<td>&gt;= 0</td>
-<td>必填</td>
-<td>FK to Contact ID</td>
+<td>name</td>
+<td>字串(varchar)</td>
+<td>64</td>
+<td></td>
+<td></td>
+<td>Internal name of Group.</td>
 </tr>
 <tr>
-<td>membership_type_id</td>
-<td>數字(int unsigned)</td>
-<td>10</td>
-<td>&gt;= 0</td>
-<td>必填</td>
-<td>FK to Membership Type</td>
+<td>title</td>
+<td>字串(varchar)</td>
+<td>64</td>
+<td></td>
+<td></td>
+<td>Name of Group.</td>
 </tr>
 <tr>
-<td>join_date</td>
-<td>日期(date)</td>
+<td>description</td>
+<td>字串(text)</td>
+<td>65535</td>
 <td></td>
-<td>yyyy-mm-dd</td>
 <td></td>
-<td>Beginning of initial membership period (member since&hellip;).</td>
-</tr>
-<tr>
-<td>start_date</td>
-<td>日期(date)</td>
-<td></td>
-<td>yyyy-mm-dd</td>
-<td></td>
-<td>Beginning of current uninterrupted membership period.</td>
-</tr>
-<tr>
-<td>end_date</td>
-<td>日期(date)</td>
-<td></td>
-<td>yyyy-mm-dd</td>
-<td></td>
-<td>Current membership period expire date.</td>
+<td>Optional verbose description of the group.</td>
 </tr>
 <tr>
 <td>source</td>
 <td>字串(varchar)</td>
+<td>64</td>
+<td></td>
+<td></td>
+<td>Module or process which created this group.</td>
+</tr>
+<tr>
+<td>saved_search_id</td>
+<td>數字(int unsigned)</td>
+<td>10</td>
+<td>&gt;= 0</td>
+<td></td>
+<td>FK to saved search table.</td>
+</tr>
+<tr>
+<td>is_active</td>
+<td>布林值(boolean)</td>
+<td>1</td>
+<td>0 or 1</td>
+<td></td>
+<td>Is this entry active?</td>
+</tr>
+<tr>
+<td>visibility</td>
+<td>字串(enum)</td>
+<td></td>
+<td>User and User Admin Only,Public Pages</td>
+<td>預設值: &lsquo;User and User Admin Only&rsquo;</td>
+<td>In what context(s) is this field visible.</td>
+</tr>
+<tr>
+<td>where_clause</td>
+<td>字串(text)</td>
+<td>65535</td>
+<td></td>
+<td></td>
+<td>the sql where clause if a saved search acl</td>
+</tr>
+<tr>
+<td>select_tables</td>
+<td>字串(text)</td>
+<td>65535</td>
+<td></td>
+<td></td>
+<td>the tables to be included in a select data</td>
+</tr>
+<tr>
+<td>where_tables</td>
+<td>字串(text)</td>
+<td>65535</td>
+<td></td>
+<td></td>
+<td>the tables to be included in the count statement</td>
+</tr>
+<tr>
+<td>group_type</td>
+<td>字串(varchar)</td>
 <td>128</td>
 <td></td>
 <td></td>
-<td></td>
+<td>FK to group type</td>
 </tr>
 <tr>
-<td>status_id</td>
-<td>數字(int unsigned)</td>
-<td>10</td>
-<td>&gt;= 0</td>
-<td>必填</td>
-<td>FK to Membership Status</td>
+<td>cache_date</td>
+<td>日期(datetime)</td>
+<td></td>
+<td>yyyy-mm-dd hh:ii:ss</td>
+<td></td>
+<td>Date when we created the cache for a smart group</td>
 </tr>
 <tr>
-<td>is_override</td>
-<td>布林值(boolean)</td>
-<td>1</td>
-<td>0 or 1</td>
+<td>parents</td>
+<td>字串(text)</td>
+<td>65535</td>
 <td></td>
-<td>Admin users may set a manual status which overrides the calculated status. When this flag is true, automated status update scripts should NOT modify status for the record.</td>
+<td></td>
+<td>IDs of the parent(s)</td>
 </tr>
 <tr>
-<td>reminder_date</td>
-<td>日期(date)</td>
+<td>children</td>
+<td>字串(text)</td>
+<td>65535</td>
 <td></td>
-<td>yyyy-mm-dd</td>
 <td></td>
-<td>When should a reminder be sent.</td>
+<td>IDs of the child(ren)</td>
 </tr>
 <tr>
-<td>owner_membership_id</td>
-<td>數字(int unsigned)</td>
-<td>10</td>
-<td>&gt;= 0</td>
-<td></td>
-<td>Optional FK to Parent Membership.</td>
-</tr>
-<tr>
-<td>is_test</td>
+<td>is_hidden</td>
 <td>布林值(boolean)</td>
 <td>1</td>
 <td>0 or 1</td>
 <td>預設值: 0</td>
-<td></td>
-</tr>
-<tr>
-<td>is_pay_later</td>
-<td>布林值(boolean)</td>
-<td>1</td>
-<td>0 or 1</td>
-<td>預設值: 0</td>
-<td></td>
+<td>Is this group hidden?</td>
 </tr>
 </tbody>
 </table>
-<h2 id="membership-create-api">Membership Create API</h2>
+<h2 id="group-create-api">Group Create API</h2>
 <h3 id="傳送範例">傳送範例</h3>
 <h4 id="http-method">HTTP Method</h4>
 <pre tabindex="0"><code>POST
 </code></pre><h4 id="request-url">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Membership&amp;action=create
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Group&amp;action=create
 </code></pre><h4 id="request-content-type">Request Content Type</h4>
 <pre tabindex="0"><code>application/json
 </code></pre><h4 id="request-body">Request body</h4>
 <pre tabindex="0"><code>{
-    &#34;contact_id&#34;: &#34;54&#34;,
-    &#34;membership_type_id&#34;: &#34;9&#34;,
-    &#34;join_date&#34;: &#34;2009-01-21&#34;,
-    &#34;start_date&#34;: &#34;2009-01-21&#34;,
-    &#34;end_date&#34;: &#34;2009-12-21&#34;,
-    &#34;source&#34;: &#34;Payment&#34;,
-    &#34;is_override&#34;: 1,
-    &#34;status_id&#34;: &#34;2&#34;
+    &#34;name&#34;: &#34;Test Group 1&#34;,
+    &#34;domain_id&#34;: 1,
+    &#34;title&#34;: &#34;New Test Group Created&#34;,
+    &#34;description&#34;: &#34;New Test Group Created&#34;,
+    &#34;is_active&#34;: 1,
+    &#34;visibility&#34;: &#34;Public Pages&#34;,
+    &#34;group_type&#34;: &#34;1&#34;
 }
 </code></pre><h4 id="api-explorer">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Membership&amp;action=get&amp;pretty=1&amp;json={&#34;contact_id&#34;:&#34;54&#34;,&#34;membership_type_id&#34;:&#34;9&#34;,&#34;join_date&#34;:&#34;2009-01-21&#34;,&#34;start_date&#34;:&#34;2009-01-21&#34;,&#34;end_date&#34;:&#34;2009-12-21&#34;,&#34;source&#34;:&#34;Payment&#34;,&#34;is_override&#34;:1,&#34;status_id&#34;:&#34;2&#34;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&amp;action=get&amp;pretty=1&amp;json={&#34;name&#34;:&#34;Test Group 1&#34;,&#34;domain_id&#34;:1,&#34;title&#34;:&#34;New Test Group Created&#34;,&#34;description&#34;:&#34;New Test Group Created&#34;,&#34;is_active&#34;:1,&#34;visibility&#34;:&#34;Public Pages&#34;,&#34;group_type&#34;:&#34;1&#34;}
 </code></pre><h4 id="curl-example">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
   --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
   --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
   --header &#39;content-type: application/json&#39; \
   --request POST \
-  --data &#39;{&#34;contact_id&#34;:&#34;54&#34;,&#34;membership_type_id&#34;:&#34;9&#34;,&#34;join_date&#34;:&#34;2009-01-21&#34;,&#34;start_date&#34;:&#34;2009-01-21&#34;,&#34;end_date&#34;:&#34;2009-12-21&#34;,&#34;source&#34;:&#34;Payment&#34;,&#34;is_override&#34;:1,&#34;status_id&#34;:&#34;2&#34;}&#39; \
-  &#39;&lt;entrypoint&gt;?entity=Membership&amp;action=create&#39;
+  --data &#39;{&#34;name&#34;:&#34;Test Group 1&#34;,&#34;domain_id&#34;:1,&#34;title&#34;:&#34;New Test Group Created&#34;,&#34;description&#34;:&#34;New Test Group Created&#34;,&#34;is_active&#34;:1,&#34;visibility&#34;:&#34;Public Pages&#34;,&#34;group_type&#34;:&#34;1&#34;}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Group&amp;action=create&#39;
 </code></pre><h3 id="回傳範例">回傳範例</h3>
 <pre tabindex="0"><code>{
     &#34;is_error&#34;: 0,
     &#34;version&#34;: 3,
     &#34;count&#34;: 1,
-    &#34;id&#34;: 27,
+    &#34;id&#34;: 12,
     &#34;values&#34;: {
-        &#34;27&#34;: {
-            &#34;id&#34;: &#34;27&#34;,
-            &#34;contact_id&#34;: &#34;54&#34;,
-            &#34;membership_type_id&#34;: &#34;9&#34;,
-            &#34;join_date&#34;: &#34;2009-01-21&#34;,
-            &#34;start_date&#34;: &#34;2009-01-21&#34;,
-            &#34;end_date&#34;: &#34;2009-12-21&#34;,
-            &#34;source&#34;: &#34;Payment&#34;,
-            &#34;status_id&#34;: &#34;2&#34;,
-            &#34;is_override&#34;: &#34;1&#34;,
-            &#34;reminder_date&#34;: &#34;&#34;,
-            &#34;owner_membership_id&#34;: &#34;&#34;,
-            &#34;is_test&#34;: &#34;0&#34;,
-            &#34;is_pay_later&#34;: &#34;0&#34;
+        &#34;12&#34;: {
+            &#34;id&#34;: &#34;12&#34;,
+            &#34;name&#34;: &#34;Test Group 1&#34;,
+            &#34;title&#34;: &#34;New Test Group Created&#34;,
+            &#34;description&#34;: &#34;New Test Group Created&#34;,
+            &#34;source&#34;: &#34;&#34;,
+            &#34;saved_search_id&#34;: &#34;&#34;,
+            &#34;is_active&#34;: &#34;1&#34;,
+            &#34;visibility&#34;: &#34;Public Pages&#34;,
+            &#34;where_clause&#34;: &#34; ( `civicrm_group_contact-12`.group_id IN ( 12 ) AND `civicrm_group_contact-12`.status IN (&#39;Added&#39;) ) &#34;,
+            &#34;select_tables&#34;: &#34;a:12:{s:15:\&#34;civicrm_contact\&#34;;i:1;s:15:\&#34;civicrm_address\&#34;;i:1;s:22:\&#34;civicrm_state_province\&#34;;i:1;s:15:\&#34;civicrm_country\&#34;;i:1;s:13:\&#34;civicrm_email\&#34;;i:1;s:13:\&#34;civicrm_phone\&#34;;i:1;s:10:\&#34;civicrm_im\&#34;;i:1;s:19:\&#34;civicrm_worldregion\&#34;;i:1;s:26:\&#34;`civicrm_group_contact-12`\&#34;;s:116:\&#34; LEFT JOIN civicrm_group_contact `civicrm_group_contact-12` ON contact_a.id = `civicrm_group_contact-12`.contact_id \&#34;;s:6:\&#34;gender\&#34;;i:1;s:17:\&#34;individual_prefix\&#34;;i:1;s:17:\&#34;individual_suffix\&#34;;i:1;}&#34;,
+            &#34;where_tables&#34;: &#34;a:2:{s:15:\&#34;civicrm_contact\&#34;;i:1;s:26:\&#34;`civicrm_group_contact-12`\&#34;;s:116:\&#34; LEFT JOIN civicrm_group_contact `civicrm_group_contact-12` ON contact_a.id = `civicrm_group_contact-12`.contact_id \&#34;;}&#34;,
+            &#34;group_type&#34;: &#34;1&#34;,
+            &#34;cache_date&#34;: &#34;&#34;,
+            &#34;parents&#34;: &#34;&#34;,
+            &#34;children&#34;: &#34;&#34;,
+            &#34;is_hidden&#34;: &#34;&#34;
         }
     }
-}
-</code></pre><h2 id="membership-get-api">Membership Get API</h2>
-<h3 id="傳送範例-1">傳送範例</h3>
-<h4 id="http-method-1">HTTP Method</h4>
-<pre tabindex="0"><code>GET
-</code></pre><h4 id="request-url-1">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Membership&amp;action=get&amp;json={&#34;id&#34;:29}
-</code></pre><h4 id="api-explorer-1">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Membership&amp;action=get&amp;pretty=1&amp;json={&#34;id&#34;:29}
-</code></pre><h4 id="curl-example-1">curl Example</h4>
-<pre tabindex="0"><code>curl -g \
-  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
-  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
-  &#39;&lt;entrypoint&gt;?entity=Membership&amp;action=get&amp;json=&#39;
-</code></pre><h3 id="回傳範例-1">回傳範例</h3>
-<pre tabindex="0"><code>{
-    &#34;is_error&#34;: 0,
-    &#34;version&#34;: 3,
-    &#34;count&#34;: 1,
-    &#34;id&#34;: 29,
-    &#34;values&#34;: {
-        &#34;29&#34;: {
-            &#34;id&#34;: &#34;29&#34;,
-            &#34;contact_id&#34;: &#34;54&#34;,
-            &#34;membership_type_id&#34;: &#34;9&#34;,
-            &#34;join_date&#34;: &#34;2009-01-21&#34;,
-            &#34;start_date&#34;: &#34;2009-01-21&#34;,
-            &#34;end_date&#34;: &#34;2009-12-21&#34;,
-            &#34;source&#34;: &#34;Payment&#34;,
-            &#34;status_id&#34;: &#34;2&#34;,
-            &#34;is_override&#34;: &#34;1&#34;,
-            &#34;is_test&#34;: &#34;0&#34;,
-            &#34;is_pay_later&#34;: &#34;0&#34;,
-            &#34;membership_name&#34;: &#34;測試會員&#34;,
-            &#34;relationship_name&#34;: &#34;Child of&#34;
-        }
-    }
-}
-</code></pre><h2 id="membership-update-api">Membership Update API</h2>
-<h3 id="傳送範例-2">傳送範例</h3>
-<h4 id="http-method-2">HTTP Method</h4>
-<pre tabindex="0"><code>POST
-</code></pre><h4 id="request-url-2">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Membership&amp;action=create
-</code></pre><h4 id="request-content-type-1">Request Content Type</h4>
-<pre tabindex="0"><code>application/json
-</code></pre><h4 id="request-body-1">Request body</h4>
-<pre tabindex="0"><code>{
-    &#34;id&#34;: 31,
-    &#34;membership_type_id&#34;: &#34;9&#34;,
-    &#34;contact_id&#34;: &#34;54&#34;,
-    &#34;join_date&#34;: &#34;2006-01-21&#34;,
-    &#34;start_date&#34;: &#34;2006-01-21&#34;,
-    &#34;end_date&#34;: &#34;2006-12-21&#34;,
-    &#34;source&#34;: &#34;Payment&#34;,
-    &#34;is_override&#34;: 1,
-    &#34;status_id&#34;: &#34;2&#34;
-}
-</code></pre><h4 id="api-explorer-2">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Membership&amp;action=create&amp;pretty=1&amp;json={&#34;id&#34;:31,&#34;membership_type_id&#34;:&#34;9&#34;,&#34;contact_id&#34;:&#34;54&#34;,&#34;join_date&#34;:&#34;2006-01-21&#34;,&#34;start_date&#34;:&#34;2006-01-21&#34;,&#34;end_date&#34;:&#34;2006-12-21&#34;,&#34;source&#34;:&#34;Payment&#34;,&#34;is_override&#34;:1,&#34;status_id&#34;:&#34;2&#34;}
-</code></pre><h4 id="curl-example-2">curl Example</h4>
-<pre tabindex="0"><code>curl -g \
-  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
-  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
-  --header &#39;content-type: application/json&#39; \
-  --request POST \
-  --data &#39;{&#34;id&#34;:31,&#34;membership_type_id&#34;:&#34;9&#34;,&#34;contact_id&#34;:&#34;54&#34;,&#34;join_date&#34;:&#34;2006-01-21&#34;,&#34;start_date&#34;:&#34;2006-01-21&#34;,&#34;end_date&#34;:&#34;2006-12-21&#34;,&#34;source&#34;:&#34;Payment&#34;,&#34;is_override&#34;:1,&#34;status_id&#34;:&#34;2&#34;}&#39; \
-  &#39;&lt;entrypoint&gt;?entity=Membership&amp;action=create&#39;
-</code></pre><h3 id="回傳範例-2">回傳範例</h3>
-<pre tabindex="0"><code>{
-    &#34;is_error&#34;: 0,
-    &#34;version&#34;: 3,
-    &#34;count&#34;: 1,
-    &#34;id&#34;: 31,
-    &#34;values&#34;: {
-        &#34;31&#34;: {
-            &#34;id&#34;: &#34;31&#34;,
-            &#34;contact_id&#34;: &#34;54&#34;,
-            &#34;membership_type_id&#34;: &#34;9&#34;,
-            &#34;join_date&#34;: &#34;2006-01-21&#34;,
-            &#34;start_date&#34;: &#34;2006-01-21&#34;,
-            &#34;end_date&#34;: &#34;2006-12-21&#34;,
-            &#34;source&#34;: &#34;Payment&#34;,
-            &#34;status_id&#34;: &#34;2&#34;,
-            &#34;is_override&#34;: &#34;1&#34;,
-            &#34;reminder_date&#34;: &#34;&#34;,
-            &#34;owner_membership_id&#34;: &#34;&#34;,
-            &#34;is_test&#34;: &#34;0&#34;,
-            &#34;is_pay_later&#34;: &#34;0&#34;
-        }
-    }
-}
-</code></pre><h2 id="membership-delete-api">Membership Delete API</h2>
-<h3 id="傳送範例-3">傳送範例</h3>
-<h4 id="http-method-3">HTTP Method</h4>
-<pre tabindex="0"><code>POST
-</code></pre><h4 id="request-url-3">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Membership&amp;action=delete
-</code></pre><h4 id="request-content-type-2">Request Content Type</h4>
-<pre tabindex="0"><code>application/json
-</code></pre><h4 id="request-body-2">Request body</h4>
-<pre tabindex="0"><code>{
-    &#34;id&#34;: 48,
-    &#34;contact_id&#34;: &#34;54&#34;
-}
-</code></pre><h4 id="api-explorer-3">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Membership&amp;action=delete&amp;pretty=1&amp;json={&#34;id&#34;:48,&#34;contact_id&#34;:&#34;54&#34;}
-</code></pre><h4 id="curl-example-3">curl Example</h4>
-<pre tabindex="0"><code>curl -g \
-  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
-  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
-  --header &#39;content-type: application/json&#39; \
-  --request POST \
-  --data &#39;{&#34;id&#34;:48,&#34;contact_id&#34;:&#34;54&#34;}&#39; \
-  &#39;&lt;entrypoint&gt;?entity=Membership&amp;action=delete&#39;
-</code></pre><h3 id="回傳範例-3">回傳範例</h3>
-<pre tabindex="0"><code>{
-    &#34;is_error&#34;: 0,
-    &#34;version&#34;: 3,
-    &#34;count&#34;: 1,
-    &#34;values&#34;: 1
 }
 </code></pre>
 
@@ -1052,22 +939,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1087,6 +958,22 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1143,10 +1030,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/api-document/3/group/" title="Group API"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/api-document/3/getoptions/" title="Get Options API"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/api-document/3/participant/" title="Participant API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/api-document/3/membership/" title="Membership API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
