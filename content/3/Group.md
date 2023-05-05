@@ -101,3 +101,160 @@ curl -g \
     }
 }
 ```
+
+## Group Update API
+
+### 傳送範例
+#### HTTP Method
+```
+POST
+```
+
+#### Request URL
+```
+<entrypoint>?entity=Group&action=create
+```
+
+#### Request Content Type
+```
+application/json
+```
+
+#### Request body
+```
+{
+    "id": 103,
+    "title": "New Update title for title",
+    "description": "New Update title for description",
+    "is_active": 1,
+    "visibility": "Public Pages"
+}
+```
+
+#### API Explorer
+```
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&action=create&pretty=1&json={"id":103,"title":"New Update title for title","description":"New Update title for description","is_active":1,"visibility":"Public Pages"}
+```
+
+#### curl Example
+```
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{"id":103,"title":"New Update title for title","description":"New Update title for description","is_active":1,"visibility":"Public Pages"}' \
+  '<entrypoint>?entity=Group&action=create'
+```
+
+### 回傳範例
+```
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "id": 103,
+    "values": {
+        "103": {
+            "id": "103",
+            "name": "",
+            "title": "New Update title for title",
+            "description": "New Update title for description",
+            "source": "",
+            "saved_search_id": "",
+            "is_active": "1",
+            "visibility": "Public Pages",
+            "where_clause": " ( `civicrm_group_contact-103`.group_id IN ( 103 ) AND `civicrm_group_contact-103`.status IN ('Added') ) ",
+            "select_tables": "a:12:{s:15:\"civicrm_contact\";i:1;s:15:\"civicrm_address\";i:1;s:22:\"civicrm_state_province\";i:1;s:15:\"civicrm_country\";i:1;s:13:\"civicrm_email\";i:1;s:13:\"civicrm_phone\";i:1;s:10:\"civicrm_im\";i:1;s:19:\"civicrm_worldregion\";i:1;s:27:\"`civicrm_group_contact-103`\";s:118:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-103` ON contact_a.id = `civicrm_group_contact-103`.contact_id \";s:6:\"gender\";i:1;s:17:\"individual_prefix\";i:1;s:17:\"individual_suffix\";i:1;}",
+            "where_tables": "a:2:{s:15:\"civicrm_contact\";i:1;s:27:\"`civicrm_group_contact-103`\";s:118:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-103` ON contact_a.id = `civicrm_group_contact-103`.contact_id \";}",
+            "group_type": "null",
+            "cache_date": "",
+            "parents": "",
+            "children": "",
+            "is_hidden": ""
+        }
+    }
+}
+```
+
+## Group Delete API
+
+### 傳送範例
+#### HTTP Method
+```
+POST
+```
+
+#### Request URL
+```
+<entrypoint>?entity=Group&action=delete
+```
+
+#### Request Content Type
+```
+application/json
+```
+
+#### Request body
+```
+{
+    "id": 102
+}
+```
+
+#### API Explorer
+```
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&action=delete&pretty=1&json={"id":102}
+```
+
+#### curl Example
+```
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{"id":102}' \
+  '<entrypoint>?entity=Group&action=delete'
+```
+
+### 回傳範例
+```
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "values": true
+}
+```
+
+## Group Get API
+
+### 傳送範例
+#### HTTP Method
+```
+GET
+```
+
+#### Request URL
+```
+<entrypoint>?entity=Group&action=get&json=null
+```
+
+#### API Explorer
+```
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&action=get&pretty=1&json=null
+```
+
+#### curl Example
+```
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \ 
+  '<entrypoint>?entity=Group&action=get&json=null'
+```
+
+### 回傳範例
+```
+null
+```
