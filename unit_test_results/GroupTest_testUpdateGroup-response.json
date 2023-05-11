@@ -2,10 +2,10 @@
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 109,
+    "id": 168,
     "values": {
-        "109": {
-            "id": "109",
+        "168": {
+            "id": "168",
             "name": "",
             "title": "New Update title for title",
             "description": "New Update title for description",
@@ -13,9 +13,9 @@
             "saved_search_id": "",
             "is_active": "1",
             "visibility": "Public Pages",
-            "where_clause": " ( `civicrm_group_contact-109`.group_id IN ( 109 ) AND `civicrm_group_contact-109`.status IN ('Added') ) ",
-            "select_tables": "a:12:{s:15:\"civicrm_contact\";i:1;s:15:\"civicrm_address\";i:1;s:22:\"civicrm_state_province\";i:1;s:15:\"civicrm_country\";i:1;s:13:\"civicrm_email\";i:1;s:13:\"civicrm_phone\";i:1;s:10:\"civicrm_im\";i:1;s:19:\"civicrm_worldregion\";i:1;s:27:\"`civicrm_group_contact-109`\";s:118:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-109` ON contact_a.id = `civicrm_group_contact-109`.contact_id \";s:6:\"gender\";i:1;s:17:\"individual_prefix\";i:1;s:17:\"individual_suffix\";i:1;}",
-            "where_tables": "a:2:{s:15:\"civicrm_contact\";i:1;s:27:\"`civicrm_group_contact-109`\";s:118:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-109` ON contact_a.id = `civicrm_group_contact-109`.contact_id \";}",
+            "where_clause": " ( `civicrm_group_contact-168`.group_id IN ( 168 ) AND `civicrm_group_contact-168`.status IN ('Added') ) ",
+            "select_tables": "a:12:{s:15:\"civicrm_contact\";i:1;s:15:\"civicrm_address\";i:1;s:22:\"civicrm_state_province\";i:1;s:15:\"civicrm_country\";i:1;s:13:\"civicrm_email\";i:1;s:13:\"civicrm_phone\";i:1;s:10:\"civicrm_im\";i:1;s:19:\"civicrm_worldregion\";i:1;s:27:\"`civicrm_group_contact-168`\";s:118:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-168` ON contact_a.id = `civicrm_group_contact-168`.contact_id \";s:6:\"gender\";i:1;s:17:\"individual_prefix\";i:1;s:17:\"individual_suffix\";i:1;}",
+            "where_tables": "a:2:{s:15:\"civicrm_contact\";i:1;s:27:\"`civicrm_group_contact-168`\";s:118:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-168` ON contact_a.id = `civicrm_group_contact-168`.contact_id \";}",
             "group_type": "null",
             "cache_date": "",
             "parents": "",

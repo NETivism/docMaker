@@ -13,20 +13,20 @@
     <title>Group API :: netiCRM API Documentation</title>
 
     
-    <link href="/api-document/css/nucleus.css?1683272437" rel="stylesheet">
-    <link href="/api-document/css/fontawesome-all.min.css?1683272437" rel="stylesheet">
-    <link href="/api-document/css/hybrid.css?1683272437" rel="stylesheet">
-    <link href="/api-document/css/featherlight.min.css?1683272437" rel="stylesheet">
-    <link href="/api-document/css/perfect-scrollbar.min.css?1683272437" rel="stylesheet">
-    <link href="/api-document/css/auto-complete.css?1683272437" rel="stylesheet">
-    <link href="/api-document/css/atom-one-dark-reasonable.css?1683272437" rel="stylesheet">
-    <link href="/api-document/css/theme.css?1683272437" rel="stylesheet">
-    <link href="/api-document/css/tabs.css?1683272437" rel="stylesheet">
-    <link href="/api-document/css/hugo-theme.css?1683272437" rel="stylesheet">
+    <link href="/api-document/css/nucleus.css?1683779290" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1683779290" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1683779290" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1683779290" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1683779290" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1683779290" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1683779290" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1683779290" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1683779290" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1683779290" rel="stylesheet">
     
     
 
-    <script src="/api-document/js/jquery-3.3.1.min.js?1683272437"></script>
+    <script src="/api-document/js/jquery-3.3.1.min.js?1683779290"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/api-document/js/lunr.min.js?1683272437"></script>
-<script type="text/javascript" src="/api-document/js/auto-complete.js?1683272437"></script>
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1683779290"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1683779290"></script>
 <script type="text/javascript">
     
         var baseurl = "\/api-document";
     
 </script>
-<script type="text/javascript" src="/api-document/js/search.js?1683272437"></script>
+<script type="text/javascript" src="/api-document/js/search.js?1683779290"></script>
 
     
   </div>
@@ -698,44 +698,47 @@
 <pre tabindex="0"><code>application/json
 </code></pre><h4 id="request-body">Request body</h4>
 <pre tabindex="0"><code>{
-    &#34;name&#34;: &#34;Test Group 1&#34;,
+    &#34;name&#34;: &#34;Test Group 1 For Create&#34;,
     &#34;domain_id&#34;: 1,
-    &#34;title&#34;: &#34;New Test Group Created&#34;,
+    &#34;title&#34;: &#34;New Test Group For Create&#34;,
     &#34;description&#34;: &#34;New Test Group Created&#34;,
     &#34;is_active&#34;: 1,
-    &#34;visibility&#34;: &#34;Public Pages&#34;,
-    &#34;group_type&#34;: &#34;1&#34;
+    &#34;group_type&#34;: &#34;1,2&#34;,
+    &#34;visibility&#34;: &#34;Public Pages&#34;
 }
 </code></pre><h4 id="api-explorer">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&amp;action=get&amp;pretty=1&amp;json={&#34;name&#34;:&#34;Test Group 1&#34;,&#34;domain_id&#34;:1,&#34;title&#34;:&#34;New Test Group Created&#34;,&#34;description&#34;:&#34;New Test Group Created&#34;,&#34;is_active&#34;:1,&#34;visibility&#34;:&#34;Public Pages&#34;,&#34;group_type&#34;:&#34;1&#34;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&amp;action=get&amp;pretty=1&amp;json={&#34;name&#34;:&#34;Test Group 1 For Create&#34;,&#34;domain_id&#34;:1,&#34;title&#34;:&#34;New Test Group For Create&#34;,&#34;description&#34;:&#34;New Test Group Created&#34;,&#34;is_active&#34;:1,&#34;group_type&#34;:&#34;1,2&#34;,&#34;visibility&#34;:&#34;Public Pages&#34;}
 </code></pre><h4 id="curl-example">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
   --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
   --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
   --header &#39;content-type: application/json&#39; \
   --request POST \
-  --data &#39;{&#34;name&#34;:&#34;Test Group 1&#34;,&#34;domain_id&#34;:1,&#34;title&#34;:&#34;New Test Group Created&#34;,&#34;description&#34;:&#34;New Test Group Created&#34;,&#34;is_active&#34;:1,&#34;visibility&#34;:&#34;Public Pages&#34;,&#34;group_type&#34;:&#34;1&#34;}&#39; \
+  --data &#39;{&#34;name&#34;:&#34;Test Group 1 For Create&#34;,&#34;domain_id&#34;:1,&#34;title&#34;:&#34;New Test Group For Create&#34;,&#34;description&#34;:&#34;New Test Group Created&#34;,&#34;is_active&#34;:1,&#34;group_type&#34;:&#34;1,2&#34;,&#34;visibility&#34;:&#34;Public Pages&#34;}&#39; \
   &#39;&lt;entrypoint&gt;?entity=Group&amp;action=create&#39;
 </code></pre><h3 id="回傳範例">回傳範例</h3>
 <pre tabindex="0"><code>{
     &#34;is_error&#34;: 0,
     &#34;version&#34;: 3,
     &#34;count&#34;: 1,
-    &#34;id&#34;: 12,
+    &#34;id&#34;: 167,
     &#34;values&#34;: {
-        &#34;12&#34;: {
-            &#34;id&#34;: &#34;12&#34;,
-            &#34;name&#34;: &#34;Test Group 1&#34;,
-            &#34;title&#34;: &#34;New Test Group Created&#34;,
+        &#34;167&#34;: {
+            &#34;id&#34;: &#34;167&#34;,
+            &#34;name&#34;: &#34;Test Group 1 For Create&#34;,
+            &#34;title&#34;: &#34;New Test Group For Create&#34;,
             &#34;description&#34;: &#34;New Test Group Created&#34;,
             &#34;source&#34;: &#34;&#34;,
             &#34;saved_search_id&#34;: &#34;&#34;,
             &#34;is_active&#34;: &#34;1&#34;,
             &#34;visibility&#34;: &#34;Public Pages&#34;,
-            &#34;where_clause&#34;: &#34; ( `civicrm_group_contact-12`.group_id IN ( 12 ) AND `civicrm_group_contact-12`.status IN (&#39;Added&#39;) ) &#34;,
-            &#34;select_tables&#34;: &#34;a:12:{s:15:\&#34;civicrm_contact\&#34;;i:1;s:15:\&#34;civicrm_address\&#34;;i:1;s:22:\&#34;civicrm_state_province\&#34;;i:1;s:15:\&#34;civicrm_country\&#34;;i:1;s:13:\&#34;civicrm_email\&#34;;i:1;s:13:\&#34;civicrm_phone\&#34;;i:1;s:10:\&#34;civicrm_im\&#34;;i:1;s:19:\&#34;civicrm_worldregion\&#34;;i:1;s:26:\&#34;`civicrm_group_contact-12`\&#34;;s:116:\&#34; LEFT JOIN civicrm_group_contact `civicrm_group_contact-12` ON contact_a.id = `civicrm_group_contact-12`.contact_id \&#34;;s:6:\&#34;gender\&#34;;i:1;s:17:\&#34;individual_prefix\&#34;;i:1;s:17:\&#34;individual_suffix\&#34;;i:1;}&#34;,
-            &#34;where_tables&#34;: &#34;a:2:{s:15:\&#34;civicrm_contact\&#34;;i:1;s:26:\&#34;`civicrm_group_contact-12`\&#34;;s:116:\&#34; LEFT JOIN civicrm_group_contact `civicrm_group_contact-12` ON contact_a.id = `civicrm_group_contact-12`.contact_id \&#34;;}&#34;,
-            &#34;group_type&#34;: &#34;1&#34;,
+            &#34;where_clause&#34;: &#34; ( `civicrm_group_contact-167`.group_id IN ( 167 ) AND `civicrm_group_contact-167`.status IN (&#39;Added&#39;) ) &#34;,
+            &#34;select_tables&#34;: &#34;a:12:{s:15:\&#34;civicrm_contact\&#34;;i:1;s:15:\&#34;civicrm_address\&#34;;i:1;s:22:\&#34;civicrm_state_province\&#34;;i:1;s:15:\&#34;civicrm_country\&#34;;i:1;s:13:\&#34;civicrm_email\&#34;;i:1;s:13:\&#34;civicrm_phone\&#34;;i:1;s:10:\&#34;civicrm_im\&#34;;i:1;s:19:\&#34;civicrm_worldregion\&#34;;i:1;s:27:\&#34;`civicrm_group_contact-167`\&#34;;s:118:\&#34; LEFT JOIN civicrm_group_contact `civicrm_group_contact-167` ON contact_a.id = `civicrm_group_contact-167`.contact_id \&#34;;s:6:\&#34;gender\&#34;;i:1;s:17:\&#34;individual_prefix\&#34;;i:1;s:17:\&#34;individual_suffix\&#34;;i:1;}&#34;,
+            &#34;where_tables&#34;: &#34;a:2:{s:15:\&#34;civicrm_contact\&#34;;i:1;s:27:\&#34;`civicrm_group_contact-167`\&#34;;s:118:\&#34; LEFT JOIN civicrm_group_contact `civicrm_group_contact-167` ON contact_a.id = `civicrm_group_contact-167`.contact_id \&#34;;}&#34;,
+            &#34;group_type&#34;: [
+                &#34;1&#34;,
+                &#34;2&#34;
+            ],
             &#34;cache_date&#34;: &#34;&#34;,
             &#34;parents&#34;: &#34;&#34;,
             &#34;children&#34;: &#34;&#34;,
@@ -753,31 +756,31 @@
 <pre tabindex="0"><code>application/json
 </code></pre><h4 id="request-body-1">Request body</h4>
 <pre tabindex="0"><code>{
-    &#34;id&#34;: 103,
+    &#34;id&#34;: 168,
     &#34;title&#34;: &#34;New Update title for title&#34;,
     &#34;description&#34;: &#34;New Update title for description&#34;,
     &#34;is_active&#34;: 1,
     &#34;visibility&#34;: &#34;Public Pages&#34;
 }
 </code></pre><h4 id="api-explorer-1">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&amp;action=create&amp;pretty=1&amp;json={&#34;id&#34;:103,&#34;title&#34;:&#34;New Update title for title&#34;,&#34;description&#34;:&#34;New Update title for description&#34;,&#34;is_active&#34;:1,&#34;visibility&#34;:&#34;Public Pages&#34;}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&amp;action=create&amp;pretty=1&amp;json={&#34;id&#34;:168,&#34;title&#34;:&#34;New Update title for title&#34;,&#34;description&#34;:&#34;New Update title for description&#34;,&#34;is_active&#34;:1,&#34;visibility&#34;:&#34;Public Pages&#34;}
 </code></pre><h4 id="curl-example-1">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
   --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
   --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
   --header &#39;content-type: application/json&#39; \
   --request POST \
-  --data &#39;{&#34;id&#34;:103,&#34;title&#34;:&#34;New Update title for title&#34;,&#34;description&#34;:&#34;New Update title for description&#34;,&#34;is_active&#34;:1,&#34;visibility&#34;:&#34;Public Pages&#34;}&#39; \
+  --data &#39;{&#34;id&#34;:168,&#34;title&#34;:&#34;New Update title for title&#34;,&#34;description&#34;:&#34;New Update title for description&#34;,&#34;is_active&#34;:1,&#34;visibility&#34;:&#34;Public Pages&#34;}&#39; \
   &#39;&lt;entrypoint&gt;?entity=Group&amp;action=create&#39;
 </code></pre><h3 id="回傳範例-1">回傳範例</h3>
 <pre tabindex="0"><code>{
     &#34;is_error&#34;: 0,
     &#34;version&#34;: 3,
     &#34;count&#34;: 1,
-    &#34;id&#34;: 103,
+    &#34;id&#34;: 168,
     &#34;values&#34;: {
-        &#34;103&#34;: {
-            &#34;id&#34;: &#34;103&#34;,
+        &#34;168&#34;: {
+            &#34;id&#34;: &#34;168&#34;,
             &#34;name&#34;: &#34;&#34;,
             &#34;title&#34;: &#34;New Update title for title&#34;,
             &#34;description&#34;: &#34;New Update title for description&#34;,
@@ -785,9 +788,9 @@
             &#34;saved_search_id&#34;: &#34;&#34;,
             &#34;is_active&#34;: &#34;1&#34;,
             &#34;visibility&#34;: &#34;Public Pages&#34;,
-            &#34;where_clause&#34;: &#34; ( `civicrm_group_contact-103`.group_id IN ( 103 ) AND `civicrm_group_contact-103`.status IN (&#39;Added&#39;) ) &#34;,
-            &#34;select_tables&#34;: &#34;a:12:{s:15:\&#34;civicrm_contact\&#34;;i:1;s:15:\&#34;civicrm_address\&#34;;i:1;s:22:\&#34;civicrm_state_province\&#34;;i:1;s:15:\&#34;civicrm_country\&#34;;i:1;s:13:\&#34;civicrm_email\&#34;;i:1;s:13:\&#34;civicrm_phone\&#34;;i:1;s:10:\&#34;civicrm_im\&#34;;i:1;s:19:\&#34;civicrm_worldregion\&#34;;i:1;s:27:\&#34;`civicrm_group_contact-103`\&#34;;s:118:\&#34; LEFT JOIN civicrm_group_contact `civicrm_group_contact-103` ON contact_a.id = `civicrm_group_contact-103`.contact_id \&#34;;s:6:\&#34;gender\&#34;;i:1;s:17:\&#34;individual_prefix\&#34;;i:1;s:17:\&#34;individual_suffix\&#34;;i:1;}&#34;,
-            &#34;where_tables&#34;: &#34;a:2:{s:15:\&#34;civicrm_contact\&#34;;i:1;s:27:\&#34;`civicrm_group_contact-103`\&#34;;s:118:\&#34; LEFT JOIN civicrm_group_contact `civicrm_group_contact-103` ON contact_a.id = `civicrm_group_contact-103`.contact_id \&#34;;}&#34;,
+            &#34;where_clause&#34;: &#34; ( `civicrm_group_contact-168`.group_id IN ( 168 ) AND `civicrm_group_contact-168`.status IN (&#39;Added&#39;) ) &#34;,
+            &#34;select_tables&#34;: &#34;a:12:{s:15:\&#34;civicrm_contact\&#34;;i:1;s:15:\&#34;civicrm_address\&#34;;i:1;s:22:\&#34;civicrm_state_province\&#34;;i:1;s:15:\&#34;civicrm_country\&#34;;i:1;s:13:\&#34;civicrm_email\&#34;;i:1;s:13:\&#34;civicrm_phone\&#34;;i:1;s:10:\&#34;civicrm_im\&#34;;i:1;s:19:\&#34;civicrm_worldregion\&#34;;i:1;s:27:\&#34;`civicrm_group_contact-168`\&#34;;s:118:\&#34; LEFT JOIN civicrm_group_contact `civicrm_group_contact-168` ON contact_a.id = `civicrm_group_contact-168`.contact_id \&#34;;s:6:\&#34;gender\&#34;;i:1;s:17:\&#34;individual_prefix\&#34;;i:1;s:17:\&#34;individual_suffix\&#34;;i:1;}&#34;,
+            &#34;where_tables&#34;: &#34;a:2:{s:15:\&#34;civicrm_contact\&#34;;i:1;s:27:\&#34;`civicrm_group_contact-168`\&#34;;s:118:\&#34; LEFT JOIN civicrm_group_contact `civicrm_group_contact-168` ON contact_a.id = `civicrm_group_contact-168`.contact_id \&#34;;}&#34;,
             &#34;group_type&#34;: &#34;null&#34;,
             &#34;cache_date&#34;: &#34;&#34;,
             &#34;parents&#34;: &#34;&#34;,
@@ -806,17 +809,17 @@
 <pre tabindex="0"><code>application/json
 </code></pre><h4 id="request-body-2">Request body</h4>
 <pre tabindex="0"><code>{
-    &#34;id&#34;: 102
+    &#34;id&#34;: 169
 }
 </code></pre><h4 id="api-explorer-2">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&amp;action=delete&amp;pretty=1&amp;json={&#34;id&#34;:102}
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&amp;action=delete&amp;pretty=1&amp;json={&#34;id&#34;:169}
 </code></pre><h4 id="curl-example-2">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
   --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
   --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
   --header &#39;content-type: application/json&#39; \
   --request POST \
-  --data &#39;{&#34;id&#34;:102}&#39; \
+  --data &#39;{&#34;id&#34;:169}&#39; \
   &#39;&lt;entrypoint&gt;?entity=Group&amp;action=delete&#39;
 </code></pre><h3 id="回傳範例-2">回傳範例</h3>
 <pre tabindex="0"><code>{
@@ -830,16 +833,44 @@
 <h4 id="http-method-3">HTTP Method</h4>
 <pre tabindex="0"><code>GET
 </code></pre><h4 id="request-url-3">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Group&amp;action=get&amp;json=null
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Group&amp;action=get&amp;json={&#34;id&#34;:170}
 </code></pre><h4 id="api-explorer-3">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&amp;action=get&amp;pretty=1&amp;json=null
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&amp;action=get&amp;pretty=1&amp;json={&#34;id&#34;:170}
 </code></pre><h4 id="curl-example-3">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
   --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
   --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
-  &#39;&lt;entrypoint&gt;?entity=Group&amp;action=get&amp;json=null&#39;
+  &#39;&lt;entrypoint&gt;?entity=Group&amp;action=get&amp;json=&#39;
 </code></pre><h3 id="回傳範例-3">回傳範例</h3>
-<pre tabindex="0"><code>null
+<pre tabindex="0"><code>{
+    &#34;is_error&#34;: 0,
+    &#34;version&#34;: 3,
+    &#34;count&#34;: 1,
+    &#34;id&#34;: 170,
+    &#34;values&#34;: {
+        &#34;170&#34;: {
+            &#34;id&#34;: &#34;170&#34;,
+            &#34;name&#34;: &#34;Test Group 1&#34;,
+            &#34;title&#34;: &#34;New Test Group Created&#34;,
+            &#34;description&#34;: &#34;New Test Group Created&#34;,
+            &#34;source&#34;: &#34;&#34;,
+            &#34;saved_search_id&#34;: &#34;&#34;,
+            &#34;is_active&#34;: &#34;1&#34;,
+            &#34;visibility&#34;: &#34;Public Pages&#34;,
+            &#34;where_clause&#34;: &#34; ( `civicrm_group_contact-170`.group_id IN ( 170 ) AND `civicrm_group_contact-170`.status IN (&#39;Added&#39;) ) &#34;,
+            &#34;select_tables&#34;: &#34;a:12:{s:15:\&#34;civicrm_contact\&#34;;i:1;s:15:\&#34;civicrm_address\&#34;;i:1;s:22:\&#34;civicrm_state_province\&#34;;i:1;s:15:\&#34;civicrm_country\&#34;;i:1;s:13:\&#34;civicrm_email\&#34;;i:1;s:13:\&#34;civicrm_phone\&#34;;i:1;s:10:\&#34;civicrm_im\&#34;;i:1;s:19:\&#34;civicrm_worldregion\&#34;;i:1;s:27:\&#34;`civicrm_group_contact-170`\&#34;;s:118:\&#34; LEFT JOIN civicrm_group_contact `civicrm_group_contact-170` ON contact_a.id = `civicrm_group_contact-170`.contact_id \&#34;;s:6:\&#34;gender\&#34;;i:1;s:17:\&#34;individual_prefix\&#34;;i:1;s:17:\&#34;individual_suffix\&#34;;i:1;}&#34;,
+            &#34;where_tables&#34;: &#34;a:2:{s:15:\&#34;civicrm_contact\&#34;;i:1;s:27:\&#34;`civicrm_group_contact-170`\&#34;;s:118:\&#34; LEFT JOIN civicrm_group_contact `civicrm_group_contact-170` ON contact_a.id = `civicrm_group_contact-170`.contact_id \&#34;;}&#34;,
+            &#34;group_type&#34;: [
+                &#34;1&#34;,
+                &#34;2&#34;
+            ],
+            &#34;cache_date&#34;: &#34;&#34;,
+            &#34;parents&#34;: &#34;&#34;,
+            &#34;children&#34;: &#34;&#34;,
+            &#34;is_hidden&#34;: &#34;0&#34;
+        }
+    }
+}
 </code></pre>
 
 <footer class="footline">
@@ -1158,19 +1189,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/api-document/js/clipboard.min.js?1683272437"></script>
-    <script src="/api-document/js/perfect-scrollbar.min.js?1683272437"></script>
-    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1683272437"></script>
-    <script src="/api-document/js/jquery.sticky.js?1683272437"></script>
-    <script src="/api-document/js/featherlight.min.js?1683272437"></script>
-    <script src="/api-document/js/highlight.pack.js?1683272437"></script>
+    <script src="/api-document/js/clipboard.min.js?1683779290"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1683779290"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1683779290"></script>
+    <script src="/api-document/js/jquery.sticky.js?1683779290"></script>
+    <script src="/api-document/js/featherlight.min.js?1683779290"></script>
+    <script src="/api-document/js/highlight.pack.js?1683779290"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/api-document/js/modernizr.custom-3.6.0.js?1683272437"></script>
-    <script src="/api-document/js/learn.js?1683272437"></script>
-    <script src="/api-document/js/hugo-learn.js?1683272437"></script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1683779290"></script>
+    <script src="/api-document/js/learn.js?1683779290"></script>
+    <script src="/api-document/js/hugo-learn.js?1683779290"></script>
     
         
-            <script src="/api-document/mermaid/mermaid.js?1683272437"></script>
+            <script src="/api-document/mermaid/mermaid.js?1683779290"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

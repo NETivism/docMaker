@@ -46,19 +46,19 @@ application/json
 #### Request body
 ```
 {
-    "name": "Test Group 1",
+    "name": "Test Group 1 For Create",
     "domain_id": 1,
-    "title": "New Test Group Created",
+    "title": "New Test Group For Create",
     "description": "New Test Group Created",
     "is_active": 1,
-    "visibility": "Public Pages",
-    "group_type": "1"
+    "group_type": "1,2",
+    "visibility": "Public Pages"
 }
 ```
 
 #### API Explorer
 ```
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&action=get&pretty=1&json={"name":"Test Group 1","domain_id":1,"title":"New Test Group Created","description":"New Test Group Created","is_active":1,"visibility":"Public Pages","group_type":"1"}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&action=get&pretty=1&json={"name":"Test Group 1 For Create","domain_id":1,"title":"New Test Group For Create","description":"New Test Group Created","is_active":1,"group_type":"1,2","visibility":"Public Pages"}
 ```
 
 #### curl Example
@@ -68,7 +68,7 @@ curl -g \
   --header 'x-civicrm-site-key: <site-key>' \ 
   --header 'content-type: application/json' \
   --request POST \
-  --data '{"name":"Test Group 1","domain_id":1,"title":"New Test Group Created","description":"New Test Group Created","is_active":1,"visibility":"Public Pages","group_type":"1"}' \
+  --data '{"name":"Test Group 1 For Create","domain_id":1,"title":"New Test Group For Create","description":"New Test Group Created","is_active":1,"group_type":"1,2","visibility":"Public Pages"}' \
   '<entrypoint>?entity=Group&action=create'
 ```
 
@@ -78,21 +78,24 @@ curl -g \
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 12,
+    "id": 167,
     "values": {
-        "12": {
-            "id": "12",
-            "name": "Test Group 1",
-            "title": "New Test Group Created",
+        "167": {
+            "id": "167",
+            "name": "Test Group 1 For Create",
+            "title": "New Test Group For Create",
             "description": "New Test Group Created",
             "source": "",
             "saved_search_id": "",
             "is_active": "1",
             "visibility": "Public Pages",
-            "where_clause": " ( `civicrm_group_contact-12`.group_id IN ( 12 ) AND `civicrm_group_contact-12`.status IN ('Added') ) ",
-            "select_tables": "a:12:{s:15:\"civicrm_contact\";i:1;s:15:\"civicrm_address\";i:1;s:22:\"civicrm_state_province\";i:1;s:15:\"civicrm_country\";i:1;s:13:\"civicrm_email\";i:1;s:13:\"civicrm_phone\";i:1;s:10:\"civicrm_im\";i:1;s:19:\"civicrm_worldregion\";i:1;s:26:\"`civicrm_group_contact-12`\";s:116:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-12` ON contact_a.id = `civicrm_group_contact-12`.contact_id \";s:6:\"gender\";i:1;s:17:\"individual_prefix\";i:1;s:17:\"individual_suffix\";i:1;}",
-            "where_tables": "a:2:{s:15:\"civicrm_contact\";i:1;s:26:\"`civicrm_group_contact-12`\";s:116:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-12` ON contact_a.id = `civicrm_group_contact-12`.contact_id \";}",
-            "group_type": "1",
+            "where_clause": " ( `civicrm_group_contact-167`.group_id IN ( 167 ) AND `civicrm_group_contact-167`.status IN ('Added') ) ",
+            "select_tables": "a:12:{s:15:\"civicrm_contact\";i:1;s:15:\"civicrm_address\";i:1;s:22:\"civicrm_state_province\";i:1;s:15:\"civicrm_country\";i:1;s:13:\"civicrm_email\";i:1;s:13:\"civicrm_phone\";i:1;s:10:\"civicrm_im\";i:1;s:19:\"civicrm_worldregion\";i:1;s:27:\"`civicrm_group_contact-167`\";s:118:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-167` ON contact_a.id = `civicrm_group_contact-167`.contact_id \";s:6:\"gender\";i:1;s:17:\"individual_prefix\";i:1;s:17:\"individual_suffix\";i:1;}",
+            "where_tables": "a:2:{s:15:\"civicrm_contact\";i:1;s:27:\"`civicrm_group_contact-167`\";s:118:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-167` ON contact_a.id = `civicrm_group_contact-167`.contact_id \";}",
+            "group_type": [
+                "1",
+                "2"
+            ],
             "cache_date": "",
             "parents": "",
             "children": "",
@@ -123,7 +126,7 @@ application/json
 #### Request body
 ```
 {
-    "id": 103,
+    "id": 168,
     "title": "New Update title for title",
     "description": "New Update title for description",
     "is_active": 1,
@@ -133,7 +136,7 @@ application/json
 
 #### API Explorer
 ```
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&action=create&pretty=1&json={"id":103,"title":"New Update title for title","description":"New Update title for description","is_active":1,"visibility":"Public Pages"}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&action=create&pretty=1&json={"id":168,"title":"New Update title for title","description":"New Update title for description","is_active":1,"visibility":"Public Pages"}
 ```
 
 #### curl Example
@@ -143,7 +146,7 @@ curl -g \
   --header 'x-civicrm-site-key: <site-key>' \ 
   --header 'content-type: application/json' \
   --request POST \
-  --data '{"id":103,"title":"New Update title for title","description":"New Update title for description","is_active":1,"visibility":"Public Pages"}' \
+  --data '{"id":168,"title":"New Update title for title","description":"New Update title for description","is_active":1,"visibility":"Public Pages"}' \
   '<entrypoint>?entity=Group&action=create'
 ```
 
@@ -153,10 +156,10 @@ curl -g \
     "is_error": 0,
     "version": 3,
     "count": 1,
-    "id": 103,
+    "id": 168,
     "values": {
-        "103": {
-            "id": "103",
+        "168": {
+            "id": "168",
             "name": "",
             "title": "New Update title for title",
             "description": "New Update title for description",
@@ -164,9 +167,9 @@ curl -g \
             "saved_search_id": "",
             "is_active": "1",
             "visibility": "Public Pages",
-            "where_clause": " ( `civicrm_group_contact-103`.group_id IN ( 103 ) AND `civicrm_group_contact-103`.status IN ('Added') ) ",
-            "select_tables": "a:12:{s:15:\"civicrm_contact\";i:1;s:15:\"civicrm_address\";i:1;s:22:\"civicrm_state_province\";i:1;s:15:\"civicrm_country\";i:1;s:13:\"civicrm_email\";i:1;s:13:\"civicrm_phone\";i:1;s:10:\"civicrm_im\";i:1;s:19:\"civicrm_worldregion\";i:1;s:27:\"`civicrm_group_contact-103`\";s:118:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-103` ON contact_a.id = `civicrm_group_contact-103`.contact_id \";s:6:\"gender\";i:1;s:17:\"individual_prefix\";i:1;s:17:\"individual_suffix\";i:1;}",
-            "where_tables": "a:2:{s:15:\"civicrm_contact\";i:1;s:27:\"`civicrm_group_contact-103`\";s:118:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-103` ON contact_a.id = `civicrm_group_contact-103`.contact_id \";}",
+            "where_clause": " ( `civicrm_group_contact-168`.group_id IN ( 168 ) AND `civicrm_group_contact-168`.status IN ('Added') ) ",
+            "select_tables": "a:12:{s:15:\"civicrm_contact\";i:1;s:15:\"civicrm_address\";i:1;s:22:\"civicrm_state_province\";i:1;s:15:\"civicrm_country\";i:1;s:13:\"civicrm_email\";i:1;s:13:\"civicrm_phone\";i:1;s:10:\"civicrm_im\";i:1;s:19:\"civicrm_worldregion\";i:1;s:27:\"`civicrm_group_contact-168`\";s:118:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-168` ON contact_a.id = `civicrm_group_contact-168`.contact_id \";s:6:\"gender\";i:1;s:17:\"individual_prefix\";i:1;s:17:\"individual_suffix\";i:1;}",
+            "where_tables": "a:2:{s:15:\"civicrm_contact\";i:1;s:27:\"`civicrm_group_contact-168`\";s:118:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-168` ON contact_a.id = `civicrm_group_contact-168`.contact_id \";}",
             "group_type": "null",
             "cache_date": "",
             "parents": "",
@@ -198,13 +201,13 @@ application/json
 #### Request body
 ```
 {
-    "id": 102
+    "id": 169
 }
 ```
 
 #### API Explorer
 ```
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&action=delete&pretty=1&json={"id":102}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&action=delete&pretty=1&json={"id":169}
 ```
 
 #### curl Example
@@ -214,7 +217,7 @@ curl -g \
   --header 'x-civicrm-site-key: <site-key>' \ 
   --header 'content-type: application/json' \
   --request POST \
-  --data '{"id":102}' \
+  --data '{"id":169}' \
   '<entrypoint>?entity=Group&action=delete'
 ```
 
@@ -238,12 +241,12 @@ GET
 
 #### Request URL
 ```
-<entrypoint>?entity=Group&action=get&json=null
+<entrypoint>?entity=Group&action=get&json={"id":170}
 ```
 
 #### API Explorer
 ```
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&action=get&pretty=1&json=null
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Group&action=get&pretty=1&json={"id":170}
 ```
 
 #### curl Example
@@ -251,10 +254,38 @@ GET
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
   --header 'x-civicrm-site-key: <site-key>' \ 
-  '<entrypoint>?entity=Group&action=get&json=null'
+  '<entrypoint>?entity=Group&action=get&json='
 ```
 
 ### 回傳範例
 ```
-null
+{
+    "is_error": 0,
+    "version": 3,
+    "count": 1,
+    "id": 170,
+    "values": {
+        "170": {
+            "id": "170",
+            "name": "Test Group 1",
+            "title": "New Test Group Created",
+            "description": "New Test Group Created",
+            "source": "",
+            "saved_search_id": "",
+            "is_active": "1",
+            "visibility": "Public Pages",
+            "where_clause": " ( `civicrm_group_contact-170`.group_id IN ( 170 ) AND `civicrm_group_contact-170`.status IN ('Added') ) ",
+            "select_tables": "a:12:{s:15:\"civicrm_contact\";i:1;s:15:\"civicrm_address\";i:1;s:22:\"civicrm_state_province\";i:1;s:15:\"civicrm_country\";i:1;s:13:\"civicrm_email\";i:1;s:13:\"civicrm_phone\";i:1;s:10:\"civicrm_im\";i:1;s:19:\"civicrm_worldregion\";i:1;s:27:\"`civicrm_group_contact-170`\";s:118:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-170` ON contact_a.id = `civicrm_group_contact-170`.contact_id \";s:6:\"gender\";i:1;s:17:\"individual_prefix\";i:1;s:17:\"individual_suffix\";i:1;}",
+            "where_tables": "a:2:{s:15:\"civicrm_contact\";i:1;s:27:\"`civicrm_group_contact-170`\";s:118:\" LEFT JOIN civicrm_group_contact `civicrm_group_contact-170` ON contact_a.id = `civicrm_group_contact-170`.contact_id \";}",
+            "group_type": [
+                "1",
+                "2"
+            ],
+            "cache_date": "",
+            "parents": "",
+            "children": "",
+            "is_hidden": "0"
+        }
+    }
+}
 ```

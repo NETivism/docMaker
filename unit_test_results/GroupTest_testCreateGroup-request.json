@@ -1,9 +1,9 @@
 {
-    "name": "Test Group 1",
+    "name": "Test Group 1 For Create",
     "domain_id": 1,
-    "title": "New Test Group Created",
+    "title": "New Test Group For Create",
     "description": "New Test Group Created",
     "is_active": 1,
-    "visibility": "Public Pages",
-    "group_type": "1"
+    "group_type": "1,2",
+    "visibility": "Public Pages"
 }
