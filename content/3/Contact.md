@@ -92,7 +92,7 @@ GET
 姓氏是王、名字是小明的聯絡人
 ```
 <entrypoint>?entity=Contact&action=get&json={"last_name":"王","first_name":"小明"}}
-``` 
+```
 
 #### API Explorer
 
@@ -100,12 +100,12 @@ GET
 /civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=get&json={"<field>":"<value>"}>
 ```
 
-#### curl Example
+#### curl 發送範例
 
-```
+```bash
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
-  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'x-civicrm-site-key: <site-key>' \
   '<entrypoint>?entity=Contact&action=get&json={"<field>":"<value>"}'
 ```
 
@@ -144,7 +144,7 @@ POST
 application/json
 ```
 
-#### Request URL 
+#### Request URL
 
 ```
 <entrypoint>?entity=Contact&action=create
@@ -167,7 +167,7 @@ application/json
 ```
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
-  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'x-civicrm-site-key: <site-key>' \
   --header 'content-type: application/json' \
   --request POST \
   --data '{"first_name":"小明","last_name":"王","contact_type":"Individual"}' \
@@ -209,7 +209,7 @@ POST
 application/json
 ```
 
-#### Request URL 
+#### Request URL
 
 ```
 <entrypoint>?entity=Contact&action=create
@@ -217,30 +217,31 @@ application/json
 
 #### Request Body
 
-更新聯絡人編號14678的個資
+更新聯絡人編號14678的個資，假設原聯絡人資料如下：
 ```
 {
   "id":"14678",
-  "first_name":"大明"
+  "first_name":"大明",
+  "last_name":"王"
 }
 ```
 
 #### API Explorer
 
 ```
-/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=create&json={"first_name":"小明","last_name":"王","contact_type":"Individual"}
+/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=create&json={"id":"14678", "first_name":"小明","last_name":"王"}
 ```
 
-#### curl Example
+#### curl 發送範例
 
-```
+```bash
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
-  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'x-civicrm-site-key: <site-key>' \
   --header 'content-type: application/json' \
   --request POST \
-  --data 'json={"first_name":"小明","last_name":"王","contact_type":"Individual"}' \
-'<entrypoint>?entity=Contact&action=create'
+  --data '{"id":"14678", "first_name":"小明","last_name":"王"}' \
+  '<entrypoint>?entity=Contact&action=create'
 ```
 
 ### 回傳範例
@@ -284,7 +285,7 @@ POST
 application/json
 ```
 
-#### Request URL 
+#### Request URL
 
 ```
 <entrypoint>?entity=Contact&action=delete
@@ -307,11 +308,11 @@ application/json
 ```bash
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
-  --header 'x-civicrm-site-key: <site-key>' \ 
+  --header 'x-civicrm-site-key: <site-key>' \
   --header 'content-type: application/json' \
   --request POST \
-  --data 'json={"id":"14678"}' \
-'<entrypoint>?entity=Contact&action=delete'
+  --data '{"id":"14678"}' \
+  '<entrypoint>?entity=Contact&action=delete'
 ```
 
 ### 回傳範例
@@ -369,7 +370,7 @@ https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&actio
 
 #### curl 發送範例
 
-```
+```bash
 curl -g \
   --header 'x-civicrm-api-key: <secret-key>' \
   --header 'x-civicrm-site-key: <site-key>' \ 
@@ -506,13 +507,14 @@ application/json
 
 CS(Contact Checksum) 的用途，讓使用者可以填寫表單時，不用重新填寫個資的方式。
 設定的變數有 `contact_id` 與 `live`，`contact_id` 為聯絡人id，而`live` 則是設定過多久後會失效，需重新登入，單位為小時。
+回傳的`checksum`與`Contact ID`代入捐款頁、活動報名頁於網址參數`cs`、`cid`，使用者點擊該網址，即自動帶出聯絡人個資。
 
 ### 發送範例
 
 #### HTTP 方法
 
 ```
-GET
+POST
 ```
 
 #### Request URL
@@ -522,7 +524,7 @@ GET
 <entrypoint>?entity=Contact&action=checksum&json={"contact_id":"<contact id>", "live":<valid hours>}
 ```
 
-取得聯絡人編號1234的Checksum，並設定3小時後失效
+取得聯絡人編號1234的CheckSum，並設定3小時後失效
 ```
 <entrypoint>?entity=Contact&action=checksum&json={"contact_id":"1234", "live":3}
 ```
@@ -531,6 +533,18 @@ GET
 
 ```
 https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&action=checksum&json={"contact_id":"1234", "live":3}
+```
+
+#### curl 發送範例
+
+```bash
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{"contact_id":1234,"live":3}' \
+  '<entrypoint>?entity=Contact&action=checksum'
 ```
 
 ### 回傳範例
@@ -549,6 +563,32 @@ https://<site-domain>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&actio
         }
     ]
 }
+```
+
+### 使用範例
+
+以捐款頁為例，ID 為`<page_id>`的捐款頁網址為 `https://<site-domain>/civicrm/contribute/transact?reset=1&id=<page_id>`，在網址後面加上`cs`和`cid`的變數，就會自動代入該聯絡人資料。
+
+組合後網址如下：
+
+```
+https://<site-domain>/civicrm/contribute/transact?reset=1&id=<page_id>&cs=<checksum>&cid=<contact_id>
+```
+
+#### 使用於捐款頁的範例
+
+以下為 ID=2 的捐款頁，代入上述產生的 ID=1234 之聯絡人資料的網址：
+
+```
+https://<site-domain>/civicrm/contribute/transact?reset=1&id=2&cs=abcde12345HQWEQWEASDSASD_1631155364_3&cid=1234
+```
+
+#### 使用於活動報名頁的範例
+
+以下為 ID=12 的活動報名頁，代入上述產生的 ID=1234 之聯絡人資料的網址：
+
+```
+https://<site-domain>/civicrm/event/register?reset=1&id=12&cs=abcde12345HQWEQWEASDSASD_1631155364_3&cid=1234#register-now
 ```
 
 
