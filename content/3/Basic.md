@@ -90,6 +90,26 @@ curl -g \
 <entrypoint>?entity=Contact&action=get&json={"options":{"limit":100,"offset":100}}
 ```
 
+
+## 資料排序
+
+* 當`<action>`為`get`時，資料順序可透過代入之欄位名稱進行排序，欄位性質必須要為可排序之類型，例如數字、日期。實際用法：
+  * 依照建立日期，由舊到新排序（日期由小到大，升冪排序）：`json={"options":{"sort": "created_date asc"}}`
+  * 捐款依照總金額，由大到小，降冪排序：`json={"options":{"sort": "total_amount desc"}}`
+* 可搭配 `limit` 來取得前 N 筆的聯絡人。
+
+篩選範例：
+
+1. 取得建立日期最早的 10 筆聯絡人
+```
+<entrypoint>?entity=Contact&action=get&json={"options":{"sort": "created_date asc","limit":10}}
+```
+
+2. 取得捐款金額第 101~200 高、「已完成」狀態的捐款（已完成的狀態，`contribution_status_id` 為 1）
+```
+<entrypoint>?entity=Contribution&action=get&json={"contribution_status_id": 1, "options":{"sort": "total_amount desc", "limit":100, "offset":100}}
+```
+
 ## 資料篩選
 
 * 當`<action>`為`get`時，資料篩選會根據傳入的JSON物件方式處置。
