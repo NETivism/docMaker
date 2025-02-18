@@ -4,7 +4,7 @@
     <base target="_parent">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.123.7">
     <meta name="description" content="">
 
 
@@ -13,20 +13,20 @@
     <title>API 基礎操作 :: netiCRM API Documentation</title>
 
     
-    <link href="/api-document/css/nucleus.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/fontawesome-all.min.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/hybrid.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/featherlight.min.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/perfect-scrollbar.min.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/auto-complete.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/atom-one-dark-reasonable.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/theme.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/tabs.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/hugo-theme.css?1683779290" rel="stylesheet">
+    <link href="/api-document/css/nucleus.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1739866258" rel="stylesheet">
     
     
 
-    <script src="/api-document/js/jquery-3.3.1.min.js?1683779290"></script>
+    <script src="/api-document/js/jquery-3.3.1.min.js?1739866258"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/api-document/js/lunr.min.js?1683779290"></script>
-<script type="text/javascript" src="/api-document/js/auto-complete.js?1683779290"></script>
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1739866258"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1739866258"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/api-document";
+        var baseurl = "\/api-document\/";
     
 </script>
-<script type="text/javascript" src="/api-document/js/search.js?1683779290"></script>
+<script type="text/javascript" src="/api-document/js/search.js?1739866258"></script>
 
     
   </div>
@@ -505,6 +505,7 @@
       </ul>
     </li>
     <li><a href="#資料分頁">資料分頁</a></li>
+    <li><a href="#資料排序">資料排序</a></li>
     <li><a href="#資料篩選">資料篩選</a></li>
     <li><a href="#資料巢狀查詢">資料巢狀查詢</a></li>
   </ul>
@@ -580,6 +581,25 @@
 </ul>
 <p>整合上例，以下是回傳第100筆開始起算，取得下一百筆資料的網址路徑</p>
 <pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;options&#34;:{&#34;limit&#34;:100,&#34;offset&#34;:100}}
+</code></pre><h2 id="資料排序">資料排序</h2>
+<ul>
+<li>當<code>&lt;action&gt;</code>為<code>get</code>時，資料順序可透過代入之欄位名稱進行排序，欄位性質必須要為可排序之類型，例如數字、日期。實際用法：
+<ul>
+<li>依照建立日期，由舊到新排序（日期由小到大，升冪排序）：<code>json={&quot;options&quot;:{&quot;sort&quot;: &quot;created_date asc&quot;}}</code></li>
+<li>捐款依照總金額，由大到小，降冪排序：<code>json={&quot;options&quot;:{&quot;sort&quot;: &quot;total_amount desc&quot;}}</code></li>
+</ul>
+</li>
+<li>可搭配 <code>limit</code> 來取得前 N 筆的聯絡人。</li>
+</ul>
+<p>篩選範例：</p>
+<ol>
+<li>取得建立日期最早的 10 筆聯絡人</li>
+</ol>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;options&#34;:{&#34;sort&#34;: &#34;created_date asc&#34;,&#34;limit&#34;:10}}
+</code></pre><ol start="2">
+<li>取得捐款金額第 101~200 高、「已完成」狀態的捐款（已完成的狀態，<code>contribution_status_id</code> 為 1）</li>
+</ol>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contribution&amp;action=get&amp;json={&#34;contribution_status_id&#34;: 1, &#34;options&#34;:{&#34;sort&#34;: &#34;total_amount desc&#34;, &#34;limit&#34;:100, &#34;offset&#34;:100}}
 </code></pre><h2 id="資料篩選">資料篩選</h2>
 <ul>
 <li>當<code>&lt;action&gt;</code>為<code>get</code>時，資料篩選會根據傳入的JSON物件方式處置。</li>
@@ -929,19 +949,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/api-document/js/clipboard.min.js?1683779290"></script>
-    <script src="/api-document/js/perfect-scrollbar.min.js?1683779290"></script>
-    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1683779290"></script>
-    <script src="/api-document/js/jquery.sticky.js?1683779290"></script>
-    <script src="/api-document/js/featherlight.min.js?1683779290"></script>
-    <script src="/api-document/js/highlight.pack.js?1683779290"></script>
+    <script src="/api-document/js/clipboard.min.js?1739866258"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1739866258"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1739866258"></script>
+    <script src="/api-document/js/jquery.sticky.js?1739866258"></script>
+    <script src="/api-document/js/featherlight.min.js?1739866258"></script>
+    <script src="/api-document/js/highlight.pack.js?1739866258"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/api-document/js/modernizr.custom-3.6.0.js?1683779290"></script>
-    <script src="/api-document/js/learn.js?1683779290"></script>
-    <script src="/api-document/js/hugo-learn.js?1683779290"></script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1739866258"></script>
+    <script src="/api-document/js/learn.js?1739866258"></script>
+    <script src="/api-document/js/hugo-learn.js?1739866258"></script>
     
         
-            <script src="/api-document/mermaid/mermaid.js?1683779290"></script>
+            <script src="/api-document/mermaid/mermaid.js?1739866258"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

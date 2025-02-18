@@ -5,6 +5,7 @@
     <link>/api-document/tags/</link>
     <description>Recent content in Tags on netiCRM API Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language><atom:link href="/api-document/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-tw</language>
+    <atom:link href="/api-document/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

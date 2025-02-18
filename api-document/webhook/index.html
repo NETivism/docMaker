@@ -4,7 +4,7 @@
     <base target="_parent">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.123.7">
     <meta name="description" content="">
 
 
@@ -13,20 +13,20 @@
     <title>Webhook API 簡介 :: netiCRM API Documentation</title>
 
     
-    <link href="/api-document/css/nucleus.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/fontawesome-all.min.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/hybrid.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/featherlight.min.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/perfect-scrollbar.min.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/auto-complete.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/atom-one-dark-reasonable.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/theme.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/tabs.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/hugo-theme.css?1683779290" rel="stylesheet">
+    <link href="/api-document/css/nucleus.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1739866258" rel="stylesheet">
     
     
 
-    <script src="/api-document/js/jquery-3.3.1.min.js?1683779290"></script>
+    <script src="/api-document/js/jquery-3.3.1.min.js?1739866258"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/api-document/js/lunr.min.js?1683779290"></script>
-<script type="text/javascript" src="/api-document/js/auto-complete.js?1683779290"></script>
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1739866258"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1739866258"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/api-document";
+        var baseurl = "\/api-document\/";
     
 </script>
-<script type="text/javascript" src="/api-document/js/search.js?1683779290"></script>
+<script type="text/javascript" src="/api-document/js/search.js?1739866258"></script>
 
     
   </div>
@@ -491,21 +491,28 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#webhook-api-簡介">Webhook API 簡介</a></li>
-    <li><a href="#webhook-api-使用入口">Webhook API 使用入口</a></li>
-    <li><a href="#設定">設定</a></li>
+    <li><a href="#webhook-api-概要說明">Webhook API 概要說明</a>
+      <ul>
+        <li><a href="#webhook-api-簡介">Webhook API 簡介</a></li>
+        <li><a href="#neticrm-入口網址說明">netiCRM 入口網址說明</a></li>
+        <li><a href="#事前設定">事前設定</a></li>
+      </ul>
+    </li>
     <li><a href="#redirection-webhook">Redirection Webhook</a>
       <ul>
-        <li><a href="#發送範例">發送範例</a></li>
+        <li><a href="#發動方式">發動方式</a></li>
+        <li><a href="#實作-html-頁面範例">實作 Html 頁面範例</a></li>
       </ul>
     </li>
     <li><a href="#notification-webhook">Notification Webhook</a>
       <ul>
-        <li><a href="#發送範例-1">發送範例</a></li>
+        <li><a href="#發動方式-1">發動方式</a></li>
+        <li><a href="#實作-html-頁面範例-1">實作 Html 頁面範例</a></li>
         <li><a href="#回傳範例">回傳範例</a></li>
         <li><a href="#驗證回傳值">驗證回傳值</a></li>
       </ul>
     </li>
+    <li><a href="#跳過-html-form-頁面">跳過 Html Form 頁面</a></li>
   </ul>
 </nav>
     </div>
@@ -531,57 +538,105 @@
 
 
 
-	<h2 id="webhook-api-簡介">Webhook API 簡介</h2>
-<p>可以自訂當捐款者捐款交易完成後，以及通知最新一筆捐款交易的資訊到指定的網址。
-利用 HTTP POST 傳送請求，帶入指定參數可以進行Webhook的觸發動作。</p>
-<h2 id="webhook-api-使用入口">Webhook API 使用入口</h2>
-<p>本文件所述的 <!-- raw HTML omitted --> 表示網站網域名稱
-本文件所有的 <!-- raw HTML omitted --> ，也就是 API 的入口，為CRM的活動頁或募款頁</p>
+	<h2 id="webhook-api-概要說明">Webhook API 概要說明</h2>
+<h3 id="webhook-api-簡介">Webhook API 簡介</h3>
+<p>可以讓管理員自訂當使用者完成捐款交易，或完成活動報名時，讓使用者導向到管理員自定義非 netiCRM 網域的頁面，或是發送該交易資訊的通知到管理員指定的網址。</p>
+<p>管理員需自行建立簡易的 HTML Form 表單頁面，引導使用者送出表單後進到 netiCRM 捐款頁或報名頁入口網址，開始進行 Webhook 的觸發動作。</p>
+<h3 id="neticrm-入口網址說明">netiCRM 入口網址說明</h3>
+<p>本文件所述的<code>&lt;site-domain&gt;</code>表示 netiCRM 網站網域名稱。</p>
+<p>本文件所述的<code>&lt;entrypoint&gt;</code>，也就是 API 的入口，為 netiCRM 的活動頁或募款頁</p>
+<h4 id="募款頁網址">募款頁網址</h4>
 <pre tabindex="0"><code>https://&lt;site-domain&gt;/civicrm/contribute/transact?reset=1&amp;id=&lt;page_id&gt;
-</code></pre><pre tabindex="0"><code>https://&lt;site-domain&gt;/civicrm/event/info?reset=1&amp;id=&lt;event_id&gt;
-</code></pre><p>之後文件所述的<!-- raw HTML omitted -->替代符號，皆是此網址，也請注意，網址需要將<!-- raw HTML omitted -->替換為自己網站的網域名稱。</p>
-<h2 id="設定">設定</h2>
-<p>netiCRM的網站設定中，需要事先設定完以下常數，Webhook僅會於指定的網域驗證通過後觸發。</p>
-<p>以<code>https</code>開頭指定Webhook網域: <code>&lt;civicrm_webhook_domain&gt;</code>
-驗證用的Secret: <code>&lt;civicrm_webhook_secret&gt;</code></p>
+</code></pre><h4 id="活動報名頁網址">活動報名頁網址</h4>
+<pre tabindex="0"><code>https://&lt;site-domain&gt;/civicrm/event/register?reset=1&amp;id=&lt;event_id&gt;
+</code></pre><h4 id="網址說明">網址說明</h4>
+<p>以上的<code>&lt;page_id&gt;</code>請自行代換成募款頁 ID ，<code>&lt;event_id&gt;</code>請自行代換成活動 ID，<code>&lt;site-domain&gt;</code>替換成自己 netiCRM 網站的網域名稱。</p>
+<p>之後文件所述的<code>&lt;entrypoint&gt;</code>替代符號，皆是此網址。</p>
+<h3 id="事前設定">事前設定</h3>
+<p>netiCRM 的網站設定中，需要事先提供以下常數完成設定，Webhook 僅會於指定的網域驗證通過後觸發。</p>
+<ul>
+<li>以<code>https</code>開頭指定 Webhook 網域：<code>&lt;civicrm_webhook_domain&gt;</code></li>
+<li>驗證用的 Secret（僅用於 Notification Webhook）：<code>&lt;civicrm_webhook_secret&gt;</code></li>
+</ul>
 <p>下文將會以這兩個變數說明</p>
 <h2 id="redirection-webhook">Redirection Webhook</h2>
-<p><code>_wh_redirect</code> 回傳value中的網址，進行轉址。設定轉址網址只需要更改value雙引號中間的網址。</p>
-<h3 id="發送範例">發送範例</h3>
-<h4 id="http-方法">HTTP 方法</h4>
-<pre tabindex="0"><code>POST
-</code></pre><h4 id="request-content-type">Request Content Type</h4>
-<pre tabindex="0"><code>application/x-www-form-urlencoded
-</code></pre><h4 id="request-url">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;
-</code></pre><h4 id="request-body">Request Body</h4>
-<pre tabindex="0"><code>_wh_redirect=&lt;civicrm_webhook_domain&gt;/your-redirection-path
-</code></pre><h4 id="curl-發送範例">curl 發送範例</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--request POST -d <span style="color:#e6db74">&#39;_wh_redirect=&lt;civicrm_webhook_domain&gt;/your-redirection-path&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#39;&lt;endpoint&gt;&#39;</span>
-</span></span></code></pre></div><h2 id="notification-webhook">Notification Webhook</h2>
-<h3 id="發送範例-1">發送範例</h3>
-<h4 id="http-方法-1">HTTP 方法</h4>
-<pre tabindex="0"><code>POST
-</code></pre><h4 id="request-content-type-1">Request Content Type</h4>
-<pre tabindex="0"><code>application/x-www-form-urlencoded
-</code></pre><h4 id="request-url-1">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;
-</code></pre><h4 id="request-body-1">Request Body</h4>
-<pre tabindex="0"><code>_wh_notify=&lt;civicrm_webhook_domain&gt;/your-notification-path
-</code></pre><h4 id="curl-發送範例-1">curl 發送範例</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#ae81ff">\ </span>
-</span></span><span style="display:flex;"><span>--request POST -d <span style="color:#e6db74">&#39;_wh_notify=&lt;civicrm_webhook_domain&gt;/your-notification-path&#39;</span> <span style="color:#ae81ff">\ </span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&lt;endpoint&gt;&#39;</span>
-</span></span></code></pre></div><h3 id="回傳範例">回傳範例</h3>
+<h3 id="發動方式">發動方式</h3>
+<ol>
+<li>
+<p>建立包含下列<code>name</code>的 Html Form 頁面：</p>
+<ul>
+<li>Form 參數<code>action</code>為上述的<code>&lt;entrypoint&gt;</code>入口頁面，參數<code>method</code>為<code>post</code></li>
+<li>Form 之中包含 <!-- raw HTML omitted --> 物件，其中參數如下：
+<ul>
+<li><code>type</code>為<code>hidden</code>。</li>
+<li><code>name</code>為<code>_wh_redirect</code>。</li>
+<li><code>value</code>為完成時要導向的網址<code>https://&lt;civicrm_webhook_domain&gt;/your-redirection-path</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>發送該表單給使用者端瀏覽器（可藉 Javascript 跳過呈現此頁的步驟，詳看<a href="#%E8%B7%B3%E9%81%8E-html-form-%E9%A0%81%E9%9D%A2">本文件最後的說明</a>）。</p>
+</li>
+<li>
+<p>送出表單後，使用者會導向到 netiCRM 的<code>&lt;entrypoint&gt;</code>入口頁面（捐款頁或活動報名頁），在最後完成填表送出時，不會導到感謝頁，而是導到自訂的<code>https://&lt;civicrm_webhook_domain&gt;/your-redirection-path</code>網址。</p>
+</li>
+</ol>
+<h3 id="實作-html-頁面範例">實作 Html 頁面範例</h3>
+<h4 id="html-form-範例">Html Form 範例</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;entrypoint&gt;&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_wh_redirect&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://&lt;civicrm_webhook_domain&gt;/your-redirection-path&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;送出&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
+</span></span></code></pre></div><h4 id="範例說明">範例說明</h4>
+<ol>
+<li>使用者的頁面上會呈現「送出」的按鈕，按下送出按鈕後，會帶使用者轉向到<code>&lt;entrypoint&gt;</code>入口頁面（捐款頁或活動報名頁），同時代入<code>_wh_redirect=https://&lt;civicrm_webhook_domain&gt;/your-redirection-path</code>參數給伺服器。</li>
+<li>要透過 Javascript 讓使用者跳過點擊按鈕的步驟，請看<a href="#%E8%B7%B3%E9%81%8E-html-form-%E9%A0%81%E9%9D%A2">本文件最後的說明</a>。</li>
+<li>請網站管理員自行替換正確的<code>&lt;entrypoint&gt;</code>和<code>https://&lt;civicrm_webhook_domain&gt;/your-redirection-path</code>參數。</li>
+</ol>
+<h2 id="notification-webhook">Notification Webhook</h2>
+<h3 id="發動方式-1">發動方式</h3>
+<ol>
+<li>
+<p>建立包含下列<code>name</code>的 Html Form 頁面：</p>
+<ul>
+<li>Form 參數<code>action</code>為上述的<code>&lt;entrypoint&gt;</code>入口頁面，參數<code>method</code>為<code>post</code></li>
+<li>Form 之中包含 <!-- raw HTML omitted --> 物件，其中參數如下：
+<ul>
+<li><code>type</code>為<code>hidden</code>。</li>
+<li><code>name</code>為<code>_wh_notify</code>。</li>
+<li><code>value</code>為完成時要傳送通知的網址<code>https://&lt;civicrm_webhook_domain&gt;/your-notification-path</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>發送該表單給使用者端瀏覽器（可藉 Javascript 跳過呈現此頁的步驟，詳看<a href="#%E8%B7%B3%E9%81%8E-html-form-%E9%A0%81%E9%9D%A2">本文件最後的說明</a>）。</p>
+</li>
+<li>
+<p>送出表單到最後全步驟完成、導向到感謝頁時，伺服器會發送一個 Notification Post 到自定義的<code>https://&lt;civicrm_webhook_domain&gt;/your-notification-path</code>。</p>
+</li>
+</ol>
+<h3 id="實作-html-頁面範例-1">實作 Html 頁面範例</h3>
+<h4 id="form-範例">Form 範例</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;entrypoint&gt;&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_wh_notify&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://&lt;civicrm_webhook_domain&gt;/your-notification-path&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;送出&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
+</span></span></code></pre></div><h4 id="範例說明-1">範例說明</h4>
+<ol>
+<li>使用者的頁面上會呈現「送出」的按鈕，按下送出按鈕後，會帶使用者轉向到<code>&lt;entrypoint&gt;</code>入口頁面（捐款頁或活動報名頁），同時代入<code>_wh_notify=https://&lt;civicrm_webhook_domain&gt;/your-notification-path</code>參數給伺服器。</li>
+<li>要透過 Javascript 讓使用者跳過點擊按鈕的步驟，請看<a href="#%E8%B7%B3%E9%81%8E-html-form-%E9%A0%81%E9%9D%A2">本文件最後的說明</a>。</li>
+<li>請網站管理員自行替換正確的<code>&lt;entrypoint&gt;</code>和<code>https://&lt;civicrm_webhook_domain&gt;/your-redirection-path</code>參數。</li>
+</ol>
+<h3 id="回傳範例">回傳範例</h3>
 <p>回傳的捐款資訊會通知到指定的網址。回傳的捐款資訊內容請見下方回傳格式的範例。</p>
-<h4 id="response-header">Response Header:</h4>
-<p>記錄網站網域、捐款通知回傳的格式、WebhookID與內容的字數</p>
+<h4 id="response-header">Response Header</h4>
+<p>記錄網站網域、捐款通知回傳的格式、WebhookID 與內容的字數：</p>
 <pre tabindex="0"><code>Content-Type: application/json
 X-Civicrm-Webhook-Signature: ********************
-</code></pre><h4 id="response-body">Response Body:</h4>
-<p>預設回傳格式為JSON，被記錄的捐款資訊欄位是固定的，如下範例：</p>
+</code></pre><h4 id="response-body">Response Body</h4>
+<p>預設回傳格式為 JSON，被記錄的捐款資訊欄位是固定的，如下範例：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;contact_id&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;external_identifier&#34;</span>:<span style="color:#e6db74">&#34;abcd1234&#34;</span>,
@@ -601,14 +656,55 @@ X-Civicrm-Webhook-Signature: ********************
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 id="驗證回傳值">驗證回傳值</h3>
 <p>接收到 Notification 後，建議您務必驗證來源
-HTTP Header 將會附上 <code>X-Civicrm-Webhook-Signature</code> 這個字串標記。
-接收到此標記後，請您使用 <code>&lt;civicrm_webhook_secret&gt;</code> 密鑰搭配進行驗證</p>
+HTTP Header 將會附上<code>X-Civicrm-Webhook-Signature</code>這個字串標記。
+接收到此標記後，請您使用<code>&lt;civicrm_webhook_secret&gt;</code>密鑰搭配進行驗證</p>
 <p>驗證方式說明如下：
-netiCRM 使用 HMAC sha1演算法進行加密，針對每筆捐款交易產生一組簽名與密鑰。透過相同方式進行驗算，比對 <code>X-Civicrm-Webhook-Signature</code> 的簽名與 <code>&lt;civicrm_webhook_secret&gt;</code> 密鑰雜湊運算後是否相符合，驗證 HTTP POST request 是不是來自於 netiCRM。以下以PHP為例。</p>
+netiCRM 使用 HMAC sha1演算法進行加密，針對每筆捐款交易產生一組簽名與密鑰。透過相同方式進行驗算，比對<code>X-Civicrm-Webhook-Signature</code>的簽名與<code>&lt;civicrm_webhook_secret&gt;</code>密鑰雜湊運算後是否相符合，驗證 HTTP POST request 是不是來自於 netiCRM。以下以 PHP 為例。</p>
 <h4 id="驗證範例">驗證範例</h4>
-<pre tabindex="0"><code>$hash = hash_hmac(&#39;sha1&#39;, $json_body, &#39;&lt;civicrm_webhook_secret&gt;&#39;);
-echo $hash; # this should be the same with X-Civicrm-Webhook-Signature
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$hash <span style="color:#f92672">=</span> <span style="color:#a6e22e">hash_hmac</span>(<span style="color:#e6db74">&#39;sha1&#39;</span>, $json_body, <span style="color:#e6db74">&#39;&lt;civicrm_webhook_secret&gt;&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> $hash; <span style="color:#75715e"># this should be the same with X-Civicrm-Webhook-Signature
+</span></span></span></code></pre></div><h2 id="跳過-html-form-頁面">跳過 Html Form 頁面</h2>
+<p>提供給使用者 Html 表單時，可透過在<code>&lt;/form&gt;</code>後面加入下列<code>&lt;script&gt;</code>元件，執行 Javascirpt 來跳過表單頁，直接進入<code>&lt;entrypoint&gt;</code>入口頁面。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">form</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;form&#39;</span>)[<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 隱藏送出按鈕
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">btn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">form</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;[type=&#34;submit&#34;]&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">btn</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;none&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 自動送出表單
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">form</span>.<span style="color:#a6e22e">submit</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 沒有轉向成功的話，5 秒後提供轉向按鈕給使用者點擊
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">btn</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;block&#34;</span>;
+</span></span><span style="display:flex;"><span>    }, <span style="color:#ae81ff">5000</span>);
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>組合後的 Html 全頁結構範例如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;zh-Hant-TW&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">title</span>&gt;Redirect&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;entrypoint&gt;&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_wh_redirect&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://&lt;civicrm_webhook_domain&gt;/your-notification-path&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;送出&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">form</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">form</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;form&#39;</span>)[<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 隱藏送出按鈕
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">btn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">form</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;[type=&#34;submit&#34;]&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">btn</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;none&#34;</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 自動送出表單
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">form</span>.<span style="color:#a6e22e">submit</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 沒有轉向成功的話，5 秒後提供轉向按鈕給使用者點擊
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">btn</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;block&#34;</span>;
+</span></span><span style="display:flex;"><span>            }, <span style="color:#ae81ff">5000</span>);
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div>
 
 
 
@@ -925,19 +1021,19 @@ echo $hash; # this should be the same with X-Civicrm-Webhook-Signature
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/api-document/js/clipboard.min.js?1683779290"></script>
-    <script src="/api-document/js/perfect-scrollbar.min.js?1683779290"></script>
-    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1683779290"></script>
-    <script src="/api-document/js/jquery.sticky.js?1683779290"></script>
-    <script src="/api-document/js/featherlight.min.js?1683779290"></script>
-    <script src="/api-document/js/highlight.pack.js?1683779290"></script>
+    <script src="/api-document/js/clipboard.min.js?1739866258"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1739866258"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1739866258"></script>
+    <script src="/api-document/js/jquery.sticky.js?1739866258"></script>
+    <script src="/api-document/js/featherlight.min.js?1739866258"></script>
+    <script src="/api-document/js/highlight.pack.js?1739866258"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/api-document/js/modernizr.custom-3.6.0.js?1683779290"></script>
-    <script src="/api-document/js/learn.js?1683779290"></script>
-    <script src="/api-document/js/hugo-learn.js?1683779290"></script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1739866258"></script>
+    <script src="/api-document/js/learn.js?1739866258"></script>
+    <script src="/api-document/js/hugo-learn.js?1739866258"></script>
     
         
-            <script src="/api-document/mermaid/mermaid.js?1683779290"></script>
+            <script src="/api-document/mermaid/mermaid.js?1739866258"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -5,153 +5,105 @@
     <link>/api-document/3/</link>
     <description>Recent content in netiCRM API v3 簡介 on netiCRM API Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language><atom:link href="/api-document/3/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-tw</language>
+    <atom:link href="/api-document/3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>API 基礎操作</title>
       <link>/api-document/3/basic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/api-document/3/basic/</guid>
-      <description>Entity、Action 每次API呼叫，都需要指定要使用的API名稱，和要進行的動作 此參數為必填，分別是下列網址的&amp;lt;entity-name&amp;gt;和&amp;lt;action&amp;gt;：
-&amp;lt;entrypoint&amp;gt;?entity=&amp;lt;entity-name&amp;gt;&amp;amp;action=&amp;lt;action&amp;gt; 舉例，如果需要取得聯絡人資料，其 &amp;lt;entity-name&amp;gt; 為 contact，&amp;lt;action&amp;gt;為 get
-範例：取得聯絡人資料 發送範例 HTTP 方法 GET Request Content Type 未限制
-Request URL &amp;lt;entrypoint&amp;gt;?entity=Contact&amp;amp;action=get Request Body 無
-API Explorer /civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;amp;action=get curl 發送範例 curl -g \ --header &amp;#39;x-civicrm-api-key: &amp;lt;secret-key&amp;gt;&amp;#39; \ --header &amp;#39;x-civicrm-site-key: &amp;lt;site-key&amp;gt;&amp;#39; \ &amp;#39;&amp;lt;entrypoint&amp;gt;?entity=Contact&amp;amp;action=get&amp;#39; 回傳範例 { &amp;#34;is_error&amp;#34;: 0, &amp;#34;version&amp;#34;: 3, &amp;#34;count&amp;#34;: 25, &amp;#34;values&amp;#34;: [ { &amp;#34;contact_id&amp;#34;: &amp;#34;1234&amp;#34;, &amp;#34;contact_type&amp;#34;: &amp;#34;Individual&amp;#34;, &amp;#34;contact_sub_type&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;sort_name&amp;#34;: &amp;#34;蔡怡君&amp;#34;, &amp;#34;display_name&amp;#34;: &amp;#34;蔡怡君&amp;#34;, ...... &amp;#34;id&amp;#34;: &amp;#34;1234&amp;#34; }, ...... ] } 資料分頁 因受限於API限制，每次最多回傳 100 筆資料，可搭配offset擷取更多資料</description>
+      <description>Entity、Action 每次API呼叫，都需要指定要使用的API名稱，和要進行的動作 此參數為必填，分別是下列網址的&amp;lt;entity-name&amp;gt;和&amp;lt;action&amp;gt;：&#xA;&amp;lt;entrypoint&amp;gt;?entity=&amp;lt;entity-name&amp;gt;&amp;amp;action=&amp;lt;action&amp;gt; 舉例，如果需要取得聯絡人資料，其 &amp;lt;entity-name&amp;gt; 為 contact，&amp;lt;action&amp;gt;為 get&#xA;範例：取得聯絡人資料 發送範例 HTTP 方法 GET Request Content Type 未限制&#xA;Request URL &amp;lt;entrypoint&amp;gt;?entity=Contact&amp;amp;action=get Request Body 無&#xA;API Explorer /civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;amp;action=get curl 發送範例 curl -g \ --header &amp;#39;x-civicrm-api-key: &amp;lt;secret-key&amp;gt;&amp;#39; \ --header &amp;#39;x-civicrm-site-key: &amp;lt;site-key&amp;gt;&amp;#39; \ &amp;#39;&amp;lt;entrypoint&amp;gt;?entity=Contact&amp;amp;action=get&amp;#39; 回傳範例 { &amp;#34;is_error&amp;#34;: 0, &amp;#34;version&amp;#34;: 3, &amp;#34;count&amp;#34;: 25, &amp;#34;values&amp;#34;: [ { &amp;#34;contact_id&amp;#34;: &amp;#34;1234&amp;#34;, &amp;#34;contact_type&amp;#34;: &amp;#34;Individual&amp;#34;, &amp;#34;contact_sub_type&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;sort_name&amp;#34;: &amp;#34;蔡怡君&amp;#34;, &amp;#34;display_name&amp;#34;: &amp;#34;蔡怡君&amp;#34;, ...... &amp;#34;id&amp;#34;: &amp;#34;1234&amp;#34; }, ...... ] } 資料分頁 因受限於API限制，每次最多回傳 100 筆資料，可搭配offset擷取更多資料</description>
     </item>
-    
     <item>
       <title>Contact API</title>
       <link>/api-document/3/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/api-document/3/contact/</guid>
       <description>變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 Unique Contact ID contact_type 字串(varchar) 64 Type of Contact. contact_sub_type 字串(varchar) 64 May be used to over-ride contact view and edit templates. do_not_email 布林值(boolean) 1 0 or 1 預設值: 0 do_not_phone 布林值(boolean) 1 0 or 1 預設值: 0 do_not_mail 布林值(boolean) 1 0 or 1 預設值: 0 do_not_sms 布林值(boolean) 1 0 or 1 預設值: 0 do_not_trade 布林值(boolean) 1 0 or 1 預設值: 0 is_opt_out 布林值(boolean) 1 0 or 1 必填, 預設值: 0 Has the contact opted out from receiving all bulk email from the organization or site domain?</description>
     </item>
-    
     <item>
       <title>Activity API</title>
       <link>/api-document/3/activity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/api-document/3/activity/</guid>
-      <description>This is a API Document about Activity.
-變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 Unique Other Activity ID source_contact_id 數字(int unsigned) 10 &amp;gt;= 0 Contact ID of the person scheduling or logging this Activity. Usually the authenticated user. source_record_id 數字(int unsigned) 10 &amp;gt;= 0 Artificial FK to original transaction (e.g. contribution) IF it is not an Activity. Table can be figured out through activity_type_id, and further through component registry.</description>
+      <description>This is a API Document about Activity.&#xA;變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 Unique Other Activity ID source_contact_id 數字(int unsigned) 10 &amp;gt;= 0 Contact ID of the person scheduling or logging this Activity. Usually the authenticated user. source_record_id 數字(int unsigned) 10 &amp;gt;= 0 Artificial FK to original transaction (e.g. contribution) IF it is not an Activity. Table can be figured out through activity_type_id, and further through component registry.</description>
     </item>
-    
     <item>
       <title>Contribution API</title>
       <link>/api-document/3/contribution/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/api-document/3/contribution/</guid>
-      <description>This is a API Document about contribution.
-變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 Unique Contribution ID contact_id 數字(int unsigned) 10 &amp;gt;= 0 必填 FK to Contact ID solicitor_id 數字(int unsigned) 10 &amp;gt;= 0 FK to Solicitor ID contribution_type_id 數字(int unsigned) 10 &amp;gt;= 0 FK to Contribution Type contribution_page_id 數字(int unsigned) 10 &amp;gt;= 0 The Contribution Page which triggered this contribution payment_processor_id 數字(int unsigned) 10 &amp;gt;= 0 FK to Payment Processor payment_instrument_id 數字(int unsigned) 10 &amp;gt;= 0 FK to Payment Instrument created_date 日期(datetime) yyyy-mm-dd hh:ii:ss when was contribution submitted receive_date 日期(datetime) yyyy-mm-dd hh:ii:ss when was gift received(or got authorized by credit card) non_deductible_amount 數字(decimal) 20,2 00.</description>
+      <description>This is a API Document about contribution.&#xA;變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 Unique Contribution ID contact_id 數字(int unsigned) 10 &amp;gt;= 0 必填 FK to Contact ID solicitor_id 數字(int unsigned) 10 &amp;gt;= 0 FK to Solicitor ID contribution_type_id 數字(int unsigned) 10 &amp;gt;= 0 FK to Contribution Type contribution_page_id 數字(int unsigned) 10 &amp;gt;= 0 The Contribution Page which triggered this contribution payment_processor_id 數字(int unsigned) 10 &amp;gt;= 0 FK to Payment Processor payment_instrument_id 數字(int unsigned) 10 &amp;gt;= 0 FK to Payment Instrument created_date 日期(datetime) yyyy-mm-dd hh:ii:ss when was contribution submitted receive_date 日期(datetime) yyyy-mm-dd hh:ii:ss when was gift received(or got authorized by credit card) non_deductible_amount 數字(decimal) 20,2 00.</description>
     </item>
-    
     <item>
       <title>Contribution Page API</title>
       <link>/api-document/3/contributionpage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/api-document/3/contributionpage/</guid>
-      <description>取得募款頁資料 透過 get API，可取得 CRM 網站上募款頁資訊
-查詢範例 HTTP方法 GET Request URL 取得所有募款頁
-&amp;lt;entrypoint&amp;gt;?entity=ContributionPage&amp;amp;action=get 取得編號3的募款頁
-&amp;lt;entrypoint&amp;gt;?entity=ContributionPage&amp;amp;action=get&amp;amp;json={&amp;#34;id&amp;#34;:&amp;#34;3&amp;#34;} API Explorer 路徑 /civicrm/apibrowser#/civicrm/ajax/rest?entity=ContributionPage&amp;amp;action=get&amp;amp;pretty=1 curl Example curl -g \ --header &amp;#39;x-civicrm-api-key: &amp;lt;secret-key&amp;gt;&amp;#39; \ --header &amp;#39;x-civicrm-site-key: &amp;lt;site-key&amp;gt;&amp;#39; \ &amp;#39;&amp;lt;entrypoint&amp;gt;?entity=ContributionPage&amp;amp;action=get&amp;#39; 回傳範例 { &amp;#34;is_error&amp;#34;: 0, #是否有錯誤 &amp;#34;version&amp;#34;: 3, #API的版本 &amp;#34;count&amp;#34;: 1, #此次查詢比數 &amp;#34;values&amp;#34;: [ #此次查詢結果 { &amp;#34;id&amp;#34;: &amp;#34;4&amp;#34;, #募款頁id &amp;#34;title&amp;#34;: &amp;#34;範例募款頁&amp;#34;, #募款頁標題 &amp;#34;intro_text&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;募款頁的介紹訊息！&amp;lt;/p&amp;gt;&amp;#34;, #主要介紹訊息，允許HTML &amp;#34;contribution_type_id&amp;#34;: &amp;#34;1&amp;#34;, #費用類型編號 &amp;#34;payment_processor&amp;#34;: [ #啟用的金流機制 ID &amp;#34;1&amp;#34;, &amp;#34;5&amp;#34; ], &amp;#34;is_monetary&amp;#34;: &amp;#34;1&amp;#34;, #是否必要付款，&amp;#34;0&amp;#34; or &amp;#34;1&amp;#34; &amp;#34;is_recur&amp;#34;: &amp;#34;1&amp;#34;, #是否定期，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34;或&amp;#34;2&amp;#34; #當&amp;#34;0&amp;#34;表示僅允許單筆，&amp;#34;1&amp;#34;表示允許單筆與定期，&amp;#34;2&amp;#34;表示允許單筆 &amp;#34;recur_frequency_unit&amp;#34;: &amp;#34;month&amp;#34;, #定期的週期別 &amp;#34;is_recur_interval&amp;#34;: &amp;#34;0&amp;#34;, #週期間隔，固定為&amp;#34;0&amp;#34; &amp;#34;installments_option&amp;#34;: &amp;#34;1&amp;#34;, #允許使用者在募款頁選擇定期期數 &amp;#34;is_pay_later&amp;#34;: &amp;#34;1&amp;#34;, #是否允許稍後付款，&amp;#34;0&amp;#34;表示停用，&amp;#34;1&amp;#34;表示啟用 &amp;#34;pay_later_text&amp;#34;: &amp;#34;請設定您的金流服務&amp;#34;, #若 is_pay_later=&amp;#34;1&amp;#34;時，稍後付款的文字 &amp;#34;pay_later_receipt&amp;#34;: &amp;#34;選擇金流服務商完成設定，即可提供正式的線上付款工具。&amp;#34;, #若 is_pay_later=&amp;#34;1&amp;#34;時，稍後付款於信件中的說明 &amp;#34;is_allow_other_amount&amp;#34;: &amp;#34;1&amp;#34;, #是否允許自訂金額 &amp;#34;default_amount_id&amp;#34;: &amp;#34;689&amp;#34;, #內部定義金額 &amp;#34;thankyou_title&amp;#34;: &amp;#34;謝謝你的支持&amp;#34;, #感謝頁的標題 &amp;#34;is_for_organization&amp;#34;: &amp;#34;0&amp;#34;, #頁面是否允許組織填寫資訊捐款，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;for_organization&amp;#34;: &amp;#34;我代表組織捐款。&amp;#34;, #組織捐款時，標題為何 &amp;#34;is_email_receipt&amp;#34;: &amp;#34;1&amp;#34;, #是否寄送付款成功確認電子郵件，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;receipt_from_email&amp;#34;: &amp;#34;demo@demo.</description>
+      <description>取得募款頁資料 透過 get API，可取得 CRM 網站上募款頁資訊&#xA;查詢範例 HTTP方法 GET Request URL 取得所有募款頁&#xA;&amp;lt;entrypoint&amp;gt;?entity=ContributionPage&amp;amp;action=get 取得編號3的募款頁&#xA;&amp;lt;entrypoint&amp;gt;?entity=ContributionPage&amp;amp;action=get&amp;amp;json={&amp;#34;id&amp;#34;:&amp;#34;3&amp;#34;} API Explorer 路徑 /civicrm/apibrowser#/civicrm/ajax/rest?entity=ContributionPage&amp;amp;action=get&amp;amp;pretty=1 curl Example curl -g \ --header &amp;#39;x-civicrm-api-key: &amp;lt;secret-key&amp;gt;&amp;#39; \ --header &amp;#39;x-civicrm-site-key: &amp;lt;site-key&amp;gt;&amp;#39; \ &amp;#39;&amp;lt;entrypoint&amp;gt;?entity=ContributionPage&amp;amp;action=get&amp;#39; 回傳範例 { &amp;#34;is_error&amp;#34;: 0, #是否有錯誤 &amp;#34;version&amp;#34;: 3, #API的版本 &amp;#34;count&amp;#34;: 1, #此次查詢比數 &amp;#34;values&amp;#34;: [ #此次查詢結果 { &amp;#34;id&amp;#34;: &amp;#34;4&amp;#34;, #募款頁id &amp;#34;title&amp;#34;: &amp;#34;範例募款頁&amp;#34;, #募款頁標題 &amp;#34;intro_text&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;募款頁的介紹訊息！&amp;lt;/p&amp;gt;&amp;#34;, #主要介紹訊息，允許HTML &amp;#34;contribution_type_id&amp;#34;: &amp;#34;1&amp;#34;, #費用類型編號 &amp;#34;payment_processor&amp;#34;: [ #啟用的金流機制 ID &amp;#34;1&amp;#34;, &amp;#34;5&amp;#34; ], &amp;#34;is_monetary&amp;#34;: &amp;#34;1&amp;#34;, #是否必要付款，&amp;#34;0&amp;#34; or &amp;#34;1&amp;#34; &amp;#34;is_recur&amp;#34;: &amp;#34;1&amp;#34;, #是否定期，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34;或&amp;#34;2&amp;#34; #當&amp;#34;0&amp;#34;表示僅允許單筆，&amp;#34;1&amp;#34;表示允許單筆與定期，&amp;#34;2&amp;#34;表示允許單筆 &amp;#34;recur_frequency_unit&amp;#34;: &amp;#34;month&amp;#34;, #定期的週期別 &amp;#34;is_recur_interval&amp;#34;: &amp;#34;0&amp;#34;, #週期間隔，固定為&amp;#34;0&amp;#34; &amp;#34;installments_option&amp;#34;: &amp;#34;1&amp;#34;, #允許使用者在募款頁選擇定期期數 &amp;#34;is_pay_later&amp;#34;: &amp;#34;1&amp;#34;, #是否允許稍後付款，&amp;#34;0&amp;#34;表示停用，&amp;#34;1&amp;#34;表示啟用 &amp;#34;pay_later_text&amp;#34;: &amp;#34;請設定您的金流服務&amp;#34;, #若 is_pay_later=&amp;#34;1&amp;#34;時，稍後付款的文字 &amp;#34;pay_later_receipt&amp;#34;: &amp;#34;選擇金流服務商完成設定，即可提供正式的線上付款工具。&amp;#34;, #若 is_pay_later=&amp;#34;1&amp;#34;時，稍後付款於信件中的說明 &amp;#34;is_allow_other_amount&amp;#34;: &amp;#34;1&amp;#34;, #是否允許自訂金額 &amp;#34;default_amount_id&amp;#34;: &amp;#34;689&amp;#34;, #內部定義金額 &amp;#34;thankyou_title&amp;#34;: &amp;#34;謝謝你的支持&amp;#34;, #感謝頁的標題 &amp;#34;is_for_organization&amp;#34;: &amp;#34;0&amp;#34;, #頁面是否允許組織填寫資訊捐款，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;for_organization&amp;#34;: &amp;#34;我代表組織捐款。&amp;#34;, #組織捐款時，標題為何 &amp;#34;is_email_receipt&amp;#34;: &amp;#34;1&amp;#34;, #是否寄送付款成功確認電子郵件，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;receipt_from_email&amp;#34;: &amp;#34;demo@demo.</description>
     </item>
-    
     <item>
       <title>Contribution Recurring API</title>
       <link>/api-document/3/contributionrecur/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/api-document/3/contributionrecur/</guid>
-      <description>This is a API document about recurring contribution.
-變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 Unique Contribution Recur ID contact_id 數字(int unsigned) 10 &amp;gt;= 0 必填 Foreign key to civicrm_contact.id amount 數字(decimal) 20,2 00.00 必填 Amount to be contributed or charged each recurrence. currency 字串(varchar) 3 預設值: NULL 3 character string, value from config setting. frequency_unit 字串(enum) day,week,month,year 預設值: &amp;lsquo;month&amp;rsquo; Time units for recurrence of payment.</description>
+      <description>This is a API document about recurring contribution.&#xA;變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 Unique Contribution Recur ID contact_id 數字(int unsigned) 10 &amp;gt;= 0 必填 Foreign key to civicrm_contact.id amount 數字(decimal) 20,2 00.00 必填 Amount to be contributed or charged each recurrence. currency 字串(varchar) 3 預設值: NULL 3 character string, value from config setting. frequency_unit 字串(enum) day,week,month,year 預設值: &amp;lsquo;month&amp;rsquo; Time units for recurrence of payment.</description>
     </item>
-    
     <item>
       <title>Custom Value API</title>
       <link>/api-document/3/customvalues/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/api-document/3/customvalues/</guid>
       <description>取得自訂欄位群組、欄位與選項 Custom Group Get API 傳送範例 HTTP Method GET Request URL &amp;lt;entrypoint&amp;gt;?entity=CustomGroup&amp;amp;action=get API Explorer /civicrm/apibrowser#/civicrm/ajax/rest?entity=CustomGroup&amp;amp;action=get curl Example curl -g \ --header &amp;#39;x-civicrm-api-key: &amp;lt;secret-key&amp;gt;&amp;#39; \ --header &amp;#39;x-civicrm-site-key: &amp;lt;site-key&amp;gt;&amp;#39; \ &amp;#39;&amp;lt;entrypoint&amp;gt;?entity=CustomGroup&amp;amp;action=get&amp;#39; 回傳範例 { &amp;#34;is_error&amp;#34;: 0, &amp;#34;version&amp;#34;: 3, &amp;#34;count&amp;#34;: 10, &amp;#34;values&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;ge_ren_bei_jing&amp;#34;, &amp;#34;title&amp;#34;: &amp;#34;個人背景&amp;#34;, &amp;#34;extends&amp;#34;: &amp;#34;Individual&amp;#34;, &amp;#34;style&amp;#34;: &amp;#34;Inline&amp;#34;, &amp;#34;collapse_display&amp;#34;: &amp;#34;0&amp;#34;, &amp;#34;help_pre&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;help_post&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;weight&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;is_active&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;table_name&amp;#34;: &amp;#34;civicrm_value_ge_ren_bei_jing_1&amp;#34;, &amp;#34;is_multiple&amp;#34;: &amp;#34;0&amp;#34;, &amp;#34;collapse_adv_display&amp;#34;: &amp;#34;0&amp;#34; }, ... ] } Custom Field Get API 傳送範例 HTTP Method GET Request URL &amp;lt;entrypoint&amp;gt;?</description>
     </item>
-    
     <item>
       <title>Email API</title>
       <link>/api-document/3/email/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/api-document/3/email/</guid>
-      <description>This is a API Document about Email.
-變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 Unique Email ID contact_id 數字(int unsigned) 10 &amp;gt;= 0 FK to Contact ID location_type_id 數字(int unsigned) 10 &amp;gt;= 0 Which Location does this email belong to. email 字串(varchar) 64 Email address is_primary 布林值(boolean) 1 0 or 1 預設值: 0 Is this the primary email for this contact and location. is_billing 布林值(boolean) 1 0 or 1 預設值: 0 Is this the billing?</description>
+      <description>This is a API Document about Email.&#xA;變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 Unique Email ID contact_id 數字(int unsigned) 10 &amp;gt;= 0 FK to Contact ID location_type_id 數字(int unsigned) 10 &amp;gt;= 0 Which Location does this email belong to. email 字串(varchar) 64 Email address is_primary 布林值(boolean) 1 0 or 1 預設值: 0 Is this the primary email for this contact and location. is_billing 布林值(boolean) 1 0 or 1 預設值: 0 Is this the billing?</description>
     </item>
-    
     <item>
       <title>Event API</title>
       <link>/api-document/3/event/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/api-document/3/event/</guid>
-      <description>取得活動頁資料 透過 get API ，可取得 CRM 網站上活動資訊
-查詢範例 HTTP方法 GET
-Request URL 取得所有活動頁 &amp;lt;entrypoint&amp;gt;?entity=Event&amp;amp;action=get
-取得活動編號6的活動頁 &amp;lt;entrypoint&amp;gt;?entity=Event&amp;amp;action=get&amp;amp;json={&amp;quot;id&amp;quot;:&amp;quot;6&amp;quot;}
-API Explorer 路徑 https://&amp;lt;site-domain&amp;gt;/civicrm/apibrowser#/civicrm/ajax/rest?entity=Event&amp;amp;action=get&amp;amp;pretty=1
-CURL 發送範例 curl -g \ --header &amp;#39;x-civicrm-api-key: &amp;lt;secret-key&amp;gt;&amp;#39; --header &amp;#39;x-civicrm-site-key: &amp;lt;site-key&amp;gt;&amp;#39; \ &amp;#39;&amp;lt;entrypoint&amp;gt;?entity=Event&amp;amp;action=get&amp;#39; 回傳範例 { &amp;#34;is_error&amp;#34;: 0, #是否有錯誤 &amp;#34;version&amp;#34;: 3, #API的版本 &amp;#34;count&amp;#34;: 1, #此次查詢比數 &amp;#34;values&amp;#34;: [ #此次查詢結果 { &amp;#34;id&amp;#34;: &amp;#34;9&amp;#34;, #活動編號 &amp;#34;title&amp;#34;: &amp;#34;OOOO&amp;#34;, #活動標題 &amp;#34;event_title&amp;#34;: &amp;#34;OOOO&amp;#34;, #同上 &amp;#34;event_type_id&amp;#34;: &amp;#34;1&amp;#34;, #活動類型 &amp;#34;is_public&amp;#34;: &amp;#34;1&amp;#34;, #是否為公開活動，未公開活動仍可存取、報名&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;start_date&amp;#34;: &amp;#34;2020-12-24 16:01:00&amp;#34;, #活動開始日期時間（時區固定為Asia/Taipei） &amp;#34;event_start_date&amp;#34;: &amp;#34;2020-12-24 16:01:00&amp;#34;, #同上 &amp;#34;is_online_registration&amp;#34;: &amp;#34;1&amp;#34;, #是否允許線上報名，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34;，&amp;#34;0&amp;#34;時無法線上報名 &amp;#34;is_qrcode&amp;#34;: &amp;#34;0&amp;#34;, #是否啟用報到碼 &amp;#34;registration_start_date&amp;#34;: &amp;#34;2020-01-13 00:00:00&amp;#34;, #報名開始日期時間 &amp;#34;registration_end_date&amp;#34;: &amp;#34;2020-01-21 00:00:00&amp;#34;, #報名截止日期時間 &amp;#34;max_participants&amp;#34;: &amp;#34;5&amp;#34;, #活動名額（最大參加數量），若未限制，則無此欄位 &amp;#34;event_full_text&amp;#34;: &amp;#34;此活動目前已報名額滿。&amp;#34;, #額滿時，出現的文字 &amp;#34;is_monetary&amp;#34;: &amp;#34;0&amp;#34;, #活動是否啟付費功能，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;contribution_type_id&amp;#34;: &amp;#34;0&amp;#34;, #當is_monetary=&amp;#34;1&amp;#34;時，需要有費用類型的編號 &amp;#34;is_map&amp;#34;: &amp;#34;0&amp;#34;, #活動是否顯示地圖於地點 &amp;#34;is_active&amp;#34;: &amp;#34;1&amp;#34;, #活動是否啟用，&amp;#34;0&amp;#34;為停用或&amp;#34;1&amp;#34;啟用，當活動停用時，活動無法存取、報名 &amp;#34;is_show_location&amp;#34;: &amp;#34;1&amp;#34;, #活動是否顯示活動地點 &amp;#34;loc_block_id&amp;#34;: &amp;#34;5&amp;#34;, #內部紀錄，請略過 &amp;#34;default_role_id&amp;#34;: &amp;#34;1&amp;#34;, #活動的參加者預設角色 &amp;#34;is_email_confirm&amp;#34;: &amp;#34;0&amp;#34;, #是否寄送報名確認信件，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;allow_cancel_by_link&amp;#34;: &amp;#34;0&amp;#34;, #當is_email_confirm=&amp;#34;1&amp;#34;時，是否包含取消活動報名的連結 &amp;#34;is_pay_later&amp;#34;: &amp;#34;0&amp;#34;, #是否啟用稍後付款，僅於is_monetary=&amp;#34;1&amp;#34;時有用 &amp;#34;is_multiple_registrations&amp;#34;: &amp;#34;0&amp;#34;, #一次是否可報名多位參加者，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;allow_same_participant_emails&amp;#34;: &amp;#34;0&amp;#34;, #多位參加者報名時，是否允許用相同Email，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;has_waitlist&amp;#34;: &amp;#34;0&amp;#34;, #是否啟用了候補功能，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;waitlist_text&amp;#34;: &amp;#34;此活動已額滿，您的報名將列為候補，若有名額將再通知您完成報名。&amp;#34;, #候補功能時，名額已滿的顯示文字 &amp;#34;is_template&amp;#34;: &amp;#34;0&amp;#34;, #是否為活動範本，固定為&amp;#34;0&amp;#34; &amp;#34;template_title&amp;#34;: &amp;#34;有名額限制，不開放候補&amp;#34;, #活動範本的標題，請略過 &amp;#34;created_id&amp;#34;: &amp;#34;1&amp;#34;, #活動建立者的聯絡人編號 &amp;#34;created_date&amp;#34;: &amp;#34;2020-12-24 16:01:35&amp;#34;, #活動建立時的日期時間 &amp;#34;available_places&amp;#34;: &amp;#34;5&amp;#34;, #活動剩餘名額，若未限制max_participants時，此固定為&amp;#34;&amp;#34; &amp;#34;is_full&amp;#34;: &amp;#34;0&amp;#34;, #活動是否額滿，若已額滿，為&amp;#34;1&amp;#34;，未額滿，為&amp;#34;0&amp;#34; #當未提供max_participants時，永遠為&amp;#34;0&amp;#34; &amp;#34;location_address&amp;#34;: &amp;#34;512 彰化縣永靖鄉ABCD&amp;#34;, #活動地點完整地址 &amp;#34;location_phone&amp;#34;: &amp;#34;0955533333&amp;#34;, #活動資訊聯絡電話 &amp;#34;location_email&amp;#34;: &amp;#34;jjj@bbb.</description>
+      <description>取得活動頁資料 透過 get API ，可取得 CRM 網站上活動資訊&#xA;查詢範例 HTTP方法 GET&#xA;Request URL 取得所有活動頁 &amp;lt;entrypoint&amp;gt;?entity=Event&amp;amp;action=get&#xA;取得活動編號6的活動頁 &amp;lt;entrypoint&amp;gt;?entity=Event&amp;amp;action=get&amp;amp;json={&amp;quot;id&amp;quot;:&amp;quot;6&amp;quot;}&#xA;API Explorer 路徑 https://&amp;lt;site-domain&amp;gt;/civicrm/apibrowser#/civicrm/ajax/rest?entity=Event&amp;amp;action=get&amp;amp;pretty=1&#xA;CURL 發送範例 curl -g \ --header &amp;#39;x-civicrm-api-key: &amp;lt;secret-key&amp;gt;&amp;#39; --header &amp;#39;x-civicrm-site-key: &amp;lt;site-key&amp;gt;&amp;#39; \ &amp;#39;&amp;lt;entrypoint&amp;gt;?entity=Event&amp;amp;action=get&amp;#39; 回傳範例 { &amp;#34;is_error&amp;#34;: 0, #是否有錯誤 &amp;#34;version&amp;#34;: 3, #API的版本 &amp;#34;count&amp;#34;: 1, #此次查詢比數 &amp;#34;values&amp;#34;: [ #此次查詢結果 { &amp;#34;id&amp;#34;: &amp;#34;9&amp;#34;, #活動編號 &amp;#34;title&amp;#34;: &amp;#34;OOOO&amp;#34;, #活動標題 &amp;#34;event_title&amp;#34;: &amp;#34;OOOO&amp;#34;, #同上 &amp;#34;event_type_id&amp;#34;: &amp;#34;1&amp;#34;, #活動類型 &amp;#34;is_public&amp;#34;: &amp;#34;1&amp;#34;, #是否為公開活動，未公開活動仍可存取、報名&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;start_date&amp;#34;: &amp;#34;2020-12-24 16:01:00&amp;#34;, #活動開始日期時間（時區固定為Asia/Taipei） &amp;#34;event_start_date&amp;#34;: &amp;#34;2020-12-24 16:01:00&amp;#34;, #同上 &amp;#34;is_online_registration&amp;#34;: &amp;#34;1&amp;#34;, #是否允許線上報名，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34;，&amp;#34;0&amp;#34;時無法線上報名 &amp;#34;is_qrcode&amp;#34;: &amp;#34;0&amp;#34;, #是否啟用報到碼 &amp;#34;registration_start_date&amp;#34;: &amp;#34;2020-01-13 00:00:00&amp;#34;, #報名開始日期時間 &amp;#34;registration_end_date&amp;#34;: &amp;#34;2020-01-21 00:00:00&amp;#34;, #報名截止日期時間 &amp;#34;max_participants&amp;#34;: &amp;#34;5&amp;#34;, #活動名額（最大參加數量），若未限制，則無此欄位 &amp;#34;event_full_text&amp;#34;: &amp;#34;此活動目前已報名額滿。&amp;#34;, #額滿時，出現的文字 &amp;#34;is_monetary&amp;#34;: &amp;#34;0&amp;#34;, #活動是否啟付費功能，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;contribution_type_id&amp;#34;: &amp;#34;0&amp;#34;, #當is_monetary=&amp;#34;1&amp;#34;時，需要有費用類型的編號 &amp;#34;is_map&amp;#34;: &amp;#34;0&amp;#34;, #活動是否顯示地圖於地點 &amp;#34;is_active&amp;#34;: &amp;#34;1&amp;#34;, #活動是否啟用，&amp;#34;0&amp;#34;為停用或&amp;#34;1&amp;#34;啟用，當活動停用時，活動無法存取、報名 &amp;#34;is_show_location&amp;#34;: &amp;#34;1&amp;#34;, #活動是否顯示活動地點 &amp;#34;loc_block_id&amp;#34;: &amp;#34;5&amp;#34;, #內部紀錄，請略過 &amp;#34;default_role_id&amp;#34;: &amp;#34;1&amp;#34;, #活動的參加者預設角色 &amp;#34;is_email_confirm&amp;#34;: &amp;#34;0&amp;#34;, #是否寄送報名確認信件，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;allow_cancel_by_link&amp;#34;: &amp;#34;0&amp;#34;, #當is_email_confirm=&amp;#34;1&amp;#34;時，是否包含取消活動報名的連結 &amp;#34;is_pay_later&amp;#34;: &amp;#34;0&amp;#34;, #是否啟用稍後付款，僅於is_monetary=&amp;#34;1&amp;#34;時有用 &amp;#34;is_multiple_registrations&amp;#34;: &amp;#34;0&amp;#34;, #一次是否可報名多位參加者，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;allow_same_participant_emails&amp;#34;: &amp;#34;0&amp;#34;, #多位參加者報名時，是否允許用相同Email，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;has_waitlist&amp;#34;: &amp;#34;0&amp;#34;, #是否啟用了候補功能，&amp;#34;0&amp;#34;或&amp;#34;1&amp;#34; &amp;#34;waitlist_text&amp;#34;: &amp;#34;此活動已額滿，您的報名將列為候補，若有名額將再通知您完成報名。&amp;#34;, #候補功能時，名額已滿的顯示文字 &amp;#34;is_template&amp;#34;: &amp;#34;0&amp;#34;, #是否為活動範本，固定為&amp;#34;0&amp;#34; &amp;#34;template_title&amp;#34;: &amp;#34;有名額限制，不開放候補&amp;#34;, #活動範本的標題，請略過 &amp;#34;created_id&amp;#34;: &amp;#34;1&amp;#34;, #活動建立者的聯絡人編號 &amp;#34;created_date&amp;#34;: &amp;#34;2020-12-24 16:01:35&amp;#34;, #活動建立時的日期時間 &amp;#34;available_places&amp;#34;: &amp;#34;5&amp;#34;, #活動剩餘名額，若未限制max_participants時，此固定為&amp;#34;&amp;#34; &amp;#34;is_full&amp;#34;: &amp;#34;0&amp;#34;, #活動是否額滿，若已額滿，為&amp;#34;1&amp;#34;，未額滿，為&amp;#34;0&amp;#34; #當未提供max_participants時，永遠為&amp;#34;0&amp;#34; &amp;#34;location_address&amp;#34;: &amp;#34;512 彰化縣永靖鄉ABCD&amp;#34;, #活動地點完整地址 &amp;#34;location_phone&amp;#34;: &amp;#34;0955533333&amp;#34;, #活動資訊聯絡電話 &amp;#34;location_email&amp;#34;: &amp;#34;jjj@bbb.</description>
     </item>
-    
     <item>
       <title>Get Options API</title>
       <link>/api-document/3/getoptions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/api-document/3/getoptions/</guid>
-      <description>This is a API document about getoptions action.
-&amp;lt;field_name&amp;gt; options API 傳送範例 HTTP Method GET Request URL &amp;lt;entrypoint&amp;gt;?entity=&amp;lt;entity&amp;gt;&amp;amp;action=getoptions&amp;amp;json= curl Example curl -g \ --header &amp;#39;x-civicrm-api-key: &amp;lt;secret-key&amp;gt;&amp;#39; \ --header &amp;#39;x-civicrm-site-key: &amp;lt;site-key&amp;gt;&amp;#39; \ &amp;#39;&amp;lt;entrypoint&amp;gt;?entity=&amp;lt;entity&amp;gt;&amp;amp;action=getoptions&amp;amp;json=&amp;#39; 回傳範例 { &amp;#34;is_error&amp;#34;: 0, &amp;#34;version&amp;#34;: 3, &amp;#34;count&amp;#34;: 3, &amp;#34;values&amp;#34;: [ { &amp;#34;value&amp;#34;: 1001, &amp;#34;label&amp;#34;: &amp;#34;example label 1&amp;#34; }, { &amp;#34;value&amp;#34;: 1002, &amp;#34;label&amp;#34;: &amp;#34;example label 2&amp;#34; }, { &amp;#34;value&amp;#34;: 1003, &amp;#34;label&amp;#34;: &amp;#34;example label 3&amp;#34; } ] } contact_type options API 傳送範例 HTTP Method GET Request URL &amp;lt;entrypoint&amp;gt;?</description>
+      <description>This is a API document about getoptions action.&#xA;&amp;lt;field_name&amp;gt; options API 傳送範例 HTTP Method GET Request URL &amp;lt;entrypoint&amp;gt;?entity=&amp;lt;entity&amp;gt;&amp;amp;action=getoptions&amp;amp;json= curl Example curl -g \ --header &amp;#39;x-civicrm-api-key: &amp;lt;secret-key&amp;gt;&amp;#39; \ --header &amp;#39;x-civicrm-site-key: &amp;lt;site-key&amp;gt;&amp;#39; \ &amp;#39;&amp;lt;entrypoint&amp;gt;?entity=&amp;lt;entity&amp;gt;&amp;amp;action=getoptions&amp;amp;json=&amp;#39; 回傳範例 { &amp;#34;is_error&amp;#34;: 0, &amp;#34;version&amp;#34;: 3, &amp;#34;count&amp;#34;: 3, &amp;#34;values&amp;#34;: [ { &amp;#34;value&amp;#34;: 1001, &amp;#34;label&amp;#34;: &amp;#34;example label 1&amp;#34; }, { &amp;#34;value&amp;#34;: 1002, &amp;#34;label&amp;#34;: &amp;#34;example label 2&amp;#34; }, { &amp;#34;value&amp;#34;: 1003, &amp;#34;label&amp;#34;: &amp;#34;example label 3&amp;#34; } ] } contact_type options API 傳送範例 HTTP Method GET Request URL &amp;lt;entrypoint&amp;gt;?</description>
     </item>
-    
     <item>
       <title>Group API</title>
       <link>/api-document/3/group/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/api-document/3/group/</guid>
-      <description>This is a API Document about Group.
-變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 群組編號 name 字串(varchar) 64 Internal name of Group. title 字串(varchar) 64 Name of Group. description 字串(text) 65535 Optional verbose description of the group. source 字串(varchar) 64 Module or process which created this group. saved_search_id 數字(int unsigned) 10 &amp;gt;= 0 FK to saved search table. is_active 布林值(boolean) 1 0 or 1 Is this entry active?</description>
+      <description>This is a API Document about Group.&#xA;變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 群組編號 name 字串(varchar) 64 Internal name of Group. title 字串(varchar) 64 Name of Group. description 字串(text) 65535 Optional verbose description of the group. source 字串(varchar) 64 Module or process which created this group. saved_search_id 數字(int unsigned) 10 &amp;gt;= 0 FK to saved search table. is_active 布林值(boolean) 1 0 or 1 Is this entry active?</description>
     </item>
-    
     <item>
       <title>Membership API</title>
       <link>/api-document/3/membership/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/api-document/3/membership/</guid>
-      <description>This is a API Document about Membership.
-變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 Membership Id contact_id 數字(int unsigned) 10 &amp;gt;= 0 必填 FK to Contact ID membership_type_id 數字(int unsigned) 10 &amp;gt;= 0 必填 FK to Membership Type join_date 日期(date) yyyy-mm-dd Beginning of initial membership period (member since&amp;hellip;). start_date 日期(date) yyyy-mm-dd Beginning of current uninterrupted membership period. end_date 日期(date) yyyy-mm-dd Current membership period expire date.</description>
+      <description>This is a API Document about Membership.&#xA;變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 Membership Id contact_id 數字(int unsigned) 10 &amp;gt;= 0 必填 FK to Contact ID membership_type_id 數字(int unsigned) 10 &amp;gt;= 0 必填 FK to Membership Type join_date 日期(date) yyyy-mm-dd Beginning of initial membership period (member since&amp;hellip;). start_date 日期(date) yyyy-mm-dd Beginning of current uninterrupted membership period. end_date 日期(date) yyyy-mm-dd Current membership period expire date.</description>
     </item>
-    
     <item>
       <title>Participant API</title>
       <link>/api-document/3/participant/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/api-document/3/participant/</guid>
-      <description>This is a API Document about Participant.
-變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 參加者編號 contact_id 數字(int unsigned) 10 &amp;gt;= 0 預設值: 0 FK to Contact ID event_id 數字(int unsigned) 10 &amp;gt;= 0 預設值: 0 FK to Event ID status_id 數字(int unsigned) 10 &amp;gt;= 0 必填, 預設值: 1 Participant status ID. FK to civicrm_participant_status_type. Default of 1 should map to status = Registered. role_id 字串(varchar) 128 預設值: NULL Participant role ID.</description>
+      <description>This is a API Document about Participant.&#xA;變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 參加者編號 contact_id 數字(int unsigned) 10 &amp;gt;= 0 預設值: 0 FK to Contact ID event_id 數字(int unsigned) 10 &amp;gt;= 0 預設值: 0 FK to Event ID status_id 數字(int unsigned) 10 &amp;gt;= 0 必填, 預設值: 1 Participant status ID. FK to civicrm_participant_status_type. Default of 1 should map to status = Registered. role_id 字串(varchar) 128 預設值: NULL Participant role ID.</description>
     </item>
-    
     <item>
       <title>Phone API</title>
       <link>/api-document/3/phone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/api-document/3/phone/</guid>
-      <description>This is a API Document about Phone.
-變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 Unique Phone ID contact_id 數字(int unsigned) 10 &amp;gt;= 0 FK to Contact ID location_type_id 數字(int unsigned) 10 &amp;gt;= 0 Which Location does this phone belong to. is_primary 布林值(boolean) 1 0 or 1 預設值: 0 Is this the primary phone for this contact and location. is_billing 布林值(boolean) 1 0 or 1 預設值: 0 Is this the billing?</description>
+      <description>This is a API Document about Phone.&#xA;變數名稱 類型 長度 格式 建立規則 說明 id 數字(int unsigned) 10 &amp;gt;= 0 更新時必填 Unique Phone ID contact_id 數字(int unsigned) 10 &amp;gt;= 0 FK to Contact ID location_type_id 數字(int unsigned) 10 &amp;gt;= 0 Which Location does this phone belong to. is_primary 布林值(boolean) 1 0 or 1 預設值: 0 Is this the primary phone for this contact and location. is_billing 布林值(boolean) 1 0 or 1 預設值: 0 Is this the billing?</description>
     </item>
-    
   </channel>
 </rss>

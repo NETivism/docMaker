@@ -4,7 +4,7 @@
     <base target="_parent">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.123.7">
     <meta name="description" content="">
 
 
@@ -13,20 +13,20 @@
     <title>Contact API :: netiCRM API Documentation</title>
 
     
-    <link href="/api-document/css/nucleus.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/fontawesome-all.min.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/hybrid.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/featherlight.min.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/perfect-scrollbar.min.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/auto-complete.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/atom-one-dark-reasonable.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/theme.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/tabs.css?1683779290" rel="stylesheet">
-    <link href="/api-document/css/hugo-theme.css?1683779290" rel="stylesheet">
+    <link href="/api-document/css/nucleus.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1739866258" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1739866258" rel="stylesheet">
     
     
 
-    <script src="/api-document/js/jquery-3.3.1.min.js?1683779290"></script>
+    <script src="/api-document/js/jquery-3.3.1.min.js?1739866258"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/api-document/js/lunr.min.js?1683779290"></script>
-<script type="text/javascript" src="/api-document/js/auto-complete.js?1683779290"></script>
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1739866258"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1739866258"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/api-document";
+        var baseurl = "\/api-document\/";
     
 </script>
-<script type="text/javascript" src="/api-document/js/search.js?1683779290"></script>
+<script type="text/javascript" src="/api-document/js/search.js?1739866258"></script>
 
     
   </div>
@@ -539,6 +539,7 @@
       <ul>
         <li><a href="#發送範例-4">發送範例</a></li>
         <li><a href="#回傳範例-5">回傳範例</a></li>
+        <li><a href="#使用範例">使用範例</a></li>
       </ul>
     </li>
   </ul>
@@ -1019,12 +1020,12 @@
 <pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;last_name&#34;:&#34;王&#34;,&#34;first_name&#34;:&#34;小明&#34;}}
 </code></pre><h4 id="api-explorer">API Explorer</h4>
 <pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=get&amp;json={&#34;&lt;field&gt;&#34;:&#34;&lt;value&gt;&#34;}&gt;
-</code></pre><h4 id="curl-example">curl Example</h4>
-<pre tabindex="0"><code>curl -g \
-  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
-  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
-  &#39;&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;&lt;field&gt;&#34;:&#34;&lt;value&gt;&#34;}&#39;
-</code></pre><h3 id="回傳範例">回傳範例</h3>
+</code></pre><h4 id="curl-發送範例">curl 發送範例</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -g <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;x-civicrm-api-key: &lt;secret-key&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;x-civicrm-site-key: &lt;site-key&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#39;&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;&lt;field&gt;&#34;:&#34;&lt;value&gt;&#34;}&#39;</span>
+</span></span></code></pre></div><h3 id="回傳範例">回傳範例</h3>
 <pre tabindex="0"><code>{
     &#34;is_error&#34;: 0,
     &#34;version&#34;: 3,
@@ -1054,10 +1055,10 @@
 <pre tabindex="0"><code>{&#34;first_name&#34;:&#34;小明&#34;,&#34;last_name&#34;:&#34;王&#34;,&#34;contact_type&#34;:&#34;Individual&#34;}
 </code></pre><h4 id="api-explorer-1">API Explorer</h4>
 <pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=create&amp;json={&#34;first_name&#34;:&#34;小明&#34;,&#34;last_name&#34;:&#34;王&#34;,&#34;contact_type&#34;:&#34;Individual&#34;}
-</code></pre><h4 id="curl-example-1">curl Example</h4>
+</code></pre><h4 id="curl-example">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
   --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
-  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \
   --header &#39;content-type: application/json&#39; \
   --request POST \
   --data &#39;{&#34;first_name&#34;:&#34;小明&#34;,&#34;last_name&#34;:&#34;王&#34;,&#34;contact_type&#34;:&#34;Individual&#34;}&#39; \
@@ -1088,22 +1089,23 @@
 </code></pre><h4 id="request-url-2">Request URL</h4>
 <pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=create
 </code></pre><h4 id="request-body-1">Request Body</h4>
-<p>更新聯絡人編號14678的個資</p>
+<p>更新聯絡人編號14678的個資，假設原聯絡人資料如下：</p>
 <pre tabindex="0"><code>{
   &#34;id&#34;:&#34;14678&#34;,
-  &#34;first_name&#34;:&#34;大明&#34;
+  &#34;first_name&#34;:&#34;大明&#34;,
+  &#34;last_name&#34;:&#34;王&#34;
 }
 </code></pre><h4 id="api-explorer-2">API Explorer</h4>
-<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=create&amp;json={&#34;first_name&#34;:&#34;小明&#34;,&#34;last_name&#34;:&#34;王&#34;,&#34;contact_type&#34;:&#34;Individual&#34;}
-</code></pre><h4 id="curl-example-2">curl Example</h4>
-<pre tabindex="0"><code>curl -g \
-  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
-  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
-  --header &#39;content-type: application/json&#39; \
-  --request POST \
-  --data &#39;json={&#34;first_name&#34;:&#34;小明&#34;,&#34;last_name&#34;:&#34;王&#34;,&#34;contact_type&#34;:&#34;Individual&#34;}&#39; \
-&#39;&lt;entrypoint&gt;?entity=Contact&amp;action=create&#39;
-</code></pre><h3 id="回傳範例-2">回傳範例</h3>
+<pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=create&amp;json={&#34;id&#34;:&#34;14678&#34;, &#34;first_name&#34;:&#34;小明&#34;,&#34;last_name&#34;:&#34;王&#34;}
+</code></pre><h4 id="curl-發送範例-1">curl 發送範例</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -g <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;x-civicrm-api-key: &lt;secret-key&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;x-civicrm-site-key: &lt;site-key&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --request POST <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --data <span style="color:#e6db74">&#39;{&#34;id&#34;:&#34;14678&#34;, &#34;first_name&#34;:&#34;小明&#34;,&#34;last_name&#34;:&#34;王&#34;}&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#39;&lt;entrypoint&gt;?entity=Contact&amp;action=create&#39;</span>
+</span></span></code></pre></div><h3 id="回傳範例-2">回傳範例</h3>
 <pre tabindex="0"><code>{
     &#34;is_error&#34;: 0,
     &#34;version&#34;: 3,
@@ -1134,14 +1136,14 @@
 <pre tabindex="0"><code>{&#34;id&#34;:&#34;14678&#34;}
 </code></pre><h4 id="api-explorer-3">API Explorer</h4>
 <pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=delete&amp;json={&#34;id&#34;:&#34;14678&#34;}
-</code></pre><h4 id="curl-發送範例">curl 發送範例</h4>
+</code></pre><h4 id="curl-發送範例-2">curl 發送範例</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -g <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;x-civicrm-api-key: &lt;secret-key&gt;&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;x-civicrm-site-key: &lt;site-key&gt;&#39;</span> <span style="color:#ae81ff">\ </span>
-</span></span><span style="display:flex;"><span>  --header <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;x-civicrm-site-key: &lt;site-key&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --request POST <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --data <span style="color:#e6db74">&#39;json={&#34;id&#34;:&#34;14678&#34;}&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#39;&lt;entrypoint&gt;?entity=Contact&amp;action=delete&#39;</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --data <span style="color:#e6db74">&#39;{&#34;id&#34;:&#34;14678&#34;}&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#39;&lt;entrypoint&gt;?entity=Contact&amp;action=delete&#39;</span>
 </span></span></code></pre></div><h3 id="回傳範例-3">回傳範例</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;is_error&#34;</span>: <span style="color:#ae81ff">0</span>,
@@ -1166,13 +1168,13 @@
 <pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;id&#34;:1234,&#34;api.Email.get&#34;:{&#34;contact_id&#34;:&#34;$value.id&#34;,&#34;is_primary&#34;:&#34;0&#34;},&#34;api.CustomValue.get&#34;:{&#34;entity_table&#34;:&#34;civicrm_contact&#34;,&#34;entity_id&#34;:&#34;$value.id&#34;}}
 </code></pre><h4 id="api-explorer-4">API Explorer</h4>
 <pre tabindex="0"><code>https://&lt;site-domain&gt;/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=get&amp;json={&#34;id&#34;:1234,&#34;api.Email.get&#34;:{&#34;contact_id&#34;:&#34;$value.id&#34;,&#34;is_primary&#34;:&#34;0&#34;},&#34;api.CustomValue.get&#34;:{&#34;entity_table&#34;:&#34;civicrm_contact&#34;,&#34;entity_id&#34;:&#34;$value.id&#34;}}
-</code></pre><h4 id="curl-發送範例-1">curl 發送範例</h4>
-<pre tabindex="0"><code>curl -g \
-  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
-  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
-  --header &#39;content-type: application/json&#39; \
-  &#39;&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;id&#34;:1234,&#34;api.Email.get&#34;:{&#34;contact_id&#34;:&#34;$value.id&#34;,&#34;is_primary&#34;:&#34;0&#34;},&#34;api.CustomValue.get&#34;:{&#34;entity_table&#34;:&#34;civicrm_contact&#34;,&#34;entity_id&#34;:&#34;$value.id&#34;}}&#39;
-</code></pre><h3 id="回傳範例-4">回傳範例</h3>
+</code></pre><h4 id="curl-發送範例-3">curl 發送範例</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -g <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;x-civicrm-api-key: &lt;secret-key&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;x-civicrm-site-key: &lt;site-key&gt;&#39;</span> <span style="color:#ae81ff">\ </span>
+</span></span><span style="display:flex;"><span>  --header <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#39;&lt;entrypoint&gt;?entity=Contact&amp;action=get&amp;json={&#34;id&#34;:1234,&#34;api.Email.get&#34;:{&#34;contact_id&#34;:&#34;$value.id&#34;,&#34;is_primary&#34;:&#34;0&#34;},&#34;api.CustomValue.get&#34;:{&#34;entity_table&#34;:&#34;civicrm_contact&#34;,&#34;entity_id&#34;:&#34;$value.id&#34;}}&#39;</span>
+</span></span></code></pre></div><h3 id="回傳範例-4">回傳範例</h3>
 <pre tabindex="0"><code>{
     &#34;is_error&#34;: 0,
     &#34;version&#34;: 3,
@@ -1278,18 +1280,27 @@
 }
 </code></pre><h2 id="取得聯絡人cs">取得聯絡人CS</h2>
 <p>CS(Contact Checksum) 的用途，讓使用者可以填寫表單時，不用重新填寫個資的方式。
-設定的變數有 <code>contact_id</code> 與 <code>live</code>，<code>contact_id</code> 為聯絡人id，而<code>live</code> 則是設定過多久後會失效，需重新登入，單位為小時。</p>
+設定的變數有 <code>contact_id</code> 與 <code>live</code>，<code>contact_id</code> 為聯絡人id，而<code>live</code> 則是設定過多久後會失效，需重新登入，單位為小時。
+回傳的<code>checksum</code>與<code>Contact ID</code>代入捐款頁、活動報名頁於網址參數<code>cs</code>、<code>cid</code>，使用者點擊該網址，即自動帶出聯絡人個資。</p>
 <h3 id="發送範例-4">發送範例</h3>
 <h4 id="http-方法-5">HTTP 方法</h4>
-<pre tabindex="0"><code>GET
+<pre tabindex="0"><code>POST
 </code></pre><h4 id="request-url-6">Request URL</h4>
 <p>格式</p>
 <pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=checksum&amp;json={&#34;contact_id&#34;:&#34;&lt;contact id&gt;&#34;, &#34;live&#34;:&lt;valid hours&gt;}
-</code></pre><p>取得聯絡人編號1234的Checksum，並設定3小時後失效</p>
+</code></pre><p>取得聯絡人編號1234的CheckSum，並設定3小時後失效</p>
 <pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contact&amp;action=checksum&amp;json={&#34;contact_id&#34;:&#34;1234&#34;, &#34;live&#34;:3}
 </code></pre><h4 id="api-explorer-5">API Explorer</h4>
 <pre tabindex="0"><code>https://&lt;site-domain&gt;/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contact&amp;action=checksum&amp;json={&#34;contact_id&#34;:&#34;1234&#34;, &#34;live&#34;:3}
-</code></pre><h3 id="回傳範例-5">回傳範例</h3>
+</code></pre><h4 id="curl-發送範例-4">curl 發送範例</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -g <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;x-civicrm-api-key: &lt;secret-key&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;x-civicrm-site-key: &lt;site-key&gt;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --header <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --request POST <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --data <span style="color:#e6db74">&#39;{&#34;contact_id&#34;:1234,&#34;live&#34;:3}&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#39;&lt;entrypoint&gt;?entity=Contact&amp;action=checksum&#39;</span>
+</span></span></code></pre></div><h3 id="回傳範例-5">回傳範例</h3>
 <p>回傳的 values 內儲存的 key 為設定的聯絡人id，value 為 checksum。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;is_error&#34;</span>: <span style="color:#ae81ff">0</span>,
@@ -1302,7 +1313,17 @@
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    ]
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span></code></pre></div><h3 id="使用範例">使用範例</h3>
+<p>以捐款頁為例，ID 為<code>&lt;page_id&gt;</code>的捐款頁網址為 <code>https://&lt;site-domain&gt;/civicrm/contribute/transact?reset=1&amp;id=&lt;page_id&gt;</code>，在網址後面加上<code>cs</code>和<code>cid</code>的變數，就會自動代入該聯絡人資料。</p>
+<p>組合後網址如下：</p>
+<pre tabindex="0"><code>https://&lt;site-domain&gt;/civicrm/contribute/transact?reset=1&amp;id=&lt;page_id&gt;&amp;cs=&lt;checksum&gt;&amp;cid=&lt;contact_id&gt;
+</code></pre><h4 id="使用於捐款頁的範例">使用於捐款頁的範例</h4>
+<p>以下為 ID=2 的捐款頁，代入上述產生的 ID=1234 之聯絡人資料的網址：</p>
+<pre tabindex="0"><code>https://&lt;site-domain&gt;/civicrm/contribute/transact?reset=1&amp;id=2&amp;cs=abcde12345HQWEQWEASDSASD_1631155364_3&amp;cid=1234
+</code></pre><h4 id="使用於活動報名頁的範例">使用於活動報名頁的範例</h4>
+<p>以下為 ID=12 的活動報名頁，代入上述產生的 ID=1234 之聯絡人資料的網址：</p>
+<pre tabindex="0"><code>https://&lt;site-domain&gt;/civicrm/event/register?reset=1&amp;id=12&amp;cs=abcde12345HQWEQWEASDSASD_1631155364_3&amp;cid=1234#register-now
+</code></pre>
 
 <footer class="footline">
 	
@@ -1620,19 +1641,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/api-document/js/clipboard.min.js?1683779290"></script>
-    <script src="/api-document/js/perfect-scrollbar.min.js?1683779290"></script>
-    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1683779290"></script>
-    <script src="/api-document/js/jquery.sticky.js?1683779290"></script>
-    <script src="/api-document/js/featherlight.min.js?1683779290"></script>
-    <script src="/api-document/js/highlight.pack.js?1683779290"></script>
+    <script src="/api-document/js/clipboard.min.js?1739866258"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1739866258"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1739866258"></script>
+    <script src="/api-document/js/jquery.sticky.js?1739866258"></script>
+    <script src="/api-document/js/featherlight.min.js?1739866258"></script>
+    <script src="/api-document/js/highlight.pack.js?1739866258"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/api-document/js/modernizr.custom-3.6.0.js?1683779290"></script>
-    <script src="/api-document/js/learn.js?1683779290"></script>
-    <script src="/api-document/js/hugo-learn.js?1683779290"></script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1739866258"></script>
+    <script src="/api-document/js/learn.js?1739866258"></script>
+    <script src="/api-document/js/hugo-learn.js?1739866258"></script>
     
         
-            <script src="/api-document/mermaid/mermaid.js?1683779290"></script>
+            <script src="/api-document/mermaid/mermaid.js?1739866258"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

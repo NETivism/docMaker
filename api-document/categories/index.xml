@@ -5,6 +5,7 @@
     <link>/api-document/categories/</link>
     <description>Recent content in Categories on netiCRM API Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language><atom:link href="/api-document/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-tw</language>
+    <atom:link href="/api-document/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
