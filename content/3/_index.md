@@ -5,17 +5,14 @@ menuTitle = "API 簡介"
 
 ## API 簡介
 
-netiCRM API 可藉由後端觸發的 Curl 程式取得 CRM 資料，此功能並非一開站即設定完成，需先向 Netivism 申請後才會開通，預設並未啟用此功能。
+netiCRM API 可藉由後端觸發的 Curl 程式取得 CRM 資料，此功能並非一開站即設定完成，需先向 NETivism 申請後才會開通，預設並未啟用此功能。
 
 ## API 使用入口
 
-本文件所述的 <site-domain> 表示網站網域名稱
-本文件所有的 <entrypoint> ，也就是 API 的入口如下
-```
-https://<site-domain>/sites/all/modules/civicrm/extern/rest.php
-```
-之後文件所述的<entrypoint>替代符號，皆是此網址，也請注意，網址需要將<site-domain>替換為自己網站的網域名稱。
+本文件所述的 `<site-domain>` 表示網站網域名稱
+本文件所有的 `<entrypoint>` ，也就是 API 的入口，會於申請後提供正確的路徑
 
+之後文件所述的 `<entrypoint>` 替代符號，皆是此網址，也請注意，網址需要將 `<site-domain>` 替換為自己網站的網域名稱。
 
 ## API 認證
 
