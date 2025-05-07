@@ -42,6 +42,52 @@ This is a API Document about contribution.
 | expire_date | 日期(datetime) |  | yyyy-mm-dd hh:ii:ss |  | when is payment expiration |
 
 
+## Contribution Search API
+
+使用跟後台一樣的參數傳入並搜尋
+
+### 傳送範例
+#### HTTP Method
+```
+POST
+```
+
+#### Request URL
+```
+<entrypoint>?entity=Contribution&action=get
+```
+
+#### Request Content Type
+```
+application/json
+```
+
+#### Request body
+```
+{
+  "contribution_date_low":"2024-01-01",
+  "contribution_date_low_time":"00:00:00",
+  "contribution_date_high":"2024-05-29",
+  "contribution_date_high_time":"11:55:02"
+}
+```
+
+
+#### curl Example
+```
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{"contribution_date_low":"2024-01-01","contribution_date_low_time":"00:00:00","contribution_date_high":"2024-05-29","contribution_date_high_time":"11:55:02"}' \
+  '<entrypoint>?entity=Contribution&action=get'
+```
+
+### 回傳範例
+
+同 Contribution Get API
+
 ## Contribution Get API
 
 ### 傳送範例

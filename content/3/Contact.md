@@ -62,6 +62,54 @@ weight = 50
 
 # 基本使用
 
+## Contact Search API
+
+使用跟後台搜尋畫面一樣的參數傳入並搜尋
+
+### 發送範例
+
+#### HTTP Method
+
+```
+POST
+```
+
+#### Request Content Type
+```
+application/json
+```
+
+#### Request URL
+```
+<entrypoint>?entity=Contact&action=get
+```
+
+#### Request Body
+
+```
+{
+  "contact_modified_date_low":"2025-01-01",
+  "street_address":"%中山路一段%"
+}
+```
+
+#### curl Example
+
+```
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{"contact_modified_date_low":"2025-01-01","street_address":"%中山路一段%"}' \
+  '<entrypoint>?entity=Contact&action=get'
+```
+
+### 回傳範例
+
+同 Contact Get API
+
+
 ## Contact Get API
 
 ### 發送範例
@@ -81,17 +129,17 @@ GET
 
 取得特定篩選條件的聯絡人
 ```
-<entrypoint>?entity=Contact&action=get&json={"<field>":"<value>"}}
+<entrypoint>?entity=Contact&action=get&json={"<field>":"<value>"}
 ```
 
 聯絡人編號1234的聯絡人
 ```
-<entrypoint>?entity=Contact&action=get&json={"id":"1234"}}
+<entrypoint>?entity=Contact&action=get&json={"id":"1234"}
 ```
 
 姓氏是王、名字是小明的聯絡人
 ```
-<entrypoint>?entity=Contact&action=get&json={"last_name":"王","first_name":"小明"}}
+<entrypoint>?entity=Contact&action=get&json={"last_name":"王","first_name":"小明"}
 ```
 
 #### API Explorer
