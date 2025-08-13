@@ -179,6 +179,58 @@ curl -g \
 }
 ```
 
+## Contact GETCOUNT API
+
+使用跟 Contact Search API 一樣搜尋條件，取得查詢結果總數，以便建立分頁查詢
+
+### 發送範例
+
+#### HTTP Method
+
+```
+POST
+```
+
+#### Request Content Type
+```
+application/json
+```
+
+#### Request URL
+```
+<entrypoint>?entity=Contact&action=getcount
+```
+
+#### Request Body
+
+```
+{
+  "contact_modified_date_low":"2025-01-01",
+  "street_address":"%中山路一段%"
+}
+```
+
+#### curl Example
+
+```
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{"contact_modified_date_low":"2025-01-01","street_address":"%中山路一段%"}' \
+  '<entrypoint>?entity=Contact&action=getcount'
+```
+
+### 回傳範例
+
+```
+{
+    "is_error": 0,
+    "result": 10
+}
+```
+
 ## Contact Create API
 
 ### HTTP 方法

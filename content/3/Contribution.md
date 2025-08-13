@@ -179,6 +179,57 @@ curl -g \
 }
 ```
 
+## Contribution GETCOUNT API
+
+使用跟 Contribution Search API 一樣搜尋條件，取得查詢結果總數，以便建立分頁查詢
+
+### 傳送範例
+#### HTTP Method
+```
+POST
+```
+
+#### Request URL
+```
+<entrypoint>?entity=Contribution&action=getcount
+```
+
+#### Request Content Type
+```
+application/json
+```
+
+#### Request body
+```
+{
+  "contribution_date_low":"2024-01-01",
+  "contribution_date_low_time":"00:00:00",
+  "contribution_date_high":"2024-05-29",
+  "contribution_date_high_time":"11:55:02"
+}
+```
+
+
+#### curl Example
+```
+curl -g \
+  --header 'x-civicrm-api-key: <secret-key>' \
+  --header 'x-civicrm-site-key: <site-key>' \
+  --header 'content-type: application/json' \
+  --request POST \
+  --data '{"contribution_date_low":"2024-01-01","contribution_date_low_time":"00:00:00","contribution_date_high":"2024-05-29","contribution_date_high_time":"11:55:02"}' \
+  '<entrypoint>?entity=Contribution&action=getcount'
+```
+
+### 回傳範例
+
+```
+{
+    "is_error": 0,
+    "result": 50
+}
+```
+
 ## Contribution Create API
 
 ### 傳送範例
