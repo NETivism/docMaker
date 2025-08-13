@@ -13,20 +13,20 @@
     <title>Contribution API :: netiCRM API Documentation</title>
 
     
-    <link href="/api-document/css/nucleus.css?1746590752" rel="stylesheet">
-    <link href="/api-document/css/fontawesome-all.min.css?1746590752" rel="stylesheet">
-    <link href="/api-document/css/hybrid.css?1746590752" rel="stylesheet">
-    <link href="/api-document/css/featherlight.min.css?1746590752" rel="stylesheet">
-    <link href="/api-document/css/perfect-scrollbar.min.css?1746590752" rel="stylesheet">
-    <link href="/api-document/css/auto-complete.css?1746590752" rel="stylesheet">
-    <link href="/api-document/css/atom-one-dark-reasonable.css?1746590752" rel="stylesheet">
-    <link href="/api-document/css/theme.css?1746590752" rel="stylesheet">
-    <link href="/api-document/css/tabs.css?1746590752" rel="stylesheet">
-    <link href="/api-document/css/hugo-theme.css?1746590752" rel="stylesheet">
+    <link href="/api-document/css/nucleus.css?1755071090" rel="stylesheet">
+    <link href="/api-document/css/fontawesome-all.min.css?1755071090" rel="stylesheet">
+    <link href="/api-document/css/hybrid.css?1755071090" rel="stylesheet">
+    <link href="/api-document/css/featherlight.min.css?1755071090" rel="stylesheet">
+    <link href="/api-document/css/perfect-scrollbar.min.css?1755071090" rel="stylesheet">
+    <link href="/api-document/css/auto-complete.css?1755071090" rel="stylesheet">
+    <link href="/api-document/css/atom-one-dark-reasonable.css?1755071090" rel="stylesheet">
+    <link href="/api-document/css/theme.css?1755071090" rel="stylesheet">
+    <link href="/api-document/css/tabs.css?1755071090" rel="stylesheet">
+    <link href="/api-document/css/hugo-theme.css?1755071090" rel="stylesheet">
     
     
 
-    <script src="/api-document/js/jquery-3.3.1.min.js?1746590752"></script>
+    <script src="/api-document/js/jquery-3.3.1.min.js?1755071090"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/api-document/js/lunr.min.js?1746590752"></script>
-<script type="text/javascript" src="/api-document/js/auto-complete.js?1746590752"></script>
+<script type="text/javascript" src="/api-document/js/lunr.min.js?1755071090"></script>
+<script type="text/javascript" src="/api-document/js/auto-complete.js?1755071090"></script>
 <script type="text/javascript">
     
         var baseurl = "\/api-document\/";
     
 </script>
-<script type="text/javascript" src="/api-document/js/search.js?1746590752"></script>
+<script type="text/javascript" src="/api-document/js/search.js?1755071090"></script>
 
     
   </div>
@@ -509,22 +509,28 @@
         <li><a href="#回傳範例-1">回傳範例</a></li>
       </ul>
     </li>
-    <li><a href="#contribution-create-api">Contribution Create API</a>
+    <li><a href="#contribution-getcount-api">Contribution GETCOUNT API</a>
       <ul>
         <li><a href="#傳送範例-2">傳送範例</a></li>
         <li><a href="#回傳範例-2">回傳範例</a></li>
       </ul>
     </li>
-    <li><a href="#contribution-update-api">Contribution Update API</a>
+    <li><a href="#contribution-create-api">Contribution Create API</a>
       <ul>
         <li><a href="#傳送範例-3">傳送範例</a></li>
         <li><a href="#回傳範例-3">回傳範例</a></li>
       </ul>
     </li>
-    <li><a href="#contribution-delete-api">Contribution Delete API</a>
+    <li><a href="#contribution-update-api">Contribution Update API</a>
       <ul>
         <li><a href="#傳送範例-4">傳送範例</a></li>
         <li><a href="#回傳範例-4">回傳範例</a></li>
+      </ul>
+    </li>
+    <li><a href="#contribution-delete-api">Contribution Delete API</a>
+      <ul>
+        <li><a href="#傳送範例-5">傳送範例</a></li>
+        <li><a href="#回傳範例-5">回傳範例</a></li>
       </ul>
     </li>
   </ul>
@@ -931,15 +937,44 @@
         }
     }
 }
-</code></pre><h2 id="contribution-create-api">Contribution Create API</h2>
+</code></pre><h2 id="contribution-getcount-api">Contribution GETCOUNT API</h2>
+<p>使用跟 Contribution Search API 一樣搜尋條件，取得查詢結果總數，以便建立分頁查詢</p>
 <h3 id="傳送範例-2">傳送範例</h3>
 <h4 id="http-method-2">HTTP Method</h4>
 <pre tabindex="0"><code>POST
 </code></pre><h4 id="request-url-2">Request URL</h4>
-<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contribution&amp;action=create
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contribution&amp;action=getcount
 </code></pre><h4 id="request-content-type-1">Request Content Type</h4>
 <pre tabindex="0"><code>application/json
 </code></pre><h4 id="request-body-1">Request body</h4>
+<pre tabindex="0"><code>{
+  &#34;contribution_date_low&#34;:&#34;2024-01-01&#34;,
+  &#34;contribution_date_low_time&#34;:&#34;00:00:00&#34;,
+  &#34;contribution_date_high&#34;:&#34;2024-05-29&#34;,
+  &#34;contribution_date_high_time&#34;:&#34;11:55:02&#34;
+}
+</code></pre><h4 id="curl-example-2">curl Example</h4>
+<pre tabindex="0"><code>curl -g \
+  --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
+  --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \
+  --header &#39;content-type: application/json&#39; \
+  --request POST \
+  --data &#39;{&#34;contribution_date_low&#34;:&#34;2024-01-01&#34;,&#34;contribution_date_low_time&#34;:&#34;00:00:00&#34;,&#34;contribution_date_high&#34;:&#34;2024-05-29&#34;,&#34;contribution_date_high_time&#34;:&#34;11:55:02&#34;}&#39; \
+  &#39;&lt;entrypoint&gt;?entity=Contribution&amp;action=getcount&#39;
+</code></pre><h3 id="回傳範例-2">回傳範例</h3>
+<pre tabindex="0"><code>{
+    &#34;is_error&#34;: 0,
+    &#34;result&#34;: 50
+}
+</code></pre><h2 id="contribution-create-api">Contribution Create API</h2>
+<h3 id="傳送範例-3">傳送範例</h3>
+<h4 id="http-method-3">HTTP Method</h4>
+<pre tabindex="0"><code>POST
+</code></pre><h4 id="request-url-3">Request URL</h4>
+<pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contribution&amp;action=create
+</code></pre><h4 id="request-content-type-2">Request Content Type</h4>
+<pre tabindex="0"><code>application/json
+</code></pre><h4 id="request-body-2">Request body</h4>
 <pre tabindex="0"><code>{
     &#34;contact_id&#34;: 29,
     &#34;receive_date&#34;: &#34;2021-11-29 15:04:09&#34;,
@@ -956,7 +991,7 @@
 }
 </code></pre><h4 id="api-explorer-1">API Explorer</h4>
 <pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&amp;action=create&amp;pretty=1&amp;json={&#34;contact_id&#34;:29,&#34;receive_date&#34;:&#34;2021-11-29 15:04:09&#34;,&#34;total_amount&#34;:100,&#34;contribution_type_id&#34;:1,&#34;non_deductible_amount&#34;:10,&#34;fee_amount&#34;:50,&#34;net_amount&#34;:90,&#34;source&#34;:&#34;Contribution Unit Test&#34;,&#34;contribution_status_id&#34;:1,&#34;trxn_id&#34;:&#34;pxhaDtwFII&#34;,&#34;invoice_id&#34;:&#34;e1uGoCG25Q&#34;,&#34;payment_instrument_id&#34;:1}
-</code></pre><h4 id="curl-example-2">curl Example</h4>
+</code></pre><h4 id="curl-example-3">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
   --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
   --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
@@ -964,7 +999,7 @@
   --request POST \
   --data &#39;{&#34;contact_id&#34;:29,&#34;receive_date&#34;:&#34;2021-11-29 15:04:09&#34;,&#34;total_amount&#34;:100,&#34;contribution_type_id&#34;:1,&#34;non_deductible_amount&#34;:10,&#34;fee_amount&#34;:50,&#34;net_amount&#34;:90,&#34;source&#34;:&#34;Contribution Unit Test&#34;,&#34;contribution_status_id&#34;:1,&#34;trxn_id&#34;:&#34;pxhaDtwFII&#34;,&#34;invoice_id&#34;:&#34;e1uGoCG25Q&#34;,&#34;payment_instrument_id&#34;:1}&#39; \
   &#39;&lt;entrypoint&gt;?entity=Contribution&amp;action=create&#39;
-</code></pre><h3 id="回傳範例-2">回傳範例</h3>
+</code></pre><h3 id="回傳範例-3">回傳範例</h3>
 <pre tabindex="0"><code>{
     &#34;is_error&#34;: 0,
     &#34;version&#34;: 3,
@@ -1007,14 +1042,14 @@
     ]
 }
 </code></pre><h2 id="contribution-update-api">Contribution Update API</h2>
-<h3 id="傳送範例-3">傳送範例</h3>
-<h4 id="http-method-3">HTTP Method</h4>
+<h3 id="傳送範例-4">傳送範例</h3>
+<h4 id="http-method-4">HTTP Method</h4>
 <pre tabindex="0"><code>POST
-</code></pre><h4 id="request-url-3">Request URL</h4>
+</code></pre><h4 id="request-url-4">Request URL</h4>
 <pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contribution&amp;action=create
-</code></pre><h4 id="request-content-type-2">Request Content Type</h4>
+</code></pre><h4 id="request-content-type-3">Request Content Type</h4>
 <pre tabindex="0"><code>application/json
-</code></pre><h4 id="request-body-2">Request body</h4>
+</code></pre><h4 id="request-body-3">Request body</h4>
 <pre tabindex="0"><code>{
     &#34;id&#34;: 59,
     &#34;total_amount&#34;: 9999,
@@ -1027,7 +1062,7 @@
 }
 </code></pre><h4 id="api-explorer-2">API Explorer</h4>
 <pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&amp;action=create&amp;pretty=1&amp;json={&#34;id&#34;:59,&#34;total_amount&#34;:9999,&#34;contribution_type_id&#34;:1,&#34;non_deductible_amount&#34;:10,&#34;net_amount&#34;:100,&#34;contribution_status_id&#34;:3,&#34;cancel_date&#34;:&#34;20211129150410&#34;,&#34;cancel_reason&#34;:&#34;The reason to cancel&#34;}
-</code></pre><h4 id="curl-example-3">curl Example</h4>
+</code></pre><h4 id="curl-example-4">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
   --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
   --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
@@ -1035,7 +1070,7 @@
   --request POST \
   --data &#39;{&#34;id&#34;:59,&#34;total_amount&#34;:9999,&#34;contribution_type_id&#34;:1,&#34;non_deductible_amount&#34;:10,&#34;net_amount&#34;:100,&#34;contribution_status_id&#34;:3,&#34;cancel_date&#34;:&#34;20211129150410&#34;,&#34;cancel_reason&#34;:&#34;The reason to cancel&#34;}&#39; \
   &#39;&lt;entrypoint&gt;?entity=Contribution&amp;action=create&#39;
-</code></pre><h3 id="回傳範例-3">回傳範例</h3>
+</code></pre><h3 id="回傳範例-4">回傳範例</h3>
 <pre tabindex="0"><code>{
     &#34;is_error&#34;: 0,
     &#34;version&#34;: 3,
@@ -1078,20 +1113,20 @@
     }
 }
 </code></pre><h2 id="contribution-delete-api">Contribution Delete API</h2>
-<h3 id="傳送範例-4">傳送範例</h3>
-<h4 id="http-method-4">HTTP Method</h4>
+<h3 id="傳送範例-5">傳送範例</h3>
+<h4 id="http-method-5">HTTP Method</h4>
 <pre tabindex="0"><code>POST
-</code></pre><h4 id="request-url-4">Request URL</h4>
+</code></pre><h4 id="request-url-5">Request URL</h4>
 <pre tabindex="0"><code>&lt;entrypoint&gt;?entity=Contribution&amp;action=delete
-</code></pre><h4 id="request-content-type-3">Request Content Type</h4>
+</code></pre><h4 id="request-content-type-4">Request Content Type</h4>
 <pre tabindex="0"><code>application/json
-</code></pre><h4 id="request-body-3">Request body</h4>
+</code></pre><h4 id="request-body-4">Request body</h4>
 <pre tabindex="0"><code>{
     &#34;id&#34;: 60
 }
 </code></pre><h4 id="api-explorer-3">API Explorer</h4>
 <pre tabindex="0"><code>/civicrm/apibrowser#/civicrm/ajax/rest?entity=Contribution&amp;action=delete&amp;pretty=1&amp;json={&#34;id&#34;:60}
-</code></pre><h4 id="curl-example-4">curl Example</h4>
+</code></pre><h4 id="curl-example-5">curl Example</h4>
 <pre tabindex="0"><code>curl -g \
   --header &#39;x-civicrm-api-key: &lt;secret-key&gt;&#39; \
   --header &#39;x-civicrm-site-key: &lt;site-key&gt;&#39; \ 
@@ -1099,7 +1134,7 @@
   --request POST \
   --data &#39;{&#34;id&#34;:60}&#39; \
   &#39;&lt;entrypoint&gt;?entity=Contribution&amp;action=delete&#39;
-</code></pre><h3 id="回傳範例-4">回傳範例</h3>
+</code></pre><h3 id="回傳範例-5">回傳範例</h3>
 <pre tabindex="0"><code>{
     &#34;is_error&#34;: 0,
     &#34;version&#34;: 3,
@@ -1424,19 +1459,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/api-document/js/clipboard.min.js?1746590752"></script>
-    <script src="/api-document/js/perfect-scrollbar.min.js?1746590752"></script>
-    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1746590752"></script>
-    <script src="/api-document/js/jquery.sticky.js?1746590752"></script>
-    <script src="/api-document/js/featherlight.min.js?1746590752"></script>
-    <script src="/api-document/js/highlight.pack.js?1746590752"></script>
+    <script src="/api-document/js/clipboard.min.js?1755071090"></script>
+    <script src="/api-document/js/perfect-scrollbar.min.js?1755071090"></script>
+    <script src="/api-document/js/perfect-scrollbar.jquery.min.js?1755071090"></script>
+    <script src="/api-document/js/jquery.sticky.js?1755071090"></script>
+    <script src="/api-document/js/featherlight.min.js?1755071090"></script>
+    <script src="/api-document/js/highlight.pack.js?1755071090"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/api-document/js/modernizr.custom-3.6.0.js?1746590752"></script>
-    <script src="/api-document/js/learn.js?1746590752"></script>
-    <script src="/api-document/js/hugo-learn.js?1746590752"></script>
+    <script src="/api-document/js/modernizr.custom-3.6.0.js?1755071090"></script>
+    <script src="/api-document/js/learn.js?1755071090"></script>
+    <script src="/api-document/js/hugo-learn.js?1755071090"></script>
     
         
-            <script src="/api-document/mermaid/mermaid.js?1746590752"></script>
+            <script src="/api-document/mermaid/mermaid.js?1755071090"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
