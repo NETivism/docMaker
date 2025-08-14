@@ -309,6 +309,10 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 #sidebar ul li > a {
     padding: 4px 0;
 }
+#sidebar ul li > a:hover {
+    padding: 4px 0;
+    background: #263944e0;
+}
 #sidebar ul li.visited > a .read-icon {
     color: #9c6fb6;
     display: inline;

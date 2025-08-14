@@ -292,18 +292,14 @@ jQuery(document).ready(function() {
       toggleTocIcon();
     }
 
-    var touchsupport = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
-    if (!touchsupport){ // browser doesn't support touch
-        $('#toc-menu').hover(function() {
-            $('.progress').stop(true, false, true).fadeToggle(100);
-        });
-    }
-    if (touchsupport){ // browser does support touch
-        $('#toc-menu').click(function() {
-            $('.progress').stop(true, false, true).fadeToggle(100);
-            toggleTocIcon();
-        });
-    }
+    // Make TOC menu clickable for all devices with default shown state
+    // Show progress bar by default
+    $('.progress').show();
+    
+    $('#toc-menu').click(function() {
+        $('.progress').stop(true, false, true).fadeToggle(100);
+        toggleTocIcon();
+    });
 
     /**
     * Fix anchor scrolling that hides behind top nav bar
